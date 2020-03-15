@@ -36,16 +36,16 @@
         <!-- Login del usuario -->
 			<div id="id_secundario">
 				<div id="id_transparencia"></div>
-				<div id="id_usuario" align="center">
-					<p align="center" style="position: relative;z-index: 1;font-size: large;color: #3d4045;">Inicia sesión como usuario</p>
-					<form id="id_formuser" method="get" action="home.php">
-						<fieldset align="left" id="id_campouser">
-							<img style="width: 15px; height: 15px;" src="./img/user.png" />
+				<div id="id_usuario">
+					<p style="position: relative;z-index: 1;font-size: large;color: #3d4045;">Inicia sesión como usuario</p>
+					<form id="id_formuser" method="post" action="home.php">
+						<fieldset id="id_campouser">
+							<img alt="user.png" style="width: 15px; height: 15px;" src="./img/user.png" />
 							<label for="id_username">Usuario:</label>
 							<input size="30" id="id_username" name="username" type="text" required/>
 							<br><br>
 
-							<img style="width: 15px; height: 15px;" src="./img/pass.png" />
+							<img alt="pass.png" style="width: 15px; height: 15px;" src="./img/pass.png" />
 							<label for="id_userpass">Contraseña:</label>
 							<input size="30" id="id_userpass" name="userpass" type="password" required/>
 							<button id="id_btuser" type="submit">Iniciar Sesión</button>
@@ -53,26 +53,26 @@
 					</form>
 				</div>
         <!-- Divisor de registro -->
-				<div align="center" id="id_register">
+				<div id="id_register">
 					<p style="color: #FBDE1B">
 						¿No tienes una cuenta?
 					</p>
-					<a id="id_btregistro" name="btregistro" href="register.php">Regístrate</a>
+					<a id="id_btregistro" href="register.php">Regístrate</a>
 				</div>
 			</div>
         <!-- Login del administrador -->
 
 			<div id="id_transparencia2"></div>
 			<div id="id_admin">
-				<p align="center" style="position: relative;z-index: 1;font-size: large;color: #3d4045;">Inicia sesión como administrador</p>
-				<form id="id_formadmin" method="get" action="error.php">
-					<fieldset align="left" id="id_campoadmin">
-						<img style="width: 15px; height: 15px;" src="./img/user.png" />
+				<p style="position: relative;z-index: 1;font-size: large;color: #3d4045;">Inicia sesión como administrador</p>
+				<form id="id_formadmin" method="post" action="error.html">
+					<fieldset id="id_campoadmin">
+						<img alt="user.png" style="width: 15px; height: 15px;" src="./img/user.png" />
 						<label for="id_adminname">Usuario:</label>
 						<input size="30" id="id_adminname" name="adminname" type="text" required/>
 						<br><br>
 
-						<img style="width: 15px; height: 15px;" src="./img/pass.png" />
+						<img alt="pass.png" style="width: 15px; height: 15px;" src="./img/pass.png" />
 						<label for="id_adminpass">Contraseña:</label>
 						<input size="30" id="id_adminpass" name="adminpass" type="password" required/>
 						<button id="id_btadmin" type="submit">Iniciar Sesión</button>

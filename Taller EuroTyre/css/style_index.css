@@ -2,6 +2,10 @@
 	margin-top: 10px;
 }
 
+html p {
+	text-align: center;
+}
+
 body {
 	background-color: #3d4045;
 }
