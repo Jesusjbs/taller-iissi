@@ -1,0 +1,185 @@
+#id_superior {
+	margin-top: 10px;
+}
+
+body {
+	background-color: #3d4045;
+}
+
+#id_logo {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.menu {
+	width: 280px;
+	height: 38px;
+	border: 1px solid #FBDE1B;
+	float: right;
+	margin-top: 40px;
+	margin-right: 40px;
+	background: #3D4045;
+}
+
+.menu ul {
+	padding: 0px 10px;
+}
+
+.menu ul li{
+	list-style: none;
+	margin-top: -13px;
+	margin-right: 10px;
+	height: 30px;
+	padding: 4px 2px;
+	text-align: center;
+	font-size: large;
+	float: left;
+}
+
+.menu ul li a {
+	text-decoration: none;
+	color: #FBDE1B;
+}
+
+#id_principal {
+	margin-top: 100px;
+	height: 350px;
+}
+
+#id_secundario {
+	height: 350px;
+	width: 250px;
+	margin-left: 33%;
+}
+
+#id_usuario {
+	color: #3D4045;
+	border: 1px solid;
+	border-radius: 10px;
+	height: 220px;
+	width: 250px;
+}
+
+#id_register {
+	width: 150px;
+	height: 100px;
+	margin: auto;
+
+}
+
+#id_btregistro {
+	border-radius: 16px;
+	padding: 4px 20px;
+	text-decoration: none;
+	border: 1px solid;
+	color: #FBDE1B;
+}
+
+#id_campouser {
+	color: #3D4045;
+	position: relative;
+	border: 0px;
+}
+
+#id_admin {
+	position: absolute;
+	color: #3D4045;
+	border: 1px solid;
+	border-radius: 10px;
+	height: 220px;
+	width: 250px;
+	margin-top: -350px;
+	margin-left: 50%;
+}
+
+#id_transparencia {
+	border: 1px solid;
+	border-radius: 10px;
+	height: 220px;
+	width: 250px;
+	background-color: #fbde1b;
+	opacity: 0.8;
+	position: absolute;
+}
+
+#id_transparencia2 {
+	position: absolute;
+	border: 1px solid;
+	border-radius: 10px;
+	height: 220px;
+	width: 250px;
+	margin-top: -350px;
+	margin-left: 50%;
+	background-color: #fbde1b;
+	opacity: 0.8;
+}
+
+#id_campoadmin {
+	border: 0px;
+	color: #3D4045;
+	position: relative;
+}
+
+#id_btuser {
+	position: relative;
+	margin-top: 15px;
+	left: 50px;
+	border-radius: 16px;
+	padding: 4px 20px;
+	text-decoration: none;
+	color: #000000;
+	background: none;
+	cursor: pointer;
+}
+
+#id_btadmin {
+	position: relative;
+	margin-top: 15px;
+	left: 50px;
+	border-radius: 16px;
+	padding: 4px 20px;
+	color: #000000;
+	background: none;
+	cursor: pointer;
+}
+
+#id_adminname {
+	position:relative;
+	border-radius: 4px;
+	background-color: #E6E3E2;
+}
+
+#id_adminpass {
+	position: relative;
+	border-radius: 4px;
+	background-color: #E6E3E2;
+}
+
+#id_username {
+	position: relative;
+	border-radius: 4px;
+	background-color: #E6E3E2;
+}
+
+#id_userpass {
+	position: relative;
+	border-radius: 4px;
+	background-color: #E6E3E2;
+}
+
+#id_footer {
+	position: fixed;
+ 	bottom: 0;
+ 	left: 0;
+  	width: 100%;
+	height: 60px;
+	text-align: center;
+    border-top: 1px solid;
+    border-color: #FBDE1B;
+	background: #43474d;
+	color: #FBDE1B;
+}
+
+#id_footer a {
+	color: #FBDE1B;
+}

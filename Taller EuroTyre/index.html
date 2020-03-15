@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Taller EuroTyre</title>
+		<link rel="stylesheet" type="text/css" href="./css/style_index.css" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="./img/logo.png">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	</head>
+
+	<body>
+		<section id="id_superior">
+			<header>
+				<img id="id_logo" src="./img/logo.png" height="125px" alt="Logo EuroTyre"/>
+
+				<nav class="menu">
+					<ul>
+						<li><a href="">Inicio</a></li>
+						<li><a href="">Nosotros</a></li>
+						<li><a href="">F.A.Q</a></li>
+						<li><a href="">Acerca</a></li>
+					</ul>
+				</nav>
+			</header>
+		</section>
+
+        <!-- Divisor central de login -->		
+		<section id="id_principal">
+        <!-- Login del usuario -->
+			<div id="id_secundario">
+				<div id="id_transparencia"></div>
+				<div id="id_usuario" align="center">
+					<p align="center" style="position: relative;z-index: 1;font-size: large;color: #3d4045;">Inicia sesión como usuario</p>
+					<form id="id_formuser" method="get" action="home.php">
+						<fieldset align="left" id="id_campouser">
+							<img style="width: 15px; height: 15px;" src="./img/user.png" />
+							<label for="id_username">Usuario:</label>
+							<input size="30" id="id_username" name="username" type="text" required/>
+							<br><br>
+
+							<img style="width: 15px; height: 15px;" src="./img/pass.png" />
+							<label for="id_userpass">Contraseña:</label>
+							<input size="30" id="id_userpass" name="userpass" type="password" required/>
+							<button id="id_btuser" type="submit">Iniciar Sesión</button>
+						</fieldset>
+					</form>
+				</div>
+        <!-- Divisor de registro -->
+				<div align="center" id="id_register">
+					<p style="color: #FBDE1B">
+						¿No tienes una cuenta?
+					</p>
+					<a id="id_btregistro" name="btregistro" href="register.php">Regístrate</a>
+				</div>
+			</div>
+        <!-- Login del administrador -->
+
+			<div id="id_transparencia2"></div>
+			<div id="id_admin">
+				<p align="center" style="position: relative;z-index: 1;font-size: large;color: #3d4045;">Inicia sesión como administrador</p>
+				<form id="id_formadmin" method="get" action="error.php">
+					<fieldset align="left" id="id_campoadmin">
+						<img style="width: 15px; height: 15px;" src="./img/user.png" />
+						<label for="id_adminname">Usuario:</label>
+						<input size="30" id="id_adminname" name="adminname" type="text" required/>
+						<br><br>
+
+						<img style="width: 15px; height: 15px;" src="./img/pass.png" />
+						<label for="id_adminpass">Contraseña:</label>
+						<input size="30" id="id_adminpass" name="adminpass" type="password" required/>
+						<button id="id_btadmin" type="submit">Iniciar Sesión</button>
+					</fieldset>
+				</form>
+			</div>
+		</section>
+        <!-- Divisor inferior footer -->		
+		
+		<div id="id_inferior">
+			<footer id="id_footer">
+				<p>Al usar este sitio, reconoces haber leído y entendido nuestra <a href="">Política de Privacidad</a>
+				    y nuestros <a href="">Términos y Condiciones</a>.</p>
+			</footer>
+		</div>
+	</body>
+</html>
