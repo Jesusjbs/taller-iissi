@@ -90,7 +90,7 @@
 				<input id="id_confirmar" name="confirmar" type="password" title="Confirmación de contraseña" required />
 			</div>
 			
-			<p>Al hacer clic en Enviar, aceptas nuestros <a href="#">Términos y Condiciones</a></p>
+			<p>Al hacer clic en Enviar, aceptas nuestros <a href="terminos.php">Términos y Condiciones</a></p>
 
 			<button id="id_enviar" type="submit">Enviar</button>
 			
