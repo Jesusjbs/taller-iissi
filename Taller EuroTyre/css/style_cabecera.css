@@ -1,0 +1,38 @@
+#id_superior {
+	margin-top: 10px;
+}
+
+#id_logo {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.menu {
+	width: 230px;
+	height: 38px;
+	border: 1px solid #FBDE1B;
+	float: right;
+	margin-top: 40px;
+	margin-right: 40px;
+	background: #3D4045;
+}
+
+.menu ul {
+	padding: 0px 10px;
+}
+
+.menu ul li{
+	list-style: none;
+	margin-top: -13px;
+	margin-right: 12px;
+	height: 30px;
+	padding: 4px 2px;
+	text-align: center;
+	font-size: large;
+	float: left;
+}
+
+.menu ul li a {
+	text-decoration: none;
+	color: #FBDE1B;
+}
