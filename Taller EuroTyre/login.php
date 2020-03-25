@@ -4,9 +4,9 @@
   	include_once("gestionBD.php");
  	include_once("gestionarUsuarios.php");
 	
-	if (isset($_POST["submit"])){
-		$dni= $_POST["dni"];
-		$pass = $_POST["pass"];
+	if (isset($_POST['submit'])){
+		$dni= $_POST['dni'];
+		$pass = $_POST['pass'];
 
 
 		$conexion = crearConexionBD();
@@ -21,7 +21,8 @@
 
 			$_SESSION["login"] = $dni;
 
-			header("Location: home.php");
+			//header("Location: home.php");
+			echo $existeCliente;
 		}
 	}
 
@@ -70,13 +71,13 @@
 					<form id="id_formuser" method="POST" action="login.php">
 						<fieldset id="id_campouser">
 							<img alt="user.png" style="width: 15px; height: 15px;" src="./img/user.png" />
-							<label for="id_username">Usuario:</label>
-							<input size="25" id="id_username" name="username" type="text" required/>
+							<label for="id_dni">Usuario:</label>
+							<input size="25" id="id_dni" name="dni" type="text" required/>
 							<br><br>
 
 							<img alt="pass.png" style="width: 15px; height: 15px;" src="./img/pass.png" />
-							<label for="id_userpass">Contraseña:</label>
-							<input size="25" id="id_userpass" name="userpass" type="password" required/>
+							<label for="id_pass">Contraseña:</label>
+							<input size="25" id="id_pass" name="pass" type="password" required/>
 							<button id="id_btuser" type="submit">Iniciar Sesión</button>
 						</fieldset>
 					</form>

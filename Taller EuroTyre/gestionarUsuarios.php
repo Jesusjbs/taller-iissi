@@ -12,7 +12,7 @@
         $stmt -> bindParam(':direccion',$usuario["direccion"]);
         $stmt -> bindParam(':contraseña',$usuario["contraseña"]);
         $stmt -> execute();
-        return true;
+        return $stmt;
     }
     catch(PDOException $err) {
         echo $err -> GetMessage();
