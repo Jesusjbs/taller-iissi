@@ -1,3 +1,32 @@
+<?php
+	session_start();
+  	
+  	include_once("gestionBD.php");
+ 	include_once("gestionarUsuarios.php");
+	
+	if (isset($_POST["submit"])){
+		$dni= $_POST["dni"];
+		$pass = $_POST["pass"];
+
+
+		$conexion = crearConexionBD();
+	
+		$existeCliente = consultarCliente($conexion, $dni, $pass);
+		
+		cerrarConexionBD($conexion);
+
+		if(!$existeCliente) {
+			$login = "";
+		} else {
+
+			$_SESSION["login"] = $dni;
+
+			header("Location: home.php");
+		}
+	}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -16,6 +45,15 @@
 	</head>
 
 	<body>
+
+	<?php 
+	if (isset($login)) {
+		echo "<div class=\'error\'>";
+		echo "Error en la contraseña o no existe el usuario.";
+		echo "</div>";
+	}
+	?>
+
 		<section id="id_superior">
 			<header>
 				<img id="id_logo" src="./img/logo.png" height="125px" alt="Logo EuroTyre"/>
@@ -29,16 +67,16 @@
 				<div id="id_transparencia"></div>
 				<div id="id_usuario">
 					<p style="position: relative;z-index: 1;font-size: large;color: #3d4045;">Inicia sesión como usuario</p>
-					<form id="id_formuser" method="post" action="home.php">
+					<form id="id_formuser" method="POST" action="login.php">
 						<fieldset id="id_campouser">
 							<img alt="user.png" style="width: 15px; height: 15px;" src="./img/user.png" />
 							<label for="id_username">Usuario:</label>
-							<input size="30" id="id_username" name="username" type="text" required/>
+							<input size="25" id="id_username" name="username" type="text" required/>
 							<br><br>
 
 							<img alt="pass.png" style="width: 15px; height: 15px;" src="./img/pass.png" />
 							<label for="id_userpass">Contraseña:</label>
-							<input size="30" id="id_userpass" name="userpass" type="password" required/>
+							<input size="25" id="id_userpass" name="userpass" type="password" required/>
 							<button id="id_btuser" type="submit">Iniciar Sesión</button>
 						</fieldset>
 					</form>
@@ -51,32 +89,12 @@
 					<a id="id_btregistro" href="formulario_usuario.php">Regístrate</a>
 				</div>
 			</div>
-        <!-- Login del administrador -->
-
-			<div id="id_transparencia2"></div>
-			<div id="id_admin">
-				<p style="position: relative;z-index: 1;font-size: large;color: #3d4045;">Inicia sesión como administrador</p>
-				<form id="id_formadmin" method="post" action="error.html">
-					<fieldset id="id_campoadmin">
-						<img alt="user.png" style="width: 15px; height: 15px;" src="./img/user.png" />
-						<label for="id_adminname">Usuario:</label>
-						<input size="30" id="id_adminname" name="adminname" type="text" required/>
-						<br><br>
-
-						<img alt="pass.png" style="width: 15px; height: 15px;" src="./img/pass.png" />
-						<label for="id_adminpass">Contraseña:</label>
-						<input size="30" id="id_adminpass" name="adminpass" type="password" required/>
-						<button id="id_btadmin" type="submit">Iniciar Sesión</button>
-					</fieldset>
-				</form>
-			</div>
 		</section>
         <!-- Divisor inferior footer -->		
 		
 		<div id="id_inferior">
 			<footer id="id_footer">
-				<p>Al usar este sitio, reconoces haber leído y entendido nuestra <a href="terminos.php">Política de Privacidad</a>
-				y nuestros <a href="terminos.php">Términos y Condiciones</a>.</p>
+				<p>Al usar este sitio, reconoces haber leído y entendido nuestra <a href="terminos.php">Política de Privacidad y nuestros Términos y Condiciones</a>.</p>
 			</footer>
 		</div>
 	</body>

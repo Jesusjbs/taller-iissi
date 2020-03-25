@@ -2,7 +2,7 @@
 	session_start();
 
 	require_once("gestionBD.php");
-//	require_once("gestionarUsuarios.php");
+	require_once("gestionarUsuarios.php");
 		
 	// Comprobar que hemos llegado a esta página porque se ha rellenado el formulario
 	// Se recupera la variable de sesión y se anula
@@ -37,7 +37,7 @@
             if(alta_cliente($conexion, $nuevoUsuario)) { ?>		
 			<h1>Te has registrado correctamente como <?php echo $nuevoUsuario["nombre"]; echo $nuevoUsuario["apellidos"];?></h1>
 			<div >	
-				Pulsa <a href="#">aquí</a> para acceder a la gestión de biblioteca.
+				Pulsa <a href="home.php">aquí</a> para acceder a la página de inicio del taller.
 			</div>
 		<?php } else { ?>
 			<h1>El usuario ya existe en la base de datos.</h1>
