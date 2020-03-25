@@ -35,6 +35,10 @@
 	<main>
         <?php 	
             if(alta_cliente($conexion, $nuevoUsuario)) { ?>		
+			<?php
+				 $_SESSION["login"] = $nuevoUsuario["dni"];
+			?>
+			
 			<h1>Te has registrado correctamente como <?php echo $nuevoUsuario["nombre"]; echo $nuevoUsuario["apellidos"];?></h1>
 			<div >	
 				Pulsa <a href="home.php">aquí</a> para acceder a la página de inicio del taller.
