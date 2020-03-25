@@ -21,7 +21,7 @@
 }
 
 function consultarCliente($conexion,$dni,$pass) {
- 	$consulta = "SELECT COUNT(*) AS TOTAL FROM CLIENTES WHERE DNI=:dni AND PASS=:pass";
+ 	$consulta = "SELECT COUNT(*) AS TOTAL FROM CLIENTES WHERE DNI=:dni AND CONTRASEÑA=:pass";
 	$stmt = $conexion->prepare($consulta);
 	$stmt->bindParam(':dni',$dni);
 	$stmt->bindParam(':pass',$pass);

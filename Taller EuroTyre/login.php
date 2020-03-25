@@ -21,8 +21,7 @@
 
 			$_SESSION["login"] = $dni;
 
-			//header("Location: home.php");
-			echo $existeCliente;
+			header("Location: home.php");
 		}
 	}
 
@@ -78,7 +77,7 @@
 							<img alt="pass.png" style="width: 15px; height: 15px;" src="./img/pass.png" />
 							<label for="id_pass">Contraseña:</label>
 							<input size="25" id="id_pass" name="pass" type="password" required/>
-							<button id="id_btuser" type="submit">Iniciar Sesión</button>
+							<button id="id_btuser" name="submit" type="submit">Iniciar Sesión</button>
 						</fieldset>
 					</form>
 				</div>
