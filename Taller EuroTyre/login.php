@@ -71,7 +71,7 @@
 						<fieldset id="id_campouser">
 							<img alt="user.png" style="width: 15px; height: 15px;" src="./img/user.png" />
 							<label for="id_dni">Usuario:</label>
-							<input size="25" id="id_dni" name="dni" type="text" required/>
+							<input size="25" id="id_dni" name="dni" type="text" placeholder="DNI" required/>
 							<br><br>
 
 							<img alt="pass.png" style="width: 15px; height: 15px;" src="./img/pass.png" />
