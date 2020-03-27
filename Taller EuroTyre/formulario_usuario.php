@@ -52,49 +52,59 @@
 		<fieldset id="id_campoRegister">
 		<div id="id_nombreCompleto">
 			<div>
-				<input id="id_nombre" name="nombre" type="text" size="20" placeholder="Nombre *"
+				<input class="campo" id="id_nombre" name="nombre" type="text" size="20" placeholder="Nombre *"
 					value="<?php echo $formulario['nombre'];?>" required />
 			</div>
 
-			<div>
-				<input id="id_apellidos" name="apellidos" type="text" size="20" placeholder="Apellidos *"
+			<div id="id_divApellidos">
+				<input class="campo" id="id_apellidos" name="apellidos" type="text" size="20" placeholder="Apellidos *"
 					value="<?php echo $formulario['apellidos'];?>" required />
 			</div>
+			<br><br>
 		</div>
-			<div id="id_divDNI">
+			<div class="div">
 				<label for="id_dni">DNI*:</label>
-				<input id="id_dni" name="dni" type="text" placeholder="12345678" size="12" pattern="^[0-9]{8}"
+				<input class="campo" id="id_dni" name="dni" type="text" placeholder="12345678" size="12" pattern="^[0-9]{8}"
 					title="Ocho dígitos (sin letra)" value="<?php echo $formulario['dni'];?>" required>
+					<br><br>
 			</div>
 
-			<div id="id_divTelefono">
+			<div class="div">
 				<label for="id_telefono">Teléfono*:</label>
-				<input id="id_telefono" name="telefono" type="text" size="14" placeholder="XXX-XXX-XXX" 
+				<input class="campo" id="id_telefono" name="telefono" type="text" size="14" placeholder="XXX-XXX-XXX" 
 				pattern="^[0-9]{9}"
 					title="Nueve dígitos" value="<?php echo $formulario['telefono'];?>" required>
+					<br><br>
 			</div>
 
-			<div id="id_divEmail">
+			<div class="div">
 				<label for="id_email">Email:</label>
-				<input id="id_email" name="email" type="email" placeholder="ejemplo@compañia.dominio"
+				<input class="campo" size="30"  id="id_email" name="email" type="email" placeholder="ejemplo@compañia.dominio"
 					value="<?php echo $formulario['email'];?>" />
+					<br><br>
 			</div>
 			
-			<div><label for="id_direccion">Dirección:</label>
-				<input id="id_direccion" name="direccion" type="text" size="35"
+			<div class="div">
+			<label for="id_direccion">Dirección:</label>
+				<input class="campo" id="id_direccion" name="direccion" type="text" size="35"
 				placeholder="Calle/Avda. (Reina Mercedes) Nº XXX"
 					value="<?php echo $formulario['direccion'];?>" />
+					<br><br>
 			</div>
 			
-			<div><label for="id_contraseña">Contraseña*:</label>
-				<input id="id_contraseña" name="contraseña" type="password" title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número)" required/>
+			<div class="div">
+			<label for="id_contraseña">Contraseña*:</label>
+				<input class="campo" id="id_contraseña" name="contraseña" type="password" title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número)" required/>
+				<br><br>
 			</div>
 			
-			<div><label for="id_confirmar">Confirmar Contraseña*:</label>
-				<input id="id_confirmar" name="confirmar" type="password" title="Confirmación de contraseña" required />
+			<div class="div">
+			<label for="id_confirmar">Confirmar Contraseña*:</label>
+				<input class="campo" id="id_confirmar" name="confirmar" type="password" title="Confirmación de contraseña" required />
+				<br><br>
 			</div>
 			
-			<p>Al hacer clic en Enviar, aceptas nuestros <a href="terminos.php">Términos y Condiciones</a></p>
+			<p style="text-align: center;">Al hacer clic en Enviar, aceptas nuestros <a href="terminos.php">Términos y Condiciones</a></p>
 
 			<button id="id_enviar" type="submit">Enviar</button>
 			
