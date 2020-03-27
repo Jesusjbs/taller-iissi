@@ -52,7 +52,7 @@
 		<fieldset id="id_campoRegister">
 		<div id="id_nombreCompleto">
 			<div>
-				<input class="campo" id="id_nombre" name="nombre" type="text" size="20" placeholder="Nombre *"
+				<input class="campo" id="id_nombre" name="nombre" type="text" size="15" placeholder="Nombre *"
 					value="<?php echo $formulario['nombre'];?>" required />
 			</div>
 
@@ -101,7 +101,7 @@
 			<div class="div">
 			<label for="id_confirmar">Confirmar Contraseña*:</label>
 				<input class="campo" id="id_confirmar" name="confirmar" type="password" title="Confirmación de contraseña" required />
-				<br><br>
+				<br>
 			</div>
 			
 			<p style="text-align: center;">Al hacer clic en Enviar, aceptas nuestros <a href="terminos.php">Términos y Condiciones</a></p>
