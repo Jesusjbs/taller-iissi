@@ -21,9 +21,9 @@ body {
 }
 
 #id_secundario {
+	margin: auto;
 	height: 350px;
 	width: 250px;
-	margin-left: 33%;
 }
 
 #id_usuario {
@@ -38,7 +38,6 @@ body {
 	width: 150px;
 	height: 100px;
 	margin: auto;
-
 }
 
 #id_btregistro {
@@ -47,6 +46,7 @@ body {
 	text-decoration: none;
 	border: 1px solid;
 	color: #FBDE1B;
+	margin-left: 15%;
 }
 
 #id_campouser {
@@ -65,18 +65,6 @@ body {
 	position: absolute;
 }
 
-#id_transparencia2 {
-	position: absolute;
-	border: 1px solid;
-	border-radius: 10px;
-	height: 220px;
-	width: 250px;
-	margin-top: -350px;
-	margin-left: 50%;
-	background-color: #fbde1b;
-	opacity: 0.8;
-}
-
 #id_btuser {
 	position: relative;
 	margin-top: 15px;
@@ -89,13 +77,13 @@ body {
 	cursor: pointer;
 }
 
-#id_username {
+#id_dni {
 	position: relative;
 	border-radius: 4px;
 	background-color: #E6E3E2;
 }
 
-#id_userpass {
+#id_pass {
 	position: relative;
 	border-radius: 4px;
 	background-color: #E6E3E2;

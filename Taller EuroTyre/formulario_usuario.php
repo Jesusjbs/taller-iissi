@@ -28,6 +28,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Regístrate</title>
+	<link rel="stylesheet" type="text/css" href="./css/style_register.css" />
 </head>
 
 <body>
@@ -44,12 +45,12 @@
     		echo "</div>";
   		}
 	?>
-	
+	<div id="id_registro">
 	<form id="id_altaUsuario" method="get" action="validacion_usuario.php" novalidate>
 		<h1>Crea una cuenta</h1>
-		<p style="color: red;">* Obligatorio</p>
-		<fieldset>
-		<div>
+		<p style="color: red;margin-left: 20%;">* Obligatorio</p>
+		<fieldset id="id_campoRegister">
+		<div id="id_nombreCompleto">
 			<div>
 				<input id="id_nombre" name="nombre" type="text" size="20" placeholder="Nombre *"
 					value="<?php echo $formulario['nombre'];?>" required />
@@ -60,18 +61,21 @@
 					value="<?php echo $formulario['apellidos'];?>" required />
 			</div>
 		</div>
-			<div><label for="id_dni">DNI*:</label>
+			<div id="id_divDNI">
+				<label for="id_dni">DNI*:</label>
 				<input id="id_dni" name="dni" type="text" placeholder="12345678" size="12" pattern="^[0-9]{8}"
 					title="Ocho dígitos (sin letra)" value="<?php echo $formulario['dni'];?>" required>
 			</div>
 
-			<div><label for="id_telefono">Teléfono*:</label>
+			<div id="id_divTelefono">
+				<label for="id_telefono">Teléfono*:</label>
 				<input id="id_telefono" name="telefono" type="text" size="14" placeholder="XXX-XXX-XXX" 
 				pattern="^[0-9]{9}"
 					title="Nueve dígitos" value="<?php echo $formulario['telefono'];?>" required>
 			</div>
 
-			<div><label for="id_email">Email:</label>
+			<div id="id_divEmail">
+				<label for="id_email">Email:</label>
 				<input id="id_email" name="email" type="email" placeholder="ejemplo@compañia.dominio"
 					value="<?php echo $formulario['email'];?>" />
 			</div>
@@ -96,7 +100,7 @@
 			
 		</fieldset>
 	</form>
-
+	</div>
 </body>
 
 </html>

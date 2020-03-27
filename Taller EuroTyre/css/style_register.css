@@ -1,0 +1,36 @@
+#id_altaUsuario {
+    width: 100%;
+    height: 500px;
+    border: 0px;
+    margin: auto;
+}
+
+#id_altaUsuario h1 {
+    font-size: 250%;
+    text-align: center;
+}
+
+#id_registro {
+    width: 30%;
+    height: 500px;
+    border: 1px solid;
+    margin: auto;
+    margin-top: -10%;
+}
+
+#id_campoRegister {
+    border: 0px solid;
+}
+
+#id_nombreCompleto {
+    padding: 10px 0px;
+}
+
+#id_enviar {
+    margin-left: 40%;
+	border-radius: 16px;
+	padding: 4px 20px;
+	text-decoration: none;
+	background: none;
+	cursor: pointer;
+}

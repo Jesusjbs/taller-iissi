@@ -71,12 +71,12 @@
 						<fieldset id="id_campouser">
 							<img alt="user.png" style="width: 15px; height: 15px;" src="./img/user.png" />
 							<label for="id_dni">Usuario:</label>
-							<input size="25" id="id_dni" name="dni" type="text" placeholder="DNI" required/>
+							<input size="33" id="id_dni" name="dni" type="text" placeholder="DNI" required/>
 							<br><br>
 
 							<img alt="pass.png" style="width: 15px; height: 15px;" src="./img/pass.png" />
 							<label for="id_pass">Contraseña:</label>
-							<input size="25" id="id_pass" name="pass" type="password" required/>
+							<input size="33" id="id_pass" name="pass" type="password" required/>
 							<button id="id_btuser" name="submit" type="submit">Iniciar Sesión</button>
 						</fieldset>
 					</form>
