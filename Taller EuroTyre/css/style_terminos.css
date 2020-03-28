@@ -1,0 +1,21 @@
+body {
+    background-color: #3D4045;
+}
+
+body h1 {
+    color: #fbde1b;
+    text-align: center;
+    font-size: 250%;
+}
+
+body p {
+    color: #ffffff;
+}
+
+#id_principal {
+    text-align: justify;
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    vertical-align: middle;
+}

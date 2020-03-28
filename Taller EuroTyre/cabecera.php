@@ -12,13 +12,13 @@
                     <ul>
                         <li><a href="#">Nosotros</a></li>
                         <li><a href="#">F.A.Q</a></li>
-                        <li><a href="#">Acerca</a></li>
+                        <li><a href="terminos.php">Acerca</a></li>
                     </ul>
                 </nav>
 
                 <nav class="menu2">
                     <ul>
-                        <li><a href="#">Solicitar cita</a></li>
+                        <li><a href="home.php">Solicitar cita</a></li>
                         <li><a href="#">Consulta</a></li>
                         <li><a href="#">Mis Vehículos</a></li>
                     </ul>
