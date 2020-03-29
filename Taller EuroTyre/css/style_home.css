@@ -1,0 +1,70 @@
+.error {
+	color : red;	
+	border : 2px solid red;
+	padding : 10px;
+    margin: 10px;
+    width: 12%;
+    float: left;
+}
+
+body {
+    background-color: #3d4045;
+}
+
+#id_cita {
+    border-radius: 10px;
+    background-color: #fbde1b;
+	color: #3D4045;
+    opacity: 80%;
+    width: 70%;
+    height: 400px;
+    border: 1px solid #000000;
+    margin: auto;
+    vertical-align: middle;
+}
+
+.div {
+    font-size: large;
+    margin-left: 10%;
+}
+
+.campo {
+    margin-top: -1.4%;
+    position: absolute;
+    margin-left: 23%;
+}
+
+#id_campo {
+    border: 0px solid;
+}
+
+#id_divPresupuesto {
+    text-align: center;
+}
+
+#id_formCita h1 {
+    text-align: center;
+    font-size: 250%;
+    margin-top: 0;
+}
+
+#id_nota {
+    float: right;
+    margin-right: 10%;
+    margin-top: -8%;
+    width: 22%;
+    border: 2px solid;
+}
+
+#id_nota p {
+    margin: 3%;
+}
+
+#id_solicitar {
+    margin-left: 45%;
+	border-radius: 16px;
+	padding: 4px 20px;
+	text-decoration: none;
+	background: none;
+    cursor: pointer;
+}

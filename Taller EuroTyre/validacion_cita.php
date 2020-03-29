@@ -41,7 +41,7 @@
         $fecha_actual = date("d/m/Y");
         $fecha_entrada = date('d/m/Y',strtotime($nuevaCita['dia']));
 		if($fecha_actual >= $fecha_entrada) {
-			$errores[] = "<p>La fecha se solicitud debe de ser posterior al día actual</p>";
+			$errores[] = "<p>La fecha de solicitud debe de ser posterior a la fecha actual</p>";
         }
 		return $errores;
 	}
