@@ -15,7 +15,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>INSERTAR TITULO DE ERROR</title>
+  <title>Error</title>
 </head>
 <body>	
 	

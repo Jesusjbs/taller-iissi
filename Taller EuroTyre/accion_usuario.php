@@ -24,7 +24,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>INSERTAR TÍTULO</title>
+  <title>Registrado correctamente</title>
 </head>
 
 <body>

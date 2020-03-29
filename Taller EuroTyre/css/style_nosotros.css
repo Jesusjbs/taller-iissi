@@ -1,0 +1,43 @@
+body {
+    background-color: #3d4045;
+}
+
+#id_div {
+    margin: auto;
+    vertical-align: middle;
+    color: #fbde1b;
+    text-align: center;
+    width: 50%;
+    height: auto;
+}
+
+#id_div h1{
+    margin: 0;
+    font-size: 250%;
+}
+
+#id_div p {
+    color: #ffffff;
+}
+
+#id_mapa {
+    border: 1px solid;
+    border-radius: 16px;
+}
+
+#id_footer {
+	position: fixed;
+ 	bottom: 0;
+ 	left: 0;
+  	width: 100%;
+	height: 60px;
+	text-align: center;
+    border-top: 1px solid;
+    border-color: #FBDE1B;
+	background: #43474d;
+	color: #FBDE1B;
+}
+
+#id_footer a {
+	color: #FBDE1B;
+}

@@ -10,7 +10,7 @@
 
                 <nav class="menu">
                     <ul>
-                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="nosotros.php">Nosotros</a></li>
                         <li><a href="#">F.A.Q</a></li>
                         <li><a href="terminos.php">Acerca</a></li>
                     </ul>
