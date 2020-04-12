@@ -4,6 +4,10 @@
   	include_once("gestionBD.php");
  	include_once("gestionarUsuarios.php");
 	
+	if(isset($_SESSION["login"])){
+		$_SESSION["login"] = null;
+		//header("Location: home.php");
+	}
 	if (isset($_POST['submit'])){
 		$dni= $_POST['dni'];
 		$pass = $_POST['pass'];

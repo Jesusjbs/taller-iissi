@@ -55,7 +55,7 @@
 
 		<div id="id_cita">
 			<form id="id_formCita" method="POST" action="validacion_cita.php">
-				<fieldset id="id_campo"></fieldset>
+				<fieldset id="id_campo">
 					<h1>Solicitar Cita</h1>
 					<br/>
 <!--					<label for="id_auto">Elige de entre tus vehículos*:</label>
@@ -72,7 +72,7 @@
 					<div id="id_nota">
 						<p>Nota: Si no encuenta su vehiculo
 							en la lista, debe de registrarlo en
-							el siguiente <a href="#">enlace</a></p>
+							el siguiente <a href="formulario_vehiculo.php">enlace</a></p>
 					</div>
 					  
 					<div class="div">

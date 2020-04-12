@@ -30,7 +30,7 @@
 		Header('Location: home.php');
 	} else
 		// Si todo va bien, vamos a la página de éxito (inserción del usuario en la base de datos)
-        Header('Location: home-request.php');
+        Header('Location: accion_cita.php');
         
     ///////////////////////////////////////////////////////////
 	// Validación en servidor del formulario de alta de cita //

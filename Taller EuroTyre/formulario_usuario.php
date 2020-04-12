@@ -56,7 +56,7 @@
   		}
 	?>
 	<div id="id_registro">
-	<form id="id_altaUsuario" method="get" action="validacion_usuario.php" novalidate>
+	<form id="id_altaUsuario" method="post" action="validacion_usuario.php" novalidate>
 		<h1>Crea una cuenta</h1>
 		<p style="color: red;margin-left: 20%;">* Obligatorio</p>
 		<fieldset id="id_campoRegister">
