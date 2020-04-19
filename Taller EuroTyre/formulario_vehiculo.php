@@ -5,8 +5,7 @@
 	if (!isset($_SESSION['registro'])) {
 		$registro['tipo'] = "COCHE";
 		$registro['furgoneta'] = 0;
-		$registro['marca'] = "";
-		$registro['modelo'] = "";
+        $registro['modelo'] = "";
 		$registro['matricula'] = "";
 		$registro['color'] = "";
 	
@@ -68,12 +67,40 @@
                 <label for="id_tipo1.1">Furgoneta</label>
             </div>
             <div>
-                <label for="id_marca">Marca*:</label>
-                <input id="id_marca" name="marca" type="text" value="<?php echo $registro['marca'];?>"  required />
-            </div>
-            <div>
-                <label for="id_modelo">Modelo*:</label>
-                <input id="id_modelo" name="modelo" type="text" value="<?php echo $registro['modelo'];?>" required />
+                <label for="id_modelo">Vehículo*:</label>
+                <select id="id_modelo" name="modelo"> 
+                    <?php 
+                    require_once("gestionBD.php");
+                    require_once("gestionarVehiculo.php");
+                    $conexion = crearConexionBD();
+                    $marcas = consultaMarcas($conexion);
+                   
+                    foreach($marcas as $marca) {
+                      ?>
+                      
+                      <optgroup label="<?php echo $marca[1] ?>">
+                      <?php 
+                        $modelosC = consultaMC($conexion, $marca[0]);
+                        $modelosM = consultaMM($conexion, $marca[0]);
+                        
+                        foreach($modelosC as $modeloC) {
+                            ?>
+                            <option value="<?php echo $modeloC[0] . ' '; echo $modeloC[1] ?>">
+                            <?php echo $modeloC[1] ?></option>
+                        <?php }
+
+                        foreach($modelosM as $modeloM) {
+                            ?>
+                            <option value="<?php echo $modeloM[0] . ' '; echo $modeloM[1] ?>">
+                            <?php echo $modeloM[1] ?></option>
+                        <?php }
+                      ?>
+                      </optgroup>
+                    <?php } 
+                    cerrarConexionBD($conexion);
+                    ?>
+
+                </select>
             </div>
             <div>
                 <label for="id_matricula">Matrícula*:</label>

@@ -58,15 +58,33 @@
 				<fieldset id="id_campo">
 					<h1>Solicitar Cita</h1>
 					<br/>
-<!--					<label for="id_auto">Elige de entre tus vehículos*:</label>
-					<br/>
-	-->				
-		  			<div class="div">
+					<label for="id_vehiculo">Elige de entre tus vehículos*:</label>
+					<select name="auto" id="id_vehiculo" required>
+						  <?php
+							require_once("gestionBD.php");
+							require_once("gestionarVehiculo.php");
+						 	$conexion = crearConexionBD();
+							$coches = consultaCoche($conexion,$_SESSION["login"]);
+							$motos = consultaMoto($conexion,$_SESSION["login"]);
+							foreach($coches as $coche) {	?>
+								<option value="<?php echo $coche[7] ?>">
+								<?php echo $coche[26] . " "; echo $coche[17]; ?></option>
+							<?php }
+							foreach($motos as $moto) {	?>
+								<option value="<?php echo $moto[7] ?>">
+								<?php echo $moto[23] . " "; echo $moto[16]; ?></option>
+							<?php }
+							cerrarConexionBD($conexion);
+						?>
+					</select>
+					
+		<!--  			<div class="div">
 						<label for="id_auto">Introduzca su matrícula*:</label>
 						<div class="campo">
 							<input class="campo" id="id_auto" name="auto" type="text" required/>
 						</div>
-					</div>
+					</div>	-->
+
 					<br/><br/>
 
 					<div id="id_nota">

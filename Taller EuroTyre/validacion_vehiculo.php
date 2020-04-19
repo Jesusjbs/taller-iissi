@@ -1,17 +1,18 @@
 <?php
 	session_start();
-
+	
 	// Comprobar que hemos llegado a esta página porque se ha rellenado el formulario
 	if (isset($_SESSION["registro"])) {
+		
 		// Recogemos los datos del formulario
         $nuevoVehiculo["tipo"] = $_REQUEST["tipo"];
         if(!isset($_REQUEST["furgoneta"])) 	$nuevoVehiculo["furgoneta"] = 0;
 		else $nuevoVehiculo["furgoneta"] = 1;
-		$nuevoVehiculo["marca"] = $_REQUEST["marca"];
-		$nuevoVehiculo["modelo"] = $_REQUEST["modelo"];
+		$porciones = explode(" ", $_REQUEST["modelo"]);
+		$nuevoVehiculo["modelo"] = (int) $porciones[0];
+		$nuevoVehiculo["nombreModelo"] = $porciones[1];
 		$nuevoVehiculo["matricula"] = $_REQUEST["matricula"];
 		$nuevoVehiculo["color"] = $_REQUEST["color"];
-
     }
     
 	else // En caso contrario, vamos al formulario
@@ -36,27 +37,31 @@
 	// Validación en servidor del formulario de alta de usuario
     ///////////////////////////////////////////////////////////
     
-	function validarDatosVehiculo($nuevoVehiculo){
-        
+	function validarDatosVehiculo($nuevoVehiculo) {
+		/*
+		require_once("gestionBD.php");
+		require_once("gestionarVehiculo.php");
+		$conexion = crearConexionBD();
+		if((cuentaModelos($conexion,$nuevoVehiculo["nombreModelo"]) == 0 && $nuevoVehiculo["tipo"] == "COCHE")
+		|| (cuentaModelos($conexion,$nuevoVehiculo["nombreModelo"]) != 0 && $nuevoVehiculo["tipo"] == "MOTO")) {
+			$errores[] = cuentaModelos($conexion,$nuevoVehiculo["nombreModelo"]);
+		}
+		*/
         if($nuevoVehiculo["furgoneta"] == 1 && $nuevoVehiculo["tipo"] == "MOTO")
-            $errores[] = "<p>No se puede marcar simultaneamente moto y furgoneta. 
-                Para elegir la opción Furgoneta se deberá de marcar la opción Coche también<p>";
-		// Validación de la marca		
-		if($nuevoVehiculo["marca"]=="") 
-			$errores[] = "<p>La marca no puede estar vacía</p>";
-
+            $errores[] = "<p>No se puede marcar simultaneamente tipo moto y furgoneta.</p>";
         // Validación del modelo
-        if($nuevoVehiculo["modelo"]=="") 
+         if($nuevoVehiculo["nombreModelo"]=="") 
 			$errores[] = "<p>El modelo no pueden estar vacío</p>";
-
+		
         // Validación de la matrícula
 		if($nuevoVehiculo["matricula"] =="") 
             $errores[] = "<p>La matrícula no puede estar vacía</p>";
         else if(!preg_match("/^[0-9]{4}[A-Z]{3}$/", $nuevoVehiculo["matricula"])){
             $errores[] = "<p>La matrícula no tiene formato válido: " . $nuevoVehiculo["matricula"]. "</p>";
         }
-
+		//cerrarConexionBD($conexion);
 		return $errores;
 	}
 
+	
 ?>

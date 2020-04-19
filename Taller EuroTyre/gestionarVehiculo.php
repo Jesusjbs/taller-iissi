@@ -1,12 +1,11 @@
 <?php
 
  function alta_vehiculo($conexion,$registro,$dni) {
-    $consulta = "CALL insertar_vehiculo(:tipo, :furgoneta, :marca, :modelo, :matricula,:dni, :color)";
+    $consulta = "CALL insertar_vehiculo(:tipo, :furgoneta, :modelo, :matricula,:dni, :color)";
     try {
         $stmt = $conexion -> prepare($consulta);
         $stmt -> bindParam(':tipo',$registro['tipo']);
         $stmt -> bindParam(':furgoneta',$registro["furgoneta"]);
-        $stmt -> bindParam(':marca',$registro["marca"]);
         $stmt -> bindParam(':modelo',$registro["modelo"]);
         $stmt -> bindParam(':matricula',$registro["matricula"]);
         $stmt -> bindParam(':dni',$dni);
@@ -45,5 +44,73 @@ function consultaMoto($conexion,$dni){
         return false;
     }
 }
+
+function consultaMarcas($conexion) {
+    $consulta = "SELECT * FROM MARCAS";
+    try{    
+        return $conexion -> query($consulta);
+    } catch(PDOException $e) {
+        echo $err -> GetMessage();
+        return false;
+    }
+}
+
+function consultaMC($conexion, $oidm) {
+    $consulta = "SELECT * FROM MODELOSCOCHES WHERE OID_M = $oidm";
+    try{    
+        return $conexion -> query($consulta);
+    } catch(PDOException $e) {
+        echo $err -> GetMessage();
+        return false;
+    }
+}
+
+function consultaMM($conexion, $oidm) {
+    $consulta = "SELECT * FROM MODELOSMOTOS WHERE OID_M = $oidm";
+    try{    
+        return $conexion -> query($consulta);
+    } catch(PDOException $e) {
+        echo $err -> GetMessage();
+        return false;
+    }
+}
+
+function cuentaModelos($conexion, $nombre) {
+    $consulta = "SELECT COUNT(*) AS TOTAL FROM MODELOSMOTOS WHERE MODELO=$nombre";
+    try {    
+        $stmt = $conexion->query($consulta);
+		$result = $stmt->fetch();
+		$total = $result['TOTAL'];
+		return $total;
+    } catch(PDOException $e) {
+        echo $e -> GetMessage();
+        return false;
+    }
+}
+
+function eliminarCoche($conexion,$matricula){
+    try{
+        $stmt=$conexion->prepare('CALL ELIMINARCOCHE(:matricula)');
+        $stmt->bindParam(':matricula',$matricula);
+        $stmt->execute();
+        return "";
+
+    }catch(PDOException $e){
+        return $e->getMessage();
+    }
+
+}
+function editarCoche($conexion,$matricula){
+    try{
+        $stmt=$conexion->prepare('CALL EDITARCOCHE(:matricula)');
+		$stmt->bindParam(':matricula',$matricula);
+		$stmt->execute();
+		return "";
+
+    }catch(PDOException $e){
+        return $e->getMessage();
+    }
+}
+
 
 ?>
