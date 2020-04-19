@@ -1,30 +1,29 @@
 <?php	
 	session_start();	
 	
-	if (isset($_SESSION["registro"])) {
-		$registro = $_SESSION["registro"];
-		unset($_SESSION["registro"]);
+	if (isset($_SESSION["coche"])) {
+		$coche = $_SESSION["coche"];
+		unset($_SESSION["coche"]);
 		
 		require_once("gestionBD.php");
-		require_once("gestionarLibros.php");
+		require_once("gestionarVehiculo.php");
 		
 		// CREAR LA CONEXIÓN A LA BASE DE DATOS
 		$conexion = crearConexionBD();
-		// INVOCAR "QUITAR_TITULO"
-		$lib = $libro["OID_LIBRO"];
-		$excep = quitar_libro($conexion, $lib);
+		// INVOCAR "MODIFICAR_TITULO" EN GESTIONLIBROS
+		$excep = editarCoche($conexion, $coche);
 		// CERRAR LA CONEXIÓN
 		cerrarConexionBD($conexion);
 		
 		// SI LA FUNCIÓN RETORNÓ UN MENSAJE DE EXCEPCIÓN, ENTONCES REDIRIGIR A "EXCEPCION.PHP"
+		// (NÓTESE QUE HAY QUE ASIGNAR ADECUADAMENTE LAS VARIABLES DE SESIÓN PARA "EXCEPCION.PHP")
 		if($excep<>""){
 			$_SESSION["excepcion"] = $excep;
-			$_SESSION["destino"] = "consulta_libros.php";
-			Header("Location: excepcion.php");
+			header("Location: excepcion.php");
 			// EN OTRO CASO, VOLVER A "CONSULTA_LIBROS.PHP"
-		}else Header("Location: consulta_libros.php");
+		}else Header("Location: mis_vehiculos.php");
 		
-	}
+	} 
 	else // Se ha tratado de acceder directamente a este PHP 
-		Header("Location: consulta_libros.php"); 
+		Header("Location: mis_vehiculos.php"); 
 ?>

@@ -88,6 +88,18 @@ function cuentaModelos($conexion, $nombre) {
     }
 }
 
+function eliminarMoto($conexion,$matricula){
+    try{
+        $stmt=$conexion->prepare('CALL ELIMINARMOTO(:matricula)');
+        $stmt->bindParam(':matricula',$matricula);
+        $stmt->execute();
+        return "";
+
+    }catch(PDOException $e){
+        return $e->getMessage();
+    }
+
+}
 function eliminarCoche($conexion,$matricula){
     try{
         $stmt=$conexion->prepare('CALL ELIMINARCOCHE(:matricula)');
@@ -100,10 +112,16 @@ function eliminarCoche($conexion,$matricula){
     }
 
 }
-function editarCoche($conexion,$matricula){
+
+function editarCoche($conexion,$coche){
     try{
-        $stmt=$conexion->prepare('CALL EDITARCOCHE(:matricula)');
-		$stmt->bindParam(':matricula',$matricula);
+        $stmt=$conexion->prepare('CALL EDITARCOCHE(:matricula, :color, :kilometraje, :proxITV, :numBastidor)');
+        $stmt->bindParam(':matricula',$coche["matricula"]);
+        $stmt->bindParam(':color',$coche["color"]);
+        $stmt->bindParam(':kilometraje',$coche["kilometraje"]);
+        $proxITV = date('d/m/Y',strtotime($coche["proxITV"]));
+        $stmt->bindParam(':proxITV',$proxITV);
+        $stmt->bindParam(':numBastidor',$coche["numBastidor"]);
 		$stmt->execute();
 		return "";
 
@@ -112,5 +130,21 @@ function editarCoche($conexion,$matricula){
     }
 }
 
+function editarMoto($conexion,$moto){
+    try{
+        $stmt=$conexion->prepare('CALL EDITARMOTO(:matricula, :color, :kilometraje, :proxITV, :numBastidor)');
+        $stmt->bindParam(':matricula',$moto["matricula"]);
+        $stmt->bindParam(':color',$moto["color"]);
+        $stmt->bindParam(':kilometraje',$moto["kilometraje"]);
+        $proxITV = date('d/m/Y',strtotime($moto["proxITV"]));
+        $stmt->bindParam(':proxITV',$proxITV);
+        $stmt->bindParam(':numBastidor',$moto["numBastidor"]);
+		$stmt->execute();
+		return "";
+
+    }catch(PDOException $e){
+        return $e->getMessage();
+    }
+}
 
 ?>

@@ -36,9 +36,9 @@
 		<?php echo "Información relativa al problema: $excepcion;" ?>
 	</div>
 
-<?php	
+<!--<?php	
 	include_once("pie.php");
-?>	
+?>-->	
 
 </body>
 </html>
