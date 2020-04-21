@@ -12,7 +12,7 @@
         if(!isset($oid)) Header("Location: consulta.php");
     }
     $conexion = crearConexionBD();
-    $fact = consulta_factura($conexion,$oid);
+    $facturas = consulta_factura($conexion,$oid);
     cerrarConexionBD($conexion);
 
 
@@ -27,7 +27,9 @@
     <body>
 
     <?php
-	include_once("cabecera.php");
+    include_once("cabecera.php");
+    $i = 0;
+    foreach($facturas as $fact) {
     ?>
         <main>
         <h1>Factura</h1>
@@ -45,7 +47,7 @@
             </tr>
             <tr>
                 <td>IVA:</td>
-                <td><?php echo $fact["IVA"]." €";?></td>
+                <td><?php echo substr($fact["IVA"],1)." %";?></td>
             </tr>
             <tr>
                 <td>Importe:</td>
@@ -61,5 +63,15 @@
             </tr>
         </table><br />
         </main>
+    <?php 
+        $i++;
+    } 
+    if($i == 0) { ?>
+        <br /><br /><p>La factura correspondiente a la reparación con ID <?php echo $oid ?> no está disponible aún. Disculpe las molestias.</p>
+    <?php
+    }
+    
+    ?>
+    
     </body>
 </html>

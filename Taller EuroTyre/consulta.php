@@ -43,7 +43,6 @@
 	$_SESSION["paginacion"] = $paginacion;
 	
 	$filas = consulta_paginada($conexion,$query,$pagina_seleccionada,$pag_tam);
-	
 	cerrarConexionBD($conexion);
 ?>
 <!DOCTYPE html>
@@ -90,8 +89,8 @@
             </tr>
             <tr>
                 <td>Factura:</td>
-                <td><form action="factura.php" method="post">
-                    <input type="hidden" value=<?php echo $fila["OID_R"];?> name="oidR" />
+                <td><form action="factura.php" method="get">
+                    <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oidR" />
                     <button type="submit">Ver Factura</button>
                 </form></td>
             </tr>
