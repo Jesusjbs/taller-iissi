@@ -16,4 +16,17 @@
         echo $err -> GetMessage();
         return false;
     }
+
 }
+
+function consulta_factura($conexion, $oid) {
+    $consulta = "SELECT * FROM FACTURASCLIENTES WHERE OID_R = $oid";
+    try{    
+        return $conexion -> query($consulta);
+    } catch(PDOException $e) {
+        echo $e -> GetMessage();
+        return false;
+    }
+}
+
+?>

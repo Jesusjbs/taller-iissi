@@ -29,7 +29,7 @@
         <nav class="menu2">
             <ul>
                 <li><a href="home.php">Solicitar cita</a></li>
-                <li><a href="#">Consulta</a></li>
+                <li><a href="consulta.php">Consulta</a></li>
                 <li><a href="mis_vehiculos.php">Mis Vehículos</a></li>
             </ul>
         </nav>

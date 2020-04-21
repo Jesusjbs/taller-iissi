@@ -42,7 +42,7 @@
    <body>
 	<?php 	
 				if(crea_cita($conexion, $_SESSION["login"], $nuevaCita)) { ?>		
-				<p>Su cita con fecha <?php echo date('d/m/Y',strtotime($nuevaCita['dia'])); ?> ha sido solicitada correctamente, para más datos, dirigase a la pestaña de <a href="#">consultas</a></p>
+				<p>Su cita con fecha <?php echo date('d/m/Y',strtotime($nuevaCita['dia'])); ?> ha sido solicitada correctamente, para más datos, dirigase a la pestaña de <a href="consulta.php">consultas</a></p>
 
 			<?php } else { ?>
 				<h1>Datos erróneos, vuelva a introducirlos</h1>
