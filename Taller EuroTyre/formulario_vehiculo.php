@@ -51,6 +51,7 @@
     ?>
     <h1>Registro de vehículo</h1>
     <p>* Obligatorio</p>
+
     <form id="id_regVehiculo" method="post" action="validacion_vehiculo.php" novalidate>
         <fieldset>
             <div>

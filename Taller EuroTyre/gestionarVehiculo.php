@@ -76,16 +76,11 @@ function consultaMM($conexion, $oidm) {
 }
 
 function cuentaModelos($conexion, $nombre) {
-    $consulta = "SELECT COUNT(*) AS TOTAL FROM MODELOSMOTOS WHERE MODELO=$nombre";
-    try {    
-        $stmt = $conexion->query($consulta);
-		$result = $stmt->fetch();
-		$total = $result['TOTAL'];
-		return $total;
-    } catch(PDOException $e) {
-        echo $e -> GetMessage();
-        return false;
-    }
+    $consulta = "SELECT COUNT(*) AS TOTAL FROM MODELOSMOTOS WHERE MODELO=:nombre";
+	$stmt = $conexion->prepare($consulta);
+	$stmt->bindParam(':nombre',$nombre);
+	$stmt->execute();
+	return $stmt->fetchColumn();
 }
 
 function eliminarMoto($conexion,$matricula){

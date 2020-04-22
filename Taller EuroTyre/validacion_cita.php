@@ -38,8 +38,8 @@
     
 	function validarDatosCita($nuevaCita){
         // Validación del día
-        $fecha_actual = date("d/m/Y");
-        $fecha_entrada = date('d/m/Y',strtotime($nuevaCita['dia']));
+        $fecha_actual = date("Y/m/d");
+        $fecha_entrada = date('Y/m/d',strtotime($nuevaCita['dia']));
 		if($fecha_actual >= $fecha_entrada) {
 			$errores[] = "<p>La fecha de solicitud debe de ser posterior a la fecha actual</p>";
         }

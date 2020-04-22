@@ -38,17 +38,19 @@
     ///////////////////////////////////////////////////////////
     
 	function validarDatosVehiculo($nuevoVehiculo) {
-		/*
+		
 		require_once("gestionBD.php");
 		require_once("gestionarVehiculo.php");
 		$conexion = crearConexionBD();
-		if((cuentaModelos($conexion,$nuevoVehiculo["nombreModelo"]) == 0 && $nuevoVehiculo["tipo"] == "COCHE")
-		|| (cuentaModelos($conexion,$nuevoVehiculo["nombreModelo"]) != 0 && $nuevoVehiculo["tipo"] == "MOTO")) {
-			$errores[] = cuentaModelos($conexion,$nuevoVehiculo["nombreModelo"]);
-		}
-		*/
+
+	/*	if((cuentaModelos($conexion,$nuevoVehiculo["nombreModelo"]) > 0 && $nuevoVehiculo["tipo"] == "COCHE")
+		|| (cuentaModelos($conexion,$nuevoVehiculo["nombreModelo"]) == 0 && $nuevoVehiculo["tipo"] == "MOTO")) {
+			$errores[] = "El tipo y el modelo elegidos no son coherentes";
+		} */
+		
         if($nuevoVehiculo["furgoneta"] == 1 && $nuevoVehiculo["tipo"] == "MOTO")
-            $errores[] = "<p>No se puede marcar simultaneamente tipo moto y furgoneta.</p>";
+			$errores[] = "<p>No se puede marcar simultaneamente tipo moto y furgoneta.</p>";
+			
         // Validación del modelo
          if($nuevoVehiculo["nombreModelo"]=="") 
 			$errores[] = "<p>El modelo no pueden estar vacío</p>";
@@ -59,7 +61,7 @@
         else if(!preg_match("/^[0-9]{4}[A-Z]{3}$/", $nuevoVehiculo["matricula"])){
             $errores[] = "<p>La matrícula no tiene formato válido: " . $nuevoVehiculo["matricula"]. "</p>";
         }
-		//cerrarConexionBD($conexion);
+		cerrarConexionBD($conexion);
 		return $errores;
 	}
 
