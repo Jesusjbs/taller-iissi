@@ -8,14 +8,13 @@
 	// Se recupera la variable de sesión y se anula
 	if (isset($_SESSION["formulario"])) {
 		$nuevoUsuario = $_SESSION["formulario"];
-		// También se puede utilizar la función unset()
+
 		$_SESSION["formulario"] = null;
 		$_SESSION["errores"] = null;
 	}
 	else 
 		Header("Location: formulario_usuario.php");	
 
-	// CONEXIÓN A LA BASE DE DATOS
 	$conexion = crearConexionBD(); 
 	
 ?>
@@ -54,7 +53,6 @@
 </body>
 </html>
 <?php
-	// DESCONECTAR LA BASE DE DATOS
 	cerrarConexionBD($conexion);
 ?>
 

@@ -8,14 +8,13 @@
 	// Se recupera la variable de sesión y se anula
 	if (isset($_SESSION["registro"])) {
 		$nuevoVehiculo = $_SESSION["registro"];
-        // También se puede utilizar la función unset()
+        
         $_SESSION["registro"] = null;
         $_SESSION["errores"] =null;
 	}
 	else 
 		Header("Location: formulario_vehiculo.php");	
 
-	// CONEXIÓN A LA BASE DE DATOS
 	$conexion = crearConexionBD(); 
 	
 ?>
@@ -51,7 +50,6 @@
 </body>
 </html>
 <?php
-	// DESCONECTAR LA BASE DE DATOS
 	cerrarConexionBD($conexion);
 ?>
 

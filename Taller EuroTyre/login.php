@@ -4,10 +4,11 @@
   	include_once("gestionBD.php");
  	include_once("gestionarUsuarios.php");
 	
+	 // Si se redirecciona a esta pagina con una sesión activa, se cierra (Para cerrar sesión)
 	if(isset($_SESSION["login"])){
 		$_SESSION["login"] = null;
-		//header("Location: home.php");
 	}
+	
 	if (isset($_POST['submit'])){
 		$dni= $_POST['dni'];
 		$pass = $_POST['pass'];
@@ -36,14 +37,12 @@
 	<head>
 		<meta charset="utf-8">
 
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
+
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Taller EuroTyre</title>
 		<link rel="stylesheet" type="text/css" href="./css/style_index.css" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
-		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="./img/logo.png">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 	</head>

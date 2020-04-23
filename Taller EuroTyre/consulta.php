@@ -102,23 +102,17 @@
         <nav>
             <div id="enlaces">
             <?php
-				for($i = 1;$i<=$total_paginas;$i++){
-			//		if(!($i == $pagina_seleccionada)){ ESTO LO QUE HARÍA ES NO MOSTRAR EL NUMERO DE PAGINA QUE HE MARCADO
-					
+				for($i = 1;$i<=$total_paginas;$i++){		
 						//Creamos la url que nos va a llevar a la página que queremos excepto si es la página seleccionada 
-						echo "<a href='" . "consulta.php?PAG_NUM=" . $i . "&PAG_TAM=" . $pag_tam . "'>" . $i . "</a>";	
-			//		}
-					
+						echo "<a href='" . "consulta.php?PAG_NUM=" . $i . "&PAG_TAM=" . $pag_tam . "'>" . $i . "</a>";						
 				} 
 			?>
 		</div>
 		
 		<form method="get" action="consulta.php">
 			<!-- Formulario que contiene el número y cambio de tamaño de página -->
-			<!-- Hay que llamarle pag_tam por huevos para rellenar la variable de arriba --> 
 			
 			<input type="hidden" id= "pag_num" name="PAG_NUM" value="<?php echo $pagina_seleccionada;?>" />
-			<!-- Tenemos que crear este hidden para que entre en el if de arriba -->
 			
 			<input type="number" id= "pag_tam" name="PAG_TAM" value="<?php echo $pag_tam;?>" min="1" max="<?php echo $total_registros; ?>" autofocus/>
 			

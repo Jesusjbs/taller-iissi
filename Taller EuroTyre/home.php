@@ -28,14 +28,11 @@
 	<head>
 		<meta charset="utf-8">
 
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Inicio</title>
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="./css/style_home.css" />
 
-		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="./img/logo.png">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 	</head>
@@ -44,7 +41,7 @@
 		<?php
 			include_once("cabecera.php");
 
-				// Mostrar los errores de validación (Si los hay)
+			// Mostrar los errores de validación (Si los hay)
 		if (isset($errores) && count($errores)>0) { 
 	    	echo "<div id=\"div_errores\" class=\"error\">";
 			echo "<h4> Errores en el formulario:</h4>";
@@ -77,13 +74,6 @@
 							cerrarConexionBD($conexion);
 						?>
 					</select>
-					
-		<!--  			<div class="div">
-						<label for="id_auto">Introduzca su matrícula*:</label>
-						<div class="campo">
-							<input class="campo" id="id_auto" name="auto" type="text" required/>
-						</div>
-					</div>	-->
 
 					<br/><br/>
 

@@ -29,12 +29,10 @@
 		$_SESSION["errores"] = $errores;
 		Header('Location: home.php');
 	} else
-		// Si todo va bien, vamos a la página de éxito (inserción del usuario en la base de datos)
+		// Si todo va bien, vamos a la página de éxito (inserción de la cita en la base de datos)
         Header('Location: accion_cita.php');
         
-    ///////////////////////////////////////////////////////////
-	// Validación en servidor del formulario de alta de cita //
-    ///////////////////////////////////////////////////////////
+	// Validación en servidor del formulario de alta de cita
     
 	function validarDatosCita($nuevaCita){
         // Validación del día

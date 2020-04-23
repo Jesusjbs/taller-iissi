@@ -30,12 +30,9 @@
 		$_SESSION["errores"] = $errores;
 		Header('Location: formulario_vehiculo.php');
 	} else
-		// Si todo va bien, vamos a la página de éxito (inserción del usuario en la base de datos)
         Header('Location: accion_vehiculo.php');
         
-    ///////////////////////////////////////////////////////////
-	// Validación en servidor del formulario de alta de usuario
-    ///////////////////////////////////////////////////////////
+	// Validación en servidor del formulario de alta de vehículo
     
 	function validarDatosVehiculo($nuevoVehiculo) {
 		

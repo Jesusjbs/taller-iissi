@@ -32,9 +32,7 @@
 		// Si todo va bien, vamos a la página de éxito (inserción del usuario en la base de datos)
         Header('Location: accion_usuario.php');
         
-    ///////////////////////////////////////////////////////////
 	// Validación en servidor del formulario de alta de usuario
-    ///////////////////////////////////////////////////////////
     
 	function validarDatosUsuario($nuevoUsuario){
 		// Validación del DNI
