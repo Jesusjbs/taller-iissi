@@ -7,11 +7,12 @@
 
         <div>
             <?php
-        if(isset($_SESSION["login"])){
-            echo "Sesión: ".$_SESSION["login"]; ?>
+        if(isset($_SESSION["login"])){ ?>
+            <a href="../ClienteCL/Perfil.php"> <?php echo "Sesión: ".$_SESSION["login"]; ?></a>
             <a href="../Otros/login.php">Cerrar Sesión</a>
+            <a href="../ClienteCL/Perfil.php" ><img id="id_logo" src="../img/UserLogo.png"  style="width: 45px; height=50px;" alt="Logo User" /></a>
         <?php
-        }else{?>
+        } else{ ?>
             <a href="../Otros/login.php">Iniciar Sesión</a>
         <?php
         }

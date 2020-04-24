@@ -2,7 +2,8 @@
 	session_start();
   	
   	include_once("../Otros/gestionBD.php");
- 	include_once("../ClienteCL/gestionarUsuarios.php");
+	include_once("../ClienteCL/gestionarUsuarios.php");
+	include_once("../AdminAD/gestionarAdmin.php");
 	
 	 // Si se redirecciona a esta pagina con una sesión activa, se cierra (Para cerrar sesión)
 	if(isset($_SESSION["login"])){
@@ -17,16 +18,18 @@
 		$conexion = crearConexionBD();
 	
 		$existeCliente = consultarCliente($conexion, $dni, $pass);
-		
+		$existeMecanico = consultarMecanico($conexion, $dni, $pass);
 		cerrarConexionBD($conexion);
 
-		if(!$existeCliente) {
+		if(!$existeCliente & !$existeMecanico) {
 			$login = "";
-		} else {
-
+		} else if($existeCliente){
 			$_SESSION["login"] = $dni;
-
 			header("Location: ../CitaCL/home.php");
+		} else {
+			$_SESSION["login"] = $dni;
+			header("Location: ../Otros/nosotros.php");
+
 		}
 	}
 
@@ -69,7 +72,7 @@
 			<div id="id_secundario">
 				<div id="id_transparencia"></div>
 				<div id="id_usuario">
-					<p style="position: relative;z-index: 1;font-size: large;color: #3d4045;">Inicia sesión como usuario</p>
+					<p style="position: relative;z-index: 1;font-size: large;color: #3d4045;">Iniciar sesión</p>
 					<form id="id_formuser" method="POST" action="login.php">
 						<fieldset id="id_campouser">
 							<img alt="user.png" style="width: 15px; height: 15px;" src="../img/user.png" />

@@ -19,8 +19,8 @@
 
 }
 
-function consulta_factura($conexion, $oid) {
-    $consulta = "SELECT * FROM FACTURASCLIENTES WHERE OID_R = $oid";
+function consulta_factura($conexion, $oid,$dni) {
+    $consulta = "SELECT * FROM FACTURASCLIENTES WHERE OID_R = $oid and DNI=$dni";
     try{    
         return $conexion -> query($consulta);
     } catch(PDOException $e) {

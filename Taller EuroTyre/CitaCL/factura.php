@@ -12,7 +12,7 @@
         if(!isset($oid)) Header("Location: consulta.php");
     }
     $conexion = crearConexionBD();
-    $facturas = consulta_factura($conexion,$oid);
+    $facturas = consulta_factura($conexion,$oid,$_SESSION["login"]);
     cerrarConexionBD($conexion);
 
 
