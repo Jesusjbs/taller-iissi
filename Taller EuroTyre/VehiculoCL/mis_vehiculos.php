@@ -1,11 +1,11 @@
 <?php
 	session_start();
 
-	require_once("gestionBD.php");
+	require_once("../Otros/gestionBD.php");
 	require_once("gestionarVehiculo.php");
 
 		if(!isset($_SESSION["login"])){
-			Header("Location: login.php");	
+			Header("Location: ../Otros/login.php");	
 			
 		}else{
             if(isset($_SESSION["coche"])){
@@ -40,7 +40,7 @@
 <body>
 
     <?php
-    include_once("cabecera.php");
+    include_once("../Otros/cabecera.php");
     ?>
 
     <main>
@@ -145,18 +145,18 @@
                 if(isset($coche) and ($coche["matricula"] == $vehiculo[7])){ ?>
                         <!-- Botón de grabar -->
                         <button id="grabar" name="grabar" type="submit" class="editar_fila">
-                            <img src="img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
+                            <img src="../img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Guardar modificación">
                         </button>
                         <?php } else { ?>
                         <!-- Botón de editar -->
                         <button id="editar" name="editar" type="submit" class="editar_fila">
-                            <img src="img/edite_button.png" style="width: 30px; height: 30px;" class="editar_fila"
+                            <img src="../img/edite_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar coche">
                         </button>
                         <?php } ?>
                         <button id="borrar" name="borrar" type="submit" class="editar_fila">
-                            <img src="img/delete_button.jpg" style="width: 30px; height: 30px;" class="editar_fila"
+                            <img src="../img/delete_button.jpg" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Borrar coche">
                         </button><br /><br />
                         
@@ -263,18 +263,18 @@
                 if(isset($moto) and ($moto["matricula"] == $vehiculo[7])){ ?>
                         <!-- Botón de grabar -->
                         <button id="grabar" name="grabar" type="submit" class="editar_fila">
-                            <img src="img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
+                            <img src="../img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Guardar modificación">
                         </button>
                         <?php } else { ?>
                         <!-- Botón de editar -->
                         <button id="editar" name="editar" type="submit" class="editar_fila">
-                            <img src="img/edite_button.png" style="width: 30px; height: 30px;" class="editar_fila"
+                            <img src="../img/edite_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar moto">
                         </button>
                         <?php } ?>
                         <button id="borrar" name="borrar" type="submit" class="editar_fila">
-                            <img src="img/delete_button.jpg" style="width: 30px; height: 30px;" class="editar_fila"
+                            <img src="../img/delete_button.jpg" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Borrar moto">
                         </button><br /><br />
                         
@@ -284,7 +284,7 @@
         </article>
         <?php }?>
 
-        <a href="formulario_vehiculo.php"><img style="width: 30px; height: 30px;" src="img/add_button.png"
+        <a href="formulario_vehiculo.php"><img style="width: 30px; height: 30px;" src="../img/add_button.png"
                 class="añadir_Vehiculo" alt="Añadir Vehículo"></a>
 
     </main>

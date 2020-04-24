@@ -5,7 +5,7 @@
 		$coche = $_SESSION["coche"];
 		unset($_SESSION["coche"]);
 		
-		require_once("gestionBD.php");
+		require_once("../Otros/gestionBD.php");
 		require_once("gestionarVehiculo.php");
 		
 
@@ -17,7 +17,7 @@
 		
 		if($excep<>""){
 			$_SESSION["excepcion"] = $excep;
-			header("Location: excepcion.php");
+			header("Location: ../Otros/excepcion.php");
 
 		}else Header("Location: mis_vehiculos.php");
 		

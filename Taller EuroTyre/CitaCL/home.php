@@ -2,7 +2,7 @@
 	session_start();
 
 	if(!isset($_SESSION["login"])) {
-		header("Location: login.php");
+		header("Location: ../Otros/login.php");
 	}
 
 	// Si no existen datos del formulario en la sesión, se crea una entrada con valores por defecto
@@ -31,15 +31,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Inicio</title>
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="./css/style_home.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style_home.css" />
 
-		<link rel="shortcut icon" href="./img/logo.png">
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="shortcut icon" href="../img/logo.png">
+		<link rel="apple-touch-icon" href="../img/logo.png">
 	</head>
 
 	<body>
 		<?php
-			include_once("cabecera.php");
+			include_once("../Otros/cabecera.php");
 
 			// Mostrar los errores de validación (Si los hay)
 		if (isset($errores) && count($errores)>0) { 
@@ -58,8 +58,8 @@
 					<label for="id_vehiculo">Elige de entre tus vehículos*:</label>
 					<select name="auto" id="id_vehiculo" required>
 						  <?php
-							require_once("gestionBD.php");
-							require_once("gestionarVehiculo.php");
+							require_once("../Otros/gestionBD.php");
+							require_once("../VehiculoCL/gestionarVehiculo.php");
 						 	$conexion = crearConexionBD();
 							$coches = consultaCoche($conexion,$_SESSION["login"]);
 							$motos = consultaMoto($conexion,$_SESSION["login"]);
@@ -80,14 +80,14 @@
 					<div id="id_nota">
 						<p>Nota: Si no encuenta su vehiculo
 							en la lista, debe de registrarlo en
-							el siguiente <a href="formulario_vehiculo.php">enlace</a></p>
+							el siguiente <a href="../VehiculoCL/formulario_vehiculo.php">enlace</a></p>
 					</div>
 					  
 					<div class="div">
 						<label for="id_dia">Elige un día*:</label>
 						<div class="campo">
 							<input id="id_dia" name="dia" type="date" required/>
-							<img alt="date.png" style="width: 2.5%; height: 2.5%;margin-bottom: -0.7%" src="./img/date.png" />
+							<img alt="date.png" style="width: 2.5%; height: 2.5%;margin-bottom: -0.7%" src="../img/date.png" />
 							</div>
 					</div>
 					<br/><br/>
@@ -96,7 +96,7 @@
 						<label for="id_itv" >Próxima ITV:</label>
 						<div class="campo">
 							<input id="id_itv" name="itv" type="date" required/>
-							<img alt="date.png" style="width: 2.5%; height: 2.5%;margin-bottom: -0.7%" src="./img/date.png" />
+							<img alt="date.png" style="width: 2.5%; height: 2.5%;margin-bottom: -0.7%" src="../img/date.png" />
 						</div>
 					</div>
 					<br/><br/>

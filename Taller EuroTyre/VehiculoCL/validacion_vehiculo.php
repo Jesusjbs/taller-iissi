@@ -36,7 +36,7 @@
     
 	function validarDatosVehiculo($nuevoVehiculo) {
 		
-		require_once("gestionBD.php");
+		require_once("../Otros/gestionBD.php");
 		require_once("gestionarVehiculo.php");
 		$conexion = crearConexionBD();
 

@@ -1,8 +1,8 @@
 <?php
 	session_start();
   	
-  	include_once("gestionBD.php");
- 	include_once("gestionarUsuarios.php");
+  	include_once("../Otros/gestionBD.php");
+ 	include_once("../ClienteCL/gestionarUsuarios.php");
 	
 	 // Si se redirecciona a esta pagina con una sesión activa, se cierra (Para cerrar sesión)
 	if(isset($_SESSION["login"])){
@@ -26,7 +26,7 @@
 
 			$_SESSION["login"] = $dni;
 
-			header("Location: home.php");
+			header("Location: ../CitaCL/home.php");
 		}
 	}
 
@@ -40,11 +40,11 @@
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Taller EuroTyre</title>
-		<link rel="stylesheet" type="text/css" href="./css/style_index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style_index.css" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
-		<link rel="shortcut icon" href="./img/logo.png">
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="shortcut icon" href="../img/logo.png">
+		<link rel="apple-touch-icon" href="../img/logo.png">
 	</head>
 
 	<body>
@@ -59,7 +59,7 @@
 
 		<section id="id_superior">
 			<header>
-				<img id="id_logo" src="./img/logo.png" height="125px" alt="Logo EuroTyre"/>
+				<img id="id_logo" src="../img/logo.png" height="125px" alt="Logo EuroTyre"/>
 			</header>
 		</section>
 
@@ -72,12 +72,12 @@
 					<p style="position: relative;z-index: 1;font-size: large;color: #3d4045;">Inicia sesión como usuario</p>
 					<form id="id_formuser" method="POST" action="login.php">
 						<fieldset id="id_campouser">
-							<img alt="user.png" style="width: 15px; height: 15px;" src="./img/user.png" />
+							<img alt="user.png" style="width: 15px; height: 15px;" src="../img/user.png" />
 							<label for="id_dni">Usuario:</label>
 							<input size="33" id="id_dni" name="dni" type="text" placeholder="DNI" required/>
 							<br><br>
 
-							<img alt="pass.png" style="width: 15px; height: 15px;" src="./img/pass.png" />
+							<img alt="pass.png" style="width: 15px; height: 15px;" src="../img/pass.png" />
 							<label for="id_pass">Contraseña:</label>
 							<input size="33" id="id_pass" name="pass" type="password" required/>
 							<button id="id_btuser" name="submit" type="submit">Iniciar Sesión</button>
@@ -89,7 +89,7 @@
 					<p style="color: #FBDE1B">
 						¿No tienes una cuenta?
 					</p>
-					<a id="id_btregistro" href="formulario_usuario.php">Regístrate</a>
+					<a id="id_btregistro" href="../ClienteCL/formulario_usuario.php">Regístrate</a>
 				</div>
 			</div>
 		</section>
@@ -97,7 +97,7 @@
 		
 		<div id="id_inferior">
 			<footer id="id_footer">
-				<p>Al usar este sitio, reconoces haber leído y entendido nuestra <a href="terminos.php">Política de Privacidad y nuestros Términos y Condiciones</a>.</p>
+				<p>Al usar este sitio, reconoces haber leído y entendido nuestra <a href="../Otros/terminos.php">Política de Privacidad y nuestros Términos y Condiciones</a>.</p>
 			</footer>
 		</div>
 	</body>

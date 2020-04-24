@@ -11,10 +11,10 @@
 
 		<title>Nosotros</title>
         <meta name="viewport" content="width=device-width; initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="./css/style_nosotros.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style_nosotros.css" />
 
-		<link rel="shortcut icon" href="./img/logo.png">
-		<link rel="apple-touch-icon" href="./img/logo.png">
+		<link rel="shortcut icon" href="../img/logo.png">
+		<link rel="apple-touch-icon" href="../img/logo.png">
 	</head>
 
 	<body>

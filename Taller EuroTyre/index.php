@@ -1,3 +1,3 @@
 <?php
-    header("Location: home.php");
+    header("Location: ./CitaCL/home.php");
 ?>

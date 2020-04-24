@@ -1,11 +1,11 @@
 <?php
 	session_start();
 
-	require_once("gestionBD.php");
-	require_once("consultaPaginada.php");
+	require_once("../Otros/gestionBD.php");
+	require_once("../Otros/consultaPaginada.php");
     
     if(!isset($_SESSION["login"]))
-        Header("Location: login.php");
+        Header("Location: ../Otros/login.php");
 
 	// ¿Venimos simplemente de cambiar página o de haber seleccionado un registro ? 
 	// ¿Hay una sesión activa? 
@@ -56,7 +56,7 @@
 <body>
 
     <?php
-	include_once("cabecera.php");
+	include_once("../Otros/cabecera.php");
     ?>
     <main>
         <h1>Consultas</h1>

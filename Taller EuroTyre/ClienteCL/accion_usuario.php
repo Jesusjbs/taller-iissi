@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	require_once("gestionBD.php");
+	require_once("../Otros/gestionBD.php");
 	require_once("gestionarUsuarios.php");
 		
 	// Comprobar que hemos llegado a esta página porque se ha rellenado el formulario
@@ -28,7 +28,7 @@
 
 <body>
 	<?php
-		include_once("cabecera.php");
+		include_once("../Otros/cabecera.php");
 	?>
 
 	<main>
@@ -40,7 +40,7 @@
 			
 			<h1>Te has registrado correctamente como <?php echo $nuevoUsuario["nombre"]; echo " ". $nuevoUsuario["apellidos"];?></h1>
 			<div >	
-				Pulsa <a href="home.php">aquí</a> para acceder a la página de inicio del taller.
+				Pulsa <a href="../CitaCL/home.php">aquí</a> para acceder a la página de inicio del taller.
 			</div>
 		<?php } else { ?>
 			<h1>El usuario ya existe en la base de datos.</h1>

@@ -1,13 +1,13 @@
 <?php
     session_start();
 
-	require_once("gestionBD.php");
+	require_once("../Otros/gestionBD.php");
     require_once("gestionarCitas.php");
     
     $oid = $_REQUEST["oidR"];
     
     if(!isset($_SESSION["login"]))
-        Header("Location: login.php");
+        Header("Location: ../Otros/login.php");
     else {
         if(!isset($oid)) Header("Location: consulta.php");
     }
@@ -27,7 +27,7 @@
     <body>
 
     <?php
-    include_once("cabecera.php");
+    include_once("../Otros/cabecera.php");
     $i = 0;
     foreach($facturas as $fact) {
     ?>

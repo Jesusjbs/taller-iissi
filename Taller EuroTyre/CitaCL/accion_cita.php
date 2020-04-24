@@ -1,11 +1,11 @@
 <?php
 	session_start();
 	
-	require_once("gestionBD.php");
+	require_once("../Otros/gestionBD.php");
 	require_once("gestionarCitas.php");
 
 	if(!isset($_SESSION["login"])) {
-		header("Location: login.php");
+		header("Location: ../Otros/login.php");
 	}
 	
 	// Comprobar que hemos llegado a esta página porque se ha rellenado el formulario
@@ -33,8 +33,8 @@
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 		
-		<link rel="shortcut icon" href="./img/logo.png">
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="shortcut icon" href="../img/logo.png">
+		<link rel="apple-touch-icon" href="../img/logo.png">
     </head>
     
    <body>

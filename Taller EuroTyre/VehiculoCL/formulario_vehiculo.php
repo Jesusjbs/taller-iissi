@@ -31,14 +31,14 @@
 
     <title>Registro Vehículo</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./css/style_nosotros.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style_nosotros.css" />
 
-    <link rel="shortcut icon" href="./img/logo.png">
-    <link rel="apple-touch-icon" href="/img/logo.png>
+    <link rel="shortcut icon" href="../img/logo.png">
+    <link rel="apple-touch-icon" href="../img/logo.png>
 </head>
 
 <body>
-    <?php  include_once("cabecera.php");
+    <?php  include_once("../Otros/cabecera.php");
         if (isset($errores) && count($errores)>0) { 
 	    	echo "<div id=\"div_errores\" class=\"error\">";
 			echo "<h4> Errores en el formulario:</h4>";
@@ -68,7 +68,7 @@
                 <label for="id_modelo">Vehículo*:</label>
                 <select id="id_modelo" name="modelo"> 
                     <?php 
-                    require_once("gestionBD.php");
+                    require_once("../Otros/gestionBD.php");
                     require_once("gestionarVehiculo.php");
                     $conexion = crearConexionBD();
                     $marcas = consultaMarcas($conexion);
