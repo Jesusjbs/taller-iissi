@@ -2,7 +2,11 @@
 	session_start();
 
 	// Si no existen datos del formulario en la sesión, se crea una entrada con valores por defecto
-	if (!isset($_SESSION['registro'])) {
+    if(!isset($_SESSION["login"])){
+        Header("Location: ../Otros/login.php");	
+    }
+
+    if (!isset($_SESSION['registro'])) {
 		$registro['tipo'] = "COCHE";
 		$registro['furgoneta'] = 0;
         $registro['modelo'] = "";
@@ -21,12 +25,10 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
-
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title>Registro Vehículo</title>

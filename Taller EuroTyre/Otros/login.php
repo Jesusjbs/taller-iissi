@@ -9,6 +9,11 @@
 	if(isset($_SESSION["login"])){
 		$_SESSION["login"] = null;
 	}
+
+	if(isset($_SESSION["admin"])){
+		$_SESSION["admin"] = null;
+	}
+	
 	
 	if (isset($_POST['submit'])){
 		$dni= $_POST['dni'];
@@ -27,8 +32,8 @@
 			$_SESSION["login"] = $dni;
 			header("Location: ../CitaCL/home.php");
 		} else {
-			$_SESSION["login"] = $dni;
-			header("Location: ../Otros/nosotros.php");
+			$_SESSION["admin"] = $dni;
+			header("Location: ../AdminAD/perfil.php");
 
 		}
 	}
