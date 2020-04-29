@@ -19,7 +19,7 @@
         ?>
 
         </div>
-        <nav class="menu"></nav>
+        <nav class="menu">
             <ul>
                 <li><a href="../Otros/nosotros.php">Nosotros</a></li>
                 <li><a href="#">F.A.Q</a></li>

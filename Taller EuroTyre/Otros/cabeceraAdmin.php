@@ -18,7 +18,7 @@
         ?>
 
         </div>
-        <nav class="menu"></nav>
+        <nav class="menu">
             <ul>
                 <li><a href="#">Consulta</a></li>
                 <li><a href="#">Consulta</a></li>
@@ -28,7 +28,7 @@
 
         <nav class="menu2">
             <ul>
-                <li><a href="#">Reparaciones</a></li>
+                <li><a href="../ReparacionesAD/home.php">Reparaciones</a></li>
                 <li><a href="../Proveedor/proveedores.php">Proveedores</a></li>
                 <li><a href="../AdminAD/mecanicos.php">Mecánicos</a></li>
             </ul>

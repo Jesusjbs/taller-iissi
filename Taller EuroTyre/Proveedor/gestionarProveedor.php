@@ -12,14 +12,14 @@ function consultaProveedores($conexion) {
     }
 }
 
-function editarProveedor($conexion, $oid, $tipo, $nombre, $email, $telefono) {
+function editarProveedor($conexion, $proveedor) {
     try{
         $stmt=$conexion->prepare('CALL EDITARPROVEEDOR(:oid, :tipo, :nombre, :email, :telefono)');
-        $stmt->bindParam(':oid',$oid);
-        $stmt->bindParam(':tipo',$tipo);
-        $stmt->bindParam(':nombre',$nombre);
-        $stmt->bindParam(':email',$email);
-        $stmt->bindParam(':telefono',$telefono); 
+        $stmt->bindParam(':oid',$proveedor["oid_p"]);
+        $stmt->bindParam(':tipo',$proveedor["tipoProveedor"]);
+        $stmt->bindParam(':nombre',$proveedor['nombre']);
+        $stmt->bindParam(':email',$proveedor["email"]);
+        $stmt->bindParam(':telefono',$proveedor["telefono"]); 
 		$stmt->execute();
 		return "";
 

@@ -33,7 +33,7 @@
 			header("Location: ../CitaCL/home.php");
 		} else {
 			$_SESSION["admin"] = $dni;
-			header("Location: ../AdminAD/perfil.php");
+			header("Location: ../ReparacionesAD/home.php");
 
 		}
 	}
