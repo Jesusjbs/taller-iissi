@@ -8,15 +8,8 @@
         Header("Location: ../Otros/login.php");
     else {
         
-        if(isset($_REQUEST["oid_r"])) {
-            $oidr = $_REQUEST["oid_r"];
-        }else if(isset($_SESSION["oid_r"])){
-            $oidr=$_SESSION["oid_r"];
-        }
-
-        if(isset($_SESSION["apoyo"])) {
-            $oidr = $_SESSION["apoyo"];
-            unset($_SESSION["apoyo"]);
+        if(!isset($_SESSION["oid_r"])) {
+            $_SESSION["oid_r"] = $_REQUEST["oid_r"];
         }
         
         if(isset($_SESSION["factura"])) {
@@ -27,7 +20,7 @@
         
     }
     $conexion=crearConexionBD();
-    $filas=consultaFactura($conexion,$oidr);
+    $filas=consultaFactura($conexion,$_SESSION["oid_r"]);
 
 ?>
 <!DOCTYPE html>
@@ -51,7 +44,7 @@
             <form method="post" action="controlador_factura.php">
                 <div class="fila_factura">
                     <div class="datos_factura">
-                        <input id="id_oidr" name="OID_R" type="hidden" value="<?php echo $fila["OID_R"]; ?>" />  
+                       <!-- <input id="id_oidr" name="OID_R" type="hidden" value="<?php echo $fila["OID_R"]; ?>" />  -->
                         <input id="id_numFactura" name="numFactura" type="hidden" value="<?php echo $fila["NUMFACTURA"];?>" />
                         <input id="id_descripcion" name="descripcion" type="hidden" value="<?php  echo $fila["DESCRIPCIÓN"];?>" />
                         <input id="id_manoDeObra" name="manoDeObra" type="hidden" value="<?php  echo $fila["MANODEOBRA"];?>" />

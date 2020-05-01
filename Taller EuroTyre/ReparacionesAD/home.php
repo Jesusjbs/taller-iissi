@@ -12,6 +12,9 @@
             $reparacion = $_SESSION["reparacion"];
             unset($_SESSION["reparacion"]);
         }
+        if(isset($_SESSION["oid_r"])) {
+            unset($_SESSION["oid_r"]);
+        }
     }
 
 	// ¿Venimos simplemente de cambiar página o de haber seleccionado un registro ? 

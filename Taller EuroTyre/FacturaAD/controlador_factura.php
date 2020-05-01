@@ -8,7 +8,6 @@
 		$factura["Pago"] = $_REQUEST["Pago"];
 		
 		$_SESSION["factura"] = $factura;
-		$_SESSION["apoyo"] = $_REQUEST["OID_R"];
 		if (isset($_REQUEST["editar"])) Header("Location: factura.php"); 
 		else if (isset($_REQUEST["grabar"])) Header("Location: accion_modificar_factura.php");
 	}
