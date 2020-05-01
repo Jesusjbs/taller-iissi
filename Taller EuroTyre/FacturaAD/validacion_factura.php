@@ -8,19 +8,16 @@
         $nuevaFactura["oidr"] = $_REQUEST["oidr"];
         $nuevaFactura["dni"] = $_REQUEST["dni"];
 		$nuevaFactura["descripcion"] = $_REQUEST["descripcion"];
-        $nuevaFactura["IVA"] = $_REQUEST["iva"];
         $nuevaFactura["manoDeObra"] = $_REQUEST["manoDeObra"];
-		$nuevaFactura["Pago"] = $_REQUEST["Pago"];    
-		
+		$nuevaFactura["Pago"] = $_REQUEST["Pago"];
 
 	}
+
 	else // En caso contrario, vamos al formulario
 		Header("Location: formulario_factura.php");
 
 	// Guardar la variable local con los datos del formulario en la sesión.
-	$_SESSION['oidr'] = $nuevaFactura["oidr"];
-	$_SESSION['dni'] = $nuevaFactura["dni"];
-	$_SESSION["registroFactura"] = $nuevasFactura;
+	$_SESSION["registroFactura"] = $nuevaFactura;
 
 	// Validamos el formulario en servidor 
     $errores = validarDatosFactura($nuevaFactura);
@@ -36,24 +33,19 @@
 	// Validación en servidor del formulario de factura
     
 	function validarDatosFactura($nuevaFactura){
+
 		// Validación de la mano de obra		
 		if($nuevaFactura["manoDeObra"]==""){ 
 			$errores[] = "<p>La mano de Obra no puede estar vacía</p>";
+		}else if(!is_numeric($nuevaFactura["manoDeObra"])) {
+            $errores[] = "<p>La mano de Obra debe ser un número</p>";
         }else if($nuevaFactura["manoDeObra"]<0){
             $errores[] = "<p>La mano de Obra debe ser mayor que cero</p>";
-        }else if(!filter_var($nuevaFactura["manoDeObra"],FILTER_VAR_INT) && 
-                !filter_var($nuevaFactura["manoDeObra"],FILTER_VAR_FLOAT)) {
-            $errores[] = "<p>La mano de Obra debe ser un número</p>";
         }
-        
-        // Validación del iva
-		if($nuevaFactura["IVA"]=="") {
-			$errores[] = "<p>El IVA no puede estar vacío</p>";
-        }else if($nuevaFactura["IVA"] < 0 || $nuevaFactura["IVA"] > 1){
-            $errores[] = "<p>El IVA debe  de estar entre cero y uno</p>";
-        }else if(!filter_var($nuevaFactura["IVA"],FILTER_VAR_FLOAT)) {
-            $errores[] = "<p>El IVA debe ser un valor decimal</p>";
-        }
+		//Validad descripcion
+		if(strlen($nuevaFactura["descripcion"])>100){
+			$errores[]="<p>La descripción debe de tener menos de 100 caracteres.</p>";
+		}
         
         return $errores;
         }

@@ -22,4 +22,4 @@
 	else 
 		Header("Location: home.php");
 	
-?>r
+?>

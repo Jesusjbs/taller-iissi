@@ -7,11 +7,6 @@
         Header("Location: ../Otros/login.php");
     } 
     
-/*    if(isset($_REQUEST["oid_r"])) {
-        $oidr = 
-        $dni = 
-    }
-*/
 	// Si no existen datos del formulario en la sesión, se crea una entrada con valores por defecto
 	if (!isset($_SESSION['registroFactura'])) {
         $registroFactura['dni'] = $_REQUEST["dni"];
@@ -27,12 +22,6 @@
 	// Si ya existían valores, los cogemos para inicializar el formulario
 	else{
         $registroFactura = $_SESSION['registroFactura'];
-        /* if(isset($_SESSION["oidr"])&& isset($_SESSION["dni"])) {
-            $oidr = $_SESSION["oidr"];
-            $dni = $_SESSION["dni"];
-        }else{
-            ?> <p>Fallooooo</p><?php
-        } */
     }		
 	if (isset($_SESSION["errores"]))
 		$errores = $_SESSION["errores"];
@@ -66,27 +55,27 @@
   		}
     ?>
 
-    <h1>Registro de factura para reparación <?php echo $registroFactura['dni'] ?></h1>
+    <h1>Registro de factura para reparación <?php echo $registroFactura['oidr'];?></h1>
     <p>*Obligatorio</p>
 
     <form id="id_regFactura" method="post" action="validacion_factura.php" novalidate>
         <fieldset>
-            <input id="id_oidr" type="hidden" name="oidr" value="<?php echo $registroFactura['oidr'] ?>" />
+            <input id="id_oidr" type="hidden" name="oidr" value="<?php echo $registroFactura['oidr']; ?>" />
             <div>
-                <label for="id_dni">Dni de cliente:</label>
-                <input size="5px" id="id_dni" type="text" name="dni" value="<?php echo $registroFactura['oidr']?>" disabled/>
+            <label for="id_dni">DNI del cliente:</label>
+            <input size="7px" id="id_dni" type="text" name="dni" value="<?php echo $registroFactura['dni'];?>"  readonly="readonly" />
             </div>
             <div>
-                <label for="id_descripcion">Descripción:</label>
-                <input id="id_descripcion" type="text" name="descripcion" value="<?php echo $registroFactura["descripcion"]; ?>" />
+                <label for="id_descripcion">Descripción:</label><br/>
+                <textarea id="id_descripcion" name="descripcion" rows="5" cols="40" value="<?php echo $registroFactura["descripcion"]; ?>"><?php echo $registroFactura["descripcion"]; ?></textarea>
             </div>
             <div>
                 <label for="id_manoDeObra">Mano de Obra*:</label>
                 <input id="id_manoDeObra" type="text" name="manoDeObra" value="<?php echo $registroFactura["manoDeObra"]; ?>" required />
             </div>
             <div>
-                <label for="id_iva">IVA*:</label>
-                <input id="id_iva" type="text" name="iva" value="<?php echo $registroFactura["IVA"]; ?>" required />
+                <label for="id_iva">IVA:</label>
+                <input id="id_iva" size="3" type="text" name="iva" value="<?php echo $registroFactura["IVA"]; ?>" disabled />
             </div>
             <div>
                 <label for="id_Pago">Tipo de Pago*:</label>

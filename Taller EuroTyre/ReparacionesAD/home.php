@@ -200,7 +200,7 @@
                     <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
                     <input type="hidden" value="<?php echo $fila["DNI"];?>" name="dni" />
                     <button id="id_formFact" type="submit">Crear Factura</button>
-                    </form>
+                </form>
             <?php }
         }
             

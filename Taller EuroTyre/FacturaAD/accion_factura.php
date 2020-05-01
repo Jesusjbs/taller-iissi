@@ -8,8 +8,8 @@
 	// Se recupera la variable de sesión y se anula
 	if (isset($_SESSION["registroFactura"])) {
 		$registroFactura = $_SESSION["registroFactura"];
-        
-        $_SESSION["registroFactura"] = null;
+		$_SESSION["registroFactura"] = null;
+		
         $_SESSION["errores"] =null;
 	}
 	else 
@@ -38,8 +38,12 @@
                 Header("Location: factura.php");
 		 } else { ?>
 			<h1>Fallo al realizar la operación.</h1>
-			<div >	
-				Pulsa <a href="formulario_factura.php">aquí</a> para volver al formulario.
+			<div >
+			<form action="../FacturaAD/formulario_factura.php" method="post">
+                    <input type="hidden" value="<?php echo $registroFactura["oidr"];?>" name="oid_r" />
+                    <input type="hidden" value="<?php echo $registroFactura["dni"];?>" name="dni" />
+                    <button id="id_formFact" type="submit">Reintentar</button>
+            </form>
 			</div>
 		<?php } ?>
 
