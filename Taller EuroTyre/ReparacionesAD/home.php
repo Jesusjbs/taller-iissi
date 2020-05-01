@@ -180,7 +180,7 @@
                         <?php } else { ?>
                         <!-- Botón de editar -->
                         <button id="editar" name="editar" type="submit" class="editar_fila">
-                            <img src="../img/UserEdite.png" style="width: 30px; height: 30px;" class="editar_fila"
+                            <img src="../img/edit_repair.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar reparacion">
                         </button><br /><br />
                         </div>
@@ -190,14 +190,15 @@
         </article>
         <?php if(cuentaFactura($conexion, $fila["OID_R"]) == 1) { ?>
                 <label id="id_formFact" >Factura:</label>
-                <form action="factura.php" method="post">
+                <form action="../FacturaAD/factura.php" method="post">
                     <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
                     <button id="id_formFact" type="submit">Ver Factura</button>
                     </form>
         <?php } else { ?>
             <label id="id_formFact" >Factura:</label>
-                <form action="formulario_factura.php" method="post">
+                <form action="../FacturaAD/formulario_factura.php" method="post">
                     <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
+                    <input type="hidden" value="<?php echo $fila["DNI"];?>" name="dni" />
                     <button id="id_formFact" type="submit">Crear Factura</button>
                     </form>
             <?php }

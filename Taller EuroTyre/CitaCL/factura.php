@@ -48,8 +48,8 @@
             <h1>Factura</h1></div>
             <table id="my-table">
                 <tr>
-                    <th><h2>Factura con ID: <?php echo $fact["NUMFACTURA"]; ?></h2></th>
-                    <th></th>
+                    <th><h2>Factura con ID:</h2></th>
+                    <th><h2><?php echo $fact["NUMFACTURA"]; ?></h2></th>
                 </tr>
                 <tr>
                     <td>Descripción:</td>

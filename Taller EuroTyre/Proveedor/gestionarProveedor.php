@@ -43,6 +43,7 @@ function contratarProveedor($conexion, $proveedor) {
         return false;
     }
 }
+
 function eliminarProveedor($conexion,$oid_p){
     try{
         $stmt=$conexion->prepare('CALL ELIMINARPROVEEDOR(:oid_p)');

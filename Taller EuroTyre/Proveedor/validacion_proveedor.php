@@ -28,7 +28,7 @@
 	} else
         Header('Location: accion_proveedor.php');
         
-	// Validación en servidor del formulario de alta de mecanico
+	// Validación en servidor del formulario de proveedor
     
 	function validarDatosProveedor($nuevoProveedor){
 		// Validación del Nombre		
