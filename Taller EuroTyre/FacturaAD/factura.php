@@ -34,7 +34,7 @@
 <body>
 
     <?php
-	include_once("../Otros/cabeceraAdmin.php");
+	include_once("../Otros/cabecera.php");
     ?>
     <main>
         <?php
@@ -48,6 +48,7 @@
                         <input id="id_numFactura" name="numFactura" type="hidden" value="<?php echo $fila["NUMFACTURA"];?>" />
                         <input id="id_descripcion" name="descripcion" type="hidden" value="<?php  echo $fila["DESCRIPCIÓN"];?>" />
                         <input id="id_manoDeObra" name="manoDeObra" type="hidden" value="<?php  echo $fila["MANODEOBRA"];?>" />
+                        <input id="id_iva" name="IVA" type="hidden" value="<?php  echo $fila["IVA"];?>" />
                         <input id="id_Pago" name="Pago" type="hidden" value="<?php  echo $fila["PAGO"];?>" />
                         <?php
                         if(isset($factura) and ($factura["numFactura"] == $fila["NUMFACTURA"])){ ?>
@@ -79,7 +80,7 @@
                             </tr>
                             <tr>
                                 <td>IVA:</td>
-                                <td><?php echo substr($fila["IVA"],1)." %"; ?></td>
+                                <td><input id="id_iva" name="IVA" type="text" value="<?php echo $fila["IVA"];?>"/></td>
                             </tr>
                             <tr>
                                 <td>IMPORTE:</td>

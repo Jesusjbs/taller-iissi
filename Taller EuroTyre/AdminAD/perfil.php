@@ -29,7 +29,7 @@
 <body>
 
     <?php
-    include_once("../Otros/cabeceraAdmin.php");
+    include_once("../Otros/cabecera.php");
 
 	foreach($consultas as $consulta) {
 	?>

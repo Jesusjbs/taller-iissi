@@ -59,4 +59,13 @@ function editarCliente($conexion, $dni, $nombre, $apellido, $telefono, $email, $
     }
 }
 
+function validaContraseña($conexion, $dni, $contraseña) {
+    $consulta = "SELECT COUNT(*) AS TOTAL FROM CLIENTES WHERE DNI=:dni AND CONTRASEÑA=:pass";
+	$stmt = $conexion->prepare($consulta);
+	$stmt->bindParam(':dni',$dni);
+	$stmt->bindParam(':pass',$contraseña);
+	$stmt->execute();
+	return $stmt->fetchColumn();
+}
+
 ?>

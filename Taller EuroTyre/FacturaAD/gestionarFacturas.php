@@ -14,10 +14,11 @@ function consultaFactura($conexion, $oidr) {
 
 function crearFactura($conexion, $factura) {
     try{
-        $stmt=$conexion->prepare('CALL CREARFACTURA(:oidr, :descripcion, :manoDeObra, :pago, :dni)');
+        $stmt=$conexion->prepare('CALL CREARFACTURA(:oidr, :descripcion, :manoDeObra,:iva, :pago, :dni)');
         $stmt->bindParam(':oidr',$factura["oidr"]);
         $stmt->bindParam(':descripcion',$factura["descripcion"]);
         $stmt->bindParam(':manoDeObra',$factura["manoDeObra"]);
+        $stmt->bindParam(':iva',$factura["IVA"]);
         $stmt->bindParam(':pago',$factura["Pago"]);
         $stmt->bindParam(':dni',$factura["dni"]);
 		$stmt->execute();
@@ -31,11 +32,13 @@ function crearFactura($conexion, $factura) {
 
 function editarFactura($conexion, $factura) {
     try{
-        $stmt=$conexion->prepare('CALL EDITARFACTURA(:numFactura, :descripcion, :manoDeObra, :pago)');
+        $stmt=$conexion->prepare('CALL EDITARFACTURA(:numFactura, :descripcion, :manoDeObra,:iva, :pago)');
         $stmt->bindParam(':numFactura',$factura["numFactura"]);
         $stmt->bindParam(':descripcion',$factura["descripcion"]);
         $stmt->bindParam(':manoDeObra',$factura["manoDeObra"]);
+        $stmt->bindParam(':iva',$factura["IVA"]);
         $stmt->bindParam(':pago',$factura["Pago"]);
+        
 		$stmt->execute();
 		return "";
 

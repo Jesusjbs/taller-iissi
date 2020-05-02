@@ -44,14 +44,18 @@
 			$errores[] = "<p>El nombre no puede estar vacío</p>";
         else if(!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ\s]+$/", $nuevoMecanico["nombre"])) {
             $errores[] = "<p>El nombre solo puede contener letras</p>";
-        }
+        }else if(strlen($nuevoMecanico["nombre"])>50){
+			$errores[] = "<p>El nombre debe de tener menos de 50 caracteres.</p>";
+		}
 
         // Validación del apellidos
         if($nuevoMecanico["apellido"]=="") 
 			$errores[] = "<p>El apellido no pueden estar vacíos</p>";
         else if(!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ\s]+$/", $nuevoMecanico["apellido"])) {
             $errores[] = "<p>Los apellidos solo pueden contener letras</p>";
-        }
+        }else if(strlen($nuevoMecanico["apellidos"])>50){
+			$errores[] = "<p>Los apellidos deben de tener menos de 50 caracteres.</p>";
+		}
         
 		// Validación de la contraseña
 		if(!isset($nuevoMecanico["contraseña"]) || strlen($nuevoMecanico["contraseña"])<6) {
@@ -62,6 +66,8 @@
 			$errores[] = "<p>Contraseña no válida: debe contener letras mayúsculas y minúsculas y números</p>";
 		} else if($nuevoMecanico["contraseña"] != $nuevoMecanico["confirmar"]){
 			$errores[] = "<p>Las contraseñas introducidas no coinciden</p>";
+		} else if(strlen($nuevoMecanico["contraseña"])>50){
+			$errores[] = "<p>La contraseña debe de tener menos de 50 caracteres.</p>";
 		}
 	
 		return $errores;

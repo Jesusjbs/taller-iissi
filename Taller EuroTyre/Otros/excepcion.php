@@ -26,9 +26,9 @@
 	<div>
 		<h2>Ups!</h2>
 		<?php if ($destino<>"") { ?>
-		<p>Ocurrió un problema durante el procesado de los datos. Pulse <a href="<?php echo $destino ?>">aquí</a> para volver a la página principal.</p>
+		<p>Ocurrió un problema durante el procesado de los datos.Pulse <a href="<?php echo $destino ?>">aquí</a> para volver a la página principal.</p>
 		<?php } else { ?>
-		<p>Ocurrió un problema para acceder a la base de datos. </p>
+		<p>Ocurrió un problema para acceder a la base de datos.</p>
 		<?php } ?>
 	</div>
 		

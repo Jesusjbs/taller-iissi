@@ -34,7 +34,7 @@
 <body>
 
     <?php
-    include_once("../Otros/cabeceraAdmin.php");
+    include_once("../Otros/cabecera.php");
     ?>
 
     <main>
@@ -130,7 +130,7 @@
                         <?php } else { ?>
                         <!-- Botón de editar -->
                         <button id="editar" name="editar" type="submit" class="editar_fila">
-                            <img src="../img/edite_button.png" style="width: 30px; height: 30px;" class="editar_fila"
+                            <img src="../img/UserEdite.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar trabajador">
                         </button>
                         <?php } ?>

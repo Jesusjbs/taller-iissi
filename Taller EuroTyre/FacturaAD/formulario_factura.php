@@ -13,10 +13,9 @@
         $registroFactura['oidr'] = $_REQUEST["oid_r"];
         $registroFactura['descripcion'] = "";
         $registroFactura['manoDeObra'] = "";
-        $registroFactura['IVA'] = "0.21";
+        $registroFactura['IVA'] = 0.21;
         $registroFactura['Pago'] = "Efectivo";
         
-	
 		$_SESSION['registroFactura'] = $registroFactura;
 	}
 	// Si ya existían valores, los cogemos para inicializar el formulario
@@ -46,7 +45,7 @@
 </head>
 
 <body>
-    <?php  include_once("../Otros/cabeceraAdmin.php");
+    <?php  include_once("../Otros/cabecera.php");
         if (isset($errores) && count($errores)>0) { 
 	    	echo "<div id=\"div_errores\" class=\"error\">";
 			echo "<h4> Errores en el formulario:</h4>";
@@ -75,7 +74,7 @@
             </div>
             <div>
                 <label for="id_iva">IVA:</label>
-                <input id="id_iva" size="3" type="text" name="iva" value="<?php echo $registroFactura["IVA"]; ?>" disabled />
+                <input id="id_iva" size="3" type="text" name="IVA" value="<?php echo $registroFactura["IVA"]; ?>" />
             </div>
             <div>
                 <label for="id_Pago">Tipo de Pago*:</label>

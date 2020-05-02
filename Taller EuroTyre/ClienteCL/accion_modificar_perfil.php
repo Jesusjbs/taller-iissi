@@ -5,11 +5,11 @@
 		$cliente = $_SESSION["cliente"];
 		$dni = $cliente["dni"];
 		$nombre = $cliente["nombre"];
-		$apellido = $cliente["apellido"];
+		$apellido = $cliente["apellidos"];
 		$telefono = $cliente["telefono"];
 		$email = $cliente["email"];
 		$direccion = $cliente["direccion"];
-        $contraseña = $cliente["contraseña"];
+		$contraseña = $cliente["contraseña"];
 		unset($_SESSION["cliente"]);
 
 		require_once("../Otros/gestionBD.php");

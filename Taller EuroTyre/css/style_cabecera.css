@@ -1,19 +1,60 @@
 #id_superior {
-	margin-top: 10px;
+	position: relative;
+	margin-top: 0.5%;
 }
 
 #id_logo {
-	margin-top: 20px;
-	margin-left: 20px;
+	margin-left: -35%;
+	margin-top: 1%;
+}
+
+#id_logoFix {
+	margin-left: 3%;
+	margin-top: 1%;
+}
+
+#id_divInicia {
+	float: right;
+	margin-top: 1%;
+	margin-right: 2%;
+}
+
+#id_divInicia a{
+	color: #FBDE1B;
+	text-decoration: none;
+}
+
+#id_divPerfil {
+	float: right;
+	margin-right: 1%;
+	margin-top: 1%;
+	width: 13%;
+	height: 50px;
+	color: #FBDE1B;
+}
+
+#id_divPerfil a {
+	color: #FBDE1B;
+	text-decoration: none;
+}
+
+#id_divSesion {
+	padding-bottom: 3%;
+	color: #FBDE1B;
+}
+
+#id_userLogo {
+	float: right;
+	margin-top: -23%;
 }
 
 .menu {
-	width: 230px;
+	width: 16%;
 	height: 38px;
 	border: 1px solid #FBDE1B;
 	float: right;
-	margin-top: 40px;
-	margin-right: 40px;
+	margin-top: 4%;
+	margin-right: 2%;
 	background: #3D4045;
 }
 
@@ -33,6 +74,37 @@
 }
 
 .menu ul li a {
+	text-decoration: none;
+	color: #FBDE1B;
+}
+
+
+.menu2 {
+	width: 23%;
+	height: 38px;
+	border: 1px solid #FBDE1B;
+	float: left;
+	margin-top: 4%;
+	margin-left: 15%;
+	background: #3D4045;
+}
+
+.menu2 ul {
+	padding: 0px 10px;
+}
+
+.menu2 ul li{
+	list-style: none;
+	margin-top: -13px;
+	margin-right: 12px;
+	height: 30px;
+	padding: 4px 2px;
+	text-align: center;
+	font-size: large;
+	float: left;
+}
+
+.menu2 ul li a {
 	text-decoration: none;
 	color: #FBDE1B;
 }

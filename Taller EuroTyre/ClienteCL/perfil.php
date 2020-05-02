@@ -16,6 +16,11 @@
             $consultas = datosCliente($conexion,$_SESSION["login"]);
 		    cerrarConexionBD($conexion);            
         }
+
+        if (isset($_SESSION["errores"])) {
+            $errores = $_SESSION["errores"];
+            unset($_SESSION["errores"]);
+        }
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +36,13 @@
     <?php
     include_once("../Otros/cabecera.php");
 
+    if (isset($errores) && count($errores)>0) { 
+        echo "<div id=\"div_errores\" class=\"error\">";
+        echo "<h4> Errores al editar perfil:</h4>";
+        foreach($errores as $error) echo $error; 
+        echo "</div>";
+    }
+
 	foreach($consultas as $consulta) {
 	?>
     <article class="perfil">
@@ -39,12 +51,11 @@
                     <div class="dato_usuario">
                         <input id="id_dni" name="dni" type="hidden" value="<?php echo $consulta[0];?>" />
                         <input id="id_nombre" name="nombre" type="hidden" value="<?php  echo $consulta[1];?>" />
-                        <input id="id_apellido" name="apellido" type="hidden" value="<?php  echo $consulta[2];?>" />
+                        <input id="id_apellido" name="apellidos" type="hidden" value="<?php  echo $consulta[2];?>" />
                         <input id="id_telefono" name="telefono" type="hidden" value="<?php  echo $consulta[3];?>" />
                         <input id="id_email" name="email" type="hidden" value="<?php  echo $consulta[4];?>" />
                         <input id="id_direccion" name="direccion" type="hidden" value="<?php  echo $consulta[5];?>" />
                         <input id="id_contraseña" name="contraseña" type="hidden" value="<?php  echo $consulta[6];?>" />
-
                         
                         <?php
                 if(isset($cliente)){ ?>
@@ -62,7 +73,7 @@
                             </tr>
                             <tr>
                                 <td>Apellido:</td>
-                                <td><input id="id_apellido" name="apellido" type="text" value="<?php echo $consulta[2];?>" /></td>
+                                <td><input id="id_apellido" name="apellidos" type="text" value="<?php echo $consulta[2];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Teléfono:</td>
@@ -77,8 +88,16 @@
                                 <td><input id="id_direccion" name="direccion" type="text" value="<?php  echo $consulta[5];?>" /></td>
                             </tr>
                             <tr>
-                                <td>Contraseña:</td>
+                                <td>Antigua contraseña:</td>
+                                <td><input id="id_antiguaContraseña" name="antigua" type="password" /></td>
+                            </tr>
+                            <tr>
+                                <td>Nueva contraseña:</td>
                                 <td><input id="id_contraseña" name="contraseña" type="password" /></td>
+                            </tr>
+                            <tr>
+                                <td>Confirmar nueva contraseña:</td>
+                                <td><input id="id_confirmarNueva" name="confirmar" type="password" /></td>
                             </tr>
                         </table><br />
                         

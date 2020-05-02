@@ -53,7 +53,7 @@
 </head>
 
 <body>
-    <?php  include_once("../Otros/cabeceraAdmin.php");
+    <?php  include_once("../Otros/cabecera.php");
         if (isset($errores) && count($errores)>0) { 
 	    	echo "<div id=\"div_errores\" class=\"error\">";
 			echo "<h4> Errores en el formulario:</h4>";

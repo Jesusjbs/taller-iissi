@@ -66,7 +66,7 @@
 <body>
 
     <?php
-	include_once("../Otros/cabeceraAdmin.php");
+	include_once("../Otros/cabecera.php");
     ?>
     <main>
         <h1>Reparaciones</h1>
@@ -176,13 +176,13 @@
                         <?php
                 if(isset($reparacion) and ($reparacion["oid_r"] == $fila["OID_R"])){ ?>
                         <!-- Botón de grabar -->
-                        <button id="grabar" name="grabar" type="submit" class="editar_fila">
+                        <button title="Guardar Modificación" id="grabar" name="grabar" type="submit" class="editar_fila">
                             <img src="../img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Guardar modificación">
                         </button>
                         <?php } else { ?>
                         <!-- Botón de editar -->
-                        <button id="editar" name="editar" type="submit" class="editar_fila">
+                        <button title="Editar Reparación" id="editar" name="editar" type="submit" class="editar_fila">
                             <img src="../img/edit_repair.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar reparacion">
                         </button><br /><br />
@@ -195,14 +195,16 @@
                 <label id="id_formFact" >Factura:</label>
                 <form action="../FacturaAD/factura.php" method="post">
                     <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
-                    <button id="id_formFact" type="submit">Ver Factura</button>
+                    <button title="Ver Factura" id="id_formFact" type="submit"><img src="../img/see_bill.png" 
+                        style="width: 30px; height: 30px;" alt="Ver Factura"></button>
                     </form>
         <?php } else { ?>
             <label id="id_formFact" >Factura:</label>
                 <form action="../FacturaAD/formulario_factura.php" method="post">
                     <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
                     <input type="hidden" value="<?php echo $fila["DNI"];?>" name="dni" />
-                    <button id="id_formFact" type="submit">Crear Factura</button>
+                    <button title="Crear Factura" id="id_formFact" type="submit"><img src="../img/add_bill.png" 
+                        style="width: 30px; height: 30px;" alt="Crear Factura"></button>
                 </form>
             <?php }
         }

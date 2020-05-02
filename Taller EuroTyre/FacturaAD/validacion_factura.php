@@ -8,6 +8,7 @@
         $nuevaFactura["oidr"] = $_REQUEST["oidr"];
         $nuevaFactura["dni"] = $_REQUEST["dni"];
 		$nuevaFactura["descripcion"] = $_REQUEST["descripcion"];
+		$nuevaFactura["IVA"] = $_REQUEST["IVA"];
         $nuevaFactura["manoDeObra"] = $_REQUEST["manoDeObra"];
 		$nuevaFactura["Pago"] = $_REQUEST["Pago"];
 
@@ -41,7 +42,15 @@
             $errores[] = "<p>La mano de Obra debe ser un número</p>";
         }else if($nuevaFactura["manoDeObra"]<0){
             $errores[] = "<p>La mano de Obra debe ser mayor que cero</p>";
-        }
+		}
+		//Validar IVA
+		if($nuevaFactura["IVA"]==""){
+			$errores[] = "<p>El IVA  no puede estar vacío.</p>";
+		}else if($nuevaFactura["IVA"]>1 || $nuevaFactura["IVA"]<0){
+			$errores[] = "<p>El IVA debe de ser un valor comprendido entre 1 y 0.</p>";
+		}else if(!is_numeric($nuevaFactura["IVA"])){
+			$errores[] = "<p>El IVA debe de ser un número.</p>";
+		}
 		//Validad descripcion
 		if(strlen($nuevaFactura["descripcion"])>100){
 			$errores[]="<p>La descripción debe de tener menos de 100 caracteres.</p>";

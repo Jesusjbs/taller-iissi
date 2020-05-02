@@ -41,6 +41,7 @@
     <?php
     include_once("../Otros/cabecera.php");
     $i = 0;
+
     foreach($facturas as $fact) {
     ?>
         <main>
@@ -48,8 +49,8 @@
             <h1>Factura</h1></div>
             <table id="my-table">
                 <tr>
-                    <th><h2>Factura con ID:</h2></th>
-                    <th><h2><?php echo $fact["NUMFACTURA"]; ?></h2></th>
+                    <th><h2>Factura con ID: <?php echo $fact["NUMFACTURA"]; ?></h2></th>
+                    <th></th>
                 </tr>
                 <tr>
                     <td>Descripción:</td>
@@ -64,16 +65,16 @@
                     <td><?php echo substr($fact["IVA"],1)." %";?></td>
                 </tr>
                 <tr>
-                    <td>Importe:</td>
-                    <td><?php echo $fact["IMPORTE"]." €";?></td>
-                </tr>
-                <tr>
                     <td>Fecha de Emisión:</td>
                     <td><?php echo $fact["FECHAEMISIÓN"];?></td>
                 </tr>
                 <tr>
                     <td>Tipo de Pago:</td>
                     <td><?php echo $fact["PAGO"];?></td>
+                </tr>
+                <tr>
+                    <td>Importe:</td>
+                    <td><?php echo $fact["IMPORTE"]." €";?></td>
                 </tr>
             </table><br />
         </main>

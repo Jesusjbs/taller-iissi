@@ -36,7 +36,9 @@
 			$errores[] = "<p>El nombre no puede estar vacío</p>";
         else if(!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ\s]+$/", $nuevoProveedor["nombre"])) {
             $errores[] = "<p>El nombre solo puede contener letras</p>";
-        }
+        }else if(strlen($nuevoProveedor["nombre"])>50){
+			$errores[] = "<p>El nombre debe de tener menos de 50 caracteres.</p>";
+		}
         
         // Validación del teléfono
 		if($nuevoProveedor["telefono"]=="") 
@@ -48,7 +50,9 @@
         // Validación del email
         if(!filter_var($nuevoProveedor["email"], FILTER_VALIDATE_EMAIL) && $nuevoProveedor["email"] != ""){
             $errores[] = $error . "<p>El email es incorrecto: " . $nuevoProveedor["email"]. "</p>";
-        }
+		}else if(strlen($nuevoProveedor["email"])>50){
+			$errores[] = "<p>El email debe de tener menos de 50 caracteres.</p>";
+		}
         
             return $errores;
         }

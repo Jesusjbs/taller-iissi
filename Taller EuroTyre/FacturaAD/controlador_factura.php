@@ -5,6 +5,7 @@
 		$factura["numFactura"] = $_REQUEST["numFactura"];
 		$factura["descripcion"] = $_REQUEST["descripcion"];
 		$factura["manoDeObra"] = $_REQUEST["manoDeObra"];
+		$factura["IVA"] = $_REQUEST["IVA"];
 		$factura["Pago"] = $_REQUEST["Pago"];
 		
 		$_SESSION["factura"] = $factura;

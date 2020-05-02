@@ -57,7 +57,12 @@
             $errores[] = "<p>La matrícula no puede estar vacía</p>";
         else if(!preg_match("/^[0-9]{4}[A-Z]{3}$/", $nuevoVehiculo["matricula"])){
             $errores[] = "<p>La matrícula no tiene formato válido: " . $nuevoVehiculo["matricula"]. "</p>";
-        }
+		}
+		
+		// Validación de color
+		if(strlen($nuevoVehiculo["color"]) > 50) {
+			$errores[] = "<p>El color debe tener menos de 50 caracteres.</p>";
+		}
 		cerrarConexionBD($conexion);
 		return $errores;
 	}
