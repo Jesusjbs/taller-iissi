@@ -29,4 +29,15 @@ function consulta_factura($conexion, $oid,$dni) {
     }
 }
 
+function consulta_linea($conexion, $num, $oid) {
+    $consulta = "SELECT * FROM PIEZAS, LÍNEASFACTURASCLIENTES, REPARACIONES WHERE LÍNEASFACTURASCLIENTES.NUMFACTURA = $num
+         and REPARACIONES.OID_R = $oid and LÍNEASFACTURASCLIENTES.OID_P = PIEZAS.OID_P";
+    try{    
+        return $conexion -> query($consulta);
+    } catch(PDOException $e) {
+        echo $e -> GetMessage();
+        return false;
+    }
+}
+
 ?>

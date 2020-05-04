@@ -32,7 +32,7 @@
                 var pdf = new jsPDF();
 
                 pdf.autoTable({ html: '#my-table' });
-                pdf.save('Factura"<?php echo $oid;?>".pdf');
+                pdf.save('Factura.pdf');
             }
         </script>
     </head>
@@ -45,8 +45,6 @@
     foreach($facturas as $fact) {
     ?>
         <main>
-            <div id="imprimir">
-            <h1>Factura</h1></div>
             <table id="my-table">
                 <tr>
                     <th><h2>Factura con ID: <?php echo $fact["NUMFACTURA"]; ?></h2></th>
@@ -72,9 +70,30 @@
                     <td>Tipo de Pago:</td>
                     <td><?php echo $fact["PAGO"];?></td>
                 </tr>
+                <?php
+                $lineas = consulta_linea($conexion, $fact["NUMFACTURA"], $oid);
+                $n = 1;
+                foreach($lineas as $linea) { ?>
                 <tr>
-                    <td>Importe:</td>
-                    <td><?php echo $fact["IMPORTE"]." €";?></td>
+                    <th>Línea de Factura <?php echo $n; ?></th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Pieza:</td>
+                    <td><?php echo $linea["NOMBRE"];?></td>
+                </tr>
+                <tr>
+                    <td>Unidades:</td>
+                    <td><?php echo $linea["CANTIDAD"];?></td>
+                </tr>
+                <tr>
+                    <td>Precio unitario:</td>
+                    <td><?php echo $linea["PRECIOUNITARIO"]." €";?></td>
+                </tr>
+                <?php $n++; } ?>
+                <tr>
+                    <th>Importe total:</th>
+                    <th><?php echo $fact["MANODEOBRA"] + $fact["IMPORTE"]." €";?></th>
                 </tr>
             </table><br />
         </main>
