@@ -119,9 +119,30 @@
                                 <td>IVA:</td>
                                 <td><?php echo substr($fila["IVA"],1)." %"; ?></td>
                             </tr>
+                            <?php
+                            $lineas = consulta_linea($conexion, $fila["NUMFACTURA"],  $fila["OID_R"]);
+                            $n = 1;
+                            foreach($lineas as $linea) { ?>
                             <tr>
-                                <td>IMPORTE:</td>
-                                <td><?php echo $fila["IMPORTE"]; ?></td>
+                                <th>Línea de Factura <?php echo $n; ?></th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Pieza:</td>
+                                <td><?php echo $linea["NOMBRE"];?></td>
+                            </tr>
+                            <tr>
+                                <td>Unidades:</td>
+                                <td><?php echo $linea["CANTIDAD"];?></td>
+                            </tr>
+                            <tr>
+                                <td>Precio unitario:</td>
+                                <td><?php echo $linea["PRECIOUNITARIO"]." €";?></td>
+                            </tr>
+                            <?php $n++; } ?>
+                            <tr>
+                                <th>Importe total:</th>
+                                <th><?php echo $fila["MANODEOBRA"] + $fila["IMPORTE"]." €";?></th>
                             </tr>
                         </table><br />
 
@@ -133,13 +154,13 @@
                         <?php
                 if(isset($factura) and ($factura["numFactura"] == $fila["NUMFACTURA"])){ ?>
                         <!-- Botón de grabar -->
-                        <button id="grabar" name="grabar" type="submit" class="editar_fila">
+                        <button title="Confirmar Cambios" id="grabar" name="grabar" type="submit" class="editar_fila">
                             <img src="../img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Guardar modificación">
                         </button>
                         <?php } else { ?>
                         <!-- Botón de editar -->
-                        <button id="editar" name="editar" type="submit" class="editar_fila">
+                        <button title="Editar Factura" id="editar" name="editar" type="submit" class="editar_fila">
                             <img src="../img/edit_bill.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar Factura">
                         </button><br /><br />
@@ -148,13 +169,15 @@
                 </div>
             </form>
         </article>
-        <!--<?php if(cuentaFactura($conexion, $fila["OID_R"]) == 1) { ?>
-                <label id="id_formFact" >Factura:</label>
-                <form action="../FacturaAD/factura.php" method="post">
-                    <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
-                    <button id="id_formFact" type="submit">Ver Factura</button>
-                    </form>
-        <?php } ?> -->
+        <label id="id_formFact" >Líneas de Factura:</label>
+            <form action="../FacturaAD/formulario_linea_factura.php" method="post">
+                <input type="hidden" value="<?php echo $fila["NUMFACTURA"];?>" name="numFactura" />
+                <button id="id_formFact" type="submit">Añadir Línea</button>
+            </form>
+            <form action="../FacturaAD/accion_borrar_linea.php" method="post">
+                <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
+                <button id="id_formFact" type="submit">Eliminar Línea</button>
+            </form>
         <?php
         }
         cerrarConexionBD($conexion);?>

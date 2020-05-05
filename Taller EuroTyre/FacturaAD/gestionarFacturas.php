@@ -47,6 +47,40 @@ function editarFactura($conexion, $factura) {
     }
 }
 
+function consulta_linea($conexion, $num, $oid) {
+    $consulta = "SELECT * FROM PIEZAS, LÍNEASFACTURASCLIENTES, REPARACIONES WHERE LÍNEASFACTURASCLIENTES.NUMFACTURA = $num
+         and REPARACIONES.OID_R = $oid and LÍNEASFACTURASCLIENTES.OID_P = PIEZAS.OID_P";
+    try{    
+        return $conexion -> query($consulta);
+    } catch(PDOException $e) {
+        echo $e -> GetMessage();
+        return false;
+    }
+}
 
+function crearLineaFactura($conexion, $lineaFact) {
+    try{
+        $stmt=$conexion->prepare('CALL CREARLINEADEFACTURA(:cantidad, :numFactura, :pieza)');
+        $stmt->bindParam(':cantidad',$lineaFact["cantidad"]);
+        $stmt->bindParam(':numFactura',$lineaFact["numFactura"]);
+        $stmt->bindParam(':pieza',$lineaFact["pieza"]);
+		$stmt->execute();
+		return $stmt;
+
+    }catch(PDOException $e){
+        echo $e->getMessage();
+        return false;
+    }
+}
+
+function consultaPiezas($conexion) {
+    $consulta = "SELECT * FROM PIEZAS";
+    try{    
+        return $conexion -> query($consulta);
+    } catch(PDOException $e) {
+        echo $err -> GetMessage();
+        return false;
+    }
+}
 
 ?>

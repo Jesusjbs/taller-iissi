@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../css/style_nosotros.css" />
 
     <link rel="shortcut icon" href="../img/logo.png">
-    <link rel="apple-touch-icon" href="../img/logo.png>
+    <link rel="apple-touch-icon" href="../img/logo.png">
 </head>
 
 <body>
