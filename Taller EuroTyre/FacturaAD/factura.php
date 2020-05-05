@@ -68,7 +68,8 @@
                             </tr>
                             <tr>
                                 <td>Descripción:</td>
-                                <td><input id="id_descripción" name="descripcion" type="text" value="<?php echo $fila["DESCRIPCIÓN"]; ?>" /></td>
+                                <td><textarea id="id_descripcion" name="descripcion" rows="2" cols="40" 
+                                        value="<?php echo $fila["DESCRIPCIÓN"]; ?>"><?php echo $fila["DESCRIPCIÓN"]; ?></textarea></td>
                             </tr>
                             <tr>
                                 <td>Mano de Obra:</td>
@@ -125,7 +126,10 @@
                             foreach($lineas as $linea) { ?>
                             <tr>
                                 <th>Línea de Factura <?php echo $n; ?></th>
-                                <td></td>
+                                <td>
+                                <input type="hidden" value="<?php echo $linea["OID_LFC"];?>" name="OID_LFC" />
+                                <button id="id_formFact" type="submit">Eliminar Línea</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Pieza:</td>
@@ -173,10 +177,6 @@
             <form action="../FacturaAD/formulario_linea_factura.php" method="post">
                 <input type="hidden" value="<?php echo $fila["NUMFACTURA"];?>" name="numFactura" />
                 <button id="id_formFact" type="submit">Añadir Línea</button>
-            </form>
-            <form action="../FacturaAD/accion_borrar_linea.php" method="post">
-                <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
-                <button id="id_formFact" type="submit">Eliminar Línea</button>
             </form>
         <?php
         }

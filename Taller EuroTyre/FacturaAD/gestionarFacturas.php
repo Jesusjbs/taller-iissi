@@ -73,6 +73,19 @@ function crearLineaFactura($conexion, $lineaFact) {
     }
 }
 
+function eliminarLineaFactura($conexion,$oid){
+    try{
+        $stmt=$conexion->prepare('CALL ELIMINARLINEADEFACTURA(:oid_lfc)');
+        $stmt->bindParam(':oid_lfc',$oid);
+        $stmt->execute();
+        return "";
+
+    }catch(PDOException $e){
+        return $e->getMessage();
+    }
+
+}
+
 function consultaPiezas($conexion) {
     $consulta = "SELECT * FROM PIEZAS";
     try{    
@@ -82,5 +95,4 @@ function consultaPiezas($conexion) {
         return false;
     }
 }
-
 ?>
