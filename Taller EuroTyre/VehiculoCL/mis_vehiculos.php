@@ -55,19 +55,20 @@
                 <div class="fila_vehiculo">
                     <div class="dato_vehiculo">
 
-                        <input id="id_matricula" name="matricula" type="hidden" value="<?php echo $vehiculo[7];?>" />
-                        <input id="id_color" name="color" type="hidden" value="<?php  echo $vehiculo[8];?>" />
-                        <input id="id_kilometraje" name="kilometraje" type="hidden"
+                        <input name="matricula" type="hidden" value="<?php echo $vehiculo[7];?>" />
+                        <input name="color" type="hidden" value="<?php  echo $vehiculo[8];?>" />
+                        <input name="kilometraje" type="hidden"
                             value="<?php  echo $vehiculo[9];?>" />
-                        <input id="id_proxITV" name="proxITV" type="hidden" value="<?php  echo $vehiculo[10];?>" />
-                        <input id="id_numBastidor" name="numBastidor" type="hidden"
+                        <input name="proxITV" type="hidden" value="<?php  echo $vehiculo[10];?>" />
+                        <input name="numBastidor" type="hidden"
                             value="<?php  echo $vehiculo[11];?>" />
                         
                         <?php
                 if(isset($coche) and ($coche["matricula"] == $vehiculo[7])){ ?>
                         <table>
                             <tr>
-                                <th><h2>Coche en edición...</h2></th>
+                                <th>Coche en edición...</th>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>Marca:</td>
@@ -95,7 +96,7 @@
                             </tr>
                             <tr>
                                 <td>Prox. ITV:</td>
-                                <td><input id="id_proxITV" name="proxITV" type="date" value="<?php  echo $vehiculo[10];?>" /></td>
+                                <td><input id="id_proxITV" name="proxITV" type="date" value="<?php echo $vehiculo[10];?>" /></td>
                             </tr>
                         </table><br />
                         
@@ -103,7 +104,8 @@
                         
                             <table>
                             <tr>
-                                <th><h2>Coche <?php echo " ".$i;?></h2></th>
+                                <td><h2>Coche <?php echo " ".$i;?></h2></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>Marca:</td>
@@ -150,12 +152,12 @@
                         </button>
                         <?php } else { ?>
                         <!-- Botón de editar -->
-                        <button id="editar" name="editar" type="submit" class="editar_fila">
+                        <button name="editar" type="submit" class="editar_fila">
                             <img src="../img/edite_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar coche">
                         </button>
                         <?php } ?>
-                        <button id="borrar" name="borrar" type="submit" class="editar_fila">
+                        <button name="borrar" type="submit" class="editar_fila">
                             <img src="../img/delete_button.jpg" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Borrar coche">
                         </button><br /><br />
@@ -173,19 +175,20 @@
                 <div class="fila_vehiculo_moto">
                     <div class="dato_vehiculo_moto">
 
-                        <input id="id_matricula" name="matricula" type="hidden" value="<?php echo $vehiculo[7];?>" />
-                        <input id="id_color" name="color" type="hidden" value="<?php  echo $vehiculo[8];?>" />
-                        <input id="id_kilometraje" name="kilometraje" type="hidden"
+                        <input name="matricula" type="hidden" value="<?php echo $vehiculo[7];?>" />
+                        <input name="color" type="hidden" value="<?php  echo $vehiculo[8];?>" />
+                        <input name="kilometraje" type="hidden"
                             value="<?php  echo $vehiculo[9];?>" />
-                        <input id="id_proxITV" name="proxITV" type="hidden" value="<?php  echo $vehiculo[10];?>" />
-                        <input id="id_numBastidor" name="numBastidor" type="hidden"
+                        <input name="proxITV" type="hidden" value="<?php  echo $vehiculo[10];?>" />
+                        <input id="id_numBastidorM" name="numBastidor" type="hidden"
                             value="<?php  echo $vehiculo[11];?>" />
                         
                         <?php
                 if(isset($moto) and ($moto["matricula"] == $vehiculo[7])){ ?>
                         <table>
                             <tr>
-                                <th><h2>Moto en edición...</h2></th>
+                                <td><h2>Moto en edición...</h2></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>Marca:</td>
@@ -221,7 +224,8 @@
                         
                             <table>
                             <tr>
-                                <th><h2>Moto <?php echo " ".$n;?></h2></th>
+                                <th><Moto <?php echo " ".$n;?>></th>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>Marca:</td>
@@ -268,12 +272,12 @@
                         </button>
                         <?php } else { ?>
                         <!-- Botón de editar -->
-                        <button id="editar" name="editar" type="submit" class="editar_fila">
+                        <button name="editar" type="submit" class="editar_fila">
                             <img src="../img/edite_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar moto">
                         </button>
                         <?php } ?>
-                        <button id="borrar" name="borrar" type="submit" class="editar_fila">
+                        <button name="borrar" type="submit" class="editar_fila">
                             <img src="../img/delete_button.jpg" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Borrar moto">
                         </button><br /><br />

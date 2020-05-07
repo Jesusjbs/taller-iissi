@@ -49,19 +49,20 @@
             <form method="post" action="controlador_perfil.php">
                 <div class="fila_usuario">
                     <div class="dato_usuario">
-                        <input id="id_dni" name="dni" type="hidden" value="<?php echo $consulta[0];?>" />
-                        <input id="id_nombre" name="nombre" type="hidden" value="<?php  echo $consulta[1];?>" />
-                        <input id="id_apellido" name="apellidos" type="hidden" value="<?php  echo $consulta[2];?>" />
-                        <input id="id_telefono" name="telefono" type="hidden" value="<?php  echo $consulta[3];?>" />
-                        <input id="id_email" name="email" type="hidden" value="<?php  echo $consulta[4];?>" />
-                        <input id="id_direccion" name="direccion" type="hidden" value="<?php  echo $consulta[5];?>" />
-                        <input id="id_contraseña" name="contraseña" type="hidden" value="<?php  echo $consulta[6];?>" />
+                        <input name="dni" type="hidden" value="<?php echo $consulta[0];?>" />
+                        <input name="nombre" type="hidden" value="<?php  echo $consulta[1];?>" />
+                        <input name="apellidos" type="hidden" value="<?php  echo $consulta[2];?>" />
+                        <input name="telefono" type="hidden" value="<?php  echo $consulta[3];?>" />
+                        <input name="email" type="hidden" value="<?php  echo $consulta[4];?>" />
+                        <input name="direccion" type="hidden" value="<?php  echo $consulta[5];?>" />
+                        <input name="contraseña" type="hidden" value="<?php  echo $consulta[6];?>" />
                         
                         <?php
                 if(isset($cliente)){ ?>
                         <table>
                             <tr>
-                                <th><h2>Editando datos...</h2></th>
+                                <td><h2>Editando datos...</h2></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>DNI:</td>
@@ -105,7 +106,8 @@
                         
                             <table>
                             <tr>
-                                <th><h2>MIS DATOS</h2></th>
+                                <td><h2>MIS DATOS</h2></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>DNI:</td>

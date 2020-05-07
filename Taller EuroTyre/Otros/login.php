@@ -45,8 +45,6 @@
 	<head>
 		<meta charset="utf-8">
 
-
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Taller EuroTyre</title>
 		<link rel="stylesheet" type="text/css" href="../css/style_index.css" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
@@ -65,14 +63,14 @@
 	}
 	?>
 
-		<section id="id_superior">
+		<div id="id_superior">
 			<header>
-				<img id="id_logo" src="../img/logo.png" height="125px" alt="Logo EuroTyre"/>
+				<img id="id_logo" src="../img/logo.png" alt="Logo EuroTyre"/>
 			</header>
-		</section>
+		</div>
 
         <!-- Divisor central de login -->		
-		<section id="id_principal">
+		<div id="id_principal">
         <!-- Login del usuario -->
 			<div id="id_secundario">
 				<div id="id_transparencia"></div>
@@ -100,7 +98,7 @@
 					<a id="id_btregistro" href="../ClienteCL/formulario_usuario.php">Regístrate</a>
 				</div>
 			</div>
-		</section>
+		</div>
         <!-- Divisor inferior footer -->		
 		
 		<div id="id_inferior">

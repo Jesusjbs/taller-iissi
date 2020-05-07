@@ -29,7 +29,6 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title>Registro Vehículo</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
@@ -60,7 +59,7 @@
 
             <div>
                 <input id="id_tipo2" type="radio" name="tipo" value="MOTO" <?php if($registro["tipo"]=="MOTO") echo ' checked '; ?>/>
-                <label for=="id_tipo2">Moto</label>
+                <label for="id_tipo2">Moto</label>
             </div>
             <div>
                 <input id="id_tipo1.1" type="checkbox" name="furgoneta" />
@@ -116,6 +115,6 @@
         </fieldset>
     </form>
 
-    <body>
+    </body>
 
 </html>

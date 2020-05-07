@@ -48,7 +48,8 @@
                 if(isset($administrador)){ ?>
                         <table>
                             <tr>
-                                <th><h2>Editando datos...</h2></th>
+                                <td><h2>Editando datos...</h2></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>DNI:</td>
@@ -76,7 +77,8 @@
                         
                             <table>
                             <tr>
-                                <th><h2>MIS DATOS</h2></th>
+                                <td><h2>MIS DATOS</h2></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>DNI:</td>
@@ -114,7 +116,7 @@
                         </button>
                         <?php } else { ?>
                         <!-- Botón de editar -->
-                        <button id="editar" name="editar" type="submit" class="editar_fila">
+                        <button name="editar" type="submit" class="editar_fila">
                             <img src="../img/UserEdite.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar perfil">
                         </button>

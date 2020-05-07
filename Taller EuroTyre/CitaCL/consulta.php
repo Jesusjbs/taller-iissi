@@ -65,7 +65,8 @@
 	?>
         <table>
             <tr>
-                <th><h2>Cita con ID: <?php echo $fila["NUMCITA"]; ?></h2></th>
+                <td><h2>Cita con ID: <?php echo $fila["NUMCITA"]; ?></h2></td>
+                <td></td>
             </tr>
             <tr>
                 <td>Fecha de Solicitud:</td>

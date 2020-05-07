@@ -28,7 +28,6 @@
 	<head>
 		<meta charset="utf-8">
 
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Inicio</title>
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="../css/style_home.css" />
@@ -56,7 +55,7 @@
 					<h1>Solicitar Cita</h1>
 					<br/>
 					<label for="id_vehiculo">Elige de entre tus vehículos*:</label>
-					<select name="auto" id="id_vehiculo" required>
+					<select name="auto" id="id_vehiculo">
 						  <?php
 							require_once("../Otros/gestionBD.php");
 							require_once("../VehiculoCL/gestionarVehiculo.php");
@@ -64,12 +63,10 @@
 							$coches = consultaCoche($conexion,$_SESSION["login"]);
 							$motos = consultaMoto($conexion,$_SESSION["login"]);
 							foreach($coches as $coche) {	?>
-								<option value="<?php echo $coche[7] ?>">
-								<?php echo $coche[26] . " "; echo $coche[17]; ?></option>
+								<option value="<?php echo $coche[7] ?>"><?php echo $coche[26] . " "; echo $coche[17]; ?></option>
 							<?php }
 							foreach($motos as $moto) {	?>
-								<option value="<?php echo $moto[7] ?>">
-								<?php echo $moto[23] . " "; echo $moto[16]; ?></option>
+								<option value="<?php echo $moto[7] ?>"><?php echo $moto[23] . " "; echo $moto[16]; ?></option>
 							<?php }
 							cerrarConexionBD($conexion);
 						?>
@@ -102,8 +99,8 @@
 					<br/><br/>
 
 					<div id="id_divPresupuesto">
-						<input id="id_presuspuesto" name="presupuesto" type="checkbox"/>
 						<label for="id_presupuesto">Quiero solicitar un presupuesto</label>
+						<input id="id_presupuesto" name="presupuesto" type="checkbox"/>
 					</div>
 					<br/><br/>
 

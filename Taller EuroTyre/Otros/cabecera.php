@@ -1,30 +1,28 @@
 <link rel="stylesheet" type="text/css" href="../css/style_cabecera.css" />
 
-<section id="id_superior">
+<div id="id_superior">
     <header>
 
             <?php
         if(isset($_SESSION["login"])){ ?>
-            <img id="id_logo" src="../img/logo.png" height="125px" alt="Logo EuroTyre" />
+            <img id="id_logo" src="../img/logo.png" alt="Logo EuroTyre" />
 
             <div id="id_divPerfil">
                 <div id="id_divSesion">Sesión: <a title="Mi Perfil" href="../ClienteCL/Perfil.php"><?php echo " ".$_SESSION["login"]; ?></a></div>
                 <div><a title="Cerrar Sesión" href="../Otros/login.php">Cerrar Sesión</a></div>
-                <div id="id_userLogo"><a title="Mi Perfil" href="../ClienteCL/Perfil.php" ><img id="id_logo" src="../img/UserLogo.png"  
-                    style="width: 45px; height=50px;" alt="Logo User" /></a></div>
+                <div id="id_userLogo"><a title="Mi Perfil" href="../ClienteCL/Perfil.php" ><img id="id_logoUser" src="../img/UserLogo.png" alt="Logo User" /></a></div>
             </div>    
         <?php
         } else if(isset($_SESSION["admin"])) { ?>
-            <img id="id_logo" src="../img/logo.png" height="125px" alt="Logo EuroTyre" />
+            <img id="id_logo" src="../img/logo.png" alt="Logo EuroTyre" />
 
             <div id="id_divPerfil">
                 <div id="id_divSesion">Sesión: <a title="Mi Perfil" href="../AdminAD/Perfil.php"> <?php echo " ".$_SESSION["admin"]; ?></a></div>
                 <div><a title="Cerrar Sesión" href="../Otros/login.php">Cerrar Sesión</a></div>
-                <div id="id_userLogo"><a title="Mi Perfil" href="../AdminAD/Perfil.php" ><img id="id_logo" src="../img/UserLogo.png"
-                style="width: 45px; height=50px;" alt="Logo User" /></a></div>            
+                <div id="id_userLogo"><a title="Mi Perfil" href="../AdminAD/Perfil.php" ><img id="id_logoUser" src="../img/UserLogo.png" alt="Logo User" /></a></div>            
             </div>
         <?php } else{ ?>
-            <img id="id_logoFix" src="../img/logo.png" height="125px" alt="Logo EuroTyre" />
+            <img id="id_logoFix" src="../img/logo.png" alt="Logo EuroTyre" />
             
             <div id="id_divInicia">
                 <a title="Iniciar Sesión" href="../Otros/login.php">Iniciar Sesión</a>
@@ -59,4 +57,4 @@
         </nav>
         <?php } ?>
     </header>
-</section>
+</div>

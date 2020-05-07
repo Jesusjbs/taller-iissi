@@ -6,11 +6,18 @@
 #id_logo {
 	margin-left: -35%;
 	margin-top: 1%;
+	height: 125px;
+}
+
+#id_logoUser {
+	width: 45px; 
+	height: 50px;
 }
 
 #id_logoFix {
 	margin-left: 3%;
 	margin-top: 1%;
+	height: 125px;
 }
 
 #id_divInicia {

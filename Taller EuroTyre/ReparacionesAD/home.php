@@ -77,25 +77,26 @@
             <form method="post" action="controlador_reparacion.php">
                 <div class="fila_reparacion">
                     <div class="datos_reparacion">
-                        <input id="id_oidr" name="oid_r" type="hidden" value="<?php echo $fila["OID_R"];?>" />
-                        <input id="id_estado" name="estado" type="hidden" value="<?php  echo $fila["ESTADO"];?>" />
-                        <input id="id_fechaSolicitud" name="fechaSolicitud" type="hidden" value="<?php  echo $fila["FECHASOLICITUD"];?>" />
-                        <input id="id_fechaInicio" name="fechaInicio" type="hidden" value="<?php  echo $fila["FECHAINICIO"];?>" />
-                        <input id="id_fechaFin" name="fechaFin" type="hidden"
+                        <input name="oid_r" type="hidden" value="<?php echo $fila["OID_R"];?>" />
+                        <input name="estado" type="hidden" value="<?php  echo $fila["ESTADO"];?>" />
+                        <input name="fechaSolicitud" type="hidden" value="<?php  echo $fila["FECHASOLICITUD"];?>" />
+                        <input name="fechaInicio" type="hidden" value="<?php  echo $fila["FECHAINICIO"];?>" />
+                        <input name="fechaFin" type="hidden"
                             value="<?php  echo $fila["FECHAFIN"];?>" />
-                        <input id="id_matriculaC" name="matriculaC" type="hidden" value="<?php  echo $fila["MATRÍCULAC"];?>" />
-                        <input id="id_matriculaM" name="matriculaM" type="hidden" value="<?php  echo $fila["MATRÍCULAM"];?>" />
-                        <input id="id_numCita" name="numCita" type="hidden" value="<?php  echo $fila["NUMCITA"];?>" />
-                        <input id="id_tienePresupuesto" name="tienePresupuesto" type="hidden" value="<?php  echo $fila["TIENEPRESUPUESTO"];?>" />
-                        <input id="id_dni" name="dni" type="hidden" value="<?php  echo $fila["DNI"];?>" />
-
+                        <input name="matriculaC" type="hidden" value="<?php  echo $fila["MATRÍCULAC"];?>" />
+                        <input name="matriculaM" type="hidden" value="<?php  echo $fila["MATRÍCULAM"];?>" />
+                        <input name="numCita" type="hidden" value="<?php  echo $fila["NUMCITA"];?>" />
+                        <input name="tienePresupuesto" type="hidden" value="<?php  echo $fila["TIENEPRESUPUESTO"];?>" />
+                        <input name="dni" type="hidden" value="<?php  echo $fila["DNI"];?>" />
+                        
                         <?php
                 if(isset($reparacion) and ($reparacion["oid_r"] == $fila["OID_R"])){ ?>
                         <table>
                             <tr>
-                                <th>
+                                <td>
                                     <h2>Editando reparación con ID: <?php echo $fila["OID_R"]; ?></h2>
-                                </th>
+                                </td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>Fecha de Solicitud:</td>
@@ -127,15 +128,16 @@
                             <tr>
                                 <td>DNI:</td>
                                 <td><?php echo $fila["DNI"]; ?></td>
-                            </tr><br />
+                            </tr>
                         </table>
                         <?php } else { ?>
 
                         <table>
                             <tr>
-                                <th>
+                                <td>
                                     <h2>Reparación con ID: <?php echo $fila["OID_R"]; ?></h2>
-                                </th>
+                                </td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>Fecha de Solicitud:</td>
@@ -166,7 +168,7 @@
                                 <td><?php echo $fila["DNI"];?></td>
                             </tr>
 
-                        </table><br />
+                        </table>
 
                         <?php 
                     } ?>
@@ -175,35 +177,36 @@
                     <div class="id_botonesReparacion">
                         <?php
                 if(isset($reparacion) and ($reparacion["oid_r"] == $fila["OID_R"])){ ?>
-                        <!-- Botón de grabar -->
+                        <!-- Botón de grabar --><br />
                         <button title="Guardar Modificación" id="grabar" name="grabar" type="submit" class="editar_fila">
                             <img src="../img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Guardar modificación">
                         </button>
                         <?php } else { ?>
                         <!-- Botón de editar -->
-                        <button title="Editar Reparación" id="editar" name="editar" type="submit" class="editar_fila">
+                        <button title="Editar Reparación" name="editar" type="submit" class="editar_fila">
                             <img src="../img/edit_repair.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar reparacion">
                         </button><br /><br />
-                        </div>
+                    
                         <?php } ?>
+                    </div>
                 </div>
             </form>
         </article>
         <?php if(cuentaFactura($conexion, $fila["OID_R"]) == 1) { ?>
-                <label id="id_formFact" >Factura:</label>
+                <label>Factura:</label>
                 <form action="../FacturaAD/factura.php" method="post">
                     <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
-                    <button title="Ver Factura" id="id_formFact" type="submit"><img src="../img/see_bill.png" 
+                    <button title="Ver Factura" type="submit"><img src="../img/see_bill.png" 
                         style="width: 30px; height: 30px;" alt="Ver Factura"></button>
                     </form>
         <?php } else { ?>
-            <label id="id_formFact" >Factura:</label>
+            <label>Factura:</label>
                 <form action="../FacturaAD/formulario_factura.php" method="post">
                     <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
                     <input type="hidden" value="<?php echo $fila["DNI"];?>" name="dni" />
-                    <button title="Crear Factura" id="id_formFact" type="submit"><img src="../img/add_bill.png" 
+                    <button title="Crear Factura" type="submit"><img src="../img/add_bill.png" 
                         style="width: 30px; height: 30px;" alt="Crear Factura"></button>
                 </form>
             <?php }

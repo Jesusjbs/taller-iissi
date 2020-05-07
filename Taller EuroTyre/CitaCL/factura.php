@@ -47,8 +47,8 @@
         <main>
             <table id="my-table">
                 <tr>
-                    <th><h2>Factura con ID: <?php echo $fact["NUMFACTURA"]; ?></h2></th>
-                    <th></th>
+                    <td><h2>Factura con ID: <?php echo $fact["NUMFACTURA"]; ?></h2></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Descripción:</td>
