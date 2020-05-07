@@ -73,7 +73,8 @@
                             </tr>
                             <tr>
                                 <td>Mano de Obra:</td>
-                                <td><input id="id_manoDeObra" name="manoDeObra" type="text" value="<?php echo $fila["MANODEOBRA"];?>" /></td>
+                                <td><input id="id_manoDeObra" name="manoDeObra" type="text" 
+                                    value="<?php echo str_replace(',','.', $fila["MANODEOBRA"]);?>" /></td>
                             </tr>
                             <tr>
                                 <td>Tipo de Pago:</td>
@@ -81,11 +82,11 @@
                             </tr>
                             <tr>
                                 <td>IVA:</td>
-                                <td><input id="id_iva" name="IVA" type="text" value="<?php echo $fila["IVA"];?>"/></td>
+                                <td><input id="id_iva" name="IVA" type="text" 
+                                    value="<?php echo str_replace(',','.', $fila["IVA"]);?>"/></td>
                             </tr>
                             <tr>
-                                <td>IMPORTE:</td>
-                                <td><?php echo $fila["IMPORTE"]; ?></td>
+                                <td>IMPORTE: <?php echo " ".$fila["MANODEOBRA"] + $fila["IMPORTE"]." €"; ?></td>
                             </tr><br />
                         </table>
                         <?php } else { ?>
@@ -118,7 +119,7 @@
                             </tr>
                             <tr>
                                 <td>IVA:</td>
-                                <td><?php echo substr($fila["IVA"],1)." %"; ?></td>
+                                <td><?php echo 100*number_format(str_replace(',','.', $fila["IVA"]),2)." %"; ?></td>
                             </tr>
                             <?php
                             $lineas = consulta_linea($conexion, $fila["NUMFACTURA"],  $fila["OID_R"]);
@@ -145,8 +146,7 @@
                             </tr>
                             <?php $n++; } ?>
                             <tr>
-                                <th>Importe total:</th>
-                                <th><?php echo $fila["MANODEOBRA"] + $fila["IMPORTE"]." €";?></th>
+                                <th>Importe total: <?php echo " ".$fila["MANODEOBRA"] + $fila["IMPORTE"]." €";?></th>
                             </tr>
                         </table><br />
 
