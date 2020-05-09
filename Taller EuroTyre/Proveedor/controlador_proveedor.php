@@ -11,7 +11,7 @@
 		$_SESSION["prov"] = $prov;
 			
 		if (isset($_REQUEST["editar"])) Header("Location: proveedores.php"); 
-		else if (isset($_REQUEST["grabar"])) Header("Location: accion_modificar_proveedor.php");
+		else if (isset($_REQUEST["grabar"])) Header("Location: validacion_modificar_proveedor.php");
 		else if(isset($_REQUEST["borrar"]))Header("Location: accion_borrar_proveedor.php"); 
 	}
 	else 

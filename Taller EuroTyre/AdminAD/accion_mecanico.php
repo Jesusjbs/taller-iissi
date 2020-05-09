@@ -28,18 +28,14 @@
 
 <body>
 	<?php
-		include_once("../Otros/cabeceraAdmin.php");
+		include_once("../Otros/cabecera.php");
 	?>
 
 	<main>
         <?php 	
-            if(contratarMecanico($conexion, $nuevoMecanico)) { ?>		
-			
-			<h1>Se ha registrado correctamente el mecánico con dni <?php echo $nuevoMecanico["dni"] ;?></h1>
-			<div >	
-				Pulsa <a href="../AdminAD/mecanicos.php">aquí</a> para acceder a la vista de mecánicos .
-			</div>
-		<?php } else { ?>
+            if(contratarMecanico($conexion, $nuevoMecanico)) {
+				Header("Location: mecanicos.php");
+		 } else { ?>
 			<h1>Ya existe un mecánico con el dni introducido.</h1>
 			<div >	
 				Pulsa <a href="formulario_mecanico.php">aquí</a> para volver al formulario.

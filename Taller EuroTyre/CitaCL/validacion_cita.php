@@ -35,12 +35,15 @@
 	// Validación en servidor del formulario de alta de cita
     
 	function validarDatosCita($nuevaCita){
-        // Validación del día
-        $fecha_actual = date("Y/m/d");
+		// Validación del día
+		$fecha_actual = date("Y/m/d");
         $fecha_entrada = date('Y/m/d',strtotime($nuevaCita['dia']));
-		if($fecha_actual >= $fecha_entrada) {
+		
+		if($nuevaCita['dia'] == "") {
+			$errores[] = "<p>La fecha de solicitud es obligatoria</p>";
+		} else if($fecha_actual >= $fecha_entrada) {
 			$errores[] = "<p>La fecha de solicitud debe de ser posterior a la fecha actual</p>";
-        }
+		}
 		return $errores;
 	}
 ?>

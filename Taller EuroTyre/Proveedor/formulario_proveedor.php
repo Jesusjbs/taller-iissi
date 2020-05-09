@@ -20,7 +20,7 @@
 	// Si no existen datos del formulario en la sesión, se crea una entrada con valores por defecto
 	if (!isset($_SESSION['registroProveedor'])) {
 		$registroProveedor['nombre'] = "";
-        $registroProveedor['tipoProveedor'] = "DePiezas";
+        $registroProveedor['tipoProveedor'] = "Piezas";
         $registroProveedor['email'] = "";
         $registroProveedor['telefono'] = "";
 	
@@ -70,10 +70,10 @@
             </div>
             <div>
                 <label for="id_tipoProveedor">Tipo de Proveedor*:</label>
-                <input id="id_tipoProveedor" type="radio" name="tipoProveedor" value="DePiezas" <?php if($registroProveedor["tipoProveedor"]=="DePiezas") echo ' checked ' ; ?>/>
+                <input id="id_tipoProveedor" type="radio" name="tipoProveedor" value="Piezas" <?php if($registroProveedor["tipoProveedor"]=="Piezas") echo ' checked ' ; ?>/>
                 <label for = "id_tipoProveedor">Piezas</label>
             
-                <input id="id_tipoProveedor1" type="radio" name="tipoProveedor" value="DeResiduos" <?php if($registroProveedor["tipoProveedor"]=="DeResiduos") echo ' checked '; ?>/>
+                <input id="id_tipoProveedor1" type="radio" name="tipoProveedor" value="Residuos" <?php if($registroProveedor["tipoProveedor"]=="Residuos") echo ' checked '; ?>/>
                 <label for = "id_tipoProveedor1">Residuos</label>
             </div>
             <div>

@@ -11,8 +11,8 @@
 		$_SESSION["moto"] = $moto;
 			
 		if (isset($_REQUEST["editar"])) Header("Location: mis_vehiculos.php"); 
-		else if (isset($_REQUEST["grabar"])) Header("Location: accion_modificar_moto.php");
-		else if(isset($_REQUEST["borrar"]))Header("Location: accion_borrar_moto.php"); 
+		else if (isset($_REQUEST["grabar"])) Header("Location: validacion_modificar_vehiculo.php");
+		else if(isset($_REQUEST["borrar"]))Header("Location: accion_borrar_moto.php");
 	}
 	else 
 		Header("Location: mis_vehiculos.php");

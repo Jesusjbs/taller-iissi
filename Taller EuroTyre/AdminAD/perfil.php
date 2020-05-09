@@ -14,6 +14,10 @@
             
             $conexion = crearConexionBD(); 
             $consultas = datosMecanico($conexion,$_SESSION["admin"]);
+            if(isset($_SESSION["errores"])){
+                $errores = $_SESSION["errores"];
+                unset($_SESSION["errores"]);
+            }
 		    cerrarConexionBD($conexion);
         }
 ?>
@@ -30,6 +34,13 @@
 
     <?php
     include_once("../Otros/cabecera.php");
+    	// Mostrar los errores de validación (Si los hay)
+	if (isset($errores) && count($errores)>0) { 
+	    echo "<div id=\"div_errores\" class=\"error\">";
+		echo "<h4> Errores en el formulario:</h4>";
+    	foreach($errores as $error) echo $error; 
+		    echo "</div>";
+	}
 
 	foreach($consultas as $consulta) {
 	?>
@@ -37,13 +48,12 @@
             <form method="post" action="controlador_perfil.php">
                 <div class="fila_usuario">
                     <div class="dato_usuario">
-                        <input id="id_dni" name="dni" type="hidden" value="<?php echo $consulta[0];?>" />
-                        <input id="id_nombre" name="nombre" type="hidden" value="<?php  echo $consulta[1];?>" />
-                        <input id="id_apellido" name="apellido" type="hidden" value="<?php  echo $consulta[2];?>" />
-                        <input id="id_especialidad" name="especialidad" type="hidden" value="<?php  echo $consulta[3];?>" />
-                        <input id="id_contraseña" name="contraseña" type="hidden" value="<?php  echo $consulta[4];?>" />
-
-                        
+                        <input name="dni" type="hidden" value="<?php echo $consulta[0];?>" />
+                        <input name="nombre" type="hidden" value="<?php  echo $consulta[1];?>" />
+                        <input name="apellido" type="hidden" value="<?php  echo $consulta[2];?>" />
+                        <input name="especialidad" type="hidden" value="<?php  echo $consulta[3];?>" />
+                        <input name="contraseña" type="hidden" value="<?php  echo $consulta[4];?>" />
+          
                         <?php
                 if(isset($administrador)){ ?>
                         <table>
@@ -68,8 +78,16 @@
                                 <td><input id="id_especialidad" name="especialidad" type="text" value="<?php echo $consulta[3];?>" /></td>
                             </tr>
                             <tr>
-                                <td>Contraseña:</td>
+                                <td>Antigua contraseña:</td>
+                                <td><input id="id_antiguaContraseña" name="antigua" type="password" /></td>
+                            </tr>
+                            <tr>
+                                <td>Nueva contraseña:</td>
                                 <td><input id="id_contraseña" name="contraseña" type="password" /></td>
+                            </tr>
+                            <tr>
+                                <td>Confirmar nueva contraseña:</td>
+                                <td><input id="id_confirmarNueva" name="confirmar" type="password" /></td>
                             </tr>
                         </table><br />
                         

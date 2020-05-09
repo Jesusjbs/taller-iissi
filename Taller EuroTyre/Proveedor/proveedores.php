@@ -19,6 +19,10 @@
             $esJefe = esJefe($conexion, $_SESSION["admin"]);
             $consulta = consultaProveedores($conexion);
 
+            if(isset($_SESSION["errores"])){
+                $errores = $_SESSION["errores"];
+                unset($_SESSION["errores"]);
+            }
 			cerrarConexionBD($conexion);
 		}
 
@@ -36,6 +40,12 @@
 
     <?php
     include_once("../Otros/cabecera.php");
+    if (isset($errores) && count($errores)>0) { 
+	    echo "<div id=\"div_errores\" class=\"error\">";
+		echo "<h4> Errores en el formulario:</h4>";
+    	foreach($errores as $error) echo $error; 
+		    echo "</div>";
+	}
     ?>
 
     <main>
@@ -48,11 +58,11 @@
         <form method="post" action="controlador_proveedor.php">
                 <div class="fila_proveedor">
                     <div class="dato_proveedor">
-                        <input id="id_oidP" name="oid_p" type="hidden" value="<?php echo $proveedor[0];?>" />
-                        <input id="id_nombre" name="nombre" type="hidden" value="<?php echo $proveedor[2];?>" />
-                        <input id="id_tipoProveedor" name="tipoProveedor" type="hidden" value="<?php  echo $proveedor[1];?>" />
-                        <input id="id_email" name="email" type="hidden" value="<?php  echo $proveedor[3];?>" />
-                        <input id="id_telefono" name="telefono" type="hidden" value="<?php  echo $proveedor[4];?>" />
+                        <input name="oid_p" type="hidden" value="<?php echo $proveedor[0];?>" />
+                        <input name="nombre" type="hidden" value="<?php echo $proveedor[2];?>" />
+                        <input name="tipoProveedor" type="hidden" value="<?php  echo $proveedor[1];?>" />
+                        <input name="email" type="hidden" value="<?php  echo $proveedor[3];?>" />
+                        <input name="telefono" type="hidden" value="<?php  echo $proveedor[4];?>" />
                         <?php
                 if(isset($prov) and ($prov["oid_p"] == $proveedor[0])){ ?>
                         <table>

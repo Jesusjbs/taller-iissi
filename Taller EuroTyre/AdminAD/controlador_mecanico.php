@@ -12,7 +12,7 @@
 		$_SESSION["mec"] = $mec;
 			
 		if (isset($_REQUEST["editar"])) Header("Location: mecanicos.php"); 
-		else if (isset($_REQUEST["grabar"])) Header("Location: accion_modificar_mecanico.php");
+		else if (isset($_REQUEST["grabar"])) Header("Location: validar_modificar_mecanico.php");
 		else if(isset($_REQUEST["borrar"]))Header("Location: accion_borrar_mecanico.php"); 
 	}
 	else 

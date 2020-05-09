@@ -28,20 +28,16 @@
 
 <body>
 	<?php
-		include_once("../Otros/cabeceraAdmin.php");
+		include_once("../Otros/cabecera.php");
 	?>
 
 	<main>
         <?php 	
-            if(contratarProveedor($conexion, $registroProveedor)) { ?>		
-			
-			<h1>Se ha registrado correctamente el proveedor.</h1>
-			<div >	
-				Pulsa <a href="proveedores.php">aquí</a> para acceder a la vista de proveedores .
-			</div>
-		<?php } else { ?>
-			<h1>Fallo al realizar la operación.</h1>
-			<div >	
+            if(contratarProveedor($conexion, $registroProveedor)) {
+				Header("Location: proveedores.php");
+		 } else { ?>
+			<h1>Ya existe un proveedor con alguno de los datos registrados.</h1>
+			<div >
 				Pulsa <a href="formulario_proveedor.php">aquí</a> para volver al formulario.
 			</div>
 		<?php } ?>

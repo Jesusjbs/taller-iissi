@@ -19,8 +19,10 @@
 	else
 		$cita = $_SESSION['cita'];
 	
-	if (isset($_SESSION["errores"]))
+	if (isset($_SESSION["errores"])){
 		$errores = $_SESSION["errores"];
+		unset($_SESSION["errores"]);
+	}
 ?>
 
 <!DOCTYPE html>
@@ -45,32 +47,37 @@
 	    	echo "<div id=\"div_errores\" class=\"error\">";
 			echo "<h4> Errores en el formulario:</h4>";
     		foreach($errores as $error) echo $error; 
-    		echo "</div>";
-  		}
+			echo "</div>";
+		}
+		
 		?>
 
 		<div id="id_cita">
-			<form id="id_formCita" method="POST" action="validacion_cita.php">
+			<form id="id_formCita" method="POST" action="validacion_cita.php" novalidate>
 				<fieldset id="id_campo">
 					<h1>Solicitar Cita</h1>
 					<br/>
-					<label for="id_vehiculo">Elige de entre tus vehículos*:</label>
-					<select name="auto" id="id_vehiculo">
-						  <?php
-							require_once("../Otros/gestionBD.php");
-							require_once("../VehiculoCL/gestionarVehiculo.php");
-						 	$conexion = crearConexionBD();
-							$coches = consultaCoche($conexion,$_SESSION["login"]);
-							$motos = consultaMoto($conexion,$_SESSION["login"]);
-							foreach($coches as $coche) {	?>
-								<option value="<?php echo $coche[7] ?>"><?php echo $coche[26] . " "; echo $coche[17]; ?></option>
-							<?php }
-							foreach($motos as $moto) {	?>
-								<option value="<?php echo $moto[7] ?>"><?php echo $moto[23] . " "; echo $moto[16]; ?></option>
-							<?php }
-							cerrarConexionBD($conexion);
-						?>
-					</select>
+					<div class="div">
+						<label for="id_vehiculo">Elige de entre tus vehículos*:</label>
+						<div class="campo">
+						<select name="auto" id="id_vehiculo">
+							<?php
+								require_once("../Otros/gestionBD.php");
+								require_once("../VehiculoCL/gestionarVehiculo.php");
+								$conexion = crearConexionBD();
+								$coches = consultaCoche($conexion,$_SESSION["login"]);
+								$motos = consultaMoto($conexion,$_SESSION["login"]);
+								foreach($coches as $coche) {	?>
+									<option value="<?php echo $coche[7] ?>"><?php echo $coche[26] . " "; echo $coche[17]; ?></option>
+								<?php }
+								foreach($motos as $moto) {	?>
+									<option value="<?php echo $moto[7] ?>"><?php echo $moto[23] . " "; echo $moto[16]; ?></option>
+								<?php }
+								cerrarConexionBD($conexion);
+							?>
+						</select>
+						</div>
+					</div>
 
 					<br/><br/>
 

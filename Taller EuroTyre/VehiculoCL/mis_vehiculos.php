@@ -18,6 +18,11 @@
                 unset($_SESSION["moto"]);
             }
 
+            if(isset($_SESSION["errores"])){
+                $errores = $_SESSION["errores"];
+                unset($_SESSION["errores"]);
+            }
+
 			$conexion = crearConexionBD();
 
             $consulta = consultaCoche($conexion,$_SESSION["login"]);
@@ -41,6 +46,14 @@
 
     <?php
     include_once("../Otros/cabecera.php");
+
+	// Mostrar los errores de validación (Si los hay)
+	if (isset($errores) && count($errores)>0) { 
+	    echo "<div id=\"div_errores\" class=\"error\">";
+		echo "<h4> Errores en el formulario:</h4>";
+    	foreach($errores as $error) echo $error; 
+		    echo "</div>";
+	}
     ?>
 
     <main>
@@ -224,7 +237,7 @@
                         
                             <table>
                             <tr>
-                                <th><Moto <?php echo " ".$n;?>></th>
+                                <td><h2>Moto <?php echo " ".$n;?></h2></td>
                                 <td></td>
                             </tr>
                             <tr>

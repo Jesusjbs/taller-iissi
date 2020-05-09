@@ -10,14 +10,16 @@
 		}else{
             if(isset($_SESSION["mec"])){
                 $mec = $_SESSION["mec"];
-                unset($_SESSION["mec"]);
             }
-            
 
             $conexion = crearConexionBD();
             $esJefe = esJefe($conexion, $_SESSION["admin"]);
             $consulta = infoMecanicos($conexion);
 
+            if(isset($_SESSION["errores"])){
+                $errores = $_SESSION["errores"];
+                unset($_SESSION["errores"]);
+            }
 			cerrarConexionBD($conexion);
 		}
 
@@ -35,6 +37,12 @@
 
     <?php
     include_once("../Otros/cabecera.php");
+    if (isset($errores) && count($errores)>0) { 
+	    echo "<div id=\"div_errores\" class=\"error\">";
+		echo "<h4> Errores en el formulario:</h4>";
+    	foreach($errores as $error) echo $error; 
+		    echo "</div>";
+	}
     ?>
 
     <main>
@@ -47,21 +55,22 @@
         <form method="post" action="controlador_mecanico.php">
                 <div class="fila_mecanico">
                     <div class="dato_mecanico">
-                        <input id="id_dni" name="dni" type="hidden" value="<?php echo $mecanico[0];?>" />
-                        <input id="id_nombre" name="nombre" type="hidden" value="<?php  echo $mecanico[1];?>" />
-                        <input id="id_apellido" name="apellido" type="hidden" value="<?php  echo $mecanico[2];?>" />
-                        <input id="id_Especialidad" name="Especialidad" type="hidden" value="<?php  echo $mecanico[3];?>" />
-                        <input id="id_jefe" name="jefe" type="hidden" value="<?php  echo $mecanico[4];?>" />
-                        <input id="id_constraseña" name="contraseña" type="hidden" value="<?php  echo $mecanico[5];?>" />
+                        <input name="dni" type="hidden" value="<?php echo $mecanico[0];?>" />
+                        <input name="nombre" type="hidden" value="<?php  echo $mecanico[1];?>" />
+                        <input name="apellido" type="hidden" value="<?php  echo $mecanico[2];?>" />
+                        <input name="Especialidad" type="hidden" value="<?php  echo $mecanico[3];?>" />
+                        <input name="jefe" type="hidden" value="<?php  echo $mecanico[4];?>" />
+                        <input name="contraseña" type="hidden" value="<?php  echo $mecanico[5];?>" />
                         <?php
                 if(isset($mec) and ($mec["dni"] == $mecanico[0])){ ?>
                         <table>
                             <tr>
-                                <th><h2>Trabajador en edición...</h2></th>
+                                <td><h2>Trabajador en edición...</h2></td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>DNI:</td>
-                                <td><input id="id_dni" name="dni" type="text" value="<?php echo $mecanico[0];?>" /></td>
+                                <td><?php echo $mecanico[0];?></td>
                             </tr>
                             <tr>
                                 <td>Nombre:</td>
@@ -73,11 +82,16 @@
                             </tr>
                             <tr>
                                 <td>Especialidad:</td>
-                                <td><input id="id_especialidad" name="Especialiad" type="text" value="<?php echo $mecanico[3];?>" /></td>
+                                <td><input id="id_especialidad" name="Especialidad" type="text" value="<?php echo $mecanico[3];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Jefe:</td>
-                                <td> <input id="id_jefe" name="jefe" type="text" value="<?php echo $mecanico[4];?>" /></td>
+                                <?php if($mecanico[4] == 0) {
+                                    $jefe = "NO";
+                                } else {
+                                    $jefe = "SI";
+                                } ?>
+                                <td> <input id="id_jefe" name="jefe" type="text" value="<?php echo $jefe; ?>" /></td>
                             </tr>
                             <tr>
                                 <td>Contraseña:</td>
@@ -90,10 +104,11 @@
                     <table>
                             <tr>
                             <?php if($mecanico[4] == 1) { ?>
-                                <th><h2>Jefe</h2></th>
+                                <td><h2>Jefe</h2></td>
                             <?php } else { ?>
-                                <th><h2>Trabajador<?php echo " ".$i;?></h2></th>
+                                <td><h2>Trabajador<?php echo " ".$i;?></h2></td>
                             <?php } ?>
+                                <td></td> 
                             </tr>
                             <tr>
                                 <td>DNI:</td>

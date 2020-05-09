@@ -8,8 +8,11 @@
         $nuevoMecanico["dni"] = $_REQUEST["dni"];
         $nuevoMecanico["nombre"] = $_REQUEST["nombre"];
 		$nuevoMecanico["apellido"] = $_REQUEST["apellido"];
-		$nuevoMecanico["Especialidad"] = $_REQUEST["Especialidad"]; 
-
+		$nuevoMecanico["Especialidad"] = $_REQUEST["Especialidad"];
+		if(!isset($_REQUEST["jefe"])) 	$nuevoMecanico["jefe"] = 0;
+		else $nuevoMecanico["jefe"] = 1;
+		$nuevoMecanico["contraseña"] = $_REQUEST["contraseña"]; 
+		$nuevoMecanico["confirmar"] = $_REQUEST["confirmar"]; 
     }
     
 	else // En caso contrario, vamos al formulario
