@@ -29,6 +29,7 @@
 <head>
     <meta charset="utf-8">
     <title>Mi Perfil</title>
+    <link rel="stylesheet" type="text/css" href="../css/style_perfilCL.css" />
 </head>
 
 <body>
@@ -44,7 +45,7 @@
     }
 
 	foreach($consultas as $consulta) {
-	?>
+    ?>
     <article class="perfil">
             <form method="post" action="controlador_perfil.php">
                 <div class="fila_usuario">
@@ -59,7 +60,7 @@
                         
                         <?php
                 if(isset($cliente)){ ?>
-                        <table>
+                        <table id="id_tabla">
                             <tr>
                                 <td><h2>Editando datos...</h2></td>
                                 <td></td>
@@ -106,7 +107,7 @@
                         
                             <table>
                             <tr>
-                                <td><h2>MIS DATOS</h2></td>
+                                <td><h2 id="mis_datos">MIS DATOS</h2></td>
                                 <td></td>
                             </tr>
                             <tr>

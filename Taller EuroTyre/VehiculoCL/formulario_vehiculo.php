@@ -33,6 +33,7 @@
     <title>Registro Vehículo</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/style_nosotros.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style_form_vehiculo.css" />
 
     <link rel="shortcut icon" href="../img/logo.png">
     <link rel="apple-touch-icon" href="../img/logo.png">
@@ -47,26 +48,30 @@
     		echo "</div>";
   		}
     ?>
-    <h1>Registro de vehículo</h1>
-    <p>* Obligatorio</p>
 
+    <div id="id_divVehiculo">
     <form id="id_regVehiculo" method="post" action="validacion_vehiculo.php" novalidate>
-        <fieldset>
-            <div>
+        <fieldset id="id_campo">
+            <h1>Registro de vehículo</h1>
+            <p id="id_obligatorio">* Obligatorio</p>
+            <div id="id_cocheBtn">
                 <input id="id_tipo1" type="radio" name="tipo" value="COCHE" <?php if($registro["tipo"]=="COCHE") echo ' checked '; ?>/>
                 <label for="id_tipo1">Coche</label>
             </div>
 
-            <div>
+            <div id = "id_motoBtn">
                 <input id="id_tipo2" type="radio" name="tipo" value="MOTO" <?php if($registro["tipo"]=="MOTO") echo ' checked '; ?>/>
                 <label for="id_tipo2">Moto</label>
             </div>
-            <div>
+            <br />
+            <div id="id_furgonetaBtn">
                 <input id="id_tipo1.1" type="checkbox" name="furgoneta" />
                 <label for="id_tipo1.1">Furgoneta</label>
             </div>
-            <div>
-                <label for="id_modelo">Vehículo*:</label>
+            <br />
+            <div class="div">
+                <label id = "id_distancia" for="id_modelo">Vehículo*:</label>
+                <div class="campo"> 
                 <select id="id_modelo" name="modelo"> 
                     <?php 
                     require_once("../Otros/gestionBD.php");
@@ -100,21 +105,28 @@
                     ?>
 
                 </select>
+                </div>
             </div>
-            <div>
+            <br />
+            <div class="div">
                 <label for="id_matricula">Matrícula*:</label>
+                <div class="campo">
                 <input id="id_matricula" name="matricula" type="text" value="<?php echo $registro['matricula'];?>" required />
+                </div>
             </div>
-            <div>
+            <br />
+            <div class="div">
                 <label for="id_color">Color:</label>
+                <div class="campo">
                 <input id="id_color" name="color" type="text" value="<?php echo $registro['color'];?>" />
+                </div>
             </div>
-
+            <br />
             <button id="id_enviar" type="submit">Registrar</button>
 
         </fieldset>
     </form>
-
+    </div>
     </body>
 
 </html>
