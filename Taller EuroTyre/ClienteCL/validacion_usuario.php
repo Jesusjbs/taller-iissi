@@ -62,15 +62,13 @@
 
         // Validación del teléfono
 		if($nuevoUsuario["telefono"]=="") 
-            $errores[] = "<p>El telefono no puede estar vacío</p>";
+            $errores[] = "<p>El teléfono no puede estar vacío</p>";
         else if(!preg_match("/^[0-9]{9}+$/", $nuevoUsuario["telefono"])){
             $errores[] = "<p>El telefono debe contener 9 números: " . $nuevoUsuario["telefono"]. "</p>";
         }
 
 		// Validación del email
-		if($nuevoUsuario["email"]==""){ 
-			$errores[] = "<p>El email no puede estar vacío</p>";
-		}else if(!filter_var($nuevoUsuario["email"], FILTER_VALIDATE_EMAIL)){
+		if($nuevoUsuario["email"] != "" && !filter_var($nuevoUsuario["email"], FILTER_VALIDATE_EMAIL)){
 			$errores[] = $error . "<p>El email es incorrecto: " . $nuevoUsuario["email"]. "</p>";
         }else if(strlen($nuevoUsuario["email"])>50){
 			$errores[] = "<p>El email debe de tener menos de 50 caracteres.</p>";

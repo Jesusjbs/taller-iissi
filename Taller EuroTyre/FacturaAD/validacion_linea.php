@@ -33,11 +33,11 @@
 
 		// Validación de la mano de obra		
 		if($nuevaLinea["cantidad"]==""){ 
-			$errores[] = "<p>Las unidades no pueden estar vacía</p>";
+			$errores[] = "<p>Las unidades no pueden estar vacías</p>";
 		}else if(!preg_match("/^[0-9]+$/", $nuevaLinea["cantidad"])) {
             $errores[] = "<p>Las unidades deben ser un número entero</p>";
         }
-        if($nuevaLinea["cantidad"] <= 0){
+        else if($nuevaLinea["cantidad"] <= 0){
             $errores[] = "<p>Las unidades deben ser mayor que cero</p>";
 		}
 

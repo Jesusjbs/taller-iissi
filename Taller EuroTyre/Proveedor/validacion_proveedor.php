@@ -42,9 +42,9 @@
         
         // Validación del teléfono
 		if($nuevoProveedor["telefono"]=="") 
-        $errores[] = "<p>El telefono no puede estar vacío</p>";
+        $errores[] = "<p>El teléfono no puede estar vacío</p>";
         else if(!preg_match("/^[0-9]{9}+$/", $nuevoProveedor["telefono"])){
-        $errores[] = "<p>El telefono debe contener 9 números: " . $nuevoProveedor["telefono"]. "</p>";
+        $errores[] = "<p>El teléfono debe contener 9 números: " . $nuevoProveedor["telefono"]. "</p>";
        }
 
         // Validación del email

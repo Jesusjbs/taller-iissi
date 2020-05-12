@@ -31,7 +31,8 @@
 		$registroProveedor = $_SESSION['registroProveedor'];
 			
 	if (isset($_SESSION["errores"]))
-		$errores = $_SESSION["errores"];
+        $errores = $_SESSION["errores"];
+        unset($_SESSION["errores"]);        
 ?>
 
 
@@ -43,7 +44,7 @@
 
     <title>Registro Proveedor</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/style_nosotros.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style_form_proveedor.css" />
 
     <link rel="shortcut icon" href="../img/logo.png"/>
     <link rel="apple-touch-icon" href="../img/logo.png"/>
@@ -59,35 +60,49 @@
   		}
     ?>
 
-    <h1>Registro de proveedor</h1>
-    <p>*Obligatorio</p>
-
+    <div id="id_divProveedor">
     <form id="id_regProveedor" method="post" action="validacion_proveedor.php" novalidate>
-        <fieldset>
-            <div>
+        <fieldset id="id_campo">
+            <h1>Registro de proveedor</h1>
+            <p id="id_obligatorio">*Obligatorio</p>
+            <br />
+            <div class="div">
                 <label for="id_nombre">Nombre*:</label>
-                <input id="id_nombre" type="text" name="nombre" value="<?php echo $registroProveedor["nombre"]; ?>" required />
+                <div class="campo"> 
+                    <input id="id_nombre" type="text" name="nombre" value="<?php echo $registroProveedor["nombre"]; ?>" required />
+                </div>
             </div>
-            <div>
-                <label for="id_tipoProveedor">Tipo de Proveedor*:</label>
-                <input id="id_tipoProveedor" type="radio" name="tipoProveedor" value="Piezas" <?php if($registroProveedor["tipoProveedor"]=="Piezas") echo ' checked ' ; ?>/>
-                <label for = "id_tipoProveedor">Piezas</label>
-            
-                <input id="id_tipoProveedor1" type="radio" name="tipoProveedor" value="Residuos" <?php if($registroProveedor["tipoProveedor"]=="Residuos") echo ' checked '; ?>/>
-                <label for = "id_tipoProveedor1">Residuos</label>
+            <br />
+            <div class="div">
+                <label for="id_tipoProveedor">Tipo de Proveedor:</label>
+                <div class="campo">
+                    <input id="id_tipoProveedor" type="radio" name="tipoProveedor" 
+                        value="Piezas" <?php if($registroProveedor["tipoProveedor"]=="Piezas") echo ' checked ' ; ?>/>
+                    <label for = "id_tipoProveedor">Piezas</label>
+                
+                    <input id="id_tipoProveedor1" type="radio" name="tipoProveedor" 
+                        value="Residuos" <?php if($registroProveedor["tipoProveedor"]=="Residuos") echo ' checked '; ?>/>
+                    <label for = "id_tipoProveedor1">Residuos</label>
+                </div>
             </div>
-            <div>
+            <br />
+            <div class="div">
                 <label for="id_email">Email:</label>
-                <input id="id_email" name="email" type="text" value="<?php echo $registroProveedor['email'];?>"  />
+                <div class="campo"> 
+                    <input id="id_email" name="email" type="text" value="<?php echo $registroProveedor['email'];?>"  />
+                </div>
             </div>
-            <div>
+            <br />
+            <div class="div">
                 <label for="id_telefono">Teléfono*:</label>
-                <input id="id_telefono" name="telefono" type="text" value="<?php echo $registroProveedor['telefono'];?>" required/>
+                <div class="campo"> 
+                    <input id="id_telefono" name="telefono" type="text" value="<?php echo $registroProveedor['telefono'];?>" required/>
+                </div>
             </div>
             <button id="id_enviar" type="submit">Registrar</button>
         </fieldset>
     </form>
-
+    </div>
     <body>
 
 </html>

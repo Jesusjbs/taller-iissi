@@ -1,5 +1,5 @@
 .error {
-	color : red;	
+	color : #fb1b4c;	
 	border : 2px solid red;
 	padding : 10px;
     margin: 10px;
@@ -9,13 +9,6 @@
 
 body {
     background-color: #3d4045;
-}
-
-#id_altaUsuario {
-    width: 100%;
-    height: 500px;
-    border: 0px;
-    margin: auto;
 }
 
 #id_altaUsuario h1 {
@@ -28,36 +21,101 @@ body {
     background-color: #fbde1b;
 	color: #3D4045;
     opacity: 80%;
-    width: 35%;
-    height: 500px;
+    width: 40%;
+    height: 510px;
     border: 1px solid #000000;
     margin: auto;
     vertical-align: middle;
 }
 
-#id_campoRegister {
-    border: 0px solid;
+#id_campo {
+    border: none;
+    font-size: large;
 }
 
-#id_nombre {
-    float: left;
+#id_obligatorio {
+    margin-top: -2%;
+    color: red;
     margin-left: 20%;
-}
-
-#id_divApellidos {
-    float: right;
-    margin-right: 15%;
 }
 
 .div {
-    margin-left: 20%;
+    font-size: large;
+    margin-left: 10%;
 }
 
 .campo {
-	border-radius: 4px;
-	background-color: #E6E3E2;
+    margin-top: -1.4%;
+    position: absolute;
+    margin-left: 14%;
 }
 
+#id_nombre{
+    font-size: medium;
+    border-radius: 5px;
+    width: 90%;
+    font-family: 'Source Code Pro';
+    margin-top: 1%;
+    margin-left: -135%;
+}
+
+#id_apellidos{
+    font-size: medium;
+    border-radius: 5px;
+    width: 90%;
+    font-family: 'Source Code Pro';
+    margin-top: 1%;    
+    margin-left:-15%;
+}
+#id_dni{
+    font-size: medium;
+    border-radius: 5px;
+    width: 90%;
+    font-family: 'Source Code Pro';
+    margin-top: 0.5%;
+    margin-left: 2%;
+}
+#id_telefono{
+    font-size: medium;
+    border-radius: 5px;
+    width: 110%;
+    font-family: 'Source Code Pro';
+    margin-top: 0.5%;
+    margin-left: 2%;
+}
+
+#id_email{
+    font-size: medium;
+    border-radius: 5px;
+    width: 90%;
+    font-family: 'Source Code Pro';
+    margin-top: 0.5%;
+    margin-left: 2%;
+}
+
+#id_direccion{
+    font-size: medium;
+    border-radius: 5px;
+    width: 100%;
+    font-family: 'Source Code Pro';
+    margin-top: 0.5%;
+    margin-left: 2%;
+}
+#id_contraseña{
+    border-radius: 5px;
+    width: 125%;
+    font-family: 'Source Code Pro';
+    margin-top: 0.5%;
+    margin-left: 2%;
+}
+
+#id_confirmar{
+    border-radius: 5px;
+    width: 125%;
+    font-family: 'Source Code Pro';
+    margin-top: 0.5%;
+    margin-left: 2%;
+}
 #id_enviar {
     margin-left: 40%;
 	border-radius: 16px;
@@ -65,4 +123,9 @@ body {
 	text-decoration: none;
 	background: none;
     cursor: pointer;
+}
+#id_terminos{
+    margin-top: 5%;
+    font-size: medium;
+    text-align: center;
 }

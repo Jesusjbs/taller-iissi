@@ -20,6 +20,7 @@
 			
 	if (isset($_SESSION["errores"]))
 		$errores = $_SESSION["errores"];
+		unset($_SESSION["errores"]);
 ?>
 
 <!DOCTYPE html>
@@ -51,66 +52,78 @@
     		echo "</div>";
   		}
 	?>
+
 	<div id="id_registro">
 	<form id="id_altaUsuario" method="post" action="validacion_usuario.php" novalidate>
 		<h1>Crea una cuenta</h1>
-		<p style="color: red;margin-left: 20%;">* Obligatorio</p>
-		<fieldset id="id_campoRegister">
-		<div id="id_nombreCompleto">
-			<div>
-				<input class="campo" id="id_nombre" name="nombre" type="text" size="15" placeholder="Nombre *"
-					value="<?php echo $formulario['nombre'];?>" required />
+		<p id="id_obligatorio">* Obligatorio</p>
+		<br />
+		<fieldset id="id_campo">
+		  
+			<div class="div">
+				<div class="campo">
+					<input id="id_nombre" name="nombre" type="text" size="15" placeholder="Nombre *"
+						value="<?php echo $formulario['nombre'];?>" required />
+				</div>
 			</div>
-
-			<div id="id_divApellidos">
-				<input class="campo" id="id_apellidos" name="apellidos" type="text" size="20" placeholder="Apellidos *"
-					value="<?php echo $formulario['apellidos'];?>" required />
-			</div>
-			<br><br>
-		</div>
+			<div class="div">
+				<div class="campo">
+					<input id="id_apellidos" name="apellidos" type="text" size="20" placeholder="Apellidos *"
+						value="<?php echo $formulario['apellidos'];?>" required />
+				</div>
+			</div>	
+			<br />
 			<div class="div">
 				<label for="id_dni">DNI*:</label>
-				<input class="campo" id="id_dni" name="dni" type="text" placeholder="12345678" size="12" pattern="^[0-9]{8}"
-					title="Ocho dígitos (sin letra)" value="<?php echo $formulario['dni'];?>" required>
-					<br><br>
+		  		<div class="campo">
+					<input id="id_dni" name="dni" type="text" placeholder="12345678" size="12" pattern="^[0-9]{8}"
+						title="Ocho dígitos (sin letra)" value="<?php echo $formulario['dni'];?>" required>
+				</div>
 			</div>
-
+			<br />
 			<div class="div">
 				<label for="id_telefono">Teléfono*:</label>
-				<input class="campo" id="id_telefono" name="telefono" type="text" size="14" placeholder="XXX-XXX-XXX" 
-				pattern="^[0-9]{9}"
-					title="Nueve dígitos" value="<?php echo $formulario['telefono'];?>" required>
-					<br><br>
+				<div class="campo">
+					<input id="id_telefono" name="telefono" type="text" size="14" placeholder="XXX-XXX-XXX" 
+					pattern="^[0-9]{9}"
+						title="Nueve dígitos" value="<?php echo $formulario['telefono'];?>" required />
+					</div>
 			</div>
-
+			<br />
 			<div class="div">
 				<label for="id_email">Email:</label>
-				<input class="campo" size="30"  id="id_email" name="email" type="email" placeholder="ejemplo@compañia.dominio"
-					value="<?php echo $formulario['email'];?>" />
-					<br><br>
+				<div class="campo">
+					<input size="30"  id="id_email" name="email" type="email" placeholder="ejemplo@compañia.dominio"
+						value="<?php echo $formulario['email'];?>" />
+				</div>
 			</div>
+			<br />
 			
 			<div class="div">
 			<label for="id_direccion">Dirección:</label>
-				<input class="campo" id="id_direccion" name="direccion" type="text" size="35"
-				placeholder="Calle/Avda. (Reina Mercedes) Nº XXX"
+				<div class="campo">
+				<input id="id_direccion" name="direccion" type="text" size="35" placeholder="Calle/Avda. (Reina Mercedes) Nº XXX"
 					value="<?php echo $formulario['direccion'];?>" />
-					<br><br>
+				</div>
 			</div>
+			<br />
+			<div class="div">
+				<label for="id_contraseña">Contraseña*:</label>
+				<div class="campo"> 
+					<input id="id_contraseña" name="contraseña" type="password" 
+						title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número)" required/>
+				</div>
+			</div>
+			<br />
 			
 			<div class="div">
-			<label for="id_contraseña">Contraseña*:</label>
-				<input class="campo" id="id_contraseña" name="contraseña" type="password" title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número)" required/>
-				<br><br>
+				<label for="id_confirmar">Confirmar Contraseña*:</label>
+				<div class="campo">
+					<input id="id_confirmar" name="confirmar" type="password" title="Confirmación de contraseña" required />
+				</div>
 			</div>
-			
-			<div class="div">
-			<label for="id_confirmar">Confirmar Contraseña*:</label>
-				<input class="campo" id="id_confirmar" name="confirmar" type="password" title="Confirmación de contraseña" required />
-				<br>
-			</div>
-			
-			<p style="text-align: center;">Al hacer clic en Enviar, aceptas nuestros <a href="../Otros/terminos.php">Términos y Condiciones</a></p>
+
+			<p id="id_terminos">Al hacer clic en Enviar, aceptas nuestros <a href="../Otros/terminos.php">Términos y Condiciones</a></p>
 
 			<button id="id_enviar" type="submit">Enviar</button>
 			

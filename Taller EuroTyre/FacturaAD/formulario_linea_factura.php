@@ -18,7 +18,8 @@
 		$registroLinea = $_SESSION['registroLinea'];
 			
 	if (isset($_SESSION["errores"]))
-		$errores = $_SESSION["errores"];
+        $errores = $_SESSION["errores"];
+        unset($_SESSION["errores"]);
 ?>
 
 
@@ -31,7 +32,7 @@
 
     <title>Registrar Línea de Factura</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/style_nosotros.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style_form_lineaFact.css" />
 
     <link rel="shortcut icon" href="../img/logo.png">
     <link rel="apple-touch-icon" href="../img/logo.png">
@@ -46,42 +47,50 @@
     		echo "</div>";
   		}
     ?>
-    <h1>Registrar Línea de Factura</h1>
-    <p>* Obligatorio</p>
 
+    <div id="id_divLinea">
     <form id="id_regLinea" method="post" action="validacion_linea.php" novalidate>
         <input type="hidden" name="numFactura" value="<?php echo $registroLinea['numFactura']; ?>" />
-        <fieldset>
-            <div>
+        <fieldset id="id_campo">
+            <h1>Registrar Línea de Factura</h1>
+            <p id="id_obligatorio">* Obligatorio</p>
+            
+            <div class="div">
                 <label for="id_pieza">Pieza*:</label>
-                <select id="id_pieza" name="pieza" required> 
-                    <?php 
-                    require_once("../Otros/gestionBD.php");
-                    require_once("gestionarFacturas.php");
-                    $conexion = crearConexionBD();
-                    $piezas = consultaPiezas($conexion);
-                   
-                    foreach($piezas as $pieza) {
-                      ?>
-                      <datalist label="<?php echo $pieza["NOMBRE"] ?>">
-                            <option value="<?php echo $pieza["OID_P"] ?>">
-                            <?php echo  $pieza["NOMBRE"] ?></option>
-                      </datalist>
-                    <?php } 
-                    cerrarConexionBD($conexion);
-                    ?>
+                <div class="campo">
+                    <select id="id_pieza" name="pieza" required> 
+                        <?php 
+                        require_once("../Otros/gestionBD.php");
+                        require_once("gestionarFacturas.php");
+                        $conexion = crearConexionBD();
+                        $piezas = consultaPiezas($conexion);
+                    
+                        foreach($piezas as $pieza) {
+                        ?>
+                        <datalist label="<?php echo $pieza["NOMBRE"] ?>">
+                                <option value="<?php echo $pieza["OID_P"] ?>">
+                                <?php echo  $pieza["NOMBRE"] ?></option>
+                        </datalist>
+                        <?php } 
+                        cerrarConexionBD($conexion);
+                        ?>
 
-                </select>
+                    </select>
+                </div>
             </div>
-            <div>
+            <br />
+            <div class="div">
                 <label for="id_cantidad">Unidades*:</label>
-                <input id="id_cantidad" name="cantidad" type="text" value="<?php echo $registroLinea['cantidad'];?>" required />
+                <div class="campo">
+                    <input id="id_cantidad" name="cantidad" type="text" value="<?php echo $registroLinea['cantidad'];?>" required />
+                </div>
             </div>
+            <br />
             <button id="id_enviar" type="submit">Añadir</button>
 
         </fieldset>
     </form>
-
+    </div>
     <body>
 
 </html>

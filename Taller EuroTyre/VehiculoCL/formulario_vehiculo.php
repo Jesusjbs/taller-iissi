@@ -20,7 +20,8 @@
 		$registro = $_SESSION['registro'];
 			
 	if (isset($_SESSION["errores"]))
-		$errores = $_SESSION["errores"];
+        $errores = $_SESSION["errores"];
+        unset($_SESSION["errores"]);
 ?>
 
 
@@ -32,7 +33,6 @@
 
     <title>Registro Vehículo</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/style_nosotros.css" />
     <link rel="stylesheet" type="text/css" href="../css/style_form_vehiculo.css" />
 
     <link rel="shortcut icon" href="../img/logo.png">

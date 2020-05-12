@@ -23,7 +23,8 @@
         $registroFactura = $_SESSION['registroFactura'];
     }		
 	if (isset($_SESSION["errores"]))
-		$errores = $_SESSION["errores"];
+        $errores = $_SESSION["errores"];
+        unset($_SESSION["errores"]);
 ?>
 
 
@@ -39,6 +40,7 @@
     <title>Creación de Factura</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/style_nosotros.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style_form_factura.css" />
 
     <link rel="shortcut icon" href="../img/logo.png"/>
     <link rel="apple-touch-icon" href="../img/logo.png"/>
@@ -53,40 +55,57 @@
     		echo "</div>";
   		}
     ?>
-
-    <h1>Registro de factura para reparación <?php echo $registroFactura['oidr'];?></h1>
-    <p>*Obligatorio</p>
-
+    <div id = id_divFactura>
     <form id="id_regFactura" method="post" action="validacion_factura.php" novalidate>
-        <fieldset>
+        <fieldset id="id_campo">
+            <h1>Registro de factura para reparación <?php echo $registroFactura['oidr'];?></h1>
+            <p id="id_obligatorio">*Obligatorio</p>
             <input id="id_oidr" type="hidden" name="oidr" value="<?php echo $registroFactura['oidr']; ?>" />
-            <div>
-            <label for="id_dni">DNI del cliente:</label>
-            <input size="7px" id="id_dni" type="text" name="dni" value="<?php echo $registroFactura['dni'];?>"  readonly="readonly" />
+            <div class="div">
+                <label for="id_dni">DNI del cliente:</label>
+                <div class="campo">
+                    <input size="7px" id="id_dni" type="text" name="dni" value="<?php echo $registroFactura['dni'];?>"  readonly="readonly" />
+                </div>
             </div>
-            <div>
+            <br />
+            <div class = "div">
                 <label for="id_descripcion">Descripción:</label><br/>
-                <textarea id="id_descripcion" name="descripcion" rows="5" cols="40" value="<?php echo $registroFactura["descripcion"]; ?>"><?php echo $registroFactura["descripcion"]; ?></textarea>
+                <div class="campo"> 
+                    <textarea id="id_descripcion" name="descripcion" rows="3" cols="34" 
+                        value="<?php echo $registroFactura["descripcion"]; ?>"><?php echo $registroFactura["descripcion"]; ?></textarea>
+                </div>
             </div>
-            <div>
+            <br /><br /><br />
+            <div class = "div">
                 <label for="id_manoDeObra">Mano de Obra*:</label>
+                <div class="campo">
                 <input id="id_manoDeObra" type="text" name="manoDeObra" value="<?php echo $registroFactura["manoDeObra"]; ?>" required />
+                </div>
             </div>
-            <div>
+            <br />
+            <div class = "div">
                 <label for="id_iva">IVA:</label>
-                <input id="id_iva" size="3" type="text" name="IVA" value="<?php echo $registroFactura["IVA"]; ?>" />
+                <div class="campo">
+                    <input id="id_iva" size="3" type="text" name="IVA" value="<?php echo $registroFactura["IVA"]; ?>" />
+                </div>
             </div>
-            <div>
+            <br />
+            <div class = "div">
                 <label for="id_Pago">Tipo de Pago*:</label>
-                <input id="id_Pago" type="radio" name="Pago" value="Efectivo" <?php if($registroFactura["Pago"]=="Efectivo") echo ' checked ' ; ?>/>
-                <label for = "id_Pago">Efectivo</label>
-            
-                <input id="id_tipoPago1" type="radio" name="Pago" value="Tarjeta" <?php if($registroFactura["Pago"]=="Tarjeta") echo ' checked '; ?>/>
-                <label for = "id_Pago1">Tarjeta</label>
+                <div class="campo">
+                    <input id="id_Pago" type="radio" name="Pago" 
+                        value="Efectivo" <?php if($registroFactura["Pago"]=="Efectivo") echo ' checked ' ; ?>/>
+                    <label for = "id_Pago">Efectivo</label>
+                
+                    <input id="id_tipoPago1" type="radio" name="Pago" 
+                        value="Tarjeta" <?php if($registroFactura["Pago"]=="Tarjeta") echo ' checked '; ?>/>
+                    <label for = "id_Pago1">Tarjeta</label>
+                </div> 
             </div>
             <button id="id_enviar" type="submit">Crear</button>
         </fieldset>
     </form>
+    <div>
 
     <body>
 

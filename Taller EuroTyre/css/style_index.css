@@ -1,3 +1,14 @@
+.error {
+	color : #fb1b4c;	
+	border : 2px solid red;
+	padding : 10px;
+    margin: 10px;
+    width: 20%;
+	float: left;
+	margin-top: 16%;
+	margin-left: 1%;
+}
+
 #id_superior {
 	margin-top: 10px;
 }
@@ -11,8 +22,8 @@ body {
 }
 
 #id_logo {
-	margin-top: 20px;
-	margin-left: 20px;
+	margin-left: -21%;
+	margin-top: 1%;
 	height: 125px;
 }
 

@@ -1,49 +1,39 @@
+.error {
+	color : #fb1b4c;	
+	border : 2px solid red;
+	padding : 10px;
+    margin: 10px;
+    width: 18%;
+    float: left;
+    margin-top: 6%;
+}
+
 body {
 	background-color: #3d4045;
 }
 
-#id_divVehiculo {
+#id_divLinea {
     border-radius: 10px;
     background-color: #fbde1b;
 	color: #3D4045;
     opacity: 80%;
     width: 48%;
-    height: 400px;
+    height: 300px;
     border: 1px solid #000000;
     margin: auto;
     vertical-align: middle;
     margin-top: 6%;
 }
 
-.div {
-    font-size: large;
-    margin-left: 26%;
-}
-
-#id_regVehiculo h1 {
-    text-align: center;
-    font-size: 250%;
-    margin-top: 0;
-}
-
-.error {
-	color : #fb1b4c;	
-	border : 2px solid red;
-	padding : 10px;
-    margin: 10px;
-    width: 12%;
-    float: left;
-}
-
-.campo {
-    margin-top: -1.4%;
-    position: absolute;
-    margin-left: 10%;
-}
-
 #id_campo {
     border: none;
     font-size: large;
+}
+
+#id_regLinea h1 {
+    text-align: center;
+    font-size: 250%;
+    margin-top: 0;
 }
 
 #id_obligatorio{
@@ -52,46 +42,31 @@ body {
     color:red;
 }
 
-#id_cocheBtn{
-    margin-left: 11.5%;
+.div {
+    font-size: large;
+    margin-left: 26%;
+}
+
+.campo {
+    margin-top: -1.4%;
     position: absolute;
-    width: 7%;
+    margin-left: 10%;
 }
 
-#id_motoBtn{
-    position: relative;
-    margin-left: 39%;
-    width: 12%;
-}
-
-#id_furgonetaBtn{
-    margin-left: 25.5%;
-
-}
-
-#id_modelo{
+#id_cantidad {
+    font-size: medium;
     border-radius: 5px;
+    width: 74%;
     font-family: 'Source Code Pro';
     margin-top: 0.5%;
     margin-left: 2%;
 }
 
-#id_matricula{
-    font-size: medium;
+#id_pieza {
     border-radius: 5px;
-    width: 120%;
     font-family: 'Source Code Pro';
     margin-top: 0.5%;
-    margin-left: 2%;
-}
-
-#id_color{
-    font-size: medium;
-    border-radius: 5px;
-    width: 120%;
-    margin-top: 0.5%;
-    font-family: 'Source Code Pro';
-    margin-left: 4%;
+    margin-left: 2%; 
 }
 
 #id_enviar {

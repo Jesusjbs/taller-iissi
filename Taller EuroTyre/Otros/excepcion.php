@@ -16,6 +16,7 @@
 <head>
   <meta charset="utf-8">
   <title>Error</title>
+  <link rel="stylesheet" type="text/css" href="../css/style_excepcion.css" />
 </head>
 <body>	
 	
