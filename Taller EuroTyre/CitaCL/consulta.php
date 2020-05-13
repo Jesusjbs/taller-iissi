@@ -50,6 +50,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/style_consultaCL.css" />
     <title>Consultas</title>
 </head>
 
@@ -59,13 +60,16 @@
 	include_once("../Otros/cabecera.php");
     ?>
     <main>
-        <h1>Consultas</h1>
+        
+    <div id="id_tablas">
+    <h1 id="id_titulo">Consultas</h1>
     <?php
-		foreach($filas as $fila) {   
-	?>
-        <table>
+		foreach($filas as $fila) {
+    ?>
+           
+        <table id="id_tabla">
             <tr>
-                <td><h2>Cita con ID: <?php echo $fila["NUMCITA"]; ?></h2></td>
+                <td><h2>Cita con ID: <?php echo $fila["NUMCITA"]; ?></h2> </td>
                 <td></td>
             </tr>
             <tr>
@@ -92,32 +96,32 @@
                 <td>Factura:</td>
                 <td><form action="factura.php" method="get">
                     <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oidR" />
-                    <button type="submit">Ver Factura</button>
+                    <button id="id_btnFactura" type="submit">Ver Factura</button>
                 </form></td>
             </tr>
-        </table><br />
+        </table>
     <?php
         }
     ?>
-
-        <nav>
-            <div id="enlaces">
+    </div>
+        <nav id="id_paginacion">
+            <div id="id_enlaces">
             <?php
 				for($i = 1;$i<=$total_paginas;$i++){		
 						//Creamos la url que nos va a llevar a la página que queremos excepto si es la página seleccionada 
-						echo "<a href='" . "consulta.php?PAG_NUM=" . $i . "&PAG_TAM=" . $pag_tam . "'>" . $i . "</a>";						
+						echo "<a id='id_pag' href='" . "consulta.php?PAG_NUM=" . $i . "&PAG_TAM=" . $pag_tam . "'>" . $i . "</a>";						
 				} 
 			?>
-		</div>
-		
-		<form method="get" action="consulta.php">
+		    </div>
+		<br/><br/>
+		<form id="id_form" method="get" action="consulta.php">
 			<!-- Formulario que contiene el número y cambio de tamaño de página -->
 			
 			<input type="hidden" id= "pag_num" name="PAG_NUM" value="<?php echo $pagina_seleccionada;?>" />
 			
-			<input type="number" id= "pag_tam" name="PAG_TAM" value="<?php echo $pag_tam;?>" min="1" max="<?php echo $total_registros; ?>" autofocus/>
+			<input type="number" id= "pag_tam" name="PAG_TAM" value="<?php echo $pag_tam;?>" min="1" max="4" />
 			
-			<input type="submit" value="Cambiar"/>
+			<input id="id_enviar" type="submit" value="Cambiar"/>
 		</form>
         </nav>
     </main>

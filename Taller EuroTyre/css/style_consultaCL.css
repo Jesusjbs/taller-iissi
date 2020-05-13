@@ -1,0 +1,87 @@
+.error {
+	color : #fb1b4c;	
+	border : 2px solid red;
+	padding : 10px;
+    margin: 10px;
+    width: 12%;
+    float: left;
+}
+
+body {
+    background-color: #3d4045;
+}
+
+#id_tablas{
+	color: #3D4045;
+    margin: auto;
+    width: 50%;
+    border-radius: 10px;
+    background-color: #d5be23;
+    height: 480px;
+}
+#id_titulo{
+    margin-top: 0.5%;
+    text-align: center;
+}
+
+#id_tabla{
+    margin-top: -4%;
+    padding: 0% 5%;
+    margin-bottom: 5%;
+    float: left;
+}
+
+#id_tabla th {
+    padding: 3% 0%;
+}
+
+#id_btnFactura {
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+#id_paginacion {
+    width: 50%;
+    margin: auto;
+}
+
+#id_enlaces {
+    text-align: center;
+    padding: 1% 1%;
+    width: 10%;
+    margin: auto;
+}
+
+#id_form {
+    margin-top: -3%;
+    text-align: center;
+    width: 100%;
+    
+}
+
+#id_pag {
+    text-decoration: none;
+    padding: 0% 10%;
+    color: #fbde1b;
+    font-size: medium;
+    border: 1px solid;
+}
+
+#pag_tam{
+    border-radius: 5px;
+    text-align: center;
+    width: 15%;
+    font-size: medium;
+    margin: auto;
+}
+
+#id_enviar {
+	border-radius: 16px;
+	padding: 4px 20px;
+    text-decoration: none;
+    background: none;
+	border: 1px solid;
+	color: #FBDE1B;
+    cursor: pointer;
+    margin-left: 2%;
+}

@@ -1,0 +1,78 @@
+.error {
+	color : #fb1b4c;	
+	border : 2px solid red;
+	padding : 10px;
+    margin: 5px;
+    width: 12.5%;
+    float: left;
+    margin-top: 3%;
+}
+
+body {
+    background-color: #3d4045;
+}
+
+#id_coche{
+    border-radius: 16px;
+    border: 1px solid;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    background-color: #d5be23;
+}
+
+#id_moto{
+    border-radius: 16px;
+    border:1px solid;
+    margin-left: 15%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    width: 70%;
+    background-color: #d5be23;
+}
+
+table {
+    margin-bottom: 2%;
+    font-size: large;
+    margin-right: 30%;
+    margin-left: 30%;
+}
+
+table td {
+    padding: 1.5%;
+    width: 100%;
+    border-bottom: 1px solid;
+}
+
+.campo {
+    font-size: medium;
+    border-radius: 5px;
+    width: 100%;
+    font-family: 'Source Code Pro';
+}
+
+.editar_fila {
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+.id_botonesCoches {
+    margin: auto;
+    width: 15%;
+}
+
+.id_botonesMotos {
+    margin: auto;
+    width: 15%;
+}
+
+#id_mas {
+    width: 5%;
+    margin: auto;
+}
+
+article h2 {
+    text-align: center;
+}

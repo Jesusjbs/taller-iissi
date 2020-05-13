@@ -28,6 +28,7 @@
 <head>
     <meta charset="utf-8">
     <title>Mi Perfil</title>
+    <link rel="stylesheet" type="text/css" href="../css/style_perfilAD.css" />
 </head>
 
 <body>
@@ -56,11 +57,8 @@
           
                         <?php
                 if(isset($administrador)){ ?>
-                        <table>
-                            <tr>
-                                <td><h2>Editando datos...</h2></td>
-                                <td></td>
-                            </tr>
+                    <h2 id="id_editando">Editando datos...</h2>
+                        <table id="id_tableEdit">
                             <tr>
                                 <td>DNI:</td>
                                 <td><input id="id_dni" name="dni" type="text" value="<?php echo $consulta[0];?>" /></td>
@@ -92,12 +90,8 @@
                         </table><br />
                         
                         <?php } else { ?>
-                        
-                            <table>
-                            <tr>
-                                <td><h2>MIS DATOS</h2></td>
-                                <td></td>
-                            </tr>
+                            <h2 id="id_misDatos">MIS DATOS</h2>
+                            <table id="id_table">
                             <tr>
                                 <td>DNI:</td>
                                 <td><?php echo $consulta[0];?></td>

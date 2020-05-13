@@ -33,13 +33,9 @@
 
 	<main>
         <?php 	
-            if(alta_vehiculo($conexion, $nuevoVehiculo,$_SESSION['login'])) { ?>		
-			
-			<h1>Se ha registrado correctamente el vehículo con matrícula <?php echo $nuevoVehiculo["matricula"] ;?></h1>
-			<div >	
-				Pulsa <a href="../CitaCL/home.php">aquí</a> para acceder a la página de inicio del taller.
-			</div>
-		<?php } else { ?>
+            if(alta_vehiculo($conexion, $nuevoVehiculo,$_SESSION['login'])) {	
+				Header("Location: mis_vehiculos.php"); 
+		    } else { ?>
 			<h1>El vehículo ya existe en la base de datos.</h1>
 			<div >	
 				Pulsa <a href="formulario_vehiculo.php">aquí</a> para volver al formulario.

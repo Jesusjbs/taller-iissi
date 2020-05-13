@@ -62,7 +62,7 @@
 	</head>
 
 	<body>
-		<!--<div class="container">
+		<div class="container">
 			<input type="password" class="password"
 				placeholder="Introduce tu contraseña" oninput="textChange()" required />
 			<i class="fas fa-eye" id="show_hide" onclick="showHide()" >Pulsa</i>
@@ -87,9 +87,9 @@
 				<i class="fas fa-check"></i>
 				<span>6+ caracteres</span>
 			</p>
-		</div> -->
+		</div>
 
-		<input type="checkbox" id="click2">
+		<!-- <input type="checkbox" id="click2">
 
 		<div class="alert warning">
 			<p>!</p>
@@ -98,6 +98,6 @@
 				<label for="click2">X</label>
 			</div>
 		</div>
-
+	-->
 	</body>
 </html>

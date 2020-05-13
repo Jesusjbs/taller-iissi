@@ -39,6 +39,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/style_mis_vehiculos.css" />
     <title>Mis vehículos</title>
 </head>
 
@@ -57,12 +58,13 @@
     ?>
 
     <main>
+    <div id="id_principal">
+        <div id="id_coche">
         <?php
         $i = 1;
 		foreach($consulta as $vehiculo) {
 
 	    ?>
-
         <article class="coche">
             <form method="post" action="controlador_coche.php">
                 <div class="fila_vehiculo">
@@ -78,11 +80,8 @@
                         
                         <?php
                 if(isset($coche) and ($coche["matricula"] == $vehiculo[7])){ ?>
+                        <h2>Coche en edición...</h2>
                         <table>
-                            <tr>
-                                <th>Coche en edición...</th>
-                                <td></td>
-                            </tr>
                             <tr>
                                 <td>Marca:</td>
                                 <td><?php echo $vehiculo[26];?></td>
@@ -97,29 +96,25 @@
                             </tr>
                             <tr>
                                 <td>Color:</td>
-                                <td><input id="id_color" name="color" type="text" value="<?php echo $vehiculo[8];?>" /></td>
+                                <td><input class="campo" name="color" type="text" value="<?php echo $vehiculo[8];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Kilometraje:</td>
-                                <td> <input id="id_kilometraje" name="kilometraje" type="text" value="<?php echo $vehiculo[9];?>" /></td>
+                                <td> <input class="campo" name="kilometraje" type="text" value="<?php echo $vehiculo[9];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Nº Bastidor:</td>
-                                <td><input id="id_numBastidor" name="numBastidor" type="text" value="<?php  echo $vehiculo[11];?>" /></td>
+                                <td><input class="campo" name="numBastidor" type="text" value="<?php  echo $vehiculo[11];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Prox. ITV:</td>
-                                <td><input id="id_proxITV" name="proxITV" type="date" value="<?php echo $vehiculo[10];?>" /></td>
+                                <td><input class="campo" name="proxITV" type="date" value="<?php echo $vehiculo[10];?>" /></td>
                             </tr>
                         </table><br />
                         
                         <?php  $i++ ;} else { ?>
-                        
+                            <h2>Coche <?php echo " ".$i;?></h2>
                             <table>
-                            <tr>
-                                <td><h2>Coche <?php echo " ".$i;?></h2></td>
-                                <td></td>
-                            </tr>
                             <tr>
                                 <td>Marca:</td>
                                 <td><?php echo $vehiculo[26];?></td>
@@ -179,11 +174,13 @@
                 </div>
             </form>
         </article>
+        </div>
+        <div id="id_moto">
         <?php }
         $n = 1;
 		foreach($consultaMoto as $vehiculo) {?>
 
-<article class="moto">
+        <article class="moto">
             <form method="post" action="controlador_moto.php">
                 <div class="fila_vehiculo_moto">
                     <div class="dato_vehiculo_moto">
@@ -198,11 +195,8 @@
                         
                         <?php
                 if(isset($moto) and ($moto["matricula"] == $vehiculo[7])){ ?>
+                    <h2>Moto en edición...</h2>
                         <table>
-                            <tr>
-                                <td><h2>Moto en edición...</h2></td>
-                                <td></td>
-                            </tr>
                             <tr>
                                 <td>Marca:</td>
                                 <td><?php echo $vehiculo[23];?></td>
@@ -217,29 +211,25 @@
                             </tr>
                             <tr>
                                 <td>Color:</td>
-                                <td><input id="id_color" name="color" type="text" value="<?php echo $vehiculo[8];?>" /></td>
+                                <td><input class="campo" name="color" type="text" value="<?php echo $vehiculo[8];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Kilometraje:</td>
-                                <td> <input id="id_kilometraje" name="kilometraje" type="text" value="<?php echo $vehiculo[9];?>" /></td>
+                                <td> <input class="campo" name="kilometraje" type="text" value="<?php echo $vehiculo[9];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Nº Bastidor:</td>
-                                <td><input id="id_numBastidor" name="numBastidor" type="text" value="<?php  echo $vehiculo[11];?>" /></td>
+                                <td><input class="campo" name="numBastidor" type="text" value="<?php  echo $vehiculo[11];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Prox. ITV:</td>
-                                <td><input id="id_proxITV" name="proxITV" type="date" value="<?php  echo $vehiculo[10];?>" /></td>
+                                <td><input class="campo" name="proxITV" type="date" value="<?php  echo $vehiculo[10];?>" /></td>
                             </tr>
                         </table><br />
                         
                         <?php  $n++ ;} else { ?>
-                        
+                            <h2>Moto <?php echo " ".$n;?></h2>
                             <table>
-                            <tr>
-                                <td><h2>Moto <?php echo " ".$n;?></h2></td>
-                                <td></td>
-                            </tr>
                             <tr>
                                 <td>Marca:</td>
                                 <td><?php echo $vehiculo[23];?></td>
@@ -274,7 +264,7 @@
                         $n++;
                     } ?>
                     </div>
-
+                </div>
                     <div class="id_botonesMotos">
                         <?php
                 if(isset($moto) and ($moto["matricula"] == $vehiculo[7])){ ?>
@@ -290,7 +280,7 @@
                                 alt="Editar moto">
                         </button>
                         <?php } ?>
-                        <button name="borrar" type="submit" class="editar_fila">
+                        <button  id = "id_editar" name="borrar" type="submit" class="editar_fila">
                             <img src="../img/delete_button.jpg" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Borrar moto">
                         </button><br /><br />
@@ -299,11 +289,12 @@
                 </div>
             </form>
         </article>
+        </div>
         <?php }?>
-
-        <a href="formulario_vehiculo.php"><img style="width: 30px; height: 30px;" src="../img/add_button.png"
+        <div id="id_mas">
+            <a  id="id_añadir" href="formulario_vehiculo.php"><img style="width: 40px; height: 40px;" src="../img/add_button.png"
                 class="añadir_Vehiculo" alt="Añadir Vehículo"></a>
-
+        </div>
     </main>
 </body>
 
