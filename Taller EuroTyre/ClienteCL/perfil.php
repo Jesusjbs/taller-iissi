@@ -60,56 +60,49 @@
                         
                         <?php
                 if(isset($cliente)){ ?>
-                        <table id="id_tabla">
-                            <tr>
-                                <td><h2>Editando datos...</h2></td>
-                                <td></td>
-                            </tr>
+                        <h2 id="id_editando">Editando datos...</h2>
+                        <table id="id_tableEdit">
                             <tr>
                                 <td>DNI:</td>
-                                <td><input id="id_dni" name="dni" type="text" value="<?php echo $consulta[0];?>" /></td>
+                                <td><input class="campo" name="dni" type="text" value="<?php echo $consulta[0];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Nombre:</td>
-                                <td><input id="id_nombre" name="nombre" type="text" value="<?php echo $consulta[1];?>" /></td>
+                                <td><input class="campo" name="nombre" type="text" value="<?php echo $consulta[1];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Apellido:</td>
-                                <td><input id="id_apellido" name="apellidos" type="text" value="<?php echo $consulta[2];?>" /></td>
+                                <td><input class="campo" name="apellidos" type="text" value="<?php echo $consulta[2];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Teléfono:</td>
-                                <td><input id="id_telefono" name="telefono" type="text" value="<?php echo $consulta[3];?>" /></td>
+                                <td><input class="campo" name="telefono" type="text" value="<?php echo $consulta[3];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Email:</td>
-                                <td><input id="id_email" name="email" type="text" value="<?php echo $consulta[4];?>" /></td>
+                                <td><input class="campo" name="email" type="text" value="<?php echo $consulta[4];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Dirección:</td>
-                                <td><input id="id_direccion" name="direccion" type="text" value="<?php  echo $consulta[5];?>" /></td>
+                                <td><input class="campo" name="direccion" type="text" value="<?php  echo $consulta[5];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Antigua contraseña:</td>
-                                <td><input id="id_antiguaContraseña" name="antigua" type="password" /></td>
+                                <td><input class="campo" name="antigua" type="password" /></td>
                             </tr>
                             <tr>
                                 <td>Nueva contraseña:</td>
-                                <td><input id="id_contraseña" name="contraseña" type="password" /></td>
+                                <td><input class="campo" name="contraseña" type="password" /></td>
                             </tr>
                             <tr>
                                 <td>Confirmar nueva contraseña:</td>
-                                <td><input id="id_confirmarNueva" name="confirmar" type="password" /></td>
+                                <td><input class="campo" name="confirmar" type="password" /></td>
                             </tr>
                         </table><br />
                         
                         <?php } else { ?>
-                        
-                            <table>
-                            <tr>
-                                <td><h2 id="mis_datos">MIS DATOS</h2></td>
-                                <td></td>
-                            </tr>
+                            <h2 id="id_misDatos">MIS DATOS</h2>
+                            <table id="id_table">
                             <tr>
                                 <td>DNI:</td>
                                 <td><?php echo $consulta[0];?></td>

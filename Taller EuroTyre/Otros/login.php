@@ -54,7 +54,11 @@
 	</head>
 
 	<body>
-
+	<div id="id_superior">
+			<header>
+				<img id="id_logo" src="../img/logo.png" alt="Logo EuroTyre"/>
+			</header>
+		</div>
 	<?php 
 	if (isset($login)) {
 		echo "<div id=\"div_errores\" class=\"error\">";
@@ -63,27 +67,21 @@
 	}
 	?>
 
-		<div id="id_superior">
-			<header>
-				<img id="id_logo" src="../img/logo.png" alt="Logo EuroTyre"/>
-			</header>
-		</div>
-
         <!-- Divisor central de login -->		
 		<div id="id_principal">
         <!-- Login del usuario -->
 			<div id="id_secundario">
 				<div id="id_transparencia"></div>
 				<div id="id_usuario">
-					<p style="position: relative;z-index: 1;font-size: large;color: #3d4045;">Iniciar sesión</p>
+					<p id="id_pInicio">Iniciar sesión</p>
 					<form id="id_formuser" method="POST" action="login.php">
 						<fieldset id="id_campouser">
-							<img alt="user.png" style="width: 15px; height: 15px;" src="../img/user.png" />
+							<img alt="user.png" id="id_userImg" src="../img/user.png" />
 							<label for="id_dni">Usuario:</label>
 							<input size="31" id="id_dni" name="dni" type="text" placeholder="DNI" required/>
 							<br><br>
 
-							<img alt="pass.png" style="width: 15px; height: 15px;" src="../img/pass.png" />
+							<img id="id_passImg" alt="pass.png" src="../img/pass.png" />
 							<label for="id_pass">Contraseña:</label>
 							<input size="31" id="id_pass" name="pass" type="password" required/>
 							<button id="id_btuser" name="submit" type="submit">Iniciar Sesión</button>
@@ -92,7 +90,7 @@
 				</div>
         <!-- Divisor de registro -->
 				<div id="id_register">
-					<p style="color: #FBDE1B">
+					<p id="id_pAux">
 						¿No tienes una cuenta?
 					</p>
 					<a id="id_btregistro" href="../ClienteCL/formulario_usuario.php">Regístrate</a>

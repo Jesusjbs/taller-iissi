@@ -2,10 +2,9 @@
 	color : #fb1b4c;	
 	border : 2px solid red;
 	padding : 10px;
-    margin: 10px;
     width: 20%;
 	float: left;
-	margin-top: 16%;
+	margin-top: 6%;
 	margin-left: 1%;
 }
 
@@ -22,7 +21,7 @@ body {
 }
 
 #id_logo {
-	margin-left: -21%;
+	margin-left: 2%;
 	margin-top: 1%;
 	height: 125px;
 }
@@ -87,6 +86,27 @@ body {
 	color: #000000;
 	background: none;
 	cursor: pointer;
+}
+
+#id_pInicio {
+	position: relative;
+	z-index: 1;
+	font-size: large;
+	color: #3d4045;
+}
+
+#id_userImg {
+	width: 15px;
+	height: 15px;
+}
+
+#id_passImg {
+	width: 15px;
+	height: 15px;
+}
+
+#id_pAux {
+	color: #FBDE1B;
 }
 
 #id_dni {

@@ -92,8 +92,8 @@
 		<input type="checkbox" id="click2">
 
 		<div class="alert warning">
-			<i>!</i>
-			<span><strong>Warning</strong>Si elimina el vehículo desaparecerán las citas asociadas a él.</span>
+			<p>!</p>
+			<div><strong>Warning</strong>Si elimina el vehículo desaparecerán las citas asociadas a él.</div>
 			<div id="id_cierre">
 				<label for="click2">X</label>
 			</div>

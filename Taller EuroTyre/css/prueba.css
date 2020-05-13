@@ -79,25 +79,30 @@ body {
 	height: 60px;
 	margin: auto;
 	margin-top: 50px;
-	padding: 0 0 0 15px;
+	padding: 0px 0px 0px 15px;
 	transition: .6s ease-in-out;
 	user-select: none;
 }
 
-.alert i {
+.alert p {
 	border-radius: 50%;
+	width: 1.5%;
+	margin-top: 0.3%;
+	margin-left: -0.5%;
+	position: absolute;
+	text-align: center;
 }
 
-.alert span {
-	padding: 15px 12px 15px 12px;
+.alert div {
+	padding: 0px 30px 30px 50px;
 	font-size: 18px;
 }
 
-.alert span strong { padding-right: 6px;}
+.alert div strong { padding-right: 6px;}
 
 .alert label {
 	cursor: pointer;
-	padding: 0px 10px 37px 10px;
+	padding: 5px 10px 5px 10px;
 	text-align: center;
 	font-size: 20px;
 }
@@ -110,18 +115,24 @@ input { display: none;}
 }
 
 .warning {
+	width: 43%; 
 	background: rgb(255, 222, 197);
 	border-left: 6px solid rgb(175, 116, 76);
 }
 
-.warning i {
+.warning p {
 	font-size: 40px;
-	padding: 0px 15px 7px 12px;
+	padding: 2px 14px 4px 14px;
 	color: rgb(255, 222, 197);
 	background: rgb(175, 116, 76);
 }
 
-.warning span { color: rgb(190, 115, 64);}
+.warning div { 
+	color: rgb(190, 115, 64);
+	margin-top: 3.1%;
+	width: 88%;
+	text-align: left;
+}
 
 .warning label {
 	color: rgb(190, 115, 64);
@@ -129,5 +140,10 @@ input { display: none;}
 }
 
 #id_cierre {
-	float: right;
+	display: inline-table;
+	margin-left: 36.3%;
+	width: 3%;
+	text-align: right;
+	position: absolute;
+	margin-top: -4.3%;
 }

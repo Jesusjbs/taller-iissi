@@ -17,20 +17,52 @@ article {
 	color: #3D4045;
     opacity: 80%;
     width: 48%;
-    height: 400px;
+    height: 480px;
     border: 1px solid #000000;
     margin: auto;
     vertical-align: middle;
-    margin-top: 6%;
+    margin-top: 3%;
     font-size: large;
     text-align: center;
 }
 
 .dato_usuario{
     text-align: center;
-    width: 100%;
-    margin-left: 20%;
 } 
 
-#id_tabla td {
+.campo {
+    font-size: medium;
+    border-radius: 5px;
+    width: 100%;
+    font-family: 'Source Code Pro';
+}
+
+#id_misDatos {
+    margin-top: 3%;
+}
+
+#id_editando {
+    margin-top: 1%;
+}
+
+#id_table {
+    margin-left: 16%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    width: 70%;
+}
+
+#id_tableEdit {
+    margin-left: 16%;
+    margin-top: -1%;
+    width: 70%;
+}
+
+table td {
+    padding: 1.5%;
+    border-bottom: 1px solid;
+}
+
+.id_botonesClientes {
+    margin-top: -2%;
 }
