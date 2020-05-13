@@ -58,13 +58,12 @@
     ?>
 
     <main>
-    <div id="id_principal">
-        <div id="id_coche">
+        
         <?php
         $i = 1;
 		foreach($consulta as $vehiculo) {
-
 	    ?>
+        <div class="id_coche">
         <article class="coche">
             <form method="post" action="controlador_coche.php">
                 <div class="fila_vehiculo">
@@ -175,11 +174,10 @@
             </form>
         </article>
         </div>
-        <div id="id_moto">
         <?php }
         $n = 1;
 		foreach($consultaMoto as $vehiculo) {?>
-
+        <div class="id_moto">
         <article class="moto">
             <form method="post" action="controlador_moto.php">
                 <div class="fila_vehiculo_moto">
@@ -290,9 +288,11 @@
             </form>
         </article>
         </div>
+        
         <?php }?>
+                        
         <div id="id_mas">
-            <a  id="id_añadir" href="formulario_vehiculo.php"><img style="width: 40px; height: 40px;" src="../img/add_button.png"
+            <a id="id_añadir" href="formulario_vehiculo.php"><img style="width: 40px; height: 40px;" src="../img/add_button.png"
                 class="añadir_Vehiculo" alt="Añadir Vehículo"></a>
         </div>
     </main>
