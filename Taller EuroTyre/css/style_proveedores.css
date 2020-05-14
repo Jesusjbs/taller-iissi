@@ -11,8 +11,12 @@
 body {
     background-color: #3d4045;
 }
+h1{
+    text-align: center;
+    color: #d5be23;
+}
 
-.id_coche{
+.proveedor{
     border-radius: 16px;
     border: 1px solid;
     width: 70%;
@@ -60,13 +64,7 @@ table td {
     background: none;
 }
 
-.id_botonesCoches {
-    margin: auto;
-    width: 15%;
-}
-
-
-.id_botonesMotos {
+.id_botonesProveedor {
     margin: auto;
     width: 15%;
 }
@@ -76,6 +74,7 @@ table td {
     border-radius: 16px;
     width: 70%;
     margin: auto;
+    text-align: center;
 }
 .añadir_Vehiculo{
     margin-left: 48%;

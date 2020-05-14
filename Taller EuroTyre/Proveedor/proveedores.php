@@ -33,6 +33,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/style_proveedores.css" />
     <title>Proveedores de EuroTyre</title>
 </head>
 
@@ -53,7 +54,8 @@
         <?php
         $i = 1;
 		foreach($consulta as $proveedor) {
-	    ?>
+        ?>
+
         <article class="proveedor">
         <form method="post" action="controlador_proveedor.php">
                 <div class="fila_proveedor">
@@ -142,8 +144,10 @@
         </article>
     <?php } ?>
     <?php  if($esJefe == 1) { ?>
+        <div id="id_mas">
         <a href="formulario_proveedor.php"><img style="width: 30px; height: 30px;" src="../img/add_button.png"
                 class="añadir_proveedor" alt="Añadir Proveedor"></a>
+    </div>
         <?php } ?>
     </main>
 </body>

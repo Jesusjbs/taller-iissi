@@ -30,6 +30,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/style_mecanicos.css" />
     <title>Plantilla de EuroTyre</title>
 </head>
 
@@ -51,6 +52,7 @@
         $i = 1;
 		foreach($consulta as $mecanico) {
 	    ?>
+        <div class="mecanicos">
         <article class="mecanico">
         <form method="post" action="controlador_mecanico.php">
                 <div class="fila_mecanico">
@@ -63,11 +65,8 @@
                         <input name="contraseña" type="hidden" value="<?php  echo $mecanico[5];?>" />
                         <?php
                 if(isset($mec) and ($mec["dni"] == $mecanico[0])){ ?>
-                        <table>
-                            <tr>
-                                <td><h2>Trabajador en edición...</h2></td>
-                                <td></td>
-                            </tr>
+                <h2>Trabajador en edición...</h2>
+                        <table id="id_tabla">
                             <tr>
                                 <td>DNI:</td>
                                 <td><?php echo $mecanico[0];?></td>
@@ -100,16 +99,14 @@
                         </table><br />
                         
                         <?php  $i++ ;} else { ?>
-                        
-                    <table>
-                            <tr>
                             <?php if($mecanico[4] == 1) { ?>
-                                <td><h2>Jefe</h2></td>
+                                <h2>Jefe</h2>
                             <?php } else { ?>
-                                <td><h2>Trabajador<?php echo " ".$i;?></h2></td>
+                                <h2>Trabajador<?php echo " ".$i;?></h2>
                             <?php } ?>
-                                <td></td> 
-                            </tr>
+                        
+                    <table id="id_tabla">
+    
                             <tr>
                                 <td>DNI:</td>
                                 <td><?php echo $mecanico[0];?></td>
@@ -158,9 +155,12 @@
                 </div>
             </form>
         </article>
+        </div>
     <?php } if($esJefe == 1) { ?>
-        <a href="formulario_mecanico.php"><img style="width: 30px; height: 30px;" src="../img/add_button.png"
+    <div id="id_mas">
+        <a id="id_añadir" href="formulario_mecanico.php"><img style="width: 30px; height: 30px;" src="../img/add_button.png"
                 class="añadir_mecanico" alt="Añadir Mecánico"></a>
+        </div>
         <?php } ?>
     </main>
 </body>
