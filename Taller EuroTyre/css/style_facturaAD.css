@@ -1,0 +1,86 @@
+body {
+    background-color: #3d4045;
+}
+
+.factura{
+    border-radius: 10px;
+    background-color: #d5be23;
+	color: #3D4045;
+    width: 48%;
+    height: auto;
+    border: 1px solid #000000;
+    margin: auto;
+    vertical-align: middle;
+    margin-top: 2%;
+    font-size: large;
+    overflow: auto;
+}
+
+.factura h2 {
+    margin-top: 2%;
+    text-align: center;
+}
+
+#id_tablaFactura td {
+    padding: 1% 0%;    
+}
+
+#id_tablaFactura{
+    padding: 0% 7%;
+    float: left;
+}
+
+table th {
+    border: 2px solid;
+    border-radius: 4px;
+}
+
+.h{
+    width: 30%;
+}
+
+.formFact {
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#id_descripcion {
+    resize: none;
+}
+
+#id_importe {
+    text-align: right;
+}
+
+#id_pago{
+    text-align: center;
+}
+
+.id_botonesFactura {
+    width: 10%;
+    margin: auto;
+    margin-bottom: 2%;
+}
+
+.editar_fila {
+    border-radius: 4px;
+    cursor: pointer;
+    background: none;
+    margin: auto;
+}
+
+#id_divEnviar {
+    width: 10%;
+    margin: auto;
+    margin-top: 1%;
+}
+
+#id_formFact {
+	border-radius: 16px;
+	padding: 4px 20px;
+    text-decoration: none;
+    background: none;
+	border: 1px solid;
+	color: #FBDE1B;
+    cursor: pointer;
+}

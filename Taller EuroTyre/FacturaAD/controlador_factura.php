@@ -11,7 +11,7 @@
 		$_SESSION["factura"] = $factura;
 		
 		if (isset($_REQUEST["editar"])) Header("Location: factura.php"); 
-		else if (isset($_REQUEST["grabar"])) Header("Location: accion_modificar_factura.php");
+		else if (isset($_REQUEST["grabar"])) Header("Location: validacion_editar_factura.php");
 		else if (isset($_REQUEST["OID_LFC"])) { $_SESSION["OID_LFC"] = $_REQUEST["OID_LFC"];  Header("Location: accion_borrar_linea.php");}
 
 	}

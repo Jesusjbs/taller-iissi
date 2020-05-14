@@ -78,14 +78,15 @@
             <div class = "div">
                 <label for="id_manoDeObra">Mano de Obra*:</label>
                 <div class="campo">
-                <input id="id_manoDeObra" type="text" name="manoDeObra" value="<?php echo $registroFactura["manoDeObra"]; ?>" required />
+                <input id="id_manoDeObra" type="text" name="manoDeObra" 
+                    value="<?php echo str_replace(',','.', $registroFactura["manoDeObra"]);?>" required />
                 </div>
             </div>
             <br />
             <div class = "div">
                 <label for="id_iva">IVA:</label>
                 <div class="campo">
-                    <input id="id_iva" size="3" type="text" name="IVA" value="<?php echo $registroFactura["IVA"]; ?>" />
+                    <input id="id_iva" size="3" type="text" name="IVA" value="<?php echo str_replace(',','.', $registroFactura["IVA"]);?>" />
                 </div>
             </div>
             <br />
