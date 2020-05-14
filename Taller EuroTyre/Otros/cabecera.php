@@ -43,7 +43,7 @@
         <nav class="menu2">
             <ul>
                 <li><a title="Solicitar Cita" href="../CitaCL/home.php">Solicitar cita</a></li>
-                <li><a title="Consulta" href="../CitaCL/consulta.php">Consulta</a></li>
+                <li><a title="Consulta" href="../CitaCL/selecciona_vehiculo.php">Consulta</a></li>
                 <li><a title="Mis Vehículos" href="../VehiculoCL/mis_vehiculos.php">Mis Vehículos</a></li>
             </ul>
         </nav>
