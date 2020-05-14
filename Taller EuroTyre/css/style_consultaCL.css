@@ -14,11 +14,12 @@ body {
 #id_tablas{
 	color: #3D4045;
     margin: auto;
-    width: 50%;
+    width: 53%;
     border-radius: 10px;
     background-color: #d5be23;
     height: 480px;
 }
+
 #id_titulo{
     margin-top: 0.5%;
     text-align: center;
@@ -26,13 +27,9 @@ body {
 
 #id_tabla{
     margin-top: -4%;
-    padding: 0% 5%;
+    padding: 0% 7%;
     margin-bottom: 5%;
     float: left;
-}
-
-#id_tabla th {
-    padding: 3% 0%;
 }
 
 #id_btnFactura {

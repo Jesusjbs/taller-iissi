@@ -23,6 +23,7 @@ article {
     margin-top: 3%;
     font-size: large;
     text-align: center;
+    
 }
 
 .dato_usuario{
@@ -64,4 +65,10 @@ table td {
 
 .id_botonesClientes {
     margin-top: -2%;
+}
+
+.editar_fila {
+    background: none;
+    border-radius: 4px;
+    cursor: pointer;
 }

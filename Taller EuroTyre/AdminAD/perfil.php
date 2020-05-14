@@ -61,31 +61,31 @@
                         <table id="id_tableEdit">
                             <tr>
                                 <td>DNI:</td>
-                                <td><input id="id_dni" name="dni" type="text" value="<?php echo $consulta[0];?>" /></td>
+                                <td><input class="campo" name="dni" type="text" value="<?php echo $consulta[0];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Nombre:</td>
-                                <td><input id="id_nombre" name="nombre" type="text" value="<?php echo $consulta[1];?>" /></td>
+                                <td><input class="campo" name="nombre" type="text" value="<?php echo $consulta[1];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Apellido:</td>
-                                <td><input id="id_apellido" name="apellido" type="text" value="<?php echo $consulta[2];?>" /></td>
+                                <td><input class="campo" name="apellido" type="text" value="<?php echo $consulta[2];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Especialidad:</td>
-                                <td><input id="id_especialidad" name="especialidad" type="text" value="<?php echo $consulta[3];?>" /></td>
+                                <td><input class="campo" name="especialidad" type="text" value="<?php echo $consulta[3];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Antigua contraseña:</td>
-                                <td><input id="id_antiguaContraseña" name="antigua" type="password" /></td>
+                                <td><input class="campo" name="antigua" type="password" /></td>
                             </tr>
                             <tr>
                                 <td>Nueva contraseña:</td>
-                                <td><input id="id_contraseña" name="contraseña" type="password" /></td>
+                                <td><input class="campo" name="contraseña" type="password" /></td>
                             </tr>
                             <tr>
                                 <td>Confirmar nueva contraseña:</td>
-                                <td><input id="id_confirmarNueva" name="confirmar" type="password" /></td>
+                                <td><input class="campo" name="confirmar" type="password" /></td>
                             </tr>
                         </table><br />
                         

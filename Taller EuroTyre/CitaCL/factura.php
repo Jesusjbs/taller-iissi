@@ -23,6 +23,7 @@
     <head>
         <meta charset="utf-8">
         <title>Factura</title>
+        <link rel="stylesheet" type="text/css" href="../css/style_facturaCL.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
         <script src="https://unpkg.com/jspdf-autotable"></script>
@@ -31,27 +32,26 @@
             function convertirPDF() {
                 var pdf = new jsPDF();
 
-                pdf.autoTable({ html: '#my-table' });
+                pdf.autoTable({ html: '#id_tablaFactura' });
                 pdf.save('Factura.pdf');
             }
         </script>
     </head>
     <body>
-
+            
     <?php
     include_once("../Otros/cabecera.php");
-    $i = 0;
-
+    $i = 0;?>
+    <div class="factura">
+    <?php
     foreach($facturas as $fact) {
     ?>
         <main>
-            <table id="my-table">
+        
+            <h2 id="id_factura">Factura con ID: <?php echo $fact["NUMFACTURA"]; ?></h2>
+            <table id="id_tablaFactura">
                 <tr>
-                    <td><h2>Factura con ID: <?php echo $fact["NUMFACTURA"]; ?></h2></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Descripción:</td>
+                    <td class="h">Descripción:</td>
                     <td><?php echo $fact["DESCRIPCIÓN"]; ?></td>
                 </tr>
                 <tr>
@@ -91,16 +91,22 @@
                     <td><?php echo $linea["PRECIOUNITARIO"]." €";?></td>
                 </tr>
                 <?php $n++; } ?>
+                
                 <tr>
-                    <th>Importe total:</th>
-                    <th><?php echo $fact["MANODEOBRA"] + $fact["IMPORTE"]." €";?></th>
+                    <td id="id_importe"><h3>Importe total:</h3></td>
+                    <td id="id_pago"><h3><?php echo $fact["MANODEOBRA"] + $fact["IMPORTE"]." €";?></h3></td>
                 </tr>
-            </table><br />
+            </table>
         </main>
-        <a href="javascript:convertirPDF()">Descargar</a>
+
     <?php 
         $i++;
-    } 
+    } ?> 
+    </div>
+    <div id="id_divEnviar">
+            <button id="id_enviar" onclick="javascript:convertirPDF()" >Descargar</button>
+    </div>
+    <?php
     if($i == 0) { ?>
         <br /><br /><p>La factura correspondiente a la reparación con ID <?php echo $oid ?> no está disponible aún. Disculpe las molestias.</p>
     <?php

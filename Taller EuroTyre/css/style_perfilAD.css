@@ -62,6 +62,12 @@ table td {
     border-bottom: 1px solid;
 }
 
-.id_botonesClientes {
-    margin-top: -2%;
+.id_botonesAdministrador {
+    margin-top: -1%;
+}
+
+.editar_fila {
+    background: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
