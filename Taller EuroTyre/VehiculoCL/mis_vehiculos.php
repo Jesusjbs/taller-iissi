@@ -78,7 +78,9 @@
                             value="<?php  echo $vehiculo[11];?>" />
                         
                         <?php
-                if(isset($coche) and ($coche["matricula"] == $vehiculo[7])){ ?>
+                if(isset($coche) and ($coche["matricula"] == $vehiculo[7])){ 
+                    $objFechaITV = date_create_from_format('d/m/y', $vehiculo[10]);
+                    ?>
                         <h2>Coche en edición...</h2>
                         <table>
                             <tr>
@@ -107,7 +109,7 @@
                             </tr>
                             <tr>
                                 <td>Prox. ITV:</td>
-                                <td><input class="campo" name="proxITV" type="date" value="<?php echo $vehiculo[10];?>" /></td>
+                                <td><input class="campo" name="proxITV" type="date" value="<?php echo $objFechaITV->format('Y-m-d') ; ?>" /></td>
                             </tr>
                         </table><br />
                         

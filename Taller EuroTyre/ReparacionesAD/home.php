@@ -90,7 +90,10 @@
                         <input name="dni" type="hidden" value="<?php  echo $fila["DNI"];?>" />
                         
                         <?php
-                if(isset($reparacion) and ($reparacion["oid_r"] == $fila["OID_R"])){ ?>
+                if(isset($reparacion) and ($reparacion["oid_r"] == $fila["OID_R"])){ 
+                    $objFechaIn = date_create_from_format('d/m/y', $fila["FECHAINICIO"]);
+                    $objFechaFin = date_create_from_format('d/m/y', $fila["FECHAFIN"]);
+                ?>
                         <table>
                             <tr>
                                 <td>
@@ -105,7 +108,7 @@
                             <tr>
                                 <td>Fecha de Reparación:</td>
                                 <td><input id="id_fechaInicio" name="fechaInicio" type="date" 
-                                        value="<?php echo $fila["FECHAINICIO"]; ?>" /></td>
+                                        value="<?php echo $objFechaIn->format('Y-m-d') ; ?>" /></td>
                             </tr>
                             <tr>
                                 <td>Estado de Reparación:</td>
@@ -119,7 +122,7 @@
                             <tr>
                                 <td>Fecha de Finalización:</td>
                                 <td><input id="id_fechaFin" name="fechaFin" type="date" 
-                                        value="<?php echo $fila["FECHAFIN"]; ?>" /></td>
+                                     value="<?php echo $objFechaFin->format('Y-m-d') ; ?>" /></td>
                             </tr>
                             <tr>
                                 <td>Matrícula:</td>
@@ -131,8 +134,7 @@
                             </tr>
                         </table>
                         <?php } else { ?>
-
-                        <table>
+                     <table>
                             <tr>
                                 <td>
                                     <h2>Reparación con ID: <?php echo $fila["OID_R"]; ?></h2>

@@ -49,7 +49,7 @@
     		foreach($errores as $error) echo $error; 
 			echo "</div>";
 		}
-		
+
 		?>
 
 		<div id="id_cita">
