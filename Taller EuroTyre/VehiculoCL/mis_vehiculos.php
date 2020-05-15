@@ -28,7 +28,7 @@
             $consulta = consultaCoche($conexion,$_SESSION["login"]);
             $consultaMoto = consultaMoto($conexion,$_SESSION["login"]);
 
-			cerrarConexionBD($conexion);
+			
 		}
 
 	
@@ -47,14 +47,6 @@
 
     <?php
     include_once("../Otros/cabecera.php");
-
-	// Mostrar los errores de validación (Si los hay)
-	if (isset($errores) && count($errores)>0) { 
-	    echo "<div id=\"div_errores\" class=\"error\">";
-		echo "<h4> Errores en el formulario:</h4>";
-    	foreach($errores as $error) echo $error; 
-		    echo "</div>";
-	}
     ?>
 
     <main>
@@ -82,6 +74,15 @@
                     $objFechaITV = date_create_from_format('d/m/y', $vehiculo[10]);
                     ?>
                         <h2>Coche en edición...</h2>
+                        <?php
+                        	// Mostrar los errores de validación (Si los hay)
+                            if (isset($errores) && count($errores)>0) { 
+                                echo "<div id=\"div_errores\" class=\"error\">";
+                                echo "<h4> Errores en el formulario:</h4>";
+                                foreach($errores as $error) echo $error; 
+                                    echo "</div>";
+                            }
+                            ?>
                         <table>
                             <tr>
                                 <td>Marca:</td>
@@ -155,7 +156,7 @@
                         <?php
                 if(isset($coche) and ($coche["matricula"] == $vehiculo[7])){ ?>
                         <!-- Botón de grabar -->
-                        <button id="grabar" name="grabar" type="submit" class="editar_fila">
+                        <button id="grabar" name="grabar" type="submit" class="editar_fila" autofocus>
                             <img src="../img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Guardar modificación">
                         </button>
@@ -165,12 +166,14 @@
                             <img src="../img/edite_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar coche">
                         </button>
-                        <?php } ?>
+                        <?php }
+                        $cuenta = cuentaVehiculo($conexion, $vehiculo[7]);
+                        if(!$cuenta) { ?>
                         <button name="borrar" type="submit" class="editar_fila">
                             <img src="../img/delete_button.jpg" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Borrar coche">
                         </button><br /><br />
-                        
+                        <?php } ?>
                     </div>
                 </div>
             </form>
@@ -196,6 +199,15 @@
                         <?php
                 if(isset($moto) and ($moto["matricula"] == $vehiculo[7])){ ?>
                     <h2>Moto en edición...</h2>
+                    <?php
+                        	// Mostrar los errores de validación (Si los hay)
+                            if (isset($errores) && count($errores)>0) { 
+                                echo "<div id=\"div_errores\" class=\"error\">";
+                                echo "<h4> Errores en el formulario:</h4>";
+                                foreach($errores as $error) echo $error; 
+                                    echo "</div>";
+                            }
+                    ?>
                         <table>
                             <tr>
                                 <td>Marca:</td>
@@ -269,7 +281,7 @@
                         <?php
                 if(isset($moto) and ($moto["matricula"] == $vehiculo[7])){ ?>
                         <!-- Botón de grabar -->
-                        <button id="grabar" name="grabar" type="submit" class="editar_fila">
+                        <button id="grabar" name="grabar" type="submit" class="editar_fila" autofocus>
                             <img src="../img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Guardar modificación">
                         </button>
@@ -279,19 +291,23 @@
                             <img src="../img/edite_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar moto">
                         </button>
-                        <?php } ?>
-                        <button  id = "id_editar" name="borrar" type="submit" class="editar_fila">
+                        <?php } 
+                        $cuenta = cuentaVehiculo($conexion, $vehiculo[7]);
+                        if(!$cuenta) { ?>
+                        <button name="borrar" type="submit" class="editar_fila">
                             <img src="../img/delete_button.jpg" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Borrar moto">
                         </button><br /><br />
-                        
+                        <?php } ?>
                     </div>
                 </div>
             </form>
         </article>
         </div>
         
-        <?php }?>
+        <?php }
+        cerrarConexionBD($conexion);
+        ?>
                         
         <div id="id_mas">
             <a id="id_añadir" href="formulario_vehiculo.php"><img style="width: 40px; height: 40px;" src="../img/add_button.png"

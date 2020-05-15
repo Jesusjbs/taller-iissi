@@ -17,7 +17,7 @@
 		$_SESSION["reparacion"] = $reparacion;
 			
 		if (isset($_REQUEST["editar"])) Header("Location: home.php"); 
-		else if (isset($_REQUEST["grabar"])) Header("Location: accion_modificar_reparacion.php");
+		else if (isset($_REQUEST["grabar"])) Header("Location: validar_editar_reparacion.php");
 	}
 	else 
 		Header("Location: home.php");

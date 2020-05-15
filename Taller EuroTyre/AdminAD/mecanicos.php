@@ -35,17 +35,9 @@
 </head>
 
 <body>
-
-    <?php
-    include_once("../Otros/cabecera.php");
-    if (isset($errores) && count($errores)>0) { 
-	    echo "<div id=\"div_errores\" class=\"error\">";
-		echo "<h4> Errores en el formulario:</h4>";
-    	foreach($errores as $error) echo $error; 
-		    echo "</div>";
-	}
+    <?php                     
+        include_once("../Otros/cabecera.php");
     ?>
-
     <main>
         <h1>Plantilla</h1>
         <?php
@@ -64,8 +56,17 @@
                         <input name="jefe" type="hidden" value="<?php  echo $mecanico[4];?>" />
                         <input name="contraseña" type="hidden" value="<?php  echo $mecanico[5];?>" />
                         <?php
-                if(isset($mec) and ($mec["dni"] == $mecanico[0])){ ?>
+                if(isset($mec) and ($mec["dni"] == $mecanico[0])){ 
+                    ?>
                 <h2>Trabajador en edición...</h2>
+                <?php 
+                    if (isset($errores) && count($errores)>0) { 
+                        echo "<div id=\"div_errores\" class=\"error\">";
+                        echo "<h4> Errores en el formulario:</h4>";
+                        foreach($errores as $error) echo $error; 
+                            echo "</div>";
+                        }
+                ?>
                         <table id="id_tabla">
                             <tr>
                                 <td>DNI:</td>
@@ -73,15 +74,15 @@
                             </tr>
                             <tr>
                                 <td>Nombre:</td>
-                                <td><input id="id_nombre" name="nombre" type="text" value="<?php echo $mecanico[1];?>" /></td>
+                                <td><input class="campo" name="nombre" type="text" value="<?php echo $mecanico[1];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Apellido:</td>
-                                <td><input id="id_apellido" name="apellido" type="text" value="<?php echo $mecanico[2];?>" /></td>
+                                <td><input class="campo" name="apellido" type="text" value="<?php echo $mecanico[2];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Especialidad:</td>
-                                <td><input id="id_especialidad" name="Especialidad" type="text" value="<?php echo $mecanico[3];?>" /></td>
+                                <td><input class="campo" name="Especialidad" type="text" value="<?php echo $mecanico[3];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Jefe:</td>
@@ -90,11 +91,11 @@
                                 } else {
                                     $jefe = "SI";
                                 } ?>
-                                <td> <input id="id_jefe" name="jefe" type="text" value="<?php echo $jefe; ?>" /></td>
+                                <td> <input class="campo" name="jefe" type="text" value="<?php echo $jefe; ?>" /></td>
                             </tr>
                             <tr>
                                 <td>Contraseña:</td>
-                                <td><input id="id_contraseña" name="contraseña" type="text" value="<?php  echo $mecanico[5];?>" /></td>
+                                <td><input class="campo" name="contraseña" type="text" value="<?php  echo $mecanico[5];?>" /></td>
                             </tr>
                         </table><br />
                         
@@ -135,7 +136,7 @@
                         <?php
                     if(isset($mec) and ($mec["dni"] == $mecanico[0])) { ?>
                         <!-- Botón de grabar -->
-                        <button id="grabar" name="grabar" type="submit" class="editar_fila">
+                        <button autofocus id="grabar" name="grabar" type="submit" class="editar_fila">
                             <img src="../img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Guardar modificación">
                         </button>

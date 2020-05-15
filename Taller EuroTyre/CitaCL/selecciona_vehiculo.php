@@ -24,7 +24,7 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="#" />
+    <link rel="stylesheet" type="text/css" href="../css/style_seleccion_vehiculo.css" />
     <title>Selecciona vehículo</title>
   </head>
 
@@ -33,9 +33,9 @@
     include_once("../Otros/cabecera.php");
     ?>
     <main>
-      <form id="id_selecVehiculo" method="post" action="consulta.php">
-        <h1>Selecciona un vehiculo</h1>
-        <fieldset id="id_campo">
+      <form method="post" action="consulta.php">
+      <div id="id_selecVehiculo">
+        <h1>Seleccione un vehículo</h1>
           <select id="id_vehiculo" name="vehiculo">
             <optgroup label="COCHES">
               <?php foreach($coches as $coche) { ?>
@@ -51,8 +51,10 @@
               <?php } ?>
             </optgroup>
           </select>
-          <button id="id_enviar" type="submit">Seleccionar</button>
-        </fieldset>
+          </div>
+      <div id="id_divEnviar">
+        <button id="id_enviar" type="submit">Seleccionar</button>
+      </div>
       </form>
     </main>
   </body>

@@ -1,0 +1,30 @@
+body {
+    background-color: #3d4045;
+}
+
+h1{
+    color:#d5be23;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.div {
+    color: white;
+    width: 70%;
+    text-align: justify;
+    margin: auto;
+    margin-bottom: 3%;
+}
+
+h3 {
+    color:#d5be23;
+}
+
+a {
+    text-decoration: none;
+    color: #d5be23;
+}
+b {
+    text-decoration: none;
+    color: #fb1b4c;
+}

@@ -41,12 +41,6 @@
 
     <?php
     include_once("../Otros/cabecera.php");
-    if (isset($errores) && count($errores)>0) { 
-	    echo "<div id=\"div_errores\" class=\"error\">";
-		echo "<h4> Errores en el formulario:</h4>";
-    	foreach($errores as $error) echo $error; 
-		    echo "</div>";
-	}
     ?>
 
     <main>
@@ -66,34 +60,39 @@
                         <input name="email" type="hidden" value="<?php  echo $proveedor[3];?>" />
                         <input name="telefono" type="hidden" value="<?php  echo $proveedor[4];?>" />
                         <?php
-                if(isset($prov) and ($prov["oid_p"] == $proveedor[0])){ ?>
+                            if(isset($prov) and ($prov["oid_p"] == $proveedor[0])){ 
+                        ?>
+                        <h2>Proveedor en edición...</h2>
+                        <?php
+                            if (isset($errores) && count($errores)>0) { 
+                                echo "<div id=\"div_errores\" class=\"error\">";
+                                echo "<h4> Errores en el formulario:</h4>";
+                                foreach($errores as $error) echo $error; 
+                                    echo "</div>";
+                            }
+                        ?>
                         <table>
                             <tr>
-                                <th><h2>Proveedor en edición...</h2></th>
-                            </tr>
-                            <tr>
                                 <td>Nombre:</td>
-                                <td><input id="id_nombre" name="nombre" type="text" value="<?php echo $proveedor[2];?>" /></td>
+                                <td><input class="campo" name="nombre" type="text" value="<?php echo $proveedor[2];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Tipo de Proveedor:</td>
-                                <td><input id="id_tipoProveedor" name="tipoProveedor" type="text" value="<?php echo $proveedor[1];?>" /></td>
+                                <td><input class="campo" name="tipoProveedor" type="text" value="<?php echo $proveedor[1];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Email:</td>
-                                <td><input id="id_email" name="email" type="text" value="<?php echo $proveedor[3];?>" /></td>
+                                <td><input class="campo" name="email" type="text" value="<?php echo $proveedor[3];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Teléfono:</td>
-                                <td><input id="id_telefono" name="telefono" type="text" value="<?php echo $proveedor[4];?>" /></td>
+                                <td><input class="campo" name="telefono" type="text" value="<?php echo $proveedor[4];?>" /></td>
                             </tr>
                         </table><br />
                         
                         <?php  $i++ ;} else { ?>
+                    <h2>Proveedor<?php echo " ".$i;?></h2>
                     <table>
-                            <tr>
-                                <th><h2>Proveedor<?php echo " ".$i;?></h2></th>
-                            </tr>
                             <tr>
                                 <td>Nombre:</td>
                                 <td><?php echo $proveedor[2];?></td>
@@ -122,7 +121,7 @@
                         <?php
                     if(isset($prov) and ($prov["oid_p"] == $proveedor[0])) { ?>
                         <!-- Botón de grabar -->
-                        <button id="grabar" name="grabar" type="submit" class="editar_fila">
+                        <button autofocus id="grabar" name="grabar" type="submit" class="editar_fila">
                             <img src="../img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Guardar modificación">
                         </button>

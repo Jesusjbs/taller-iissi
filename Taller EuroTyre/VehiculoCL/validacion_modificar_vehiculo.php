@@ -34,7 +34,9 @@
         // Validación del color
 		if(strlen($vehiculo["color"]) > 50) 
             $errores[] = "<p>El color debe de tener menos de 50 caracteres</p>";
-
+        else if (!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ\s]+$/", $vehiculo["color"])){
+            $errores[] = "<p>El color solo puede contener caractéres</p>";
+        }
 		// Validación del kilometraje
 		if(strlen($vehiculo["kilometraje"]) > 50) { 
 			$errores[] = "<p>El kilometraje debe tener menos de 50 dígitos.</p>";
@@ -48,11 +50,6 @@
         } else if($vehiculo["numBastidor"] != "" && !preg_match("/^[A-Z\d]+$/", $vehiculo["numBastidor"])) {
             $errores[] = "<p>El numero de bastidor no tiene formato válido, solo letras mayúsculas y dígitos</p>";
         }
-        
-        // Validación de la ITV		
-		if($vehiculo['proxITV'] == "") {
-			$errores[] = "<p>La ITV es obligatoria</p>";
-		}
         return $errores;
     }
 

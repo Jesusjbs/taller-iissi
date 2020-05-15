@@ -62,7 +62,7 @@
 	<?php 
 	if (isset($login)) {
 		echo "<div id=\"div_errores\" class=\"error\">";
-		echo "Error en la contraseña o no existe el usuario.";
+		echo "El correo electrónico y la contraseña que ingresaste no coinciden con nuestros registros. Por favor, revisa e inténtalo de nuevo.";
 		echo "</div>";
 	}
 	?>

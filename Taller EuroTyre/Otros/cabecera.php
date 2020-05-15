@@ -34,7 +34,7 @@
         <nav class="menu">
             <ul>
                 <li><a title="Nosotros" href="../Otros/nosotros.php">Nosotros</a></li>
-                <li><a title="F.A.Q" href="#">F.A.Q</a></li>
+                <li><a title="F.A.Q" href="../Otros/faq.php">F.A.Q</a></li>
                 <li><a title="Acerca" href="../Otros/terminos.php">Acerca</a></li>
             </ul>
         </nav>

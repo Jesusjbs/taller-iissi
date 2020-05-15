@@ -1,0 +1,39 @@
+body {
+    background-color: #3d4045;
+}
+
+#id_selecVehiculo {
+    border-radius: 16px;
+    border: 1px solid;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 10%;
+    margin-bottom: 1%;
+    background-color: #d5be23;
+    color: #3d4045;
+    text-align: center;
+}
+
+h1{
+    margin: 0;
+}
+
+#id_vehiculo {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#id_divEnviar {
+    width: 10%;
+    margin: auto;
+}
+
+#id_enviar {
+	border-radius: 16px;
+	padding: 4px 20px;
+    text-decoration: none;
+    background: none;
+	border: 1px solid;
+	color: #FBDE1B;
+    cursor: pointer;
+}

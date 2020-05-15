@@ -3,9 +3,10 @@
 	border : 2px solid red;
 	padding : 10px;
     margin: 5px;
-    width: 12.5%;
+    width: 20%;
     float: left;
-    margin-top: 3%;
+    margin-top: -5.8%;
+    margin-left: 1%;
 }
 
 body {
@@ -41,8 +42,14 @@ table td {
     border-bottom: 1px solid;
 }
 
+.campo {
+    font-size: medium;
+    border-radius: 5px;
+    font-family: 'Source Code Pro';
+}
+
 .editar_fila {
-    border: none;
+    border-radius: 4px;
     cursor: pointer;
     background: none;
 }
@@ -51,16 +58,12 @@ table td {
     width: 15%;
 }
 
-
 #id_mas {
     background-color: #d5be23;
     border-radius: 16px;
     width: 70%;
     margin: auto;
     text-align: center;
-}
-.añadir_Vehiculo{
-    margin-left: 48%;
 }
 
 article h2 {

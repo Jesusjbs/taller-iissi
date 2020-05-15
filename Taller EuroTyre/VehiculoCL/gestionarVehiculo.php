@@ -142,4 +142,16 @@ function editarMoto($conexion,$moto){
     }
 }
 
+function cuentaVehiculo($conexion,$matricula) {
+    try{
+        $consulta = "SELECT COUNT(*) AS TOTAL FROM REPARACIONES WHERE (MATRÍCULAC = '$matricula' OR MATRÍCULAM = '$matricula')";
+        $stmt = $conexion->prepare($consulta);
+        $stmt->execute();
+        return $stmt->fetchColumn();
+
+    }catch(PDOException $e){
+        return $e->getMessage();
+    }
+}
+
 ?>

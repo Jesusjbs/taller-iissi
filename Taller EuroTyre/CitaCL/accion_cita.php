@@ -27,20 +27,23 @@
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
-
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Cita realizada</title>
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
-		
+		<link rel="stylesheet" type="text/css" href="../css/style_accion_cita.css" />
 		<link rel="shortcut icon" href="../img/logo.png">
 		<link rel="apple-touch-icon" href="../img/logo.png">
+
     </head>
     
    <body>
-	<?php 	
+	<?php
 				if(crea_cita($conexion, $_SESSION["login"], $nuevaCita)) { ?>		
-				<p>Su cita con fecha <?php echo date('d/m/Y',strtotime($nuevaCita['dia'])); ?> ha sido solicitada correctamente, para más datos, dirigase a la pestaña de <a href="selecciona_vehiculo.php">consultas</a></p>
+				<div id="id_div">
+				<h2 id="id_parrafo">Su cita con fecha <?php echo date('d/m/Y',strtotime($nuevaCita['dia'])); ?> ha sido solicitada correctamente, para más datos, dirigase a la pestaña de 
+				<a href="selecciona_vehiculo.php">consultas</a></h2>
+				</div>
 
 			<?php } else { ?>
 				<h1>Datos erróneos, vuelva a introducirlos</h1>
