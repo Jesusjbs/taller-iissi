@@ -17,6 +17,11 @@
             unset($_SESSION["factura"]);
         }
 
+        if(isset($_SESSION["reparacion"])) {
+            $reparacion = $_SESSION["reparacion"];
+            unset($_SESSION["reparacion"]);
+        }
+
         if (isset($_SESSION["errores"]))
             $errores = $_SESSION["errores"];
             unset($_SESSION["errores"]);

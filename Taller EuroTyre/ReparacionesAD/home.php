@@ -108,26 +108,23 @@
                     $objFechaIn = date_create_from_format('d/m/y', $fila["FECHAINICIO"]);
                     $objFechaFin = date_create_from_format('d/m/y', $fila["FECHAFIN"]);
                 ?>  
-                      
                         <table id="id_tabla">
                             <tr>
-                                <td>
-                                    <h2>Editando reparación con ID: <?php echo $fila["OID_R"]; ?></h2>
-                                </td>
+                                <td><h3>Editando... </h3></td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>Fecha de Solicitud:</td>
+                                <td class="h">Fecha de Solicitud:</td>
                                 <td><?php echo $fila["FECHASOLICITUD"]; ?></td>
                             </tr>
                             <tr>
-                                <td>Fecha de Reparación:</td>
-                                <td><input id="id_fechaInicio" name="fechaInicio" type="date" 
+                                <td class="h">Fecha de Reparación:</td>
+                                <td><input class="campo" name="fechaInicio" type="date" 
                                         value="<?php echo $objFechaIn->format('Y-m-d') ; ?>" /></td>
                             </tr>
                             <tr>
-                                <td>Estado de Reparación:</td>
-                                <td><input id="id_estado" name="estado" type="text" value="<?php echo $fila["ESTADO"];?>" /></td>
+                                <td class="h">Estado de Reparación:</td>
+                                <td><input class="campo" name="estado" type="text" value="<?php echo $fila["ESTADO"];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Presupuesto:</td>
@@ -136,12 +133,12 @@
                                 } else {
                                     $presupuesto = "SI";
                                 } ?>
-                                <td><input id="id_tienePresupuesto" name="tienePresupuesto" type="text" 
+                                <td><input class="campo" name="tienePresupuesto" type="text" 
                                         value="<?php echo $presupuesto; ?>" /></td>
                             </tr>
                             <tr>
                                 <td>Fecha de Finalización:</td>
-                                <td><input id="id_fechaFin" name="fechaFin" type="date" 
+                                <td><input class="campo" name="fechaFin" type="date" 
                                      value="<?php if($objFechaFin) {echo $objFechaFin->format('Y-m-d');} ?>" /></td>
                             </tr>
                             <tr>
@@ -154,11 +151,10 @@
                             </tr>
                         </table>
                         <?php } else { ?>
+                        
                      <table id="id_tabla">
                             <tr>
-                                <td>
-                                    <h2>Reparación con ID: <?php echo $fila["OID_R"]; ?></h2>
-                                </td>
+                                <td><h2>Reparación con ID: <?php echo $fila["OID_R"]; ?></h2></td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -194,11 +190,23 @@
                                 <td>DNI:</td>
                                 <td><?php echo $fila["DNI"];?></td>
                             </tr>
+                            <tr>
+                                <td>Factura:</td>
+                                <td><?php if(cuentaFactura($conexion, $fila["OID_R"]) == 1) { ?>
+                                    <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
+                                    <input type="hidden" name="ver" />
+                                    <button class="facturaBtn" title="Ver Factura" type="submit">Ver Factura</button>
+                                    <?php } else { ?>
+                                    <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
+                                    <input type="hidden" value="<?php echo $fila["DNI"];?>" name="dni" />
+                                    <input type="hidden" name="crear" />
+                                    <button class="facturaBtn" title="Crear Factura" type="submit">Crear Factura</button>
+                                    <?php } ?>
+                                </td>
+                            </tr>
 
                         </table>
-
-                        <?php 
-                    } ?>
+                    <?php } ?>
                     </div>
 
                     <div class="id_botonesReparacion">
@@ -221,34 +229,17 @@
                 </div>
             </form>
         </article>
-        <?php if(cuentaFactura($conexion, $fila["OID_R"]) == 1) { ?>
-                <form action="../FacturaAD/factura.php" method="post">
-                    <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
-                    <div class ="id_btnFac">
-                    <button title="Ver Factura" type="submit"><img src="../img/see_bill.png" 
-                        style="width: 30px; height: 30px;" alt="Ver Factura"></button>
-                    </form>
-                    </div>
-        <?php } else { ?>
-                <form action="../FacturaAD/formulario_factura.php" method="post">
-                    <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
-                    <input type="hidden" value="<?php echo $fila["DNI"];?>" name="dni" />
-                    <div class ="id_btnFac">
-                    <button  title="Crear Factura" type="submit"><img src="../img/add_bill.png" 
-                        style="width: 30px; height: 30px;" alt="Crear Factura"></button>
-                    </div>
-                </form>
-        <?php }
+        <?php 
         }
         
         cerrarConexionBD($conexion);?>
         </div> 
         <nav id="id_paginacion">
-            <div id="enlaces">
+            <div id="id_enlaces">
                 <?php
 				for($i = 1;$i<=$total_paginas;$i++){		
 						//Creamos la url que nos va a llevar a la página que queremos excepto si es la página seleccionada 
-						echo "<a href='" . "home.php?PAG_NUM=" . $i . "&PAG_TAM=" . $pag_tam . "'>" . $i . "</a>";						
+						echo "<a id='id_pag' href='" . "home.php?PAG_NUM=" . $i . "&PAG_TAM=" . $pag_tam . "'>" . $i . "</a>";						
 				} 
 			?>
             </div>
@@ -258,8 +249,7 @@
 
                 <input type="hidden" id="pag_num" name="PAG_NUM" value="<?php echo $pagina_seleccionada;?>" />
 
-                <input type="number" id="pag_tam" name="PAG_TAM" value="<?php echo $pag_tam;?>" min="1"
-                    max="<?php echo $total_registros; ?>" />
+                <input type="number" id="pag_tam" name="PAG_TAM" value="<?php echo $pag_tam;?>" min="1" max="8" />
 
                 <input id="id_enviar" type="submit" value="Cambiar" />
             </form>

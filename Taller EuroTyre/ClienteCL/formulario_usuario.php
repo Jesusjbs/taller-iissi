@@ -54,7 +54,7 @@
 	?>
 
 	<div id="id_registro">
-	<form id="id_altaUsuario" method="post" action="validacion_usuario.php" novalidate>
+	<form id="id_altaUsuario" method="post" action="validacion_usuario.php">
 		<h1>Crea una cuenta</h1>
 		<p id="id_obligatorio">* Obligatorio</p>
 		<br />
@@ -62,22 +62,22 @@
 		  
 			<div class="div">
 				<div class="campo">
-					<input id="id_nombre" name="nombre" type="text" size="15" placeholder="Nombre *"
-						value="<?php echo $formulario['nombre'];?>" required />
+					<input id="id_nombre" name="nombre" type="text" size="15" placeholder="Nombre*"
+						value="<?php echo $formulario['nombre'];?>" pattern="[a-zA-ZÑñáéíóú]+" required />
 				</div>
 			</div>
 			<div class="div">
 				<div class="campo">
-					<input id="id_apellidos" name="apellidos" type="text" size="20" placeholder="Apellidos *"
-						value="<?php echo $formulario['apellidos'];?>" required />
+					<input id="id_apellidos" name="apellidos" type="text" size="20" placeholder="Apellidos*"
+						value="<?php echo $formulario['apellidos'];?>" pattern="[a-zA-ZÑñáéíóú]+" required />
 				</div>
 			</div>	
 			<br />
 			<div class="div">
 				<label for="id_dni">DNI*:</label>
 		  		<div class="campo">
-					<input id="id_dni" name="dni" type="text" placeholder="12345678" size="12" pattern="^[0-9]{8}"
-						title="Ocho dígitos (sin letra)" value="<?php echo $formulario['dni'];?>" required>
+					<input id="id_dni" name="dni" type="text" placeholder="12345678" size="12" 
+					pattern="^[0-9]{8}" title="Ocho dígitos (sin letra)" value="<?php echo $formulario['dni'];?>" required>
 				</div>
 			</div>
 			<br />
@@ -103,7 +103,7 @@
 			<label for="id_direccion">Dirección:</label>
 				<div class="campo">
 				<input id="id_direccion" name="direccion" type="text" size="35" placeholder="Calle/Avda. (Reina Mercedes) Nº XXX"
-					value="<?php echo $formulario['direccion'];?>" />
+					value="<?php echo $formulario['direccion'];?>" pattern="[a-zA-ZÑñáéíóú0-9]+" />
 				</div>
 			</div>
 			<br />
@@ -111,7 +111,8 @@
 				<label for="id_contraseña">Contraseña*:</label>
 				<div class="campo"> 
 					<input id="id_contraseña" name="contraseña" type="password" 
-						title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número)" required/>
+					pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])\S{6,}" 
+					title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número)" required/>
 				</div>
 			</div>
 			<br />

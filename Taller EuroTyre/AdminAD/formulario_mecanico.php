@@ -63,7 +63,7 @@
   		}
     ?>
     <div id="id_divMecanico"> 
-    <form id="id_regMecanico" method="post" action="validacion_mecanico.php" novalidate>
+    <form id="id_regMecanico" method="post" action="validacion_mecanico.php">
         <fieldset id="id_campo">
             <h1>Registro de trabajador </h1>
             <p id="id_obligatorio">Todos los campos son obligatorios</p>
@@ -75,28 +75,29 @@
             <div class="div">
                 <label for="id_dni">DNI:</label>
                 <div class="campo">
-                    <input id="id_dni" type="text" name="dni" value="<?php echo $registroMecanico["dni"]; ?>" required />
+                    <input id="id_dni" type="text" name="dni" value="<?php echo $registroMecanico["dni"]; ?>" pattern="^[0-9]{8}" required />
                 </div>
             </div>
             <br />
             <div class="div">
                 <label for="id_nombre">Nombre:</label>
                 <div class="campo">
-                    <input id="id_nombre" name="nombre" type="text" value="<?php echo $registroMecanico['nombre'];?>" required />
+                    <input id="id_nombre" name="nombre" type="text" value="<?php echo $registroMecanico['nombre'];?>" pattern="[a-zA-Z]+" required />
                 </div>
             </div>
             <br />
             <div class="div">
                 <label for="id_apellido">Apellido:</label>
                 <div class="campo">
-                    <input id="id_apellido" name="apellido" type="text" value="<?php echo $registroMecanico['apellido'];?>" required />
+                    <input id="id_apellido" name="apellido" type="text" value="<?php echo $registroMecanico['apellido'];?>" pattern="[a-zA-Z]+" required />
                 </div>
             </div>
             <br />
             <div class="div">
                 <label for="id_contraseña">Contraseña:</label>
                 <div class="campo">
-                    <input id="id_contraseña" name="contraseña" type="password" />
+                    <input id="id_contraseña" name="contraseña" type="password" 
+                    pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])\S{6,}" />
                 </div> 
             </div>
             <br /> 

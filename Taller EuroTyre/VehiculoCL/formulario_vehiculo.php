@@ -111,14 +111,15 @@
             <div class="div">
                 <label for="id_matricula">Matrícula*:</label>
                 <div class="campo">
-                <input id="id_matricula" name="matricula" type="text" value="<?php echo $registro['matricula'];?>" required />
+                <input id="id_matricula" name="matricula" type="text" value="<?php echo $registro['matricula'];?>" pattern="[0-9]{4}\s?[a-zA-Z]{3}" required />
                 </div>
             </div>
             <br />
             <div class="div">
                 <label for="id_color">Color:</label>
                 <div class="campo">
-                <input id="id_color" name="color" type="text" value="<?php echo $registro['color'];?>" />
+                <input id="id_color" name="color" type="text"  pattern="[a-zA-ZÑñáéíóú]+" 
+                value="<?php echo $registro['color'];?>" />
                 </div>
             </div>
             <br />

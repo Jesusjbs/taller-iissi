@@ -69,7 +69,7 @@
             <div class="div">
                 <label for="id_nombre">Nombre*:</label>
                 <div class="campo"> 
-                    <input id="id_nombre" type="text" name="nombre" value="<?php echo $registroProveedor["nombre"]; ?>" required />
+                    <input id="id_nombre" type="text" name="nombre" value="<?php echo $registroProveedor["nombre"]; ?>" pattern="[a-zA-ZÑñáéíóú]+" required />
                 </div>
             </div>
             <br />
@@ -89,14 +89,14 @@
             <div class="div">
                 <label for="id_email">Email:</label>
                 <div class="campo"> 
-                    <input id="id_email" name="email" type="text" value="<?php echo $registroProveedor['email'];?>"  />
+                    <input id="id_email" name="email" type="email" value="<?php echo $registroProveedor['email'];?>"  />
                 </div>
             </div>
             <br />
             <div class="div">
                 <label for="id_telefono">Teléfono*:</label>
                 <div class="campo"> 
-                    <input id="id_telefono" name="telefono" type="text" value="<?php echo $registroProveedor['telefono'];?>" required/>
+                    <input id="id_telefono" name="telefono" type="text" value="<?php echo $registroProveedor['telefono'];?>" pattern="^[0-9]{9}" required/>
                 </div>
             </div>
             <button id="id_enviar" type="submit">Registrar</button>

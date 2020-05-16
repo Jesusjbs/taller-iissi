@@ -11,6 +11,10 @@ body {
     background-color: #3d4045;
 }
 
+.h{
+    width: 120%;
+}
+
 #id_tablas{
 	color: #3D4045;
     margin: auto;
@@ -19,11 +23,14 @@ body {
     background-color: #d5be23;
     height: auto;
     overflow: auto;
+    margin-top: 8%;
 }
+
 form{
     height: auto;
     overflow: auto;
     float: left;
+
 }
 
 .reparacion {
@@ -31,9 +38,14 @@ form{
     height: auto;
     overflow: auto;
     float:left;
-    z-index: 0;
+    margin-left:2%;
 }
 
+.campo {
+    border-radius: 5px;
+    width: 100%;
+    font-family: 'Source Code Pro';
+}
 
 #id_titulo{
     margin-top: 0.5%;
@@ -42,17 +54,12 @@ form{
 
 #id_tabla{
     margin-top: 1%;
-    border:1px solid;
     margin-top: -1%;
     padding: 0% 7%;
     margin-bottom: 5%;
     float: left;
 }
-.id_btnFac{
-    margin-top: 2%;
-    margin-top: 535%;
-    z-index: 1;
-}
+
 #id_paginacion {
     width: auto;
     margin: auto;
@@ -64,6 +71,7 @@ form{
     padding: 1% 1%;
     width: 10%;
     margin: auto;
+    
 }
 
 #id_form {
@@ -81,6 +89,7 @@ form{
     color: #fbde1b;
     font-size: medium;
     border: 1px solid;
+    border-radius: 4px;
 }
 
 #pag_tam{
@@ -91,8 +100,24 @@ form{
     margin: auto;
 }
 
+.id_botonesReparacion{
+    width: 7%;
+    margin:auto;
+    margin-bottom: 3%;
+}
+
+.editar_fila {
+    border-radius: 4px;
+    background: none;
+}
+
+.facturaBtn {
+    border-radius: 4px;
+    width: 130%;
+}
+
 #id_enviar {
-    margin-top: 5%;
+    margin-top: 4%;
 	border-radius: 16px;
 	padding: 4px 20px;
     text-decoration: none;

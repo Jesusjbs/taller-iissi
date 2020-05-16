@@ -15,13 +15,18 @@
         $registroFactura['manoDeObra'] = "";
         $registroFactura['IVA'] = 0.21;
         $registroFactura['Pago'] = "Efectivo";
-        
+
 		$_SESSION['registroFactura'] = $registroFactura;
 	}
 	// Si ya existían valores, los cogemos para inicializar el formulario
 	else{
         $registroFactura = $_SESSION['registroFactura'];
     }		
+
+    if(isset($_SESSION["reparacion"])) {
+        unset($_SESSION["reparacion"]);
+    }
+
 	if (isset($_SESSION["errores"]))
         $errores = $_SESSION["errores"];
         unset($_SESSION["errores"]);
@@ -63,7 +68,7 @@
             <div class="div">
                 <label for="id_dni">DNI del cliente:</label>
                 <div class="campo">
-                    <input size="7px" id="id_dni" type="text" name="dni" value="<?php echo $registroFactura['dni'];?>"  readonly="readonly" />
+                    <input size="7px" id="id_dni" type="text" name="dni" value="<?php echo $registroFactura['dni'];?>" readonly="readonly" />
                 </div>
             </div>
             <br />
