@@ -77,10 +77,14 @@
 			$errores[] = $error . "<p>El email es incorrecto: " . $Usuario["email"]. "</p>";
         }else if(strlen($Usuario["email"])>50){
 			$errores[] = "<p>El email debe de tener menos de 50 caracteres.</p>";
-        }
+		}
+
+		//Validar dirección
+		if(strlen($Usuario["direccion"])>50){
+			$errores[] = "<p>La dirección no puede contener más de 50 caracteres.</p>";
+		}
 
         // Validación de la contraseña
-
 
 		if($Usuario["antigua"] != "" && $Usuario["contraseña"] != "" && strlen($Usuario["contraseña"])<6) {
 			$errores [] = "<p>La nueva contraseña debe tener más de 6 caracteres</p>";

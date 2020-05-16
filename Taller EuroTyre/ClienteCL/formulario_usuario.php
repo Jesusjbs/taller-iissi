@@ -62,14 +62,14 @@
 		  
 			<div class="div">
 				<div class="campo">
-					<input id="id_nombre" name="nombre" type="text" size="15" placeholder="Nombre*"
-						value="<?php echo $formulario['nombre'];?>" pattern="[a-zA-ZÑñáéíóú]+" required />
+					<input id="id_nombre" title="El nombre debe de contener menos de 50 letras" name="nombre" type="text" size="15" placeholder="Nombre*"
+						value="<?php echo $formulario['nombre'];?>" pattern="[a-zA-ZÑñáéíóú]{1,50}" required />
 				</div>
 			</div>
 			<div class="div">
 				<div class="campo">
-					<input id="id_apellidos" name="apellidos" type="text" size="20" placeholder="Apellidos*"
-						value="<?php echo $formulario['apellidos'];?>" pattern="[a-zA-ZÑñáéíóú]+" required />
+					<input id="id_apellidos" title="El apellido debe de contener menos de 50 letras" name="apellidos" type="text" size="20" placeholder="Apellidos*"
+						value="<?php echo $formulario['apellidos'];?>" pattern="[a-zA-ZÑñáéíóú]{1,50}" required />
 				</div>
 			</div>	
 			<br />
@@ -93,7 +93,7 @@
 			<div class="div">
 				<label for="id_email">Email:</label>
 				<div class="campo">
-					<input size="30"  id="id_email" name="email" type="email" placeholder="ejemplo@compañia.dominio"
+					<input size="30"  id="id_email" name="email" type="email" placeholder="ejemplo@compañia.dominio" maxlength="50"
 						value="<?php echo $formulario['email'];?>" />
 				</div>
 			</div>
@@ -102,8 +102,8 @@
 			<div class="div">
 			<label for="id_direccion">Dirección:</label>
 				<div class="campo">
-				<input id="id_direccion" name="direccion" type="text" size="35" placeholder="Calle/Avda. (Reina Mercedes) Nº XXX"
-					value="<?php echo $formulario['direccion'];?>" pattern="[a-zA-ZÑñáéíóú0-9]+" />
+				<input id="id_direccion" title="Solo debe contener letras y dígitos y tene una longitud máxima de 50" name="direccion" type="text" size="35" placeholder="Calle/Avda. (Reina Mercedes) Nº XXX"
+					value="<?php echo $formulario['direccion'];?>" pattern="[a-zA-ZÑñáéíóú0-9]{0,50}" />
 				</div>
 			</div>
 			<br />

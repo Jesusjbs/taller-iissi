@@ -74,19 +74,21 @@
                         <table>
                             <tr>
                                 <td>Nombre:</td>
-                                <td><input class="campo" name="nombre" type="text" value="<?php echo $proveedor[2];?>" /></td>
+                                <td><input class="campo" title="Sólo letras mayúsculas o minúsculas" name="nombre" type="text" 
+                                value="<?php echo $proveedor[2];?>" pattern="[a-zA-ZÑñáéíóú]+" required /></td>
                             </tr>
                             <tr>
                                 <td>Tipo de Proveedor:</td>
-                                <td><input class="campo" name="tipoProveedor" type="text" value="<?php echo $proveedor[1];?>" /></td>
+                                <td><input class="campo" name="tipoProveedor" type="text" value="<?php echo $proveedor[1];?>" required /></td>
                             </tr>
                             <tr>
                                 <td>Email:</td>
-                                <td><input class="campo" name="email" type="text" value="<?php echo $proveedor[3];?>" /></td>
+                                <td><input class="campo" name="email" type="text" value="<?php echo $proveedor[3];?>" maxlength="50"/></td>
                             </tr>
                             <tr>
                                 <td>Teléfono:</td>
-                                <td><input class="campo" name="telefono" type="text" value="<?php echo $proveedor[4];?>" /></td>
+                                <td><input class="campo" title="Debe contener 9 dígitos" name="telefono" type="text" 
+                                value="<?php echo $proveedor[4];?>" pattern="^[0-9]{9}" required/></td>
                             </tr>
                         </table><br />
                         

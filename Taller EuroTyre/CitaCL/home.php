@@ -53,7 +53,7 @@
 		?>
 
 		<div id="id_cita">
-			<form id="id_formCita" method="POST" action="validacion_cita.php" novalidate>
+			<form id="id_formCita" method="POST" action="validacion_cita.php" >
 				<fieldset id="id_campo">
 					<h1>Solicitar Cita</h1>
 					<br/>
@@ -68,10 +68,12 @@
 								$coches = consultaCoche($conexion,$_SESSION["login"]);
 								$motos = consultaMoto($conexion,$_SESSION["login"]);
 								foreach($coches as $coche) {	?>
-									<option value="<?php echo $coche[7] ?>"><?php echo $coche[26] . " "; echo $coche[17]; ?></option>
+									<option value="<?php echo $coche[7] ?>"><?php echo $coche[26] . " "; echo $coche[17] . " ("; 
+									echo $coche[7] . ")"?></option>
 								<?php }
 								foreach($motos as $moto) {	?>
-									<option value="<?php echo $moto[7] ?>"><?php echo $moto[23] . " "; echo $moto[16]; ?></option>
+									<option value="<?php echo $moto[7] ?>"><?php echo $moto[23] . " "; echo $moto[16] . " ("; 
+									echo $moto[7] . ")" ?></option>
 								<?php }
 								cerrarConexionBD($conexion);
 							?>
@@ -99,7 +101,7 @@
 					<div class="div">
 						<label for="id_itv" >Próxima ITV:</label>
 						<div class="campo">
-							<input id="id_itv" name="itv" type="date" required/>
+							<input id="id_itv" name="itv" type="date"/>
 							<img alt="date.png" style="width: 2.5%; height: 2.5%;margin-bottom: -0.7%" src="../img/date.png" />
 						</div>
 					</div>

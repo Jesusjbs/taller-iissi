@@ -18,8 +18,8 @@
 			
 		if (isset($_REQUEST["editar"])) Header("Location: home.php"); 
 		else if (isset($_REQUEST["grabar"])) Header("Location: validar_editar_reparacion.php");
-		else if(isset($_REQUEST["ver"])){ $_SESSION["oid_r"] = $_REQUEST["oid_r"]; Header("Location: ../FacturaAD/factura.php");}
-		else if(isset($_REQUEST["crear"])){ $_SESSION["oid_r"] = $_REQUEST["oid_r"]; $_SESSION["dni"] = $_REQUEST["dni"]; Header("Location: ../FacturaAD/formulario_factura.php");}
+		else if(isset($_REQUEST["ver"])){ Header("Location: ../FacturaAD/factura.php");}
+		else if(isset($_REQUEST["crear"])){ Header("Location: ../FacturaAD/formulario_factura.php");}
 	}
 	else 
 		Header("Location: home.php");

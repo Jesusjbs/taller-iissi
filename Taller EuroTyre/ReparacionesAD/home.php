@@ -27,9 +27,9 @@
 	$pagina_seleccionada = isset($_GET["PAG_NUM"])? (int)$_GET["PAG_NUM"]:
 												(isset($paginacion)? (int)$paginacion["PAG_NUM"]: 1);
 	$pag_tam = isset($_GET["PAG_TAM"])? (int)$_GET["PAG_TAM"]:
-										(isset($paginacion)? (int)$paginacion["PAG_TAM"]: 5);
+										(isset($paginacion)? (int)$paginacion["PAG_TAM"]: 8);
 	if ($pagina_seleccionada < 1) $pagina_seleccionada = 1;
-	if ($pag_tam < 1) $pag_tam = 5;
+	if ($pag_tam < 1) $pag_tam = 8;
 		
 	// Antes de seguir, borramos las variables de sección para no confundirnos más adelante
 	unset($_SESSION["paginacion"]);
@@ -118,13 +118,13 @@
                                 <td><?php echo $fila["FECHASOLICITUD"]; ?></td>
                             </tr>
                             <tr>
-                                <td class="h">Fecha de Reparación:</td>
+                                <td >Fecha de Reparación:</td>
                                 <td><input class="campo" name="fechaInicio" type="date" 
-                                        value="<?php echo $objFechaIn->format('Y-m-d') ; ?>" /></td>
+                                        value="<?php echo $objFechaIn->format('Y-m-d') ; ?>" required/></td>
                             </tr>
                             <tr>
-                                <td class="h">Estado de Reparación:</td>
-                                <td><input class="campo" name="estado" type="text" value="<?php echo $fila["ESTADO"];?>" /></td>
+                                <td >Estado de Reparación:</td>
+                                <td><input class="campo" name="estado" type="text" value="<?php echo $fila["ESTADO"];?>" required/></td>
                             </tr>
                             <tr>
                                 <td>Presupuesto:</td>
@@ -134,7 +134,7 @@
                                     $presupuesto = "SI";
                                 } ?>
                                 <td><input class="campo" name="tienePresupuesto" type="text" 
-                                        value="<?php echo $presupuesto; ?>" /></td>
+                                        value="<?php echo $presupuesto; ?>" required/></td>
                             </tr>
                             <tr>
                                 <td>Fecha de Finalización:</td>

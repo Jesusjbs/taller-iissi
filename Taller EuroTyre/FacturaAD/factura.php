@@ -9,7 +9,7 @@
     else {
         
         if(!isset($_SESSION["oid_r"])) {
-            $_SESSION["oid_r"] = $_REQUEST["oid_r"];
+            $_SESSION["oid_r"] = $_SESSION["reparacion"]["oid_r"];
         }
         
         if(isset($_SESSION["factura"])) {
@@ -79,7 +79,7 @@
                             <tr>
                                 <td>Descripción:</td>
                                 <td><textarea id="id_descripcion" name="descripcion" rows="2" cols="40" 
-                                        value="<?php echo $fila["DESCRIPCIÓN"]; ?>"><?php echo $fila["DESCRIPCIÓN"]; ?></textarea></td>
+                                        maxlength="100" value="<?php echo $fila["DESCRIPCIÓN"]; ?>"><?php echo $fila["DESCRIPCIÓN"]; ?></textarea></td>
                             </tr>
                             <tr>
                                 <td>Mano de Obra:</td>
@@ -93,7 +93,7 @@
                             <tr>
                                 <td>IVA:</td>
                                 <td><input id="id_iva" name="IVA" type="text" 
-                                    value="<?php echo str_replace(',','.', $fila["IVA"]);?>"/></td>
+                                    value="<?php echo str_replace(',','.', $fila["IVA"]);?>" required /></td>
                             </tr>
                             <tr>
                                 <td id="id_importe"><h3>IMPORTE:</h3></td>

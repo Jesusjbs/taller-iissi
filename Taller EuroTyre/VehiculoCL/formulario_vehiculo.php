@@ -50,7 +50,7 @@
     ?>
 
     <div id="id_divVehiculo">
-    <form id="id_regVehiculo" method="post" action="validacion_vehiculo.php" novalidate>
+    <form id="id_regVehiculo" method="post" action="validacion_vehiculo.php">
         <fieldset id="id_campo">
             <h1>Registro de vehículo</h1>
             <p id="id_obligatorio">* Obligatorio</p>
@@ -111,14 +111,15 @@
             <div class="div">
                 <label for="id_matricula">Matrícula*:</label>
                 <div class="campo">
-                <input id="id_matricula" name="matricula" type="text" value="<?php echo $registro['matricula'];?>" pattern="[0-9]{4}\s?[a-zA-Z]{3}" required />
+                <input id="id_matricula" title="(1234XXX)" name="matricula" type="text" value="<?php echo $registro['matricula'];?>" 
+                        pattern="[0-9]{4}\s?[A-Z]{3}" required />
                 </div>
             </div>
             <br />
             <div class="div">
                 <label for="id_color">Color:</label>
                 <div class="campo">
-                <input id="id_color" name="color" type="text"  pattern="[a-zA-ZÑñáéíóú]+" 
+                <input id="id_color" title="El color solo debe contener letras" name="color" type="text"  pattern="[a-zA-ZÑñ áéíóú]{0,50}" 
                 value="<?php echo $registro['color'];?>" />
                 </div>
             </div>

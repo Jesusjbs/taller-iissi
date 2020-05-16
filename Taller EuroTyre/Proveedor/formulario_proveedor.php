@@ -61,7 +61,7 @@
     ?>
 
     <div id="id_divProveedor">
-    <form id="id_regProveedor" method="post" action="validacion_proveedor.php" novalidate>
+    <form id="id_regProveedor" method="post" action="validacion_proveedor.php">
         <fieldset id="id_campo">
             <h1>Registro de proveedor</h1>
             <p id="id_obligatorio">*Obligatorio</p>
@@ -69,7 +69,8 @@
             <div class="div">
                 <label for="id_nombre">Nombre*:</label>
                 <div class="campo"> 
-                    <input id="id_nombre" type="text" name="nombre" value="<?php echo $registroProveedor["nombre"]; ?>" pattern="[a-zA-ZÑñáéíóú]+" required />
+                    <input id="id_nombre" title="Sólo letras mayúsculas o minúsculas" type="text" name="nombre" 
+                        value="<?php echo $registroProveedor["nombre"]; ?>" pattern="[a-zA-ZÑñáéíóú]+" required />
                 </div>
             </div>
             <br />
@@ -89,14 +90,15 @@
             <div class="div">
                 <label for="id_email">Email:</label>
                 <div class="campo"> 
-                    <input id="id_email" name="email" type="email" value="<?php echo $registroProveedor['email'];?>"  />
+                    <input id="id_email" name="email" maxlength="50" type="email" value="<?php echo $registroProveedor['email'];?>" maxlength="50" />
                 </div>
             </div>
             <br />
             <div class="div">
                 <label for="id_telefono">Teléfono*:</label>
                 <div class="campo"> 
-                    <input id="id_telefono" name="telefono" type="text" value="<?php echo $registroProveedor['telefono'];?>" pattern="^[0-9]{9}" required/>
+                    <input id="id_telefono" title="Debe contener 9 dígitos" name="telefono" type="text" 
+                        value="<?php echo $registroProveedor['telefono'];?>" pattern="^[0-9]{9}" required/>
                 </div>
             </div>
             <button id="id_enviar" type="submit">Registrar</button>

@@ -6,11 +6,14 @@
     if(!isset($_SESSION["admin"])) {
         Header("Location: ../Otros/login.php");
     } 
-    
+    if(!isset($_SESSION["reparacion"]) && !isset($_SESSION['registroFactura'])) {
+        Header("Location: ../ReparacionesAD/home.php");
+    }
+
 	// Si no existen datos del formulario en la sesión, se crea una entrada con valores por defecto
 	if (!isset($_SESSION['registroFactura'])) {
-        $registroFactura['dni'] = $_REQUEST["dni"];
-        $registroFactura['oidr'] = $_REQUEST["oid_r"];
+        $registroFactura['dni'] = $_SESSION["reparacion"]["dni"];
+        $registroFactura['oidr'] = $_SESSION["reparacion"]["oid_r"];
         $registroFactura['descripcion'] = "";
         $registroFactura['manoDeObra'] = "";
         $registroFactura['IVA'] = 0.21;
@@ -75,7 +78,7 @@
             <div class = "div">
                 <label for="id_descripcion">Descripción:</label><br/>
                 <div class="campo"> 
-                    <textarea id="id_descripcion" name="descripcion" rows="3" cols="34" 
+                    <textarea id="id_descripcion" name="descripcion" rows="3" cols="34" maxlength="100"
                         value="<?php echo $registroFactura["descripcion"]; ?>"><?php echo $registroFactura["descripcion"]; ?></textarea>
                 </div>
             </div>
@@ -89,9 +92,9 @@
             </div>
             <br />
             <div class = "div">
-                <label for="id_iva">IVA:</label>
+                <label for="id_iva">IVA*:</label>
                 <div class="campo">
-                    <input id="id_iva" size="3" type="text" name="IVA" value="<?php echo str_replace(',','.', $registroFactura["IVA"]);?>" />
+                    <input id="id_iva" size="3" type="text" name="IVA" value="<?php echo str_replace(',','.', $registroFactura["IVA"]);?>" required/>
                 </div>
             </div>
             <br />

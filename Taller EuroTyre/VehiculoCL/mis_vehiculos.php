@@ -98,15 +98,17 @@
                             </tr>
                             <tr>
                                 <td>Color:</td>
-                                <td><input class="campo" name="color" type="text" value="<?php echo $vehiculo[8];?>" /></td>
+                                <td><input class="campo" title="Solo debe contener letras"  name="color" type="text" 
+                                value="<?php echo $vehiculo[8];?>" pattern="[a-zA-ZÑñáéíó ú]{0,50}"/></td>
                             </tr>
                             <tr>
                                 <td>Kilometraje:</td>
-                                <td> <input class="campo" name="kilometraje" type="text" value="<?php echo $vehiculo[9];?>" /></td>
+                                <td> <input class="campo" title="Solo debe contener dígitos" name="kilometraje" type="text" 
+                                        value="<?php echo $vehiculo[9];?>" pattern="[0-9]+" /></td>
                             </tr>
                             <tr>
                                 <td>Nº Bastidor:</td>
-                                <td><input class="campo" name="numBastidor" type="text" value="<?php  echo $vehiculo[11];?>" /></td>
+                                <td><input class="campo" title="Debe contener 17 cáracteres alfanuméricos" name="numBastidor" pattern="[A-Z0-9]{17}" type="text" value="<?php  echo $vehiculo[11];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Prox. ITV:</td>
@@ -223,15 +225,17 @@
                             </tr>
                             <tr>
                                 <td>Color:</td>
-                                <td><input class="campo" name="color" type="text" value="<?php echo $vehiculo[8];?>" /></td>
+                                <td><input class="campo" title="Solo debe contener letras" pattern="[a-zA-ZÑñáéíó ú]{0,50}" name="color"
+                                 type="text" value="<?php echo $vehiculo[8];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Kilometraje:</td>
-                                <td> <input class="campo" name="kilometraje" type="text" value="<?php echo $vehiculo[9];?>" /></td>
+                                <td> <input class="campo" title="Solo debe contener dígitos" name="kilometraje" type="text" 
+                                value="<?php echo $vehiculo[9];?>" pattern="[0-9]+"/></td>
                             </tr>
                             <tr>
                                 <td>Nº Bastidor:</td>
-                                <td><input class="campo" name="numBastidor" type="text" value="<?php  echo $vehiculo[11];?>" /></td>
+                                <td><input class="campo" name="numBastidor" title="Debe contener 17 cáracteres alfanuméricos" pattern="[A-Z0-9]{17}" type="text" value="<?php  echo $vehiculo[11];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Prox. ITV:</td>

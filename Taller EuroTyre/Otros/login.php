@@ -78,7 +78,8 @@
 						<fieldset id="id_campouser">
 							<img alt="user.png" id="id_userImg" src="../img/user.png" />
 							<label for="id_dni">Usuario:</label>
-							<input size="31" id="id_dni" name="dni" type="text" placeholder="DNI" required/>
+							<input size="31" id="id_dni" title="Ocho dígitos (sin letra)" name="dni" type="text" 
+							placeholder="DNI" pattern="^[0-9]{8}" required/>
 							<br><br>
 
 							<img id="id_passImg" alt="pass.png" src="../img/pass.png" />

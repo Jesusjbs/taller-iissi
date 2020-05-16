@@ -75,36 +75,41 @@
             <div class="div">
                 <label for="id_dni">DNI:</label>
                 <div class="campo">
-                    <input id="id_dni" type="text" name="dni" value="<?php echo $registroMecanico["dni"]; ?>" pattern="^[0-9]{8}" required />
+                    <input id="id_dni" title="Debe contener 8 dígitos (sin letra)" type="text" name="dni" 
+                        value="<?php echo $registroMecanico["dni"]; ?>" pattern="^[0-9]{8}" required />
                 </div>
             </div>
-            <br />
+            <br />""
             <div class="div">
                 <label for="id_nombre">Nombre:</label>
                 <div class="campo">
-                    <input id="id_nombre" name="nombre" type="text" value="<?php echo $registroMecanico['nombre'];?>" pattern="[a-zA-Z]+" required />
+                    <input id="id_nombre" title="Solo debe contener letras y tener una longitud máxima de 50" name="nombre" type="text" 
+                        value="<?php echo $registroMecanico['nombre'];?>" pattern="[a-zA-ZÑñáéíóú]{1,50}" required />
                 </div>
             </div>
             <br />
             <div class="div">
                 <label for="id_apellido">Apellido:</label>
                 <div class="campo">
-                    <input id="id_apellido" name="apellido" type="text" value="<?php echo $registroMecanico['apellido'];?>" pattern="[a-zA-Z]+" required />
+                    <input id="id_apellido" title="Solo debe contener letras y tener una longitud máxima de 50" name="apellido" type="text" 
+                        value="<?php echo $registroMecanico['apellido'];?>" pattern="[a-zA-ZÑñáéíóú]{1,50}" required />
                 </div>
             </div>
             <br />
             <div class="div">
                 <label for="id_contraseña">Contraseña:</label>
                 <div class="campo">
-                    <input id="id_contraseña" name="contraseña" type="password" 
-                    pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])\S{6,}" />
+                    <input id="id_contraseña" title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número) y máximo 50." 
+                        name="contraseña" type="password" 
+                    pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])\S{6,50}" required />
                 </div> 
             </div>
             <br /> 
             <div class="div">
                 <label for="id_confirmar">Confirmar contraseña:</label>
                 <div class="campo">
-                    <input id="id_confirmar" name="confirmar" type="password" />
+                    <input id="id_confirmar" title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número) y máximo 50." 
+                    name="confirmar" type="password" required />
                 </div>
             </div>
             <br />
