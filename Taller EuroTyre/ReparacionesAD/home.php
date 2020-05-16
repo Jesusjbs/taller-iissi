@@ -222,19 +222,21 @@
             </form>
         </article>
         <?php if(cuentaFactura($conexion, $fila["OID_R"]) == 1) { ?>
-                <label>Factura:</label>
                 <form action="../FacturaAD/factura.php" method="post">
                     <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
+                    <div class ="id_btnFac">
                     <button title="Ver Factura" type="submit"><img src="../img/see_bill.png" 
                         style="width: 30px; height: 30px;" alt="Ver Factura"></button>
                     </form>
+                    </div>
         <?php } else { ?>
-            <label>Factura:</label>
                 <form action="../FacturaAD/formulario_factura.php" method="post">
                     <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
                     <input type="hidden" value="<?php echo $fila["DNI"];?>" name="dni" />
-                    <button title="Crear Factura" type="submit"><img src="../img/add_bill.png" 
+                    <div class ="id_btnFac">
+                    <button  title="Crear Factura" type="submit"><img src="../img/add_bill.png" 
                         style="width: 30px; height: 30px;" alt="Crear Factura"></button>
+                    </div>
                 </form>
         <?php }
         }
