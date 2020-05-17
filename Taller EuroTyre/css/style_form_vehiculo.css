@@ -7,11 +7,11 @@ body {
     background-color: #d5be23;
 	color: #3D4045;
     width: 48%;
-    height: 400px;
     border: 1px solid #000000;
     margin: auto;
     vertical-align: middle;
     margin-top: 6%;
+    overflow: auto;
 }
 
 .div {
@@ -26,11 +26,13 @@ body {
 }
 
 .error {
+    position: absolute;
+    margin-top: 6%;
+    margin-left: 2%;
 	color : #fb1b4c;	
 	border : 2px solid red;
 	padding : 10px;
-    margin: 10px;
-    width: 12%;
+    width: 15%;
     float: left;
 }
 
@@ -39,6 +41,37 @@ body {
     position: absolute;
     margin-left: 10%;
 }
+
+#id_marcaC{
+    border-radius: 2%;
+    position: absolute;
+    margin-left: 6.4%;
+    font-family: 'Source Code Pro';
+    font-size: medium;
+}
+
+#id_marcaM{
+    border-radius: 2%;
+    position: absolute;
+    margin-left: 6.4%;
+    font-family: 'Source Code Pro';
+    font-size: medium;
+}
+
+#id_modeloC{
+    border-radius: 2%;
+    position: absolute;
+    margin-left: 5.7%;
+    font-family: 'Source Code Pro';
+}
+
+#id_modeloM{
+    border-radius: 2%;
+    position: absolute;
+    margin-left: 5.7%;
+    font-family: 'Source Code Pro';
+}
+
 
 #id_campo {
     border: none;

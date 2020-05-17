@@ -47,7 +47,7 @@
         // Nº Bastidor
         if($vehiculo["numBastidor"] != "" && strlen($vehiculo["numBastidor"])!=17 ) {
             $errores[] = "<p>El numero de bastidor debe de tener 17 dígitos</p>";
-        } else if($vehiculo["numBastidor"] != "" && !preg_match("/^[A-Z\d]+$/", $vehiculo["numBastidor"])) {
+        } else if($vehiculo["numBastidor"] != "" && !preg_match("/^[A-Z\d]+$/", $vehiculo["numBastidor"])  ) {
             $errores[] = "<p>El numero de bastidor no tiene formato válido, solo letras mayúsculas y dígitos</p>";
         }
         return $errores;

@@ -79,7 +79,7 @@
                         value="<?php echo $registroMecanico["dni"]; ?>" pattern="^[0-9]{8}" required />
                 </div>
             </div>
-            <br />""
+            <br />
             <div class="div">
                 <label for="id_nombre">Nombre:</label>
                 <div class="campo">

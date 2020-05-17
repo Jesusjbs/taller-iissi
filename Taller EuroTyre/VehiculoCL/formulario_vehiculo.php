@@ -12,8 +12,8 @@
         $registro['modelo'] = "";
 		$registro['matricula'] = "";
 		$registro['color'] = "";
-	
-		$_SESSION['registro'] = $registro;
+
+        $_SESSION['registro'] = $registro;
 	}
 	// Si ya existían valores, los cogemos para inicializar el formulario
 	else
@@ -37,6 +37,82 @@
 
     <link rel="shortcut icon" href="../img/logo.png">
     <link rel="apple-touch-icon" href="../img/logo.png">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script>
+        // Inicialización de elementos y eventos cuando el documento se carga completamente
+        $(document).ready(function () {
+            //Inicialmente el campo de marca y modelos de moto está oculto, ya que tenemos el checked en coche
+            $('#campoMoto').hide();
+
+            //Inicialmente rellenamos los campo de marca y modelos de coches (para que salgan en la marca predeterminada un modelo)
+            $.get("Vehiculo_AJAX.php", { marcaModeloC: $("#id_marcaC").val() }, function (data) {
+                // Borro los modelos de coches que hubiera antes en el optgroup
+                $("#opcionesModelosC").empty();
+                // Adjunto al optgroup la lista de modelos de coches devuelta por la consulta AJAX
+                $("#opcionesModelosC").append(data);
+            });
+
+            //Inicialmente rellenamos los campo de marca y modelos de motos (para que salgan en la marca predeterminada un modelo)
+            $.get("Vehiculo_AJAX.php", { marcaModeloM: $("#id_marcaM").val() }, function (data) {
+                // Borro los modelos de motos que hubiera antes en el opgroup
+                $("#opcionesModelosM").empty();
+                // Adjunto al optgroup la lista de modelos de motos devuelta por la consulta AJAX
+                $("#opcionesModelosM").append(data);
+            });
+
+            //Inicialmente está marcado coche, por tanto desabilitamos los select de marca y modelo de motos (para que así no aparezcan
+            // por pantalla)
+            $('#id_marcaM').prop("disabled", true);
+            $('#id_modeloM').prop("disabled", true);
+
+            //Al seleccionar tipo moto, ocultamos el divisor de coche y desabilitamos y habilitamos los campos correspondientes 
+            // (furgoneta, marca y modelo)
+            $('#id_tipo2').click(function () {
+                $('#id_tipo3').prop("disabled", true);
+                $('#campoCoche').hide();
+                $('#campoMoto').show();
+                $('#id_marcaM').removeAttr('disabled');
+                $('#id_modeloM').removeAttr('disabled');
+                $('#id_marcaC').prop("disabled", true);
+                $('#id_modeloC').prop("disabled", true);
+            });
+            
+            // Cuando hacemos click en el radio de coche (tipo 1), habilitamos el campo furgoneta, ocultamos el campo de motos,
+            // mostramos el de coches, habilitamos marcas y modelos de coches y deshabilitamos marcas y modelos de motos.
+            
+            $('#id_tipo1').click(function () {
+                $('#id_tipo3').removeAttr('disabled');
+                $('#campoMoto').hide();
+                $('#campoCoche').show();
+                $('#id_marcaC').removeAttr('disabled');
+                $('#id_modeloC').removeAttr('disabled');
+                $('#id_marcaM').prop("disabled", true);
+                $('#id_modeloM').prop("disabled", true);
+            });
+
+            // Manejador de evento sobre el campo de marca
+            $("#id_marcaC").on("change", function () {
+                // Llamada AJAX con JQuery, pasándole el OID de la marca seleccionada
+                $.get("Vehiculo_AJAX.php", { marcaModeloC: $("#id_marcaC").val() }, function (data) {
+                // Borro los modelos de coches que hubiera antes en el optgroup
+                $("#opcionesModelosC").empty();
+                // Adjunto al optgroup la lista de modelos de coches devuelta por la consulta AJAX
+                $("#opcionesModelosC").append(data);
+                });
+            });
+
+            $("#id_marcaM").on("change", function () {
+                // Llamada AJAX con JQuery, pasándole el OID de la marca seleccionada
+                $.get("Vehiculo_AJAX.php", { marcaModeloM: $("#id_marcaM").val() }, function (data) {
+                // Borro los modelos de motos que hubiera antes en el optgroup
+                $("#opcionesModelosM").empty();
+                // Adjunto al optgroup la lista de modelos de motos devuelta por la consulta AJAX
+                $("#opcionesModelosM").append(data);
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -50,85 +126,93 @@
     ?>
 
     <div id="id_divVehiculo">
-    <form id="id_regVehiculo" method="post" action="validacion_vehiculo.php">
-        <fieldset id="id_campo">
-            <h1>Registro de vehículo</h1>
-            <p id="id_obligatorio">* Obligatorio</p>
-            <div id="id_cocheBtn">
-                <input id="id_tipo1" type="radio" name="tipo" value="COCHE" <?php if($registro["tipo"]=="COCHE") echo ' checked '; ?>/>
-                <label for="id_tipo1">Coche</label>
-            </div>
+        <form id="id_regVehiculo" method="post" action="validacion_vehiculo.php" novalidate>
+            <fieldset id="id_campo">
+                <h1>Registro de vehículo</h1>
+                <p id="id_obligatorio">* Obligatorio</p>
+                <div id="id_cocheBtn">
+                    <input id="id_tipo1" type="radio" name="tipo" value="COCHE" checked />
+                    <label for="id_tipo1">Coche</label>
+                </div>
 
-            <div id = "id_motoBtn">
-                <input id="id_tipo2" type="radio" name="tipo" value="MOTO" <?php if($registro["tipo"]=="MOTO") echo ' checked '; ?>/>
-                <label for="id_tipo2">Moto</label>
-            </div>
-            <br />
-            <div id="id_furgonetaBtn">
-                <input id="id_tipo1.1" type="checkbox" name="furgoneta" />
-                <label for="id_tipo1.1">Furgoneta</label>
-            </div>
-            <br />
-            <div class="div">
-                <label id = "id_distancia" for="id_modelo">Vehículo*:</label>
-                <div class="campo"> 
-                <select id="id_modelo" name="modelo"> 
-                    <?php 
+                <div id="id_motoBtn">
+                    <input id="id_tipo2" type="radio" name="tipo" value="MOTO" />
+                    <label for="id_tipo2">Moto</label>
+                </div>
+                <br />
+                <div id="id_furgonetaBtn">
+                    <input id="id_tipo3" type="checkbox" name="furgoneta" />
+                    <label for="id_tipo3">Furgoneta</label>
+                </div>
+                <div class="div">
+                    <br />
+                    <div id="campoCoche">
+                        <label id="id_distancia" for="id_marcaC">Marca*:</label>
+                        <select id="id_marcaC" name="marca">
+                            <?php 
                     require_once("../Otros/gestionBD.php");
                     require_once("gestionarVehiculo.php");
                     $conexion = crearConexionBD();
-                    $marcas = consultaMarcas($conexion);
-                   
-                    foreach($marcas as $marca) {
-                      ?>
-                      
-                      <optgroup label="<?php echo $marca[1] ?>">
-                      <?php 
-                        $modelosC = consultaMC($conexion, $marca[0]);
-                        $modelosM = consultaMM($conexion, $marca[0]);
-                        
-                        foreach($modelosC as $modeloC) {
-                            ?>
-                            <option value="<?php echo $modeloC[0] . ' '; echo $modeloC[1] ?>">
-                            <?php echo $modeloC[1] ?></option>
-                        <?php }
+                    $marcasCoche = consultarMarcasCoches($conexion);
 
-                        foreach($modelosM as $modeloM) {
-                            ?>
-                            <option value="<?php echo $modeloM[0] . ' '; echo $modeloM[1] ?>">
-                            <?php echo $modeloM[1] ?></option>
-                        <?php }
-                      ?>
-                      </optgroup>
-                    <?php } 
-                    cerrarConexionBD($conexion);
+                    foreach($marcasCoche as $marca) {
+                        echo "<option label='" . $marca[0] . "' value='" . $marca[1] . "'>";
+                    }
                     ?>
+                        </select>
+                        <br /><br />
+                        <label for="id_modelo">Modelo*:</label>
+                        <select id="id_modeloC" name="modelo">
+                            <optgroup label="MODELOS" id="opcionesModelosC">
+                                <!-- AJAX -->
+                            </optgroup>
+                        </select>
+                        <br /><br />
+                    </div>
+                    <!-- MOTOS -->
+                    <div id="campoMoto">
+                        <label id="id_distancia" for="id_marcaM">Marca*:</label>
+                        <select id="id_marcaM" name="marca">
+                            <?php 
+                    $marcasMotos = consultarMarcasMotos($conexion);
 
-                </select>
+                    foreach($marcasMotos as $marca) {
+                        echo "<option label='" . $marca[0] . "' value='" . $marca[1] . "'>";
+                    }
+                    ?>
+                        </select>
+                        <br /><br />
+                        <label for="id_modeloM">Modelo*:</label>
+                        <select id="id_modeloM" name="modelo">
+                            <optgroup label="MODELOS" id="opcionesModelosM">
+                                <!-- AJAX -->
+                            </optgroup>
+                        </select>
+                        <?php
+                    cerrarConexionBD($conexion);
+                    ?><br /><br />
+                    </div>
                 </div>
-            </div>
-            <br />
-            <div class="div">
-                <label for="id_matricula">Matrícula*:</label>
-                <div class="campo">
-                <input id="id_matricula" title="(1234XXX)" name="matricula" type="text" value="<?php echo $registro['matricula'];?>" 
-                        pattern="[0-9]{4}\s?[A-Z]{3}" required />
+                <div class="div">
+                    <label for="id_matricula">Matrícula*:</label>
+                    <div class="campo">
+                        <input id="id_matricula" name="matricula" type="text"
+                            value="<?php echo $registro['matricula'];?>" required />
+                    </div>
                 </div>
-            </div>
-            <br />
-            <div class="div">
-                <label for="id_color">Color:</label>
-                <div class="campo">
-                <input id="id_color" title="El color solo debe contener letras" name="color" type="text"  pattern="[a-zA-ZÑñ áéíóú]{0,50}" 
-                value="<?php echo $registro['color'];?>" />
+                <br />
+                <div class="div">
+                    <label for="id_color">Color:</label>
+                    <div class="campo">
+                        <input id="id_color" name="color" type="text" value="<?php echo $registro['color'];?>" />
+                    </div>
                 </div>
-            </div>
-            <br />
-            <button id="id_enviar" type="submit">Registrar</button>
+                <br />
+                <button id="id_enviar" type="submit">Registrar</button>
 
-        </fieldset>
-    </form>
+            </fieldset>
+        </form>
     </div>
-    </body>
+</body>
 
 </html>

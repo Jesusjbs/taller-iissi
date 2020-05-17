@@ -2,7 +2,7 @@
 	session_start();
 
 	require_once("../Otros/gestionBD.php");
-	require_once("./gestionarAdmin.php");
+    require_once("./gestionarAdmin.php");
 
 		if(!isset($_SESSION["admin"])){
 			Header("Location: ../Otros/login.php");		
@@ -29,6 +29,7 @@
     <meta charset="utf-8">
     <title>Mi Perfil</title>
     <link rel="stylesheet" type="text/css" href="../css/style_perfilAD.css" />
+
 </head>
 
 <body>
@@ -46,7 +47,7 @@
 	foreach($consultas as $consulta) {
 	?>
     <article class="perfil">
-            <form method="post" action="controlador_perfil.php">
+            <form method="post" name="formulario" action="controlador_perfil.php" >
                 <div class="fila_usuario">
                     <div class="dato_usuario">
                         <input name="dni" type="hidden" value="<?php echo $consulta[0];?>" />
@@ -76,7 +77,7 @@
                             </tr>
                             <tr>
                                 <td>Especialidad:</td>
-                                <td><input class="campo" name="especialidad" type="text" value="<?php echo $consulta[3];?>" required/></td>
+                                <td><input class="campo" id="es" name="especialidad" type="text" value="<?php echo $consulta[3];?>" required/></td>
                             </tr>
                             <tr>
                                 <td>Antigua contraseña:</td>

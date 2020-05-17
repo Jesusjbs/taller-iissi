@@ -46,7 +46,7 @@
 	    ?>
         <div class="mecanicos">
         <article class="mecanico">
-        <form method="post" action="controlador_mecanico.php">
+        <form method="post" name="formulario" action="controlador_mecanico.php">
                 <div class="fila_mecanico">
                     <div class="dato_mecanico">
                         <input name="dni" type="hidden" value="<?php echo $mecanico[0];?>" />
@@ -75,12 +75,12 @@
                             <tr>
                                 <td>Nombre:</td>
                                 <td><input class="campo" title="Solo debe contener letras y tener una longitud máxima de 50" 
-                                    name="nombre" type="text" value="<?php echo $mecanico[1];?>" pattern="[a-zA-Z]{1,50}" required/></td>
+                                    name="nombre" type="text" value="<?php echo $mecanico[1];?>" pattern="[a-zA-ZÑñáéíóú]{1,50}" required/></td>
                             </tr>
                             <tr>
                                 <td>Apellido:</td>
                                 <td><input class="campo" title="Solo debe contener letras y tener una longitud máxima de 50" 
-                                    name="apellido" type="text" value="<?php echo $mecanico[2];?>"  pattern="[a-zA-Z]{1,50}" required/></td>
+                                    name="apellido" type="text" value="<?php echo $mecanico[2];?>"  pattern="[a-zA-ZÑñáéíóú]{1,50}" required/></td>
                             </tr>
                             <tr>
                                 <td>Especialidad:</td>

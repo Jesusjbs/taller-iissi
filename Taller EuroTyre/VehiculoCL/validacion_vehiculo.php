@@ -8,9 +8,7 @@
         $nuevoVehiculo["tipo"] = $_REQUEST["tipo"];
         if(!isset($_REQUEST["furgoneta"])) 	$nuevoVehiculo["furgoneta"] = 0;
 		else $nuevoVehiculo["furgoneta"] = 1;
-		$porciones = explode(" ", $_REQUEST["modelo"]);
-		$nuevoVehiculo["modelo"] = (int) $porciones[0];
-		$nuevoVehiculo["nombreModelo"] = $porciones[1];
+		$nuevoVehiculo["modelo"] = $_REQUEST["modelo"];
 		$nuevoVehiculo["matricula"] = $_REQUEST["matricula"];
 		$nuevoVehiculo["color"] = $_REQUEST["color"];
     }
@@ -40,17 +38,13 @@
 		require_once("gestionarVehiculo.php");
 		$conexion = crearConexionBD();
 
-	/*	if((cuentaModelos($conexion,$nuevoVehiculo["nombreModelo"]) > 0 && $nuevoVehiculo["tipo"] == "COCHE")
-		|| (cuentaModelos($conexion,$nuevoVehiculo["nombreModelo"]) == 0 && $nuevoVehiculo["tipo"] == "MOTO")) {
+		/*if((cuentaModelos($conexion,$nuevoVehiculo["modelo"]) > 0 && $nuevoVehiculo["tipo"] == "COCHE")
+		|| (cuentaModelos($conexion,$nuevoVehiculo["modelo"]) == 0 && $nuevoVehiculo["tipo"] == "MOTO")) {
 			$errores[] = "El tipo y el modelo elegidos no son coherentes";
 		} */
 		
         if($nuevoVehiculo["furgoneta"] == 1 && $nuevoVehiculo["tipo"] == "MOTO")
 			$errores[] = "<p>No se puede marcar simultaneamente tipo moto y furgoneta.</p>";
-			
-        // Validación del modelo
-         if($nuevoVehiculo["nombreModelo"]=="") 
-			$errores[] = "<p>El modelo no pueden estar vacío</p>";
 		
         // Validación de la matrícula
 		if($nuevoVehiculo["matricula"] =="") 
@@ -62,7 +56,10 @@
 		// Validación de color
 		if(strlen($nuevoVehiculo["color"]) > 50) {
 			$errores[] = "<p>El color debe tener menos de 50 caracteres.</p>";
-		}
+		} else if($nuevoVehiculo["color"] != "" && 
+					!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ\s]+$/", $$nuevoVehiculo["color"])) {
+            $errores[] = "<p>El color solo puede contener letras</p>";
+        }
 		cerrarConexionBD($conexion);
 		return $errores;
 	}

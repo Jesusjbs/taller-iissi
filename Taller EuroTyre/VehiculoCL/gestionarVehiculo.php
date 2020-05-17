@@ -50,17 +50,36 @@ function consultaMarcas($conexion) {
     try{    
         return $conexion -> query($consulta);
     } catch(PDOException $e) {
-        echo $err -> GetMessage();
+        echo $e -> GetMessage();
         return false;
     }
 }
 
+function consultarMarcasCoches($conexion) {
+    $consulta = "SELECT DISTINCT NOMBRE,MARCAS.OID_M FROM MARCAS, MODELOSCOCHES WHERE MARCAS.OID_M IN MODELOSCOCHES.OID_M ORDER BY NOMBRE";
+    try {
+        return $conexion -> query($consulta);
+    } catch(PDOException $e) {
+        echo $e -> GetMessage();
+        return false;
+    }
+}
+
+function consultarMarcasMotos($conexion){
+    $consulta = "SELECT DISTINCT NOMBRE,MARCAS.OID_M FROM MARCAS, MODELOSMOTOS WHERE MARCAS.OID_M IN MODELOSMOTOS.OID_M ORDER BY NOMBRE";
+    try{    
+        return $conexion -> query($consulta);
+    } catch(PDOException $e) {
+        echo $e -> GetMessage();
+        return false;
+    }
+}
 function consultaMC($conexion, $oidm) {
     $consulta = "SELECT * FROM MODELOSCOCHES WHERE OID_M = $oidm";
     try{    
         return $conexion -> query($consulta);
     } catch(PDOException $e) {
-        echo $err -> GetMessage();
+        echo $e -> GetMessage();
         return false;
     }
 }
@@ -70,7 +89,7 @@ function consultaMM($conexion, $oidm) {
     try{    
         return $conexion -> query($consulta);
     } catch(PDOException $e) {
-        echo $err -> GetMessage();
+        echo $e -> GetMessage();
         return false;
     }
 }

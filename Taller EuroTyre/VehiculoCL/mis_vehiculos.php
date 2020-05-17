@@ -199,7 +199,9 @@
                             value="<?php  echo $vehiculo[11];?>" />
                         
                         <?php
-                if(isset($moto) and ($moto["matricula"] == $vehiculo[7])){ ?>
+                if(isset($moto) and ($moto["matricula"] == $vehiculo[7])){ 
+                    $objFechaITV = date_create_from_format('d/m/y', $vehiculo[10]);
+                    ?>
                     <h2>Moto en edición...</h2>
                     <?php
                         	// Mostrar los errores de validación (Si los hay)
@@ -239,7 +241,7 @@
                             </tr>
                             <tr>
                                 <td>Prox. ITV:</td>
-                                <td><input class="campo" name="proxITV" type="date" value="<?php  echo $vehiculo[10];?>" /></td>
+                                <td><input class="campo" name="proxITV" type="date" value="<?php echo $objFechaITV->format('Y-m-d') ;?>" /></td>
                             </tr>
                         </table><br />
                         

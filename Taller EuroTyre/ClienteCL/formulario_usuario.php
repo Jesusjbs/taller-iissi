@@ -54,7 +54,7 @@
 	?>
 
 	<div id="id_registro">
-	<form id="id_altaUsuario" method="post" action="validacion_usuario.php">
+	<form id="id_altaUsuario" method="post" action="validacion_usuario.php" >
 		<h1>Crea una cuenta</h1>
 		<p id="id_obligatorio">* Obligatorio</p>
 		<br />
