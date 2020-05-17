@@ -41,14 +41,10 @@
 
 <head>
     <meta charset="utf-8">
-
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
     <title>Creación de Factura</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/style_form_factura.css" />
-
+    <script src="../ValidacionesJS/valida_factura.js" ></script>
     <link rel="shortcut icon" href="../img/logo.png"/>
     <link rel="apple-touch-icon" href="../img/logo.png"/>
 </head>
@@ -63,7 +59,7 @@
   		}
     ?>
     <div id = id_divFactura>
-    <form id="id_regFactura" method="post" action="validacion_factura.php" novalidate>
+    <form id="id_regFactura" method="post" action="validacion_factura.php" onsubmit="return valida1()">
         <fieldset id="id_campo">
             <h1>Registro de factura para reparación <?php echo $registroFactura['oidr'];?></h1>
             <p id="id_obligatorio">*Obligatorio</p>
@@ -87,14 +83,15 @@
                 <label for="id_manoDeObra">Mano de Obra*:</label>
                 <div class="campo">
                 <input id="id_manoDeObra" type="text" name="manoDeObra" 
-                    value="<?php echo str_replace(',','.', $registroFactura["manoDeObra"]);?>" required />
+                    value="<?php echo str_replace(',','.', $registroFactura["manoDeObra"]);?>" required oninput="this.setCustomValidity('')"/>
                 </div>
             </div>
             <br />
             <div class = "div">
                 <label for="id_iva">IVA*:</label>
                 <div class="campo">
-                    <input id="id_iva" size="3" type="text" name="IVA" value="<?php echo str_replace(',','.', $registroFactura["IVA"]);?>" required/>
+                    <input id="id_iva" size="3" type="text" name="IVA" value="<?php echo str_replace(',','.', $registroFactura["IVA"]);?>" 
+                    required oninput="this.setCustomValidity('')"/>
                 </div>
             </div>
             <br />
@@ -105,7 +102,7 @@
                         value="Efectivo" <?php if($registroFactura["Pago"]=="Efectivo") echo ' checked ' ; ?>/>
                     <label for = "id_Pago">Efectivo</label>
                 
-                    <input id="id_tipoPago1" type="radio" name="Pago" 
+                    <input id="id_Pago1" type="radio" name="Pago" 
                         value="Tarjeta" <?php if($registroFactura["Pago"]=="Tarjeta") echo ' checked '; ?>/>
                     <label for = "id_Pago1">Tarjeta</label>
                 </div> 
@@ -113,8 +110,8 @@
             <button id="id_enviar" type="submit">Crear</button>
         </fieldset>
     </form>
-    <div>
+    </div>
 
-    <body>
+    </body>
 
 </html>

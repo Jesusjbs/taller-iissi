@@ -1,5 +1,14 @@
 <?php
 
+if(isset($_GET["c"])){
+    $resultado = compruebaContraseña($conexion, $_SESSION["admin"] ,$_GET["c"]);
+    if($resultado==0) {
+        echo "incorrecta";
+    } else {
+        echo "correcta";
+    }
+}
+
 function consultarMecanico($conexion,$dni,$pass) {
  	$consulta = "SELECT COUNT(*) AS TOTAL FROM MECÁNICOS WHERE DNI=:dni AND CONTRASEÑA=:pass";
 	$stmt = $conexion->prepare($consulta);

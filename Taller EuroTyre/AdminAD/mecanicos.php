@@ -10,6 +10,7 @@
 		}else{
             if(isset($_SESSION["mec"])){
                 $mec = $_SESSION["mec"];
+                unset($_SESSION["mec"]);
             }
 
             $conexion = crearConexionBD();
@@ -31,6 +32,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/style_mecanicos.css" />
+    <script src="../ValidacionesJS/valida_mecanicos.js" type="text/javascript"></script>
     <title>Plantilla de EuroTyre</title>
 </head>
 
@@ -46,7 +48,7 @@
 	    ?>
         <div class="mecanicos">
         <article class="mecanico">
-        <form method="post" name="formulario" action="controlador_mecanico.php">
+        <form method="post" name="formulario" action="controlador_mecanico.php" onsubmit="return valida()">
                 <div class="fila_mecanico">
                     <div class="dato_mecanico">
                         <input name="dni" type="hidden" value="<?php echo $mecanico[0];?>" />
@@ -84,7 +86,8 @@
                             </tr>
                             <tr>
                                 <td>Especialidad:</td>
-                                <td><input class="campo" name="Especialidad" type="text" value="<?php echo $mecanico[3];?>" required/></td>
+                                <td><input class="campo" id ="id_especialidad" name="Especialidad" type="text" value="<?php echo $mecanico[3];?>" 
+                                    required oninput="this.setCustomValidity('')" /></td>
                             </tr>
                             <tr>
                                 <td>Jefe:</td>
@@ -93,7 +96,8 @@
                                 } else {
                                     $jefe = "SI";
                                 } ?>
-                                <td> <input class="campo" name="jefe" type="text" value="<?php echo $jefe; ?>" /></td>
+                                <td><input class="campo" id="id_jefe" name="jefe" type="text" value="<?php echo $jefe;  ?>"
+                                            required oninput="this.setCustomValidity('')" /></td>
                             </tr>
                             <tr>
                                 <td>Contraseña:</td>

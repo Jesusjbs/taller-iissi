@@ -2,6 +2,17 @@ body {
     background-color: #3d4045;
 }
 
+.error {
+	color : #fb1b4c;	
+	border : 2px solid red;
+	padding : 10px;
+    margin: 10px;
+    width: 18%;
+    float: left;
+    margin-top: 3%;
+    position: absolute;
+}
+
 .factura{
     border-radius: 10px;
     background-color: #d5be23;

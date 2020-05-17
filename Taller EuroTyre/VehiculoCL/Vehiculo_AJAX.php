@@ -5,7 +5,7 @@ $conexion = crearConexionBD();
 // Si llegamos a este script por haber seleccionado una marca
 if(isset($_GET["marcaModeloC"])){
     
-    // consultamos la lista de modelos de coches dada una marca
+    //Consultamos la lista de modelos de coches dada una marca
     $resultado = listarModelosCoches($conexion, $_GET["marcaModeloC"]);
     
     if($resultado != NULL){
@@ -18,7 +18,7 @@ if(isset($_GET["marcaModeloC"])){
 }
 
 if(isset($_GET["marcaModeloM"])){
-    // Consultamos la lista de modelos de motos dada una marca
+    //Consultamos la lista de modelos de motos dada una marca
     $resultado = listarModelosMotos($conexion, $_GET["marcaModeloM"]);
     
     if($resultado != NULL){
@@ -27,7 +27,6 @@ if(isset($_GET["marcaModeloM"])){
             echo "<option label='" . $modelo["MODELO"] . "' value='" . $modelo["OID_MM"] . "'/>";  
         }
     }
-    // Cerramos la conexión y borramos de la sesión la variable
     unset($_GET["marcaModeloM"]);
 }
 

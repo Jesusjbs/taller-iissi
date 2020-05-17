@@ -37,6 +37,7 @@
     <meta charset="utf-8">
     <title>Factura</title>
     <link rel="stylesheet" type="text/css" href="../css/style_facturaAD.css" />
+    <script src="../ValidacionesJS/valida_factura.js"></script>
 </head>
 
 <body>
@@ -55,7 +56,7 @@
 		foreach($filas as $fila) { 
 	?>
         <article class="factura">
-            <form method="post" action="controlador_factura.php">
+            <form method="post" action="controlador_factura.php" onsubmit="return valida2()">
                 <div class="fila_factura">
                     <div class="datos_factura">
                        <!-- <input id="id_oidr" name="OID_R" type="hidden" value="<?php echo $fila["OID_R"]; ?>" />  -->
@@ -84,16 +85,19 @@
                             <tr>
                                 <td>Mano de Obra:</td>
                                 <td><input id="id_manoDeObra" name="manoDeObra" type="text" 
-                                    value="<?php echo str_replace(',','.', $fila["MANODEOBRA"]);?>" /></td>
+                                    value="<?php echo str_replace(',','.', $fila["MANODEOBRA"]);?>"
+                                    required oninput="this.setCustomValidity('')" /></td>
                             </tr>
                             <tr>
                                 <td>Tipo de Pago:</td>
-                                <td><input id="id_Pago" name="Pago" type="text" value="<?php echo $fila["PAGO"];?>" /></td>
+                                <td><input id="id_Pago" name="Pago" type="text" value="<?php echo $fila["PAGO"];?>"
+                                required oninput="this.setCustomValidity('')" /></td>
                             </tr>
                             <tr>
                                 <td>IVA:</td>
                                 <td><input id="id_iva" name="IVA" type="text" 
-                                    value="<?php echo str_replace(',','.', $fila["IVA"]);?>" required /></td>
+                                    value="<?php echo str_replace(',','.', $fila["IVA"]);?>" required
+                                    oninput="this.setCustomValidity('')" /></td>
                             </tr>
                             <tr>
                                 <td id="id_importe"><h3>IMPORTE:</h3></td>

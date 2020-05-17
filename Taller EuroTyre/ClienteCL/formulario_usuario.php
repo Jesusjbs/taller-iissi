@@ -33,7 +33,7 @@
 	<title>Regístrate</title>
 	<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../css/style_register.css" />
-
+	<script src="../ValidacionesJS/valida_form_usuario.js" type="text/javascript"></script>
 	<link rel="shortcut icon" href="../img/logo.png">
 	<link rel="apple-touch-icon" href="../img/logo.png">
 </head>
@@ -54,22 +54,22 @@
 	?>
 
 	<div id="id_registro">
-	<form id="id_altaUsuario" method="post" action="validacion_usuario.php" >
+	<form id="id_altaUsuario" method="post" onsubmit="return valida()" action="validacion_usuario.php" >
 		<h1>Crea una cuenta</h1>
 		<p id="id_obligatorio">* Obligatorio</p>
 		<br />
 		<fieldset id="id_campo">
-		  
+		
 			<div class="div">
 				<div class="campo">
 					<input id="id_nombre" title="El nombre debe de contener menos de 50 letras" name="nombre" type="text" size="15" placeholder="Nombre*"
-						value="<?php echo $formulario['nombre'];?>" pattern="[a-zA-ZÑñáéíóú]{1,50}" required />
+						value="<?php echo $formulario['nombre'];?>" pattern="[a-zA-ZÑñ áéíóú]{1,50}" required />
 				</div>
 			</div>
 			<div class="div">
 				<div class="campo">
 					<input id="id_apellidos" title="El apellido debe de contener menos de 50 letras" name="apellidos" type="text" size="20" placeholder="Apellidos*"
-						value="<?php echo $formulario['apellidos'];?>" pattern="[a-zA-ZÑñáéíóú]{1,50}" required />
+						value="<?php echo $formulario['apellidos'];?>" pattern="[a-zA-ZÑñ áéíóú]{1,50}" required />
 				</div>
 			</div>	
 			<br />
@@ -103,7 +103,7 @@
 			<label for="id_direccion">Dirección:</label>
 				<div class="campo">
 				<input id="id_direccion" title="Solo debe contener letras y dígitos y tene una longitud máxima de 50" name="direccion" type="text" size="35" placeholder="Calle/Avda. (Reina Mercedes) Nº XXX"
-					value="<?php echo $formulario['direccion'];?>" pattern="[a-zA-ZÑñáéíóú0-9]{0,50}" />
+					value="<?php echo $formulario['direccion'];?>" pattern="[a-zA-ZÑñ áéíóú0-9]{0,50}" />
 				</div>
 			</div>
 			<br />
@@ -112,7 +112,7 @@
 				<div class="campo"> 
 					<input id="id_contraseña" name="contraseña" type="password" 
 					pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])\S{6,}" 
-					title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número)" required/>
+					title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número)" required />
 				</div>
 			</div>
 			<br />
@@ -120,7 +120,7 @@
 			<div class="div">
 				<label for="id_confirmar">Confirmar Contraseña*:</label>
 				<div class="campo">
-					<input id="id_confirmar" name="confirmar" type="password" title="Confirmación de contraseña" required />
+					<input id="id_confirmar" name="confirmar" type="password" title="Confirmación de contraseña" required oninput="this.setCustomValidity('')"/>
 				</div>
 			</div>
 

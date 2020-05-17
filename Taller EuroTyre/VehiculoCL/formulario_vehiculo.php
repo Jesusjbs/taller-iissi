@@ -42,7 +42,7 @@
     <script>
         // Inicialización de elementos y eventos cuando el documento se carga completamente
         $(document).ready(function () {
-            //Inicialmente el campo de marca y modelos de moto está oculto, ya que tenemos el checked en coche
+            //Inicialmente los campos de moto de moto están oculto, ya que tenemos el checked en coche
             $('#campoMoto').hide();
 
             //Inicialmente rellenamos los campo de marca y modelos de coches (para que salgan en la marca predeterminada un modelo)
@@ -61,13 +61,12 @@
                 $("#opcionesModelosM").append(data);
             });
 
-            //Inicialmente está marcado coche, por tanto desabilitamos los select de marca y modelo de motos (para que así no aparezcan
-            // por pantalla)
+            //Inicialmente está marcado coche, por tanto desabilitamos los select de marca y modelo de motos (para que así no se envíen)
             $('#id_marcaM').prop("disabled", true);
             $('#id_modeloM').prop("disabled", true);
 
             //Al seleccionar tipo moto, ocultamos el divisor de coche y desabilitamos y habilitamos los campos correspondientes 
-            // (furgoneta, marca y modelo)
+            //(furgoneta-> off, campoCoche-> oculto, campoMoto-> visible, marcaCoche-> off, modeloCoche-> off, marcaMoto-> on, modeloMoto-> on)
             $('#id_tipo2').click(function () {
                 $('#id_tipo3').prop("disabled", true);
                 $('#campoCoche').hide();
@@ -78,9 +77,8 @@
                 $('#id_modeloC').prop("disabled", true);
             });
             
-            // Cuando hacemos click en el radio de coche (tipo 1), habilitamos el campo furgoneta, ocultamos el campo de motos,
-            // mostramos el de coches, habilitamos marcas y modelos de coches y deshabilitamos marcas y modelos de motos.
-            
+            //Al seleccionar tipo coche, ocultamos el divisor de moto y desabilitamos y habilitamos los campos correspondientes 
+            //(furgoneta-> on, campoCoche-> visible, campoMoto-> oculto, marcaCoche-> on, modeloCoche-> on, marcaMoto-> off, modeloMoto-> off)
             $('#id_tipo1').click(function () {
                 $('#id_tipo3').removeAttr('disabled');
                 $('#campoMoto').hide();
@@ -146,10 +144,11 @@
                 </div>
                 <div class="div">
                     <br />
+                    <!-- CAMPOS DE COCHE -->
                     <div id="campoCoche">
-                        <label id="id_distancia" for="id_marcaC">Marca*:</label>
+                        <label for="id_marcaC">Marca*:</label>
                         <select id="id_marcaC" name="marca">
-                            <?php 
+                    <?php 
                     require_once("../Otros/gestionBD.php");
                     require_once("gestionarVehiculo.php");
                     $conexion = crearConexionBD();
@@ -169,11 +168,11 @@
                         </select>
                         <br /><br />
                     </div>
-                    <!-- MOTOS -->
+                    <!-- CAMPOS DE MOTO -->
                     <div id="campoMoto">
-                        <label id="id_distancia" for="id_marcaM">Marca*:</label>
+                        <label for="id_marcaM">Marca*:</label>
                         <select id="id_marcaM" name="marca">
-                            <?php 
+                    <?php 
                     $marcasMotos = consultarMarcasMotos($conexion);
 
                     foreach($marcasMotos as $marca) {

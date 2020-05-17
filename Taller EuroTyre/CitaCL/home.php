@@ -60,7 +60,7 @@
 					<div class="div">
 						<label for="id_vehiculo">Elige de entre tus vehículos*:</label>
 						<div class="campo">
-						<select name="auto" id="id_vehiculo">
+						<select name="auto" id="id_vehiculo" required>
 							<?php
 								require_once("../Otros/gestionBD.php");
 								require_once("../VehiculoCL/gestionarVehiculo.php");

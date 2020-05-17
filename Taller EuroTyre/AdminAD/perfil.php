@@ -28,6 +28,8 @@
 <head>
     <meta charset="utf-8">
     <title>Mi Perfil</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="../ValidacionesJS/valida_perfilAD.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="../css/style_perfilAD.css" />
 
 </head>
@@ -47,7 +49,7 @@
 	foreach($consultas as $consulta) {
 	?>
     <article class="perfil">
-            <form method="post" name="formulario" action="controlador_perfil.php" >
+            <form method="post" name="formulario" action="controlador_perfil.php" onsubmit="return valida()">
                 <div class="fila_usuario">
                     <div class="dato_usuario">
                         <input name="dni" type="hidden" value="<?php echo $consulta[0];?>" />
@@ -77,19 +79,20 @@
                             </tr>
                             <tr>
                                 <td>Especialidad:</td>
-                                <td><input class="campo" id="es" name="especialidad" type="text" value="<?php echo $consulta[3];?>" required/></td>
+                                <td><input class="campo" id="id_especialidad" name="especialidad" type="text" 
+                                        value="<?php echo $consulta[3];?>" required oninput="this.setCustomValidity('')"/></td>
                             </tr>
                             <tr>
                                 <td>Antigua contraseña:</td>
-                                <td><input class="campo" name="antigua" type="password" /></td>
+                                <td><input class="campo" id="id_antigua" name="antigua" type="password" oninput="this.setCustomValidity('')" /></td>
                             </tr>
                             <tr>
                                 <td>Nueva contraseña:</td>
-                                <td><input class="campo" name="contraseña" type="password" /></td>
+                                <td><input class="campo" id="id_contraseña" name="contraseña" type="password" oninput="this.setCustomValidity('')" /></td>
                             </tr>
                             <tr>
                                 <td>Confirmar nueva contraseña:</td>
-                                <td><input class="campo" name="confirmar" type="password" /></td>
+                                <td><input class="campo" id="id_confirmar" name="confirmar" type="password" oninput="this.setCustomValidity('')" /></td>
                             </tr>
                         </table><br />
                         

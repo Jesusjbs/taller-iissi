@@ -34,6 +34,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/style_proveedores.css" />
+    <script src="../ValidacionesJS/valida_proveedor.js" type="text/javascript"></script>
     <title>Proveedores de EuroTyre</title>
 </head>
 
@@ -51,7 +52,7 @@
         ?>
 
         <article class="proveedor">
-        <form method="post" action="controlador_proveedor.php">
+        <form method="post" action="controlador_proveedor.php" onsubmit="return valida()">
                 <div class="fila_proveedor">
                     <div class="dato_proveedor">
                         <input name="oid_p" type="hidden" value="<?php echo $proveedor[0];?>" />
@@ -79,11 +80,12 @@
                             </tr>
                             <tr>
                                 <td>Tipo de Proveedor:</td>
-                                <td><input class="campo" name="tipoProveedor" type="text" value="<?php echo $proveedor[1];?>" required /></td>
+                                <td><input class="campo" id="id_tipo" name="tipoProveedor" type="text" 
+                                    value="<?php echo $proveedor[1];?>" required oninput="this.setCustomValidity('')" /></td>
                             </tr>
                             <tr>
                                 <td>Email:</td>
-                                <td><input class="campo" name="email" type="text" value="<?php echo $proveedor[3];?>" maxlength="50"/></td>
+                                <td><input class="campo" name="email" type="email" value="<?php echo $proveedor[3];?>" maxlength="50"/></td>
                             </tr>
                             <tr>
                                 <td>Teléfono:</td>

@@ -44,6 +44,9 @@
 		} else if($fecha_actual >= $fecha_entrada) {
 			$errores[] = "<p>La fecha de solicitud debe de ser posterior a la fecha actual</p>";
 		}
+		if($nuevaCita['auto'] == ""){
+			$errores[] = "<p>Se debe seleccionar algún vehículo.</p>";
+		}
 		return $errores;
 	}
 ?>
