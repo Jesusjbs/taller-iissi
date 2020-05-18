@@ -1,4 +1,3 @@
-
 function valida() {
     var error1 = validarFechaMenorActual();
     return (error1.length == 0 );
@@ -11,8 +10,8 @@ function validarFechaMenorActual(){
     var x=new Date();
     var fecha = valor.split("/");
     x.setFullYear(fecha[2],fecha[1]-1,fecha[0]);
-    var today = new Date();
-
+	var today = new Date();
+	
     if (x < today) var error= 'La fecha elegida tiene que ser posterior a la del dia de hoy.';
     else    var error = '';
     fechaCita.setCustomValidity(error);
@@ -62,5 +61,5 @@ function validarFechaMenorActual(){
 	     return estado;    
          
     }catch(err){  
-     alert("Error fechas"); */   
-}
+     alert("Error fechas");   
+}*/ 

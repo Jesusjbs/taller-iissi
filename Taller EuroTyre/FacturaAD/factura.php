@@ -56,7 +56,7 @@
 		foreach($filas as $fila) { 
 	?>
         <article class="factura">
-            <form method="post" action="controlador_factura.php" onsubmit="return valida2()">
+            <form method="post" action="controlador_factura.php" onsubmit="return valida2()" >
                 <div class="fila_factura">
                     <div class="datos_factura">
                        <!-- <input id="id_oidr" name="OID_R" type="hidden" value="<?php echo $fila["OID_R"]; ?>" />  -->

@@ -31,7 +31,7 @@ function validarDatosReparacion($reparacion){
     // Validación del fecha de Inicio		
     if($reparacion["fechaInicio"]==""){
         $errores[] = "<p>La fecha no puede estar vacía.</p>";
-    }else if(validacionFecha($reparacion["fechaInicio"])) {
+    } else if(validacionFecha($reparacion["fechaInicio"])) {
         $errores[] = "<p>La fecha no es del tipo correcto.</p>";
     }
 
@@ -40,7 +40,7 @@ function validarDatosReparacion($reparacion){
         $errores[] = "<p>El estado no puede estar vacío, debe ser 'Pendiente','EnProceso','Finalizada'</p>";
     else if((strcmp($reparacion["estado"], "Pendiente") != 0) && (strcmp($reparacion["estado"], "EnProceso") != 0)
             && (strcmp($reparacion["estado"], "Finalizada") != 0)) {
-        $errores[] = "<p>El estado no sigue el formato correcto, debe ser debe ser 'Pendiente','EnProceso','Finalizada'</p>";
+        $errores[] = "<p>El estado no sigue el formato correcto, debe ser debe ser 'Pendiente', 'EnProceso', 'Finalizada'</p>";
     }
 
     //Validar si tiene presupuesto o no

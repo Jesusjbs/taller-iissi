@@ -65,6 +65,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/style_reparaciones.css" />
+    <script src="../ValidacionesJS/valida_reparacion.js" ></script>
     <title>Inicio</title>
 </head>
 
@@ -88,7 +89,7 @@
 		foreach($filas as $fila) { 
 	?>
         <article class="reparacion">
-            <form method="post" action="controlador_reparacion.php">
+            <form method="post" action="controlador_reparacion.php" onsubmit="return valida()">
                 <div class="fila_reparacion">
                     <div class="datos_reparacion">
                         <input name="oid_r" type="hidden" value="<?php echo $fila["OID_R"];?>" />
@@ -119,12 +120,14 @@
                             </tr>
                             <tr>
                                 <td >Fecha de Reparación:</td>
-                                <td><input class="campo" name="fechaInicio" type="date" 
-                                        value="<?php echo $objFechaIn->format('Y-m-d') ; ?>" required/></td>
+                                <td><input class="campo" id="id_fechaRep" name="fechaInicio" type="date" 
+                                        value="<?php echo $objFechaIn->format('Y-m-d') ; ?>" required 
+                                            oninput="this.setCustomValidity('')"/></td>
                             </tr>
                             <tr>
                                 <td >Estado de Reparación:</td>
-                                <td><input class="campo" name="estado" type="text" value="<?php echo $fila["ESTADO"];?>" required/></td>
+                                <td><input class="campo" id="id_estado" name="estado" type="text" value="<?php echo $fila["ESTADO"];?>" 
+                                        required oninput="this.setCustomValidity('')"/></td>
                             </tr>
                             <tr>
                                 <td>Presupuesto:</td>
@@ -133,13 +136,13 @@
                                 } else {
                                     $presupuesto = "SI";
                                 } ?>
-                                <td><input class="campo" name="tienePresupuesto" type="text" 
-                                        value="<?php echo $presupuesto; ?>" required/></td>
+                                <td><input class="campo" id="id_presupuesto" name="tienePresupuesto" type="text" 
+                                        value="<?php echo $presupuesto; ?>" required oninput="this.setCustomValidity('')"/></td>
                             </tr>
                             <tr>
                                 <td>Fecha de Finalización:</td>
-                                <td><input class="campo" name="fechaFin" type="date" 
-                                     value="<?php if($objFechaFin) {echo $objFechaFin->format('Y-m-d');} ?>" /></td>
+                                <td><input class="campo" id="id_fechaFin" name="fechaFin" type="date" 
+                                     value="<?php if($objFechaFin) {echo $objFechaFin->format('Y-m-d');} ?>" oninput="this.setCustomValidity('')"/></td>
                             </tr>
                             <tr>
                                 <td>Matrícula:</td>

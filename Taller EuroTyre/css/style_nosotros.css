@@ -24,6 +24,7 @@ body {
 #id_mapa {
     border: 1px solid;
     border-radius: 16px;
+    margin-bottom: 10%;
 }
 
 #id_footer {
