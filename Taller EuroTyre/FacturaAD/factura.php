@@ -91,7 +91,7 @@
                             <tr>
                                 <td>Tipo de Pago:</td>
                                 <td><input id="id_tipoPago" name="Pago" type="text" value="<?php echo $fila["PAGO"];?>"
-                                required oninput="this.setCustomValidity('')" /></td>
+                                oninput="this.setCustomValidity('')" required /></td>
                             </tr>
                             <tr>
                                 <td>IVA:</td>

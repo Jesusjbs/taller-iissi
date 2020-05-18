@@ -34,7 +34,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/style_proveedores.css" />
-    <script src="../ValidacionesJS/valida_proveedor.js" type="text/javascript"></script>
+    <script src="../ValidacionesJS/valida_proveedor.js" ></script>
     <title>Proveedores de EuroTyre</title>
 </head>
 

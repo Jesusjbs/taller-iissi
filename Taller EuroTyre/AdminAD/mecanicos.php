@@ -32,7 +32,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/style_mecanicos.css" />
-    <script src="../ValidacionesJS/valida_mecanicos.js" type="text/javascript"></script>
+    <script src="../ValidacionesJS/valida_mecanicos.js"></script>
     <title>Plantilla de EuroTyre</title>
 </head>
 

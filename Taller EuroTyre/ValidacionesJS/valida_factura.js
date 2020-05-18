@@ -12,15 +12,15 @@ function valida2() {
 }
 
 function tipoPago(){
-    var tipo = document.getElementById("id_tipoPago");
-    var valor = tipo.value;
+    var tipoP = document.getElementById("id_tipoPago");
+    var valor = tipoP.value;
 
     if(valor!="Efectivo" && valor!="Tarjeta"){
         var error= 'El campo Tipo de Pago solo puede contener los valores "Efectivo" o "Tarjeta"';
     } else {
         var error = '';
     }
-    tipo.setCustomValidity(error);
+    tipoP.setCustomValidity(error);
     return error;
 }
 

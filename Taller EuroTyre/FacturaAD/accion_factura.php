@@ -23,6 +23,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../css/style_accion_usuario.css" />
   <title>Factura registrada</title>
 </head>
 
@@ -38,7 +39,7 @@
                 Header("Location: factura.php");
 		 } else { ?>
 			<h1>Fallo al realizar la operación.</h1>
-			<div >
+			<div id="id_div">
 			<form action="../FacturaAD/formulario_factura.php" method="post">
                     <input type="hidden" value="<?php echo $registroFactura["oidr"];?>" name="oid_r" />
                     <input type="hidden" value="<?php echo $registroFactura["dni"];?>" name="dni" />

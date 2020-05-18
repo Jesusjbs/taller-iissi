@@ -33,7 +33,7 @@
 		<title>Inicio</title>
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="../css/style_home.css" />
-
+		<script src="../ValidacionesJS/valida_fecha.js" ></script>
 		<link rel="shortcut icon" href="../img/logo.png">
 		<link rel="apple-touch-icon" href="../img/logo.png">
 	</head>
@@ -53,7 +53,7 @@
 		?>
 
 		<div id="id_cita">
-			<form id="id_formCita" method="POST" action="validacion_cita.php" >
+			<form id="id_formCita" method="POST" action="validacion_cita.php" onsubmit="return valida()">
 				<fieldset id="id_campo">
 					<h1>Solicitar Cita</h1>
 					<br/>
@@ -92,7 +92,7 @@
 					<div class="div">
 						<label for="id_dia">Elige un día*:</label>
 						<div class="campo">
-							<input id="id_dia" name="dia" type="date" required/>
+							<input id="id_dia" name="dia" type="date" required oninput="this.setCustomValidity('')"/>
 							<img alt="date.png" style="width: 2.5%; height: 2.5%;margin-bottom: -0.7%" src="../img/date.png" />
 							</div>
 					</div>

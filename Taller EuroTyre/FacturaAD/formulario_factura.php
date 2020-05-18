@@ -74,7 +74,7 @@
             <div class = "div">
                 <label for="id_descripcion">Descripción:</label><br/>
                 <div class="campo"> 
-                    <textarea id="id_descripcion" name="descripcion" rows="3" cols="34" maxlength="100"
+                    <textarea id="id_descripcion" name="descripcion" rows="3" cols="31" maxlength="100"
                         value="<?php echo $registroFactura["descripcion"]; ?>"><?php echo $registroFactura["descripcion"]; ?></textarea>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                 <label for="id_manoDeObra">Mano de Obra*:</label>
                 <div class="campo">
                 <input id="id_manoDeObra" type="text" name="manoDeObra" 
-                    value="<?php echo str_replace(',','.', $registroFactura["manoDeObra"]);?>" required oninput="this.setCustomValidity('')"/>
+                    value="<?php echo str_replace(',','.', $registroFactura["manoDeObra"]);?>" oninput="this.setCustomValidity('')" required />
                 </div>
             </div>
             <br />

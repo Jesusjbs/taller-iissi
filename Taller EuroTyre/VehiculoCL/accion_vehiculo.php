@@ -23,6 +23,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../css/style_accion_vehiculo.css" />
   <title>Registrado correctamente</title>
 </head>
 
@@ -37,7 +38,7 @@
 				Header("Location: mis_vehiculos.php"); 
 		    } else { ?>
 			<h1>El vehículo ya existe en la base de datos.</h1>
-			<div >	
+			<div id="id_div">	
 				Pulsa <a href="formulario_vehiculo.php">aquí</a> para volver al formulario.
 			</div>
 		<?php } ?>
