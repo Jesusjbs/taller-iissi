@@ -34,7 +34,7 @@
         // Validación del color
 		if(strlen($vehiculo["color"]) > 50) 
             $errores[] = "<p>El color debe de tener menos de 50 caracteres</p>";
-        else if (!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ\s]+$/", $vehiculo["color"])){
+        else if ($vehiculo["color"] != "" && !preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñ Ñ\s]+$/", $vehiculo["color"])){
             $errores[] = "<p>El color solo puede contener caractéres</p>";
         }
 		// Validación del kilometraje

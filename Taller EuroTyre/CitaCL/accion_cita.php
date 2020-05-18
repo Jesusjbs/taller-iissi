@@ -46,8 +46,8 @@
 				</div>
 
 			<?php } else { ?>
-				<h1>Datos erróneos, vuelva a introducirlos</h1>
-				<div >	
+				<div id="id_div">	
+					<h2>Datos erróneos, vuelva a introducirlos</h2>
 					Pulsa <a href="home.php">aquí</a> para volver al formulario.
 				</div>
 			<?php } ?>

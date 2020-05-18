@@ -121,7 +121,7 @@
     </div>
     <?php if($i != 0) { ?>
       <div id="id_divEnviar">
-        <button id="id_enviar" onclick="javascript:convertirPDF()">
+        <button title="Descargar Factura" id="id_enviar" onclick="convertirPDF()">
           Descargar
         </button>
       </div>

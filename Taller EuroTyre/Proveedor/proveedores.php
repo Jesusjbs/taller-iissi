@@ -125,18 +125,18 @@
                         <?php
                     if(isset($prov) and ($prov["oid_p"] == $proveedor[0])) { ?>
                         <!-- Botón de grabar -->
-                        <button autofocus id="grabar" name="grabar" type="submit" class="editar_fila">
+                        <button title="Confirmar Cambios" autofocus id="grabar" name="grabar" type="submit" class="editar_fila">
                             <img src="../img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Guardar modificación">
                         </button>
                         <?php } else { ?>
                         <!-- Botón de editar -->
-                        <button id="editar" name="editar" type="submit" class="editar_fila">
+                        <button title="Editar Proveedor" id="editar" name="editar" type="submit" class="editar_fila">
                             <img src="../img/edit.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar proveedor">
                         </button>
                         <?php } ?>
-                        <button id="borrar" name="borrar" type="submit" class="editar_fila">
+                        <button title="Eliminar Proveedor" id="borrar" name="borrar" type="submit" class="editar_fila">
                             <img src="../img/delete_button.jpg" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Borrar proveedor">
                         </button><br /><br />

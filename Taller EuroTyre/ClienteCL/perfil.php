@@ -147,13 +147,13 @@
                         <?php
                 if(isset($cliente)){ ?>
                         <!-- Botón de grabar -->
-                        <button id="grabar" name="grabar" type="submit" class="editar_fila">
+                        <button title="Confirmar Cambios" id="grabar" name="grabar" type="submit" class="editar_fila">
                             <img src="../img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Guardar modificación">
                         </button>
                         <?php } else { ?>
                         <!-- Botón de editar -->
-                        <button id="editar" name="editar" type="submit" class="editar_fila">
+                        <button title="Editar Perfil" id="editar" name="editar" type="submit" class="editar_fila">
                             <img src="../img/UserEdite.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar perfil">
                         </button>

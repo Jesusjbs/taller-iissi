@@ -213,7 +213,7 @@
                         <?php
                 if(isset($reparacion) and ($reparacion["oid_r"] == $fila["OID_R"])){ ?>
                         <!-- Botón de grabar --><br />
-                        <button autofocus title="Guardar Modificación" id="grabar" name="grabar" type="submit" class="editar_fila">
+                        <button autofocus title="Confirmar Cambios" id="grabar" name="grabar" type="submit" class="editar_fila">
                             <img src="../img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Guardar modificación">
                         </button>

@@ -12,7 +12,7 @@ function valida2() {
 }
 
 function tipoPago(){
-    var tipo = document.getElementById("id_Pago");
+    var tipo = document.getElementById("id_tipoPago");
     var valor = tipo.value;
 
     if(valor!="Efectivo" && valor!="Tarjeta"){

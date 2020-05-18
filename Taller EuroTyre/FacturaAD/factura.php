@@ -90,7 +90,7 @@
                             </tr>
                             <tr>
                                 <td>Tipo de Pago:</td>
-                                <td><input id="id_Pago" name="Pago" type="text" value="<?php echo $fila["PAGO"];?>"
+                                <td><input id="id_tipoPago" name="Pago" type="text" value="<?php echo $fila["PAGO"];?>"
                                 required oninput="this.setCustomValidity('')" /></td>
                             </tr>
                             <tr>
@@ -187,7 +187,7 @@
             <div id="id_divEnviar">
             <form action="../FacturaAD/formulario_linea_factura.php" method="post">
                 <input type="hidden" value="<?php echo $fila["NUMFACTURA"];?>" name="numFactura" />
-                <button id="id_formFact" type="submit">Añadir Línea</button>
+                <button title="Añadir Línea" id="id_formFact" type="submit">Añadir Línea</button>
             </form>
             </div>
         <?php

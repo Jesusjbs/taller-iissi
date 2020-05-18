@@ -24,6 +24,8 @@
 <head>
   <meta charset="utf-8">
   <title>Registrado correctamente</title>
+  <link rel="stylesheet" type="text/css" href="../css/style_accion_usuario.css" />
+
 </head>
 
 <body>
@@ -34,19 +36,17 @@
 				 $_SESSION["login"] = $nuevoUsuario["dni"];
 				 include_once("../Otros/cabecera.php");
 			?>
-			
+			<div id="id_div">	
 			<h1>Te has registrado correctamente como <?php echo $nuevoUsuario["nombre"]; echo " ". $nuevoUsuario["apellidos"];?></h1>
-			<div >	
-				Pulsa <a href="../CitaCL/home.php">aquí</a> para acceder a la página de inicio del taller.
+				<p>Pulsa <a href="../CitaCL/home.php">aquí</a> para acceder a la página de inicio del taller.</p>
 			</div>
 		<?php } else { 
 			include_once("../Otros/cabecera.php"); ?>
-			<h1>El usuario ya existe en la base de datos.</h1>
-			<div >	
-				Pulsa <a href="formulario_usuario.php">aquí</a> para volver al formulario.
+			<div id="id_div">	
+				<h1>El usuario ya existe en la base de datos.</h1>
+				<p>Pulsa <a href="formulario_usuario.php">aquí</a> para volver al formulario.</p>
 			</div>
 		<?php } ?>
-
 	</main>
 </body>
 </html>
