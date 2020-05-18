@@ -56,7 +56,7 @@
 		foreach($filas as $fila) { 
 	?>
         <article class="factura">
-            <form method="post" action="controlador_factura.php" onsubmit="return valida2()" >
+            <form method="post" action="controlador_factura.php"  onsubmit="return valida2()" >
                 <div class="fila_factura">
                     <div class="datos_factura">
                        <!-- <input id="id_oidr" name="OID_R" type="hidden" value="<?php echo $fila["OID_R"]; ?>" />  -->
@@ -79,29 +79,31 @@
                             </tr>
                             <tr>
                                 <td>Descripción:</td>
-                                <td><textarea id="id_descripcion" name="descripcion" rows="2" cols="40" 
+                                <td><textarea class="campo" id="id_descripcion" name="descripcion" rows="2" cols="40" 
                                         maxlength="100" value="<?php echo $fila["DESCRIPCIÓN"]; ?>"><?php echo $fila["DESCRIPCIÓN"]; ?></textarea></td>
                             </tr>
                             <tr>
                                 <td>Mano de Obra:</td>
-                                <td><input id="id_manoDeObra" name="manoDeObra" type="text" 
+                                <td><input class="campo" id="id_manoDeObra" name="manoDeObra" type="text" 
                                     value="<?php echo str_replace(',','.', $fila["MANODEOBRA"]);?>"
                                     required oninput="this.setCustomValidity('')" /></td>
                             </tr>
                             <tr>
                                 <td>Tipo de Pago:</td>
-                                <td><input id="id_tipoPago" name="Pago" type="text" value="<?php echo $fila["PAGO"];?>"
+                                <td><input class="campo" id="id_tipoPago" name="Pago" type="text" value="<?php echo $fila["PAGO"];?>"
                                 oninput="this.setCustomValidity('')" required /></td>
                             </tr>
                             <tr>
                                 <td>IVA:</td>
-                                <td><input id="id_iva" name="IVA" type="text" 
+                                <td><input class="campo" id="id_iva" name="IVA" type="text" 
                                     value="<?php echo str_replace(',','.', $fila["IVA"]);?>" required
                                     oninput="this.setCustomValidity('')" /></td>
                             </tr>
+                            <?php $importeFinal = number_format(str_replace(',','.', $fila["MANODEOBRA"]),2) 
+                                + number_format(str_replace(',','.',$fila["IMPORTE"]),2); ?>
                             <tr>
                                 <td id="id_importe"><h3>IMPORTE:</h3></td>
-                                <td id="id_pago"><h3><?php echo " ".$fila["MANODEOBRA"] + $fila["IMPORTE"]." €"; ?></h3></td>
+                                <td id="id_pago"><h3><?php echo $fila["MANODEOBRA"]+$fila["IMPORTE"]." €";?></h3></td>
                             </tr>
                         </table>
                         <?php } else { ?>
@@ -154,10 +156,12 @@
                                 <td>Precio unitario:</td>
                                 <td><?php echo $linea["PRECIOUNITARIO"]." €";?></td>
                             </tr>
-                            <?php $n++; } ?>
+                            <?php $n++; } 
+                            $importeFinal = number_format(str_replace(',','.', $fila["MANODEOBRA"]),2) 
+                                + number_format(str_replace(',','.',$fila["IMPORTE"]),2); ?>
                             <tr>
                                 <td id="id_importe"><h3>Importe total:</h3></td>
-                                <td id="id_pago"><h3><?php echo " ".$fila["MANODEOBRA"] + $fila["IMPORTE"]." €";?></td>
+                                <td id="id_pago"><h3><?php echo $fila["MANODEOBRA"]+$fila["IMPORTE"]." €";?></td>
                             </tr>
                         </table><br />
 

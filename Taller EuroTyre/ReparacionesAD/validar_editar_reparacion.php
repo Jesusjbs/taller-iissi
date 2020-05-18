@@ -30,9 +30,9 @@ function validacionFecha($fe){
 function validarDatosReparacion($reparacion){
     // Validación del fecha de Inicio		
     if($reparacion["fechaInicio"]==""){
-        $errores[] = "<p>La fecha no puede estar vacía.</p>";
+        $errores[] = "<p>La fecha no puede estar vacía</p>";
     } else if(validacionFecha($reparacion["fechaInicio"])) {
-        $errores[] = "<p>La fecha no es del tipo correcto.</p>";
+        $errores[] = "<p>La fecha no es del tipo correcto</p>";
     }
 
     //Validar el estado de Reparación
@@ -46,7 +46,7 @@ function validarDatosReparacion($reparacion){
     //Validar si tiene presupuesto o no
         // Validación de tipo Proveedor
     if($reparacion["tienePresupuesto"]=="") 
-        $errores[] = "<p>El campo Presupuesto no puede estar vacío, debe de ser 'SI' o 'NO'</p>";
+        $errores[] = "<p>El campo Presupuesto no puede estar vacío, debe ser 'SI' o 'NO'</p>";
     else if((strcmp($reparacion["tienePresupuesto"], "SI") != 0) && (strcmp($reparacion["tienePresupuesto"], "NO") != 0)) {
         $errores[] = "<p>El presupuesto no sigue el formato correcto, debe ser 'SI' o 'NO'</p>";
     } else {
@@ -65,14 +65,14 @@ function validarDatosReparacion($reparacion){
     
     if(validacionFecha($feFin)) {
         $errores[] = "<p>La fecha no es del tipo correcto.</p>";
-    }else if($fecha_ini > $fecha_fin){
-        $errores[] = "<p>La fecha de reparación tiene que ser anterior a la fecha de finalización.</p>";
+    }else if($fecha_ini >= $fecha_fin){
+        $errores[] = "<p>La fecha de reparación tiene que ser anterior a la fecha de finalización</p>";
     }else if($reparacion["estado"] != "Finalizada" && $feFin !=""){
-        $errores[] = "<p>Si el estado no es 'Finalizada' no puede existir fecha de Finalización.</p>";
+        $errores[] = "<p>Si el estado no es 'Finalizada' no puede existir fecha de Finalización</p>";
     }
     } else {
         if ($reparacion["estado"] == "Finalizada") {
-        $errores[] = "<p>Si el estado es 'Finalizada' debe de existir una fecha de fin.</p>";
+            $errores[] = "<p>Si el estado es 'Finalizada' debe existir una fecha de fin</p>";
         }
     }
         return $errores;

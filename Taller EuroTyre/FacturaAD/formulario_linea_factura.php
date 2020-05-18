@@ -28,7 +28,6 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title>Registrar Línea de Factura</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
@@ -49,7 +48,7 @@
     ?>
 
     <div id="id_divLinea">
-    <form id="id_regLinea" method="post" action="validacion_linea.php" novalidate>
+    <form id="id_regLinea" method="post" action="validacion_linea.php" >
         <input type="hidden" name="numFactura" value="<?php echo $registroLinea['numFactura']; ?>" />
         <fieldset id="id_campo">
             <h1>Registrar Línea de Factura</h1>

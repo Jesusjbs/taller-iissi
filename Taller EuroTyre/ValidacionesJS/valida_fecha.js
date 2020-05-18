@@ -12,7 +12,7 @@ function validarFechaMenorActual(){
     x.setFullYear(fecha[2],fecha[1]-1,fecha[0]);
 	var today = new Date();
 	
-    if (x < today) var error= 'La fecha elegida tiene que ser posterior a la del dia de hoy.';
+    if (x < today) var error= 'La fecha elegida tiene que ser posterior a la del dia de hoy';
     else    var error = '';
     fechaCita.setCustomValidity(error);
     return error;

@@ -122,12 +122,12 @@
                                 <td >Fecha de Reparación:</td>
                                 <td><input class="campo" id="id_fechaRep" name="fechaInicio" type="date" 
                                         value="<?php echo $objFechaIn->format('Y-m-d') ; ?>" required 
-                                            oninput="this.setCustomValidity('')"/></td>
+                                            oninput="this.setCustomValidity('')" /></td>
                             </tr>
                             <tr>
                                 <td >Estado de Reparación:</td>
                                 <td><input class="campo" id="id_estado" name="estado" type="text" value="<?php echo $fila["ESTADO"];?>" 
-                                        required oninput="this.setCustomValidity('')"/></td>
+                                        required oninput="this.setCustomValidity('')" /></td>
                             </tr>
                             <tr>
                                 <td>Presupuesto:</td>

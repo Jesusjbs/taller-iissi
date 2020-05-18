@@ -23,7 +23,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="../css/style_accion_vehiculo.css" />
+  <link rel="stylesheet" type="text/css" href="../css/style_accion_usuario.css" />
   <title>Registrado proveedor</title>
 </head>
 
@@ -37,9 +37,9 @@
             if(contratarProveedor($conexion, $registroProveedor)) {
 				Header("Location: proveedores.php");
 		 } else { ?>
-			<h1>Ya existe un proveedor con alguno de los datos registrados.</h1>
 			<div id="id_div">
-				Pulsa <a href="formulario_proveedor.php">aquí</a> para volver al formulario.
+				<h1>Ya existe un proveedor con alguno de los datos registrados.</h1>
+				 <p>Pulsa <a href="formulario_proveedor.php">aquí</a> para volver al formulario.</p>
 			</div>
 		<?php } ?>
 

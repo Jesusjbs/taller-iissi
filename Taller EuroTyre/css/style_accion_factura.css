@@ -11,7 +11,7 @@ body {
     border: 1px solid #000000;
     margin: auto;
     vertical-align: middle;
-    margin-top: 20%;
+    margin-top: 10%;
     font-size: large;
     overflow: auto;
 }
@@ -27,7 +27,19 @@ h1 {
 
 }
 
-a {
+#id_form {
+    width: 10%;
+    margin: auto;
+}
+
+#id_formFact {
+    box-shadow: #3D4045;
+    margin-left: 43%;
+	border-radius: 16px;
+	padding: 4px 20px;
     text-decoration: none;
-    color: #1e708b;
+    background: none;
+    cursor: pointer;
+    margin-top: -2%;
+    margin-bottom: 1%;
 }

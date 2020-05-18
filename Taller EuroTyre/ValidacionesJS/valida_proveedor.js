@@ -8,7 +8,7 @@ function tipo(){
     var valor = tipo.value;
 
     if(valor!="Piezas" && valor!="Residuos"){
-        var error= 'El campo Tipo solo puede contener los valores "Piezas" o "Residuos".';
+        var error= 'El campo Tipo solo puede contener los valores "Piezas" o "Residuos"';
     } else {
         var error = '';
     }

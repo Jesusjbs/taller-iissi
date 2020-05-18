@@ -77,12 +77,12 @@
                             <tr>
                                 <td>Nombre:</td>
                                 <td><input class="campo" title="Solo debe contener letras y tener una longitud máxima de 50" 
-                                    name="nombre" type="text" value="<?php echo $mecanico[1];?>" pattern="[a-zA-ZÑñáéíóú]{1,50}" required/></td>
+                                    name="nombre" type="text" value="<?php echo $mecanico[1];?>" pattern="[a-zA-ZÑñ áéíó ú]{1,50}" required/></td>
                             </tr>
                             <tr>
                                 <td>Apellido:</td>
                                 <td><input class="campo" title="Solo debe contener letras y tener una longitud máxima de 50" 
-                                    name="apellido" type="text" value="<?php echo $mecanico[2];?>"  pattern="[a-zA-ZÑñáéíóú]{1,50}" required/></td>
+                                    name="apellido" type="text" value="<?php echo $mecanico[2];?>"  pattern="[a-zA-ZÑñ áéíóú]{1,50}" required/></td>
                             </tr>
                             <tr>
                                 <td>Especialidad:</td>
@@ -101,7 +101,7 @@
                             </tr>
                             <tr>
                                 <td>Contraseña:</td>
-                                <td><input class="campo" title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número) y máximo 50." 
+                                <td><input class="campo" title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número) y máximo 50" 
                                     name="contraseña" type="text" value="<?php  echo $mecanico[5];?>" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])\S{6,50}" required/></td>
                             </tr>
                         </table><br />

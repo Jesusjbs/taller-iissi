@@ -70,12 +70,12 @@
                             <tr>
                                 <td>Nombre:</td>
                                 <td><input class="campo" title="Solo debe contener letras y tener una longitud máximo 50" name="nombre"
-                                 type="text" value="<?php echo $consulta[1];?>" pattern="[a-zA-ZÑñáéíóú]{1,50}" required /></td>
+                                 type="text" value="<?php echo $consulta[1];?>" pattern="[a-zA-ZÑñáé íóú]{1,50}" required /></td>
                             </tr>
                             <tr>
                                 <td>Apellido:</td>
                                 <td><input class="campo" title="Solo debe contener letras y tener una longitud máximo 50" name="apellidos"
-                                 type="text" value="<?php echo $consulta[2];?>" pattern="[a-zA-ZÑñáéíóú]{1,50}" required /></td>
+                                 type="text" value="<?php echo $consulta[2];?>" pattern="[a-zA-ZÑñ áéíóú]{1,50}" required /></td>
                             </tr>
                             <tr>
                                 <td>Teléfono:</td>
@@ -89,7 +89,7 @@
                             <tr>
                                 <td>Dirección:</td>
                                 <td><input class="campo" title="Solo debe contener letras y dígitos y tene una longitud máxima de 50" name="direccion"
-                                 type="text" value="<?php  echo $consulta[5];?>" pattern="[a-zA-ZÑñáéíóú0-9]{0,50}" /></td>
+                                 type="text" value="<?php  echo $consulta[5];?>" pattern="[a-zA-ZÑñá éíóú0-9]{0,50}" /></td>
                             </tr>
                             <tr>
                                 <td>Antigua contraseña:</td>

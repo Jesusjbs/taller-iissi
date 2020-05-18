@@ -70,12 +70,12 @@
                             <tr>
                                 <td>Nombre:</td>
                                 <td><input class="campo" title="Solo debe contener letras y tener una longitud máximo 50" name="nombre" 
-                                type="text" value="<?php echo $consulta[1];?>" pattern="[a-zA-ZÑñáéíóú]{1,50}" required /></td>
+                                type="text" value="<?php echo $consulta[1];?>" pattern="[a-zA-ZÑñáéí óú]{1,50}" required /></td>
                             </tr>
                             <tr>
                                 <td>Apellido:</td>
                                 <td><input class="campo" title="Solo debe contener letras y tener una longitud máximo 50" name="apellido"
-                                 type="text" value="<?php echo $consulta[2];?>" pattern="[a-zA-ZÑñáéíóú]{1,50}" required /></td>
+                                 type="text" value="<?php echo $consulta[2];?>" pattern="[a-zA-ZÑñáéí óú]{1,50}" required /></td>
                             </tr>
                             <tr>
                                 <td>Especialidad:</td>

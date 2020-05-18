@@ -70,7 +70,7 @@
                 <label for="id_nombre">Nombre*:</label>
                 <div class="campo"> 
                     <input id="id_nombre" title="Sólo letras mayúsculas o minúsculas" type="text" name="nombre" 
-                        value="<?php echo $registroProveedor["nombre"]; ?>" pattern="[a-zA-ZÑñáéíóú]+" required />
+                        value="<?php echo $registroProveedor["nombre"]; ?>" pattern="[a-zA-ZÑñ áéíóú]+" required />
                 </div>
             </div>
             <br />

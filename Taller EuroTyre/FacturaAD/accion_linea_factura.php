@@ -23,6 +23,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../css/style_accion_factura.css" />
   <title>Línea de factura registrada</title>
 </head>
 
@@ -37,9 +38,9 @@
                 $_SESSION["numFactura"] = $registroLinea["numFactura"];
                 Header("Location: factura.php");
 		 } else { ?>
+			<div id="id_div">
 			<h1>Fallo al realizar la operación.</h1>
-			<div >
-			<form action="../FacturaAD/formulario_linea_factura.php" method="post">
+			<form id="form" action="../FacturaAD/formulario_linea_factura.php" method="post">
                     <input type="hidden" value="<?php echo $registroLinea["numFactura"];?>" name="numFactura" />
                     <button id="id_formFact" type="submit">Reintentar</button>
             </form>

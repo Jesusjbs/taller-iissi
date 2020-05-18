@@ -9,7 +9,7 @@ function especialidad(){
     var valor = especialidad.value;
 
     if(valor!="Mecánica" && valor!="Neumática"){
-        var error= 'El campo Especialidad solo puede contener los valores "Mecánica" o "Neumática".';
+        var error= 'El campo Especialidad solo puede contener los valores "Mecánica" o "Neumática"';
     }else{
         var error = '';
     }
@@ -44,14 +44,19 @@ function contraseña() {
     } else if(contraseñaValue.length > 50){
         var error = 'La contraseña debe de tener menos de 50 caracteres';
         contraseña.setCustomValidity(error);
+    } else {
+        var error = '';
+        confirmar.setCustomValidity(error);
+        contraseña.setCustomValidity(error);
+        antigua.setCustomValidity(error);
     }
 
-    $.get('gestionarAdmin.php', { c : antiguaValue }, function(data) {
+    /*$.get('gestionarAdmin.php', { c : antiguaValue }, function(data) {
         if(antiguaValue != "" && data == 'incorrecta') {
             var error = 'La contraseña antigua introducida no es correcta';
             contraseña.setCustomValidity(error);        
         }
-    });
+    });*/
     
     return error;
 }

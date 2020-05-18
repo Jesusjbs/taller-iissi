@@ -50,6 +50,12 @@ table th {
     width: 30%;
 }
 
+.campo {
+    font-size: medium;
+    border-radius: 5px;
+    font-family: 'Source Code Pro';
+}
+
 .formFact {
     border-radius: 4px;
     cursor: pointer;
@@ -57,6 +63,19 @@ table th {
 
 #id_descripcion {
     resize: none;
+    width: 130%;
+}
+
+#id_manoDeObra {
+    width: 23%;
+}
+
+#id_iva {
+    width: 15%;
+}
+
+#id_tipoPago {
+    width: 23%;
 }
 
 #id_importe {

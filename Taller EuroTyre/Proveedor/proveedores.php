@@ -76,7 +76,7 @@
                             <tr>
                                 <td>Nombre:</td>
                                 <td><input class="campo" title="Sólo letras mayúsculas o minúsculas" name="nombre" type="text" 
-                                value="<?php echo $proveedor[2];?>" pattern="[a-zA-ZÑñáéíóú]+" required /></td>
+                                value="<?php echo $proveedor[2];?>" pattern="[a-zA-Z Ññáéíóú]+" required /></td>
                             </tr>
                             <tr>
                                 <td>Tipo de Proveedor:</td>

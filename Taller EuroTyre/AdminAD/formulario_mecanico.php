@@ -48,6 +48,7 @@
     <title>Registro Trabajador</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/style_form_mecanico.css" />
+    <script src="../ValidacionesJS/valida_mecanicos.js"></script>
 
     <link rel="shortcut icon" href="../img/logo.png"/>
     <link rel="apple-touch-icon" href="../img/logo.png"/>
@@ -63,7 +64,7 @@
   		}
     ?>
     <div id="id_divMecanico"> 
-    <form id="id_regMecanico" method="post" action="validacion_mecanico.php">
+    <form id="id_regMecanico" method="post" action="validacion_mecanico.php" onsubmit="return validaForm()">
         <fieldset id="id_campo">
             <h1>Registro de trabajador </h1>
             <p id="id_obligatorio">Todos los campos son obligatorios</p>
@@ -84,7 +85,7 @@
                 <label for="id_nombre">Nombre:</label>
                 <div class="campo">
                     <input id="id_nombre" title="Solo debe contener letras y tener una longitud máxima de 50" name="nombre" type="text" 
-                        value="<?php echo $registroMecanico['nombre'];?>" pattern="[a-zA-ZÑñáéíóú]{1,50}" required />
+                        value="<?php echo $registroMecanico['nombre'];?>" pattern="[a-zA-ZÑñ áéíóú]{1,50}" required />
                 </div>
             </div>
             <br />
@@ -99,7 +100,7 @@
             <div class="div">
                 <label for="id_contraseña">Contraseña:</label>
                 <div class="campo">
-                    <input id="id_contraseña" title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número) y máximo 50." 
+                    <input id="id_contraseña" title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número) y máximo 50" 
                         name="contraseña" type="password" 
                     pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])\S{6,50}" required />
                 </div> 
@@ -108,8 +109,8 @@
             <div class="div">
                 <label for="id_confirmar">Confirmar contraseña:</label>
                 <div class="campo">
-                    <input id="id_confirmar" title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número) y máximo 50." 
-                    name="confirmar" type="password" required />
+                    <input id="id_confirmar" title="Mínimo 6 caracteres (Letra mayúscula, letra minúscula y número) y máximo 50" 
+                    name="confirmar" type="password" required oninput="this.setCustomValidity('')"  />
                 </div>
             </div>
             <br />
