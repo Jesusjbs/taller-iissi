@@ -57,5 +57,6 @@
       </div>
       </form>
     </main>
+    <?php  include_once("../Otros/validacion.html"); ?>
   </body>
 </html>

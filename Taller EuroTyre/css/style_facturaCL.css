@@ -34,6 +34,7 @@ table th {
     border: 2px solid;
     border-radius: 4px;
 }
+
 .h{
     width: 30%;
 }
@@ -60,5 +61,49 @@ table th {
 	border: 1px solid;
 	color: #FBDE1B;
     cursor: pointer;
+}
+
+#id_divVolver {
+    width: 7%;
+    margin-left: 67%;
+    margin-top: -1.8%;
+}
+
+#id_volver {
+    border-radius: 16px;
+	padding: 4px 20px;
+    text-decoration: none;
+    background: none;
+    
+	border: 1px solid;
+	color: #FBDE1B;
+    cursor: pointer;
+}
+
+#id_volver a {
+    text-decoration: none;
+    color: #FBDE1B;
+}
+
+h2 a {
+    text-decoration: none;
+    color: #1e708b;
+}
+
+#id_footer {
+    margin-top: 1%;
+}
+
+#id_divValidaCSS {
+	position: absolute;
+	margin: 1%;
+	width: 5%;
+}
+
+#id_divValidaHTML {
+	position: absolute;
+	margin-top: 1%;
+	margin-left: 7.5%;
+	width: 5%;
 }
 

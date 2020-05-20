@@ -113,7 +113,7 @@
       <h2>
         La factura correspondiente a la reparación con ID
         <?php echo $oid ?>
-        no está disponible aún. Disculpe las molestias.
+        no está disponible aún. Disculpe las molestias. Pulse <a href="consulta.php">aquí</a> para volver.
       </h2>
 
       <?php
@@ -125,8 +125,15 @@
           Descargar
         </button>
       </div>
+      <div id="id_divVolver">
+      <button title="Volver atrás" id="id_volver">
+          <a href="consulta.php">Volver</a>
+        </button>
+    </div>
       <?php 
     }
+		include_once("../Otros/validacion.html");
     ?>
   </body>
+  
 </html>

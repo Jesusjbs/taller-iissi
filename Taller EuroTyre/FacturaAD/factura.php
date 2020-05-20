@@ -161,7 +161,7 @@
                                 + number_format(str_replace(',','.',$fila["IMPORTE"]),2); ?>
                             <tr>
                                 <td id="id_importe"><h3>Importe total:</h3></td>
-                                <td id="id_pago"><h3><?php echo $fila["MANODEOBRA"]+$fila["IMPORTE"]." €";?></td>
+                                <td id="id_pago"><h3><?php echo $fila["MANODEOBRA"]+$fila["IMPORTE"]." €";?></h3></td>
                             </tr>
                         </table><br />
 
@@ -198,6 +198,9 @@
         }
         cerrarConexionBD($conexion);?>
     </main>
+    <?php  
+		include_once("../Otros/validacion.html");
+	?>
 </body>
 
 </html>

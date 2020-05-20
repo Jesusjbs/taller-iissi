@@ -90,7 +90,7 @@
             <div class="div">
                 <label for="id_email">Email:</label>
                 <div class="campo"> 
-                    <input id="id_email" name="email" maxlength="50" type="email" value="<?php echo $registroProveedor['email'];?>" maxlength="50" />
+                    <input id="id_email" name="email" type="email" value="<?php echo $registroProveedor['email'];?>" maxlength="50" />
                 </div>
             </div>
             <br />
@@ -105,6 +105,6 @@
         </fieldset>
     </form>
     </div>
-    <body>
+    </body>
 
 </html>

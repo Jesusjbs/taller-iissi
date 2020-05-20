@@ -114,3 +114,19 @@ table th {
 	color: #FBDE1B;
     cursor: pointer;
 }
+#id_footer {
+    margin-top: 1%;
+}
+
+#id_divValidaCSS {
+	position: absolute;
+	margin: 1%;
+	width: 5%;
+}
+
+#id_divValidaHTML {
+	position: absolute;
+	margin-top: 1%;
+	margin-left: 7.5%;
+	width: 5%;
+}

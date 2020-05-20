@@ -52,7 +52,7 @@ form{
     text-align: center;
 }
 
-#id_tabla{
+.id_tabla{
     margin-top: 1%;
     margin-top: -1%;
     padding: 0% 7%;
@@ -70,7 +70,7 @@ form{
     text-align: center;
     padding: 1% 1%;
     width: 10%;
-    margin: auto;
+    margin-left: 4%;
     
 }
 
@@ -83,7 +83,7 @@ form{
     
 }
 
-#id_pag {
+.id_pag {
     text-decoration: none;
     padding: 0% 10%;
     color: #fbde1b;
@@ -126,4 +126,20 @@ form{
 	color: #FBDE1B;
     cursor: pointer;
     margin-left: 2%;
+}
+#id_footer {
+    margin-top: 1%;
+}
+
+#id_divValidaCSS {
+	position: absolute;
+	margin: 1%;
+	width: 5%;
+}
+
+#id_divValidaHTML {
+	position: absolute;
+	margin-top: 1%;
+	margin-left: 7.5%;
+	width: 5%;
 }

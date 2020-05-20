@@ -71,3 +71,20 @@ table td {
     border-radius: 4px;
     cursor: pointer;
 }
+
+#id_footer {
+    margin-top: 4%;
+}
+
+#id_divValidaCSS {
+	position: absolute;
+	margin: 1%;
+	width: 5%;
+}
+
+#id_divValidaHTML {
+	position: absolute;
+	margin-top: 1%;
+	margin-left: 7.5%;
+	width: 5%;
+}

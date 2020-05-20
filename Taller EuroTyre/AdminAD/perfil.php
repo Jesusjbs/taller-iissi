@@ -28,8 +28,8 @@
 <head>
     <meta charset="utf-8">
     <title>Mi Perfil</title>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
-    <script src="../ValidacionesJS/valida_perfilAD.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
+    <script src="../ValidacionesJS/valida_perfilAD.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/style_perfilAD.css" />
 
 </head>
@@ -146,5 +146,8 @@
             </form>
         </article>
     <?php } ?>
+    <?php  
+		include_once("../Otros/validacion.html");
+	?>
 </body>
 </html>

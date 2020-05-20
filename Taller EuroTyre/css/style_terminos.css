@@ -19,3 +19,21 @@ body p {
     margin: auto;
     vertical-align: middle;
 }
+
+#id_footer {
+    margin-top: 2%;
+}
+
+#id_divValidaCSS {
+    margin-top: 1%;
+    margin-left: 43%;
+    margin-bottom: 0;
+	width: 5%;
+}
+
+#id_divValidaHTML {
+    margin-top: -2.3%;
+    margin-left: 50%;
+    margin-bottom: 0;
+	width: 5%;
+}

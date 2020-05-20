@@ -19,16 +19,11 @@ article {
     overflow: auto;
     border: 1px solid #000000;
     margin: auto;
-    vertical-align: middle;
     margin-top: 3%;
     font-size: large;
     text-align: center;
     
 }
-
-.dato_usuario{
-    text-align: center;
-} 
 
 .campo {
     font-size: medium;
@@ -68,7 +63,25 @@ table td {
 }
 
 .editar_fila {
+    margin-bottom: 1%;
     background: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+#id_footer {
+    margin-top: 1%;
+}
+
+#id_divValidaCSS {
+	position: absolute;
+	margin: 1%;
+	width: 5%;
+}
+
+#id_divValidaHTML {
+	position: absolute;
+	margin-top: 1%;
+	margin-left: 7.5%;
+	width: 5%;
 }

@@ -24,7 +24,7 @@ h1{
 }
 
 #id_divEnviar {
-    width: 10%;
+    width: 8%;
     margin: auto;
 }
 
@@ -36,4 +36,21 @@ h1{
 	border: 1px solid;
 	color: #FBDE1B;
     cursor: pointer;
+}
+
+#id_footer {
+    margin-top: 15%;
+}
+
+#id_divValidaCSS {
+	position: absolute;
+	margin: 1%;
+	width: 5%;
+}
+
+#id_divValidaHTML {
+	position: absolute;
+	margin-top: 1%;
+	margin-left: 7.5%;
+	width: 5%;
 }

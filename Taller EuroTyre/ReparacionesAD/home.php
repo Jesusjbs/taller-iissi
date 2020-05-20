@@ -109,7 +109,7 @@
                     $objFechaIn = date_create_from_format('d/m/y', $fila["FECHAINICIO"]);
                     $objFechaFin = date_create_from_format('d/m/y', $fila["FECHAFIN"]);
                 ?>  
-                        <table id="id_tabla">
+                        <table class="id_tabla">
                             <tr>
                                 <td><h3>Editando... </h3></td>
                                 <td></td>
@@ -155,7 +155,7 @@
                         </table>
                         <?php } else { ?>
                         
-                     <table id="id_tabla">
+                     <table class="id_tabla">
                             <tr>
                                 <td><h2>Reparación con ID: <?php echo $fila["OID_R"]; ?></h2></td>
                                 <td></td>
@@ -242,7 +242,7 @@
                 <?php
 				for($i = 1;$i<=$total_paginas;$i++){		
 						//Creamos la url que nos va a llevar a la página que queremos excepto si es la página seleccionada 
-						echo "<a id='id_pag' href='" . "home.php?PAG_NUM=" . $i . "&PAG_TAM=" . $pag_tam . "'>" . $i . "</a>";						
+						echo "<a class='id_pag' href='" . "home.php?PAG_NUM=" . $i . "&PAG_TAM=" . $pag_tam . "'>" . $i . "</a>";						
 				} 
 			?>
             </div>
@@ -259,6 +259,7 @@
         </nav>
         
     </main>
+    <?php  include_once("../Otros/validacion.html"); ?>
 </body>
 
 </html>

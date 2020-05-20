@@ -117,5 +117,15 @@
 				</fieldset>
 			</form>
 		</div>
+		<footer id="id_footer">
+        	<div id="id_divValidaCSS">
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                    src="http://jigsaw.w3.org/css-validator/images/vcss"
+                    alt="¡CSS Válido!" />
+            </a>
+    		</div>
+
+		</footer>
 	</body>
 </html>

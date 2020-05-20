@@ -89,7 +89,7 @@
                             <tr>
                                 <td>Dirección:</td>
                                 <td><input class="campo" title="Solo debe contener letras y dígitos y tene una longitud máxima de 50" name="direccion"
-                                 type="text" value="<?php  echo $consulta[5];?>" pattern="[a-zA-ZÑñá éíóú0-9]{0,50}" /></td>
+                                 type="text" value="<?php  echo $consulta[5];?>" pattern="[a-zA-ZÑñºá éíóú0-9]{0,50}" /></td>
                             </tr>
                             <tr>
                                 <td>Antigua contraseña:</td>
@@ -163,6 +163,8 @@
                 </div>
             </form>
         </article>
-    <?php } ?>
+    <?php } 
+			include_once("../Otros/validacion.html");
+	?>
 </body>
 </html>

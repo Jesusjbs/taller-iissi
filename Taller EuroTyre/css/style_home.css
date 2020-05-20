@@ -16,10 +16,10 @@ body {
     background-color: #d5be23;
 	color: #3D4045;
     width: 70%;
-    height: 400px;
+    overflow:auto;
     border: 1px solid #000000;
     margin: auto;
-    vertical-align: middle;
+    margin-top:3%;
 }
 
 .div {
@@ -65,4 +65,14 @@ body {
 	text-decoration: none;
 	background: none;
     cursor: pointer;
+}
+
+#id_footer {
+    margin-top: 8%;
+}
+
+#id_divValidaCSS {
+	position: absolute;
+	margin: 1%;
+	width: 5%;
 }

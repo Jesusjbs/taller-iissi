@@ -144,7 +144,8 @@ body {
 }
 
 #id_divValidaHTML {
-	float: right;
-	margin: 1%;
+	position: absolute;
+	margin-top: 1%;
+	margin-left: 7.5%;
 	width: 5%;
 }

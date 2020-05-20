@@ -25,14 +25,14 @@ body {
     text-align: center;
 }
 
-#id_tabla{
+.id_tabla{
     margin-top: -4%;
     padding: 0% 7%;
     margin-bottom: 5%;
     float: left;
 }
 
-#id_btnFactura {
+.id_btnFactura {
     border-radius: 16px;
     cursor: pointer;
 }
@@ -82,4 +82,20 @@ body {
 	color: #FBDE1B;
     cursor: pointer;
     margin-left: 2%;
+}
+#id_footer {
+    margin-top: -3%;
+}
+
+#id_divValidaCSS {
+	position: absolute;
+	margin: 1%;
+	width: 5%;
+}
+
+#id_divValidaHTML {
+	position: absolute;
+	margin-top: 1%;
+	margin-left: 7.5%;
+	width: 5%;
 }

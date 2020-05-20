@@ -77,10 +77,27 @@ table td {
     width: 70%;
     margin: auto;
 }
-.añadir_Vehiculo{
+.anadir_Vehiculo{
     margin-left: 48%;
 }
 
 article h2 {
     text-align: center;
+}
+
+#id_footer {
+    margin-top: -3.4%;
+}
+
+#id_divValidaCSS {
+	position: absolute;
+	margin: 1%;
+	width: 5%;
+}
+
+#id_divValidaHTML {
+	position: absolute;
+	margin-top: 1%;
+	margin-left: 7.5%;
+	width: 5%;
 }

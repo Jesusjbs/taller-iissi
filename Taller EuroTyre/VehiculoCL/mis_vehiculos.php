@@ -112,7 +112,7 @@
                             </tr>
                             <tr>
                                 <td>Prox. ITV:</td>
-                                <td><input class="campo" name="proxITV" type="date" value="<?php echo $objFechaITV->format('Y-m-d') ; ?>" /></td>
+                                <td><input class="campo" name="proxITV" type="date" value="<?php if($objFechaITV) echo $objFechaITV->format('Y-m-d') ; ?>" /></td>
                             </tr>
                         </table><br />
                         
@@ -241,7 +241,7 @@
                             </tr>
                             <tr>
                                 <td>Prox. ITV:</td>
-                                <td><input class="campo" name="proxITV" type="date" value="<?php echo $objFechaITV->format('Y-m-d') ;?>" /></td>
+                                <td><input class="campo" name="proxITV" type="date" value="<?php if($objFechaITV) echo $objFechaITV->format('Y-m-d') ;?>" /></td>
                             </tr>
                         </table><br />
                         
@@ -281,7 +281,7 @@
                         <?php 
                         $n++;
                     } ?>
-                    </div>
+          
                 </div>
                     <div class="id_botonesMotos">
                         <?php
@@ -314,12 +314,15 @@
         <?php }
         cerrarConexionBD($conexion);
         ?>
-                        
+        
         <div id="id_mas">
             <a title="Añadir Vehículo" id="id_añadir" href="formulario_vehiculo.php"><img style="width: 40px; height: 40px;" src="../img/add_button.png"
-                class="añadir_Vehiculo" alt="Añadir Vehículo"></a>
+                class="anadir_Vehiculo" alt="Añadir Vehículo"></a>
         </div>
     </main>
+    <?php  
+		include_once("../Otros/validacion.html");
+	?>
 </body>
 
 </html>

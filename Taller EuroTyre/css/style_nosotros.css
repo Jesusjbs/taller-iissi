@@ -2,7 +2,7 @@ body {
     background-color: #3d4045;
 }
 
-#id_div {
+.id_div {
     margin: auto;
     vertical-align: middle;
     color: #d5be23;
@@ -11,12 +11,12 @@ body {
     height: auto;
 }
 
-#id_div h1{
+.id_div h1{
     margin: 0;
     font-size: 250%;
 }
 
-#id_div p {
+.id_div p {
     color: #ffffff;
     text-align: justify;
 }
@@ -42,4 +42,17 @@ body {
 
 #id_footer a {
 	color: #FBDE1B;
+}
+
+#id_divValidaCSS {
+	position: absolute;
+	margin: 1%;
+	width: 5%;
+}
+
+#id_divValidaHTML {
+	position: absolute;
+	margin-top: 1%;
+	margin-left: 7.5%;
+	width: 5%;
 }

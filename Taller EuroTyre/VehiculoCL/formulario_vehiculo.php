@@ -38,7 +38,7 @@
     <link rel="shortcut icon" href="../img/logo.png">
     <link rel="apple-touch-icon" href="../img/logo.png">
 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
     <script>
         // Inicialización de elementos y eventos cuando el documento se carga completamente
         $(document).ready(function () {
@@ -160,7 +160,7 @@
                     ?>
                         </select>
                         <br /><br />
-                        <label for="id_modelo">Modelo*:</label>
+                        <label for="id_modeloC">Modelo*:</label>
                         <select id="id_modeloC" name="modelo">
                             <optgroup label="MODELOS" id="opcionesModelosC">
                                 <!-- AJAX -->

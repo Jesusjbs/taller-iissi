@@ -63,17 +63,14 @@
                         require_once("gestionarFacturas.php");
                         $conexion = crearConexionBD();
                         $piezas = consultaPiezas($conexion);
-                    
+                        
                         foreach($piezas as $pieza) {
                         ?>
-                        <datalist label="<?php echo $pieza["NOMBRE"] ?>">
                                 <option value="<?php echo $pieza["OID_P"] ?>">
                                 <?php echo  $pieza["NOMBRE"] ?></option>
-                        </datalist>
                         <?php } 
                         cerrarConexionBD($conexion);
                         ?>
-
                     </select>
                 </div>
             </div>
@@ -91,6 +88,6 @@
         </fieldset>
     </form>
     </div>
-    <body>
+    </body>
 
 </html>

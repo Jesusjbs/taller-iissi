@@ -67,7 +67,7 @@
             <div class="div">
                 <label for="id_dni">DNI del cliente:</label>
                 <div class="campo">
-                    <input size="7px" id="id_dni" type="text" name="dni" value="<?php echo $registroFactura['dni'];?>" readonly="readonly" />
+                    <input size="5" id="id_dni" type="text" name="dni" value="<?php echo $registroFactura['dni'];?>" readonly="readonly" />
                 </div>
             </div>
             <br />

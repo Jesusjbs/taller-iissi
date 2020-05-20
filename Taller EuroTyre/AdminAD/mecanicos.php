@@ -69,7 +69,7 @@
                             echo "</div>";
                         }
                 ?>
-                        <table id="id_tabla">
+                        <table class="id_tabla">
                             <tr>
                                 <td>DNI:</td>
                                 <td><?php echo $mecanico[0];?></td>
@@ -113,7 +113,7 @@
                                 <h2>Trabajador<?php echo " ".$i;?></h2>
                             <?php } ?>
                         
-                    <table id="id_tabla">
+                    <table class="id_tabla">
     
                             <tr>
                                 <td>DNI:</td>
@@ -143,18 +143,18 @@
                         <?php
                     if(isset($mec) and ($mec["dni"] == $mecanico[0])) { ?>
                         <!-- Botón de grabar -->
-                        <button title="Confirmar Cambios" autofocus id="grabar" name="grabar" type="submit" class="editar_fila">
+                        <button title="Confirmar Cambios" autofocus name="grabar" type="submit" class="editar_fila">
                             <img src="../img/commit_button.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Guardar modificación">
                         </button>
                         <?php } else { ?>
                         <!-- Botón de editar -->
-                        <button title="Editar Trabajador" id="editar" name="editar" type="submit" class="editar_fila">
+                        <button title="Editar Trabajador" name="editar" type="submit" class="editar_fila">
                             <img src="../img/UserEdite.png" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Editar trabajador">
                         </button>
                         <?php } ?>
-                        <button title="Eliminar Trabajador" id="borrar" name="borrar" type="submit" class="editar_fila">
+                        <button title="Eliminar Trabajador" name="borrar" type="submit" class="editar_fila">
                             <img src="../img/delete_button.jpg" style="width: 30px; height: 30px;" class="editar_fila"
                                 alt="Borrar trabajador">
                         </button><br /><br />
@@ -166,11 +166,15 @@
         </div>
     <?php } if($esJefe == 1) { ?>
     <div id="id_mas">
-        <a title="Añadir Trabajador" id="id_añadir" href="formulario_mecanico.php"><img style="width: 30px; height: 30px;" src="../img/add_button.png"
+        <a title="Añadir Trabajador" id="id_añadir" href="formulario_mecanico.php">
+            <img style="width: 30px; height: 30px;" src="../img/add_button.png"
                 class="añadir_mecanico" alt="Añadir Mecánico"></a>
         </div>
         <?php } ?>
     </main>
+    <?php  
+		include_once("../Otros/validacion.html");
+	?>
 </body>
 
 </html>

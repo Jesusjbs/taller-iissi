@@ -77,7 +77,7 @@
 		foreach($filas as $fila) {
     ?>
            
-        <table id="id_tabla">
+        <table class="id_tabla">
             <tr>
                 <td><h2>Cita con ID: <?php echo $fila["NUMCITA"]; ?></h2> </td>
                 <td></td>
@@ -106,7 +106,7 @@
                 <td>Factura:</td>
                 <td><form action="factura.php" method="get">
                     <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oidR" />
-                    <button id="id_btnFactura" type="submit">Ver Factura</button>
+                    <button class="id_btnFactura" type="submit">Ver Factura</button>
                 </form></td>
             </tr>
         </table>
@@ -135,6 +135,10 @@
 		</form>
         </nav>
     </main>
+    
+    <?php
+			include_once("../Otros/validacion.html");
+	?>
 </body>
 
 </html>
