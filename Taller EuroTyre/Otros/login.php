@@ -102,6 +102,16 @@
 		
 		<div id="id_inferior">
 			<footer id="id_footer">
+			<div id="id_divValidaCSS">
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img style="border:0;width:88px;height:31px"
+						src="http://jigsaw.w3.org/css-validator/images/vcss"
+						alt="¡CSS Válido!" />
+				</a>
+			</div>
+			<div id="id_divValidaHTML">
+				<img style="border:0;width:88px;height:31px;cursor:pointer" src="../img/valid_icon.png" alt="¡HTML Válido!" />
+			</div>
 				<p>Al usar este sitio, reconoces haber leído y entendido nuestra <a href="../Otros/terminos.php">Política de Privacidad y nuestros Términos y Condiciones</a>.</p>
 			</footer>
 		</div>

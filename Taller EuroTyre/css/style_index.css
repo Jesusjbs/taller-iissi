@@ -127,7 +127,6 @@ body {
  	left: 0;
   	width: 100%;
 	height: 60px;
-	text-align: center;
     border-top: 1px solid;
     border-color: #FBDE1B;
 	background: #43474d;
@@ -136,4 +135,16 @@ body {
 
 #id_footer a {
 	color: #FBDE1B;
+}
+
+#id_divValidaCSS {
+	position: absolute;
+	margin: 1%;
+	width: 5%;
+}
+
+#id_divValidaHTML {
+	float: right;
+	margin: 1%;
+	width: 5%;
 }
