@@ -1,3 +1,33 @@
 body {
-	background-color: #3d4045;
+    background-color: #3d4045;
+}
+
+#id_div {
+    border-radius: 10px;
+    background-color: #d5be23;
+    color: #3D4045;
+    width: 48%;
+    height: auto;
+    border: 1px solid #000000;
+    margin: auto;
+    vertical-align: middle;
+    margin-top: 10%;
+    font-size: large;
+    overflow: auto;
+}
+
+h2 {
+    margin-top: 2%;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #1e708b;
+}
+
+.excepcion {
+	position: fixed;
+    bottom: 0;
+	color: #d5be23;
 }

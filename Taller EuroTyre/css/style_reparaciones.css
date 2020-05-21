@@ -30,7 +30,6 @@ form{
     height: auto;
     overflow: auto;
     float: left;
-
 }
 
 .reparacion {
@@ -53,9 +52,14 @@ form{
 }
 
 .id_tabla{
-    margin-top: 1%;
     margin-top: -1%;
     padding: 0% 7%;
+    margin-bottom: 5%;
+    float: left;
+}
+
+.id_tabla_edit{
+    padding: 0% 1.04%;
     margin-bottom: 5%;
     float: left;
 }

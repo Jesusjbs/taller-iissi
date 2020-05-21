@@ -109,7 +109,7 @@
                     $objFechaIn = date_create_from_format('d/m/y', $fila["FECHAINICIO"]);
                     $objFechaFin = date_create_from_format('d/m/y', $fila["FECHAFIN"]);
                 ?>  
-                        <table class="id_tabla">
+                        <table class="id_tabla_edit">
                             <tr>
                                 <td><h3>Editando... </h3></td>
                                 <td></td>

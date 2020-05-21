@@ -57,7 +57,7 @@
 		if(strlen($nuevoVehiculo["color"]) > 50) {
 			$errores[] = "<p>El color debe tener menos de 50 caracteres.</p>";
 		} else if($nuevoVehiculo["color"] != "" && 
-					!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ\s]+$/", $$nuevoVehiculo["color"])) {
+					!preg_match("/^[a-zA-Záéíó úÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑ\s]+$/", $nuevoVehiculo["color"])) {
             $errores[] = "<p>El color solo puede contener letras</p>";
         }
 		cerrarConexionBD($conexion);

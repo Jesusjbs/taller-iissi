@@ -124,7 +124,7 @@
     ?>
 
     <div id="id_divVehiculo">
-        <form id="id_regVehiculo" method="post" action="validacion_vehiculo.php" novalidate>
+        <form id="id_regVehiculo" method="post" action="validacion_vehiculo.php">
             <fieldset id="id_campo">
                 <h1>Registro de vehículo</h1>
                 <p id="id_obligatorio">* Obligatorio</p>
@@ -195,7 +195,7 @@
                 <div class="div">
                     <label for="id_matricula">Matrícula*:</label>
                     <div class="campo">
-                        <input id="id_matricula" name="matricula" type="text"
+                        <input id="id_matricula" name="matricula" type="text" pattern="^[0-9]{4}[A-Z]{3}$"
                             value="<?php echo $registro['matricula'];?>" required />
                     </div>
                 </div>
@@ -203,7 +203,7 @@
                 <div class="div">
                     <label for="id_color">Color:</label>
                     <div class="campo">
-                        <input id="id_color" name="color" type="text" value="<?php echo $registro['color'];?>" />
+                        <input id="id_color" name="color" type="text" pattern="[a-zA-ZÑñáéíó ú]{0,50}" value="<?php echo $registro['color'];?>" />
                     </div>
                 </div>
                 <br />

@@ -25,11 +25,17 @@
 ?>	
 
 	<div>
-		<h2>Ups!</h2>
+		
 		<?php if ($destino<>"") { ?>
+		<div id="id_div">
+		<h2>Ups!</h2>
 		<p>Ocurrió un problema durante el procesado de los datos.Pulse <a href="<?php echo $destino ?>">aquí</a> para volver a la página principal.</p>
+		</div>
 		<?php } else { ?>
-		<p>Ocurrió un problema para acceder a la base de datos.</p>
+		<div id="id_div">
+		<h2>Ups!</h2>
+		<p>Ocurrió un problema para acceder a la base de datos. Pulse <a href="../index.php">Aquí</a> para volver a la página de inicio.</p>
+		</div>
 		<?php } ?>
 	</div>
 		
