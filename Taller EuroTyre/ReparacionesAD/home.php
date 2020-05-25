@@ -109,11 +109,8 @@
                     $objFechaIn = date_create_from_format('d/m/y', $fila["FECHAINICIO"]);
                     $objFechaFin = date_create_from_format('d/m/y', $fila["FECHAFIN"]);
                 ?>  
+                        <h2>Editando reparación con ID: <?php echo $fila["OID_R"] ?></h2>
                         <table class="id_tabla_edit">
-                            <tr>
-                                <td><h3>Editando... </h3></td>
-                                <td></td>
-                            </tr>
                             <tr>
                                 <td class="h">Fecha de Solicitud:</td>
                                 <td><?php echo $fila["FECHASOLICITUD"]; ?></td>
@@ -151,6 +148,20 @@
                             <tr>
                                 <td>DNI:</td>
                                 <td><?php echo $fila["DNI"]; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Factura:</td>
+                                <td><?php if(cuentaFactura($conexion, $fila["OID_R"]) == 1) { ?>
+                                    <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
+                                    <input type="hidden" name="ver" />
+                                    <button class="facturaBtn" title="Ver Factura" type="submit">Ver</button>
+                                    <?php } else { ?>
+                                    <input type="hidden" value="<?php echo $fila["OID_R"];?>" name="oid_r" />
+                                    <input type="hidden" value="<?php echo $fila["DNI"];?>" name="dni" />
+                                    <input type="hidden" name="crear" />
+                                    <button class="facturaBtn" title="Crear Factura" type="submit">Crear</button>
+                                    <?php } ?>
+                                </td>
                             </tr>
                         </table>
                         <?php } else { ?>
