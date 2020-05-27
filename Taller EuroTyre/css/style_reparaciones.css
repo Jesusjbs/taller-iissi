@@ -27,8 +27,7 @@ body {
 }
 
 form{
-    height: auto;
-    overflow: auto;
+    height: 370px;
     float: left;
 }
 
