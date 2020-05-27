@@ -79,12 +79,11 @@ form{
 }
 
 #id_form {
-    margin-top: -3%;
     text-align: center;
     margin:auto;
     margin-left: 25%;
     width: 50%;
-    
+    height: auto;
 }
 
 .id_pag {
