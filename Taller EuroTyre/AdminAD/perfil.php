@@ -64,8 +64,7 @@
                         <table id="id_tableEdit">
                             <tr>
                                 <td>DNI:</td>
-                                <td><input class="campo" title="Debe contener 8 dígitos (sin letra)" name="dni" type="text" 
-                                    value="<?php echo $consulta[0];?>" pattern="^[0-9]{8}" required /></td>
+                                <td><?php echo $consulta[0];?></td>
                             </tr>
                             <tr>
                                 <td>Nombre:</td>
