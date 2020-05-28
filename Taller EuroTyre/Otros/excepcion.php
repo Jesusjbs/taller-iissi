@@ -34,7 +34,7 @@
 		<?php } else { ?>
 		<div id="id_div">
 		<h2>Ups!</h2>
-		<p>Ocurrió un problema para acceder a la base de datos. Pulse <a href="../index.php">Aquí</a> para volver a la página de inicio.</p>
+		<p>Ocurrió un problema para acceder a la base de datos. Pulse <a href="../Otros/login.php">Aquí</a> para volver a la página de inicio.</p>
 		</div>
 		<?php } ?>
 	</div>
