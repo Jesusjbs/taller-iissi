@@ -61,11 +61,11 @@
                 $("#opcionesModelosM").append(data);
             });
 
-            //Inicialmente está marcado coche, por tanto desabilitamos los select de marca y modelo de motos (para que así no se envíen)
+            //Inicialmente está marcado coche, por tanto deshabilitamos los select de marca y modelo de motos (para que así no se envíen)
             $('#id_marcaM').prop("disabled", true);
             $('#id_modeloM').prop("disabled", true);
 
-            //Al seleccionar tipo moto, ocultamos el divisor de coche y desabilitamos y habilitamos los campos correspondientes 
+            //Al seleccionar tipo moto, ocultamos el divisor de coche y deshabilitamos y habilitamos los campos correspondientes 
             //(furgoneta-> off, campoCoche-> oculto, campoMoto-> visible, marcaCoche-> off, modeloCoche-> off, marcaMoto-> on, modeloMoto-> on)
             $('#id_tipo2').click(function () {
                 $('#id_tipo3').prop("disabled", true);
@@ -77,7 +77,7 @@
                 $('#id_modeloC').prop("disabled", true);
             });
             
-            //Al seleccionar tipo coche, ocultamos el divisor de moto y desabilitamos y habilitamos los campos correspondientes 
+            //Al seleccionar tipo coche, ocultamos el divisor de moto y deshabilitamos y habilitamos los campos correspondientes 
             //(furgoneta-> on, campoCoche-> visible, campoMoto-> oculto, marcaCoche-> on, modeloCoche-> on, marcaMoto-> off, modeloMoto-> off)
             $('#id_tipo1').click(function () {
                 $('#id_tipo3').removeAttr('disabled');

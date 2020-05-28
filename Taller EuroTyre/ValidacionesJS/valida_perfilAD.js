@@ -50,13 +50,6 @@ function contraseña() {
         contraseña.setCustomValidity(error);
         antigua.setCustomValidity(error);
     }
-
-    /*$.get('gestionarAdmin.php', { c : antiguaValue }, function(data) {
-        if(antiguaValue != "" && data == 'incorrecta') {
-            var error = 'La contraseña antigua introducida no es correcta';
-            contraseña.setCustomValidity(error);        
-        }
-    });*/
     
     return error;
 }
