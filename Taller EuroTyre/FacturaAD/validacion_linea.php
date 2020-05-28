@@ -38,9 +38,11 @@
             $errores[] = "<p>Las unidades deben ser un número entero</p>";
         }
         else if($nuevaLinea["cantidad"] <= 0){
-            $errores[] = "<p>Las unidades deben ser mayor que cero</p>";
+            $errores[] = "<p>Las unidades deben ser mayores que cero</p>";
+		} 
+		else if($nuevaLinea["cantidad"] > 9999){
+            $errores[] = "<p>Las unidades deben ser menores que 9999</p>";
 		}
-
         return $errores;
         }
 	

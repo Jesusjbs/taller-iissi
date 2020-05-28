@@ -195,15 +195,16 @@
                 <div class="div">
                     <label for="id_matricula">Matrícula*:</label>
                     <div class="campo">
-                        <input id="id_matricula" name="matricula" type="text" pattern="^[0-9]{4}[A-Z]{3}$"
-                            value="<?php echo $registro['matricula'];?>" required />
+                        <input id="id_matricula" title="La matrícula no se ajusta al formato solicitado" name="matricula" type="text" 
+                            pattern="^[0-9]{4}[A-Z]{3}$" value="<?php echo $registro['matricula'];?>" required />
                     </div>
                 </div>
                 <br />
                 <div class="div">
                     <label for="id_color">Color:</label>
                     <div class="campo">
-                        <input id="id_color" name="color" type="text" pattern="[a-zA-ZÑñáéíó ú]{0,50}" value="<?php echo $registro['color'];?>" />
+                        <input id="id_color" title="Solo debe contener letras y el tamaño máximo es de 50 caracteres" name="color" type="text"
+                             pattern="[a-zA-ZÑñáéíó ú]{0,50}" value="<?php echo $registro['color'];?>" />
                     </div>
                 </div>
                 <br />

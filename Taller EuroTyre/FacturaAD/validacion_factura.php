@@ -42,18 +42,24 @@
             $errores[] = "<p>La mano de Obra debe ser un número</p>";
         }else if($nuevaFactura["manoDeObra"]<0){
             $errores[] = "<p>La mano de Obra debe ser mayor que cero</p>";
+		}else if(!preg_match("/^[0-9]{8}+$/", $nuevaFactura["manoDeObra"]) && 
+			!preg_match("/^[0-9]{1,4}([.])?([0-9]{0,2})?$/", $nuevaFactura["manoDeObra"])) {
+				$errores[] = "<p>La mano de Obra no tiene el formato solicitado</p>";
 		}
+
 		//Validar IVA
 		if($nuevaFactura["IVA"]==""){
 			$errores[] = "<p>El IVA  no puede estar vacío.</p>";
 		}else if($nuevaFactura["IVA"]>1 || $nuevaFactura["IVA"]<0){
-			$errores[] = "<p>El IVA debe de ser un valor comprendido entre 1 y 0.</p>";
+			$errores[] = "<p>El IVA debe ser un valor comprendido entre 1 y 0.</p>";
 		}else if(!is_numeric($nuevaFactura["IVA"])){
-			$errores[] = "<p>El IVA debe de ser un número.</p>";
+			$errores[] = "<p>El IVA debe ser un número.</p>";
+		}else if(!preg_match("/^[0-1]{0,1}([.])?([0-9]{0,2})?$/", $nuevaFactura["IVA"]) && !preg_match("/[^0-9.]+/", $nuevaFactura["IVA"])) {
+			$errores[] = "<p>El IVA no tiene el formato solicitado</p>";
 		}
 		//Validad descripcion
 		if(strlen($nuevaFactura["descripcion"])>100){
-			$errores[]="<p>La descripción debe de tener menos de 100 caracteres.</p>";
+			$errores[]="<p>La descripción debe tener menos de 100 caracteres.</p>";
 		}
         
         return $errores;

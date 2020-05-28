@@ -76,7 +76,7 @@
                             <tr>
                                 <td>Nombre:</td>
                                 <td><input class="campo" title="Sólo letras mayúsculas o minúsculas" name="nombre" type="text" 
-                                value="<?php echo $proveedor[2];?>" pattern="[a-zA-Z Ññáéíóú]+" required /></td>
+                                value="<?php echo $proveedor[2];?>" pattern="[a-zA-Z Ññáéíóú]+" maxlength="50" required /></td>
                             </tr>
                             <tr>
                                 <td>Tipo de Proveedor:</td>
@@ -85,7 +85,8 @@
                             </tr>
                             <tr>
                                 <td>Email:</td>
-                                <td><input class="campo" name="email" type="email" value="<?php echo $proveedor[3];?>" maxlength="50"/></td>
+                                <td><input class="campo" name="email" type="email" value="<?php echo $proveedor[3];?>" 
+                                        maxlength="50"/></td>
                             </tr>
                             <tr>
                                 <td>Teléfono:</td>

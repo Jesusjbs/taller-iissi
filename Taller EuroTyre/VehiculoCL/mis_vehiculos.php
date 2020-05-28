@@ -98,17 +98,18 @@
                             </tr>
                             <tr>
                                 <td>Color:</td>
-                                <td><input class="campo" title="Solo debe contener letras"  name="color" type="text" 
+                                <td><input class="campo" title="Solo debe contener letras y el tamaño máximo es de 50 caracteres"  name="color" type="text" 
                                 value="<?php echo $vehiculo[8];?>" pattern="[a-zA-ZÑñáéíó ú]{0,50}"/></td>
                             </tr>
                             <tr>
                                 <td>Kilometraje:</td>
                                 <td> <input class="campo" title="Solo debe contener dígitos" name="kilometraje" type="text" 
-                                        value="<?php echo $vehiculo[9];?>" pattern="[0-9]+" /></td>
+                                        value="<?php echo $vehiculo[9];?>" pattern="[0-9]+" maxlength="50" /></td>
                             </tr>
                             <tr>
                                 <td>Nº Bastidor:</td>
-                                <td><input class="campo" title="Debe contener 17 cáracteres alfanuméricos" name="numBastidor" pattern="[A-Z0-9]{17}" type="text" value="<?php  echo $vehiculo[11];?>" /></td>
+                                <td><input class="campo" title="Debe contener 17 cáracteres alfanuméricos" name="numBastidor" 
+                                        pattern="[A-Z0-9]{17}" type="text" value="<?php  echo $vehiculo[11];?>" /></td>
                             </tr>
                             <tr>
                                 <td>Prox. ITV:</td>

@@ -30,13 +30,18 @@
             $errores[] = "<p>La mano de obra debe ser mayor que cero</p>";
 		}else if(strlen($nuevaFactura["manoDeObra"])>10){
             $errores[] = "<p>La mano de obra debe contener menos de 10 dígitos</p>";
-        } 
+        }else if(!preg_match("/^[0-9]{8}+$/", $nuevaFactura["manoDeObra"]) && 
+        !preg_match("/^[0-9]{1,4}([.])?([0-9]{0,2})?$/", $nuevaFactura["manoDeObra"])) {
+            $errores[] = "<p>La mano de Obra no tiene el formato solicitado</p>";
+        }
+
         //Validar tipo de pago
 		if($nuevaFactura["Pago"]=="") 
             $errores[] = "<p>El tipo de pago no puede estar vacío, debe ser 'Efectivo' o 'Tarjeta'.</p>";
         else if((strcmp($nuevaFactura["Pago"], "Efectivo") != 0) && (strcmp($nuevaFactura["Pago"],  "Tarjeta") != 0)) {
         $errores[] = "<p>El tipo de pago no sigue el formato correcto, debe ser 'Efectivo' o 'Tarjeta'.</p>";
-    }
+        }
+
 		//Validar IVA
 		if($nuevaFactura["IVA"]==""){
 			$errores[] = "<p>El IVA  no puede estar vacío.</p>";
@@ -44,6 +49,8 @@
 			$errores[] = "<p>El IVA debe de ser un valor comprendido entre 1 y 0.</p>";
 		}else if(!is_numeric($nuevaFactura["IVA"])){
 			$errores[] = "<p>El IVA debe de ser un número.</p>";
+		}else if(!preg_match("/^[0-1]{0,1}([.])?([0-9]{0,2})?$/", $nuevaFactura["IVA"]) && !preg_match("/[^0-9.]+/", $nuevaFactura["IVA"])) {
+			$errores[] = "<p>El IVA no tiene el formato solicitado</p>";
 		}
 		//Validar descripcion
 		if(strlen($nuevaFactura["descripcion"])>100){
