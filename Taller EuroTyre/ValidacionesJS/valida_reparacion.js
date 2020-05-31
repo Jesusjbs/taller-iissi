@@ -49,7 +49,7 @@ function fechas() {
     var fechaInicioValue = fechaInicio.value;
 
     var iniSinFormat = new Date(fechaInicioValue);
-    var solicitudSinFormat = new Date(fechaSoliValue)
+    var solicitudSinFormat = new Date(fechaSoliValue);
     var finSinFormat = new Date(fechaFinValue);
     
     var diaSOL = solicitudSinFormat.getDate();
