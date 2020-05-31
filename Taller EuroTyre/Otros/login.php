@@ -62,7 +62,7 @@
 	<?php 
 	if (isset($login)) {
 		echo "<div id=\"div_errores\" class=\"error\">";
-		echo "El correo electrónico y la contraseña que ingresaste no coinciden con nuestros registros. Por favor, revisa e inténtalo de nuevo.";
+		echo "El DNI y la contraseña que ingresaste no coinciden con nuestros registros. Por favor, revisa e inténtalo de nuevo.";
 		echo "</div>";
 	}
 	?>
