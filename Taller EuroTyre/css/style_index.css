@@ -38,7 +38,6 @@ body {
 }
 
 #id_usuario {
-	color: #3D4045;
 	border: 1px solid;
 	border-radius: 10px;
 	height: 220px;
@@ -128,7 +127,6 @@ body {
   	width: 100%;
 	height: 60px;
     border-top: 1px solid;
-    border-color: #FBDE1B;
 	background: #43474d;
 	color: #FBDE1B;
 }

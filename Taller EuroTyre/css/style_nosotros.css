@@ -4,7 +4,6 @@ body {
 
 .id_div {
     margin: auto;
-    vertical-align: middle;
     color: #d5be23;
     text-align: center;
     width: 50%;
@@ -22,7 +21,6 @@ body {
 }
 
 #id_mapa {
-    border: 1px solid;
     border-radius: 16px;
     margin-bottom: 10%;
 }
@@ -35,7 +33,6 @@ body {
 	height: 60px;
 	text-align: center;
     border-top: 1px solid;
-    border-color: #FBDE1B;
 	background: #43474d;
 	color: #FBDE1B;
 }

@@ -25,7 +25,6 @@ body {
     height: 510px;
     border: 1px solid #000000;
     margin: auto;
-    vertical-align: middle;
 }
 
 #id_campo {
@@ -40,7 +39,6 @@ body {
 }
 
 .div {
-    font-size: large;
     margin-left: 10%;
 }
 
