@@ -57,8 +57,12 @@
 	<div id="id_superior">
 			<header>
 				<img id="id_logo" src="../img/logo.png" alt="Logo EuroTyre"/>
+				<div class="icons">
+                    <a target="_blank" href="https://m.facebook.com/Eurotyre-1942028509455716/?ref=bookmarks"><img src="../img/fb.png" style="width:50px;height:50px;"/></a>
+                    <a target="_blank" href="https://mobile.twitter.com/EurotyreEs"><img src="../img/twitter.png" style="width:50px;height:50px;"/></a>
+                </div>
 			</header>
-		</div>
+	</div>
 	<?php 
 	if (isset($login)) {
 		echo "<div id=\"div_errores\" class=\"error\">";

@@ -85,6 +85,10 @@
 	color: #FBDE1B;
 }
 
+.menu ul li a:hover {
+	text-decoration: underline;
+	text-shadow: 0.03em 0.03em #FBDE1B;
+}
 
 .menu2 {
 	width: 25%;
@@ -114,4 +118,9 @@
 .menu2 ul li a {
 	text-decoration: none;
 	color: #FBDE1B;
+}
+
+.menu2 ul li a:hover {
+	text-decoration:  underline;
+	text-shadow: 0.03em 0.03em #FBDE1B;
 }

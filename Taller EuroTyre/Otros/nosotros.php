@@ -33,6 +33,25 @@
             <iframe id="id_mapa" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12717.284092537944!2d-5.9281702!3d37.1688412!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x86ce872bf6b20ac9!2sEuro%20Tyre!5e0!3m2!1ses!2ses!4v1585501153678!5m2!1ses!2ses" width="400" height="300" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 		</div>
 
+		<div class="center">
+            <div class="front-face">
+            <img src="../img/logo.png" style="position:absolute;width:250px;height:200px;margin-top: 10%;margin-left: -43%;"/> 
+                <div class="contents front">
+                    <p>Taller EuroTyre</p>
+                    <span>Tu taller de confianza</span>
+                </div>
+            </div>
+            <div class="back-face">
+                <div class="contents_back">
+                    <h2>Taller Eurotyre</h2>
+                    <span>Síguenos</span>
+                    <div class="icons">
+                        <a target="_blank" href="https://m.facebook.com/Eurotyre-1942028509455716/?ref=bookmarks"><img src="../img/fb.png" style="width:50px;height:50px;"/></a>
+                        <a target="_blank" href="https://mobile.twitter.com/EurotyreEs"><img src="../img/twitter.png" style="width:50px;height:50px;"/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     
         <div id="id_inferior">
 			<footer id="id_footer">

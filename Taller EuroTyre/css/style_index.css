@@ -12,6 +12,12 @@
 	margin-top: 10px;
 }
 
+.icons {
+	float: right;
+	margin-top: 1.5%;
+	margin-right: 4%;
+}
+
 html p {
 	text-align: center;
 }

@@ -25,7 +25,7 @@
             <img id="id_logoFix" src="../img/logo.png" alt="Logo EuroTyre" />
             
             <div id="id_divInicia">
-                <a title="Iniciar Sesión" href="../Otros/login.php">Iniciar Sesión</a>
+                <a id="id_iniciar" title="Iniciar Sesión" href="../Otros/login.php">Iniciar Sesión</a>
             </div>
         <?php
         }

@@ -1,6 +1,113 @@
 body {
-    background-color: #3d4045;
+	background-color: #3d4045;
 }
+
+.center {
+	font-family: 'Monserrat', sans-serif;
+	user-select: none;
+	top: 28%;
+	right: 4%;
+    height: 400px;
+    width: 290px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.center, .front-face,
+.back-face, .contents, .contents_back {
+    position: absolute;
+}
+
+.front-face, .back-face {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: #777777;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: transform .7s cubic-bezier(.4, .2, .2, 1);	/*Da el efecto de giro*/
+}
+
+.contents {
+    left: 0;
+    top: 75%;
+    width: 100%;
+    perspective: 100px;
+	transform: translateY(-50%) translateZ(60px) scale(.94);	/* Posiciona los elementos,coloca el text 60px más avanzado en el eje z
+																(da sensación de profundidad a los elementos) */
+}
+
+.contents_back {
+    top: 50%;
+    width: 100%;
+    perspective: 100px;
+	transform: translateY(-50%) translateZ(60px) scale(.94);	/* Posiciona los elementos,coloca el texto 60px más avanzado en el eje z
+																(da sensación de profundidad a los elementos) */
+	color: #d5be23;
+}
+
+.front p {
+    color:  white;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+/* Insertar linea blanca después del párrafo 'Taller EuroTyre' */
+.front p::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100px;
+    background: white;
+    margin: 0 auto;
+    margin-top: 10px; 
+}
+
+.front span {
+    color:  white;
+    font-size: 23px;
+}
+
+.back-face {
+    transform: rotateY(180deg);	/* Para que aparezca de forma predefinida la cara principal del cuadro */
+    background: linear-gradient(45deg, #043348 0%, #032535 100%); /* Degradado de color en 45º (desde abajo a la izquierda hacia arriba a la derecha) */
+}
+
+.contents_back h2 {
+    font-weight: lighter;
+    font-size: 28px;
+    padding-bottom: 5px;
+}
+
+.contents_back span {
+    font-size: 25px;
+}
+
+.icons {
+    margin: 10px 0;
+}
+
+.icons i {
+    color: #042f4b;
+    background: white;
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.center:hover > .back-face {
+    transform: rotateY(0deg);
+} /* Rota la cara de detrás y oculta lo de delante */
+
+
+.center:hover > .front-face {
+    transform: rotateY(-180deg);
+} /* Rota la cara de delante */
 
 .id_div {
     margin: auto;
