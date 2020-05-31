@@ -79,7 +79,7 @@
                 <label for="id_cantidad">Unidades*:</label>
                 <div class="campo">
                     <input id="id_cantidad" title="Debe ser un valor entero comprendido entre 0 y 9999" name="cantidad" type="text" 
-                        value="<?php echo $registroLinea['cantidad'];?>" pattern="^[1-9]+[0-9]{0,3}$" required />
+                        value="<?php echo $registroLinea['cantidad'];?>" pattern="^[1-9]{1}[0-9]{0,3}$" required />
                 </div>
             </div>
             <br />

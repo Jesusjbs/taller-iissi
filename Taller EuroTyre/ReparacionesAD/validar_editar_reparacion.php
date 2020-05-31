@@ -28,11 +28,17 @@ function validacionFecha($fe){
     }
 
 function validarDatosReparacion($reparacion){
+
+    $fecha_soli = date_create_from_format('d/m/y', $reparacion['fechaSolicitud']);
+    $fecha_solicitud = $fecha_soli->format('Y/m/d');
+    $fecha_ini = date('Y/m/d',strtotime($reparacion['fechaInicio']));
     // Validación del fecha de Inicio		
     if($reparacion["fechaInicio"]==""){
         $errores[] = "<p>La fecha no puede estar vacía</p>";
     } else if(validacionFecha($reparacion["fechaInicio"])) {
         $errores[] = "<p>La fecha no es del tipo correcto</p>";
+    }else if($fecha_ini <= $fecha_solicitud){
+        $errores[] = "<p>La fecha de Reparación debe de ser posterior a la fecha de Solicitud</p>";
     }
 
     //Validar el estado de Reparación
@@ -61,7 +67,6 @@ function validarDatosReparacion($reparacion){
     $feFin=$reparacion["fechaFin"];
     if($feFin != "") {
     $fecha_fin = date('Y/m/d',strtotime($reparacion['fechaFin']));
-    $fecha_ini = date('Y/m/d',strtotime($reparacion['fechaInicio']));
     
     if(validacionFecha($feFin)) {
         $errores[] = "<p>La fecha no es del tipo correcto.</p>";

@@ -106,9 +106,12 @@
                         
                         <?php
                 if(isset($reparacion) and ($reparacion["oid_r"] == $fila["OID_R"])){ 
+                    $objFechaSol = date_create_from_format('d/m/y', $fila["FECHASOLICITUD"]);
                     $objFechaIn = date_create_from_format('d/m/y', $fila["FECHAINICIO"]);
                     $objFechaFin = date_create_from_format('d/m/y', $fila["FECHAFIN"]);
                 ?>  
+                <!-- Fecha solicitud para la comparación de fechas JS -->
+                    <input id="id_fechaSolicitud" name="js" type="hidden" value="<?php  echo $objFechaSol->format('Y-m-d') ;?>" />
                         <h2>Editando reparación con ID: <?php echo $fila["OID_R"] ?></h2>
                         <table class="id_tabla_edit">
                             <tr>
