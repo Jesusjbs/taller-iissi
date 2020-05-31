@@ -39,7 +39,6 @@ function contratarProveedor($conexion, $proveedor) {
 		return $stmt;
 
     }catch(PDOException $e){
-        echo $e->getMessage();
         return false;
     }
 }

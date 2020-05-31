@@ -14,7 +14,6 @@
         return $stmt;
     }
     catch(PDOException $err) {
-        echo $err -> GetMessage();
         return false;
     }
 }

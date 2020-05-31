@@ -79,7 +79,6 @@ function contratarMecanico($conexion, $mecanico) {
 		return $stmt;
 
     }catch(PDOException $e){
-        echo $e->getMessage();
         return false;
     }
 }

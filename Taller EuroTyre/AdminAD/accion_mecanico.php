@@ -23,6 +23,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../css/style_accion_usuario.css" />
   <title>Registrado correctamente</title>
 </head>
 
@@ -36,9 +37,9 @@
             if(contratarMecanico($conexion, $nuevoMecanico)) {
 				Header("Location: mecanicos.php");
 		 } else { ?>
-			<h1>Ya existe un mecánico con el dni introducido.</h1>
-			<div >	
-				Pulsa <a href="formulario_mecanico.php">aquí</a> para volver al formulario.
+		 <div id="id_div">
+			<h1>Ya existe un mecánico con el DNI introducido.</h1>	
+				<p>Pulsa <a href="formulario_mecanico.php">aquí</a> para volver al formulario.</p>
 			</div>
 		<?php } ?>
 

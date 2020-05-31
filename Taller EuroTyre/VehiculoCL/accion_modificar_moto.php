@@ -13,15 +13,31 @@
 		$excep = editarMoto($conexion, $moto);
 		
 		cerrarConexionBD($conexion);
-		
+		?>
+<!DOCTYPE html>
+<html lang="es">
 
-		if($excep<>""){
-			$_SESSION["excepcion"] = $excep;
-			header("Location: ../Otros/excepcion.php");
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="../css/style_accion_usuario.css" />
+	<title>Registrado vehículo</title>
+</head>
 
-		}else Header("Location: mis_vehiculos.php");
-		
-	} 
-	else 
+<body>
+	<?php 
+		include_once("../Otros/cabecera.php");
+		if($excep<>"") { ?>
+	<div id="id_div">
+		<h1>Ya existe una motocicleta con el número de bastidor introducido.</h1>
+		<p>Pulsa <a href="mis_vehiculos.php">aquí</a> para volver.</p>
+	</div>
+
+	<?php
+		} else Header("Location: mis_vehiculos.php");
+
+	} else 
 		Header("Location: mis_vehiculos.php"); 
 ?>
+</body>
+
+</html>

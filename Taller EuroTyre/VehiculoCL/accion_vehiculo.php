@@ -13,7 +13,7 @@
         $_SESSION["errores"] =null;
 	}
 	else 
-		Header("Location: formulario_vehiculo.php");	
+		Header("Location: formulario_vehiculo.php");
 
 	$conexion = crearConexionBD(); 
 	
@@ -23,7 +23,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="../css/style_accion_vehiculo.css" />
+  <link rel="stylesheet" type="text/css" href="../css/style_accion_usuario.css" />
   <title>Registrado correctamente</title>
 </head>
 
@@ -36,10 +36,11 @@
         <?php 	
             if(alta_vehiculo($conexion, $nuevoVehiculo,$_SESSION['login'])) {	
 				Header("Location: mis_vehiculos.php"); 
-		    } else { ?>
-			<h1>El vehículo ya existe en la base de datos.</h1>
+			} else { ?>
 			<div id="id_div">	
-				Pulsa <a href="formulario_vehiculo.php">aquí</a> para volver al formulario.
+			<h1>El vehículo ya existe en la base de datos.</h1>
+			
+				<p>Pulsa <a href="formulario_vehiculo.php">aquí</a> para volver al formulario.</p>
 			</div>
 		<?php } ?>
 
